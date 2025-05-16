@@ -1,0 +1,63 @@
+
+.tnavbar_light2 {
+
+	#main-navigation {
+
+		--mb2-pb-navbarbgcolor: #{$color_gray2};
+
+		.main-navigation-inner {
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+			   	width: 100%;
+			   	height: 5px;
+			   	background-image:linear-gradient(to right, var(--mb2-pb-accent1) , var(--mb2-pb-accent3));
+			}
+
+		}
+
+		.main-menu {
+
+
+			/* First level of menu list */
+
+			> li {
+
+				> a,
+				> button {
+					color: inherit;
+
+					&:hover,
+					&:focus {
+						background-color: rgba(0,0,0,.05);
+					}
+
+				}
+
+
+				&.mycourses {
+					> button {
+						background-color: rgba(0,0,0,.05);
+					}
+				}
+
+				&.bookmarks-item,
+				&.lang-item {
+					> a,
+					> button {
+						background-color: rgba(0,0,0,.08);
+					}
+				}
+
+			}
+		}
+
+	}
+
+
+}

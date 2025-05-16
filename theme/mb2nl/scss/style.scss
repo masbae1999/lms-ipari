@@ -1,0 +1,26 @@
+
+// Variables
+@import 'vars';
+@import 'css_vars';
+
+// Icon fonts
+@import 'fontawesome';
+
+// Custom font icon
+@import '../assets/Glyphicons-Halflings/glyphicons';
+@import '../assets/Pe-icon-7-stroke/Pe-icon-7-stroke';
+@import '../assets/LineIcons/LineIcons';
+@import '../assets/remixicon/remixicon';
+@import '../assets/bootstrap-icons/bootstrap-icons';
+
+@import 'bootstrap';
+@import 'moodle';
+
+@import 'mixins';
+
+@import 'moodle-custom';
+@import 'bootstrap-custom';
+
+@import 'theme';
+@import 'plugins';
+@import 'shortcodes';

@@ -1,0 +1,91 @@
+
+
+/* GENERAL STYLE ====================== */
+
+.mb2-pb-boxescircle {
+	--mb2-pb-bcrcle-s: 200px;
+	--mb2-pb-bcrcle-bgcolor: rgba(0,0,0,.35);
+	--mb2-pb-bcrcle-color: #fff;
+	--mb2-pb-bcrcle-hcolor: #fff;
+	--mb2-pb-bcrcle-borcolor: var(--mb2-pb-accent1);
+	--mb2-pb-bcrcle-hbgcolor: rgba(0,0,0,.55);
+	--mb2-pb-bcrcle-hborcolor: var(--mb2-pb-bcrcle-borcolor);
+	--mb2-pb-bcrcle-bors: 2px;
+	--mb2-pb-bcrcle-hspace: 1.4rem;
+	--mb2-pb-bcrcle-vspace: .5rem;
+}
+
+.boxescircle-list {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	align-items: center;
+	column-gap: var(--mb2-pb-bcrcle-hspace);
+	row-gap: var(--mb2-pb-bcrcle-vspace);
+}
+
+.theme-boxcircle {
+    width: var(--mb2-pb-bcrcle-s);
+    height: var(--mb2-pb-bcrcle-s);
+
+	position: relative;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;    
+    border-radius: 50%;
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	border: solid var(--mb2-pb-bcrcle-bors) var(--mb2-pb-bcrcle-borcolor);
+
+	transition: border-color .25s ease-in-out;
+
+	.box-title {
+		margin: 0;
+	}
+
+	.box-title,
+	.box-desc-text {
+		color: var(--mb2-pb-bcrcle-color);
+		transition: color .25s ease-in-out;
+	}
+
+	.box-content {
+		position: relative;
+		text-align: center;	
+		padding: .8rem;	
+	}
+
+	.box-desc-text {
+		margin-top: .8rem;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		bottom: -1px;
+		left: -1px;
+		background-color: var(--mb2-pb-bcrcle-bgcolor);
+		border-radius: 50%;
+		transition: background-color .25s ease-in-out;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: var(--mb2-pb-bcrcle-hborcolor);
+
+		&::before {
+			background-color: var(--mb2-pb-bcrcle-hbgcolor);
+		}
+
+		.box-title,
+		.box-desc-text {
+			color: var(--mb2-pb-bcrcle-hcolor);
+		}
+	}
+}

@@ -1,0 +1,70 @@
+
+.tnavheader {
+
+
+	/* Page header */
+
+	#page-header {
+		.flexcols {
+			min-height: 20px;
+		}
+	}
+
+	#main-header {
+		--mb2-pb-mbtncolor: var(--mb2-pb-navcolor);
+		--mb2-qlinksbtnc: var(--mb2-pb-navcolor);
+	}
+
+	@media only screen and (min-width: $wdmediumdevice + 1){
+
+		&.hnavpos2 {
+			#master-header:not(.sticky-el) {
+				--mb2mm-mtb: .8rem;
+			}
+	
+			.hnav2-wrap {
+				margin-top: var(--mb2mm-mtb);
+				gap: .65rem;
+			}		
+		}
+
+		/* Header tools */
+
+		.header-tools {
+
+			&.tools-pos2 {
+				.header-tools-link,
+				.popover-region-toggle {
+
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					flex-flow: column;
+					gap: .12rem;
+					max-width: 3rem;
+					
+					color: var(--mb2-pb-navcolor);
+
+					.text1 {
+						font-size: .67rem;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						width: 100%;
+					}
+				}
+
+				&.hnavtype2 {
+					.header-tools-link,
+					.popover-region-toggle {
+						max-width: none;
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+}

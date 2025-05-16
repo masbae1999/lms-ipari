@@ -1,0 +1,154 @@
+
+
+@mixin mb2_nobtn() {
+    padding: 0;
+    border: 0;
+    background-color: transparent !important;
+    font-weight: inherit;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+
+@mixin mb2_btn_link() {
+    background-color: transparent !important;
+    color: inherit !important;
+    //padding: 0 .3rem;
+    padding: 0;
+    border: 0 !important;
+    transition: color 0.15s ease-in-out;
+    @include mb2_box_shadow_none();
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $linkcolor !important;
+    }
+
+    &.isicon0 {
+        .btn-intext {
+            &:after {
+                @include mb2_font_fa();
+                content: '\f105';
+                margin-left: .45rem;
+                transform: scale(1.35);
+            }
+        }
+    }
+
+}
+
+
+
+@mixin mb2_button($color: $btncolor) {
+
+    display: inline-block;
+  	font-weight: var(--mb2-pb-fwmedium);
+  	cursor: pointer;
+	@include mb2_transition1(all, .15s);
+	@include button-variant($color, $color);
+    @include button-size(.3rem, 1rem, $fsgeneral, ($fsgeneral*1.65), .15rem);
+	@include mb2_border_radius(.15rem);
+	text-decoration: none !important;
+    border-style: solid;
+    border-width: 2px;
+
+    @include mb2_box_shadow_none();
+
+
+	/* Make small buttons in blocks */
+
+    .style-minimal .block &:not(.activityiconcontainer),
+	.style-default .block &:not(.activityiconcontainer),
+    #block-region-content .block &:not(.activityiconcontainer) {
+	  	@include button-size(.2rem, .45rem, $fssmall, 1.3, .13rem);
+	}
+
+    @media only screen and (max-width: $wmediumdevice){
+        @include button-size(.32rem, .8rem, $fsgeneral, ($fsgeneral*1.65), .15rem);
+    }
+
+    &:focus {
+        outline: .2rem solid transparent;
+    }
+
+    &.btn-icon,
+    &.btn-icon:active {
+        background-color: transparent;
+    }
+
+
+}
+
+
+
+@mixin mb2_btn_moodle_icon() {
+
+    @include mb2_box_shadow_none();
+    @include mb2_transition_none();
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0 !important;
+    color: var(--mb2-pb-headingscolor) !important;
+
+    span {
+        padding: 0 !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--mb2-pb-headingscolor) !important;
+        background-color: rgba(0,0,0,.04) !important;
+    }
+
+    &.mr-1 {
+        margin-right: 1rem !important;
+    }
+
+    &.icons-collapse-expand {
+        background-color: rgba(0,0,0,.04) !important;
+
+        &:hover {
+            outline-color: rgba(0,0,0,.1);
+            outline-width: 1px;
+        }
+    }
+
+    .fa-chevron-down,
+    .fa-chevron-right,
+    .fa-chevron-left {
+        &:before {
+            @include mb2_font_bootstrapicons();
+        }
+
+        &.icon {
+            width: auto !important;
+            height: auto !important;
+            font-size: 1.25rem;
+        }
+    }
+
+    .fa-chevron-down {
+        &:before {
+            content: '\f282';
+        }
+    }
+
+    .fa-chevron-right {
+        &:before {
+            content: '\f285';
+        }
+    }
+
+
+    .fa-chevron-left {
+        &:before {
+            content: '\f284';
+        }
+    }
+
+}

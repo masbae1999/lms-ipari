@@ -1,0 +1,18 @@
+/* ======================= PRELOAD DIV */
+
+.preload {
+    --preload-size: 74px;
+
+    min-height: 150px;
+
+    .inner {
+		width: var(--preload-size);
+		height: var(--preload-size);
+		background-image: var(--mb2-pb-spinner);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: calc(var(--preload-size)*.6);
+        border-radius: 50%;
+		z-index: 1;
+    }
+}

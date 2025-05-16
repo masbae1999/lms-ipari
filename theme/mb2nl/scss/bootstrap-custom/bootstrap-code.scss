@@ -1,0 +1,23 @@
+pre {
+	background-color: lighten($color_gray2, 2%);
+	border: solid 1px $color_border;
+	border-top-color: $color_warning;
+	border-top-width: 3px;
+	padding: .6rem;
+	font-family: 'Courier New', Courier, monospace;
+	font-style: normal;
+	color: $textcolor;
+	font-size: $fssmall;
+	@include mb2_border_radius(.15rem);
+
+	.CodeMirror-code & {
+		background-color: transparent;
+		border-top: 0;
+		padding: inherit;
+		font-family: inherit;
+		font-style: normal;
+		color: inherit;
+		font-size: inherit;
+		@include mb2_border_radius(0);
+	}
+}

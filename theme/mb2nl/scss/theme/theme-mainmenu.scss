@@ -1,0 +1,1201 @@
+/* ======================= DEFINE SOME VARIABES */
+
+:root {
+   
+    // Mega menu item
+    --mb2mm-hcolor: var(--mb2-pb-textcolor);
+    --mb2mm-hsubcolor: var(--mb2-pb-textcolor);
+    --mb2mm-hsub2color: var(--mb2-pb-textcolor);
+    --mb2mm-hiconcolor: var(--mb2-pb-textcolor);
+    --mb2mm-hiconbgcolor: transparent;
+
+    // First level menu items
+    --mb2mm-ptb: .65rem;
+    --mb2mm-mtb: 0;
+    --mb2mm-flhp: 100%;
+    --mb2mm-flbr: .18rem;
+
+    // Mega columns layout
+    --mb2mm-mcflexwidth: 50%;
+
+    // Dropdown list - normal state
+    --mb2mm-ddbgcolor: #fff;
+    --mb2mm-ddbordercolor: rgba(0,0,0,.1);
+    --mb2mm-ddcolor: var(--mb2-pb-textcolor);
+    --mb2mm-ddsubcolor: var(--mb2-pb-textcolor_lighten);
+    --mb2mm-ddiconcolor: var(--mb2-pb-textcolor);
+
+    // Dropdown list - hover state
+    --mb2mm-ddhbgcolor: rgba(0,0,0,.035);
+    --mb2mm-ddhcolor:var(--mb2mm-ddcolor);
+    --mb2mm-ddsubhcolor: var(--mb2mm-ddsubcolor);
+    --mb2mm-ddiconhcolor: var(--mb2mm-ddiconcolor);
+
+    // Mega menu dropdown background color
+    //--mb2mm-mddbgcolor: var(--mb2mm-ddbgcolor);
+
+    // Mega menu column heading
+    //--mb2mm-hfs: 1.16rem;                 Defined inline width menu item settings
+    //--mb2mm-hifs: 1.16rem;                Defined inline width menu item settings
+    //--mb2mm-hfw: var(--mb2-pb-fwbold);    Defined inline width menu item settings
+    //--mb2mm-mcminheight: 150px;           Defined inline width menu item settings
+
+    // Mega menu items - normal state
+    --mb2mm-mcitemcolor: var(--mb2-pb-textcolor);
+    --mb2mm-mcitemsubcolor: var(--mb2-pb-textcolor_lighten);
+    --mb2mm-mcitemiconcolor: var(--mb2-pb-textcolor);
+    --mb2mm-mcitembordercolor: rgba(0,0,0,.1);
+
+    // Mega menu items - hover state
+    --mb2mm-mcitemhcolor: var(--mb2-pb-accent1);
+    --mb2mm-mcitemsubhcolor: var(--mb2mm-mcitemsubcolor);
+    --mb2mm-mcitemiconhcolor: var(--mb2-pb-accent1);
+    --mb2mm-mcitemhbgcolor: rgba(0,0,0,.035);     
+
+    // Mega menu column - normal state
+    --mb2mm-mcbgcolor: transparent;
+
+    // Mega menu column item - hover state
+    --mb2mm-mcbghcolor: var(--mb2mm-mcbgcolor);
+    --mb2mm-hhcolor: var(--mb2mm-hcolor);
+    --mb2mm-hsubhcolor: var(--mb2mm-hsubcolor);
+    --mb2mm-hsub2hcolor: var(--mb2mm-hsub2color);
+    --mb2mm-hiconhcolor: var(--mb2mm-hiconcolor);
+    --mb2mm-hiconhbgcolor: var(--mb2mm-hiconbgcolor);    
+    
+    // Highlight label
+    --mb2mm-hlabelcolor: #fff;
+    --mb2mm-hlabelbgcolor: var(--mb2-pb-accent1);
+
+    // Mobile menu
+    --mb2mm-mitemheight: #{$menuh};
+    --mb2mm-mindent: 0;
+
+    // First level item on mobile menu - normal state
+    --mb2mm-m1lcolor: var(--mb2-pb-headingscolor);
+    --mb2mm-m1subcolor: var(--mb2-pb-textcolor_lighten);
+    --mb2mm-m1iconcolor: var(--mb2-pb-headingscolor);
+    --mb2mm-m1lbgcolor: #fafafa;
+    --mb2mm-m1lbordercolor: rgba(0,0,0,.1);
+
+    // First level item on mobile menu - open state
+    --mb2mm-m1locolor: var(--mb2mm-m1lcolor);
+    --mb2mm-m1lbgocolor: var(--mb2-pb-acc-color_gray2);
+    --mb2mm-m1subocolor: var(--mb2mm-m1subcolor);
+    --mb2mm-m1iconocolor: var(--mb2mm-m1iconcolor);
+    
+}
+
+
+/* ======================= SOME GENERAL MENU LIST STYLE */
+
+.mb2mm {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+     ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+
+         > li {
+            .mb2mm-action,
+            .mb2mm-mega-action,
+            .mb2mm-heading {
+
+                .mb2mm-label {
+                    // Style from theme settings
+                    @include mb2_font_family($ffddmenu);
+                    font-size: $fsddmenu2;
+                    font-weight: $fwddmenu3;
+                    text-transform: $ttddmenu; 
+                }
+
+            }
+        
+            .mb2mm-action {
+                color: var(--mb2mm-ddcolor); // Set the color for whole menu item
+                padding: 16px 15px;
+                border-bottom: solid 1px var(--mb2mm-ddbordercolor);    
+                
+                .mb2mm-sublabel {
+                    color: var(--mb2mm-ddsubcolor);              
+                }
+                
+                .mb2mm-icon {
+                    color: var(--mb2mm-ddiconcolor);
+                } 
+            }
+
+         }
+    }
+
+    // Accesibility readable font
+    .acsb_readablefont & {
+        ul {
+            > li {
+                .mb2mm-action,
+                .mb2mm-mega-action,
+                .mb2mm-heading {
+
+                    .mb2mm-label {
+                        font-family: var(--mb2-pb-readablefont);               
+                    }
+
+                }
+            }
+        }
+    }
+
+    .acsb_dyslexic & {
+        ul {
+            > li {
+                .mb2mm-action,
+                .mb2mm-mega-action,
+                .mb2mm-heading {
+
+                    .mb2mm-label {
+                        font-family: var(--mb2-pb-dyslexicfont);               
+                    }
+
+                }
+            }
+        }
+    }
+    
+    li {
+        position: relative;
+    }    
+    
+}
+
+
+
+/* ======================= STYLE FOR ALL CLICKABLE ELEMENTS */
+
+.mb2mm-action,
+.mb2mm-mega-action,
+.mb2mm-heading {    
+    outline: none;
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: inherit;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+@media only screen and (min-width: $wdmediumdevice + 1){
+    .mb2mm-action,
+    .mb2mm-mega-action,
+    .mb2mm-heading,
+    .mb2mm-sublabel,
+    .mb2mm-icon,
+    .mb2mm-sublabel-more {
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out;    
+    }
+}
+
+.mb2mm-exticon {
+    position: relative;
+    transform: scale(1.1);
+    display: inline-flex;
+    margin-left: .45rem;
+
+    @media only screen and (min-width: $wdmediumdevice + 1){
+        .issublabel2 .mb2mm-label & {
+            display: none;
+        }
+    }
+    
+}
+
+.mb2mm-sublabel-more {
+    font-weight: var(--mb2-pb-fwbold);
+    margin-top: 16px;
+    color: var(--mb2mm-hsub2color);
+
+    &:hover,
+    &:focus-within {
+        color: var(--mb2mm-hsub2hcolor);
+    }
+
+}
+
+/* Content of the menu clickacble element */
+
+.mb2mm-item-content {
+    display: flex;
+    flex-flow: column;
+}
+
+.mb2mm-label,
+.mb2mm-sublabel:not(.mb2mm-heading .mb2mm-sublabel) {
+    line-height: 1.12;
+}
+
+
+
+/* ======================= PARENT MENU ARROWS */
+
+.mb2mm-arrow,
+.mb2mm-toggle {
+    display: none;    
+    flex-flow: wrap;
+    margin-left: .28rem;
+    justify-content: center;
+    font-size: $fsmenu;
+
+    &:before {
+        @include mb2_font_bootstrapicons();
+        content: '\f282';
+    }
+
+    .level-2 & {
+        margin-left: 0;
+        font-size: $fsddmenu2;
+
+        &:before {
+            content: '\f285';
+        }
+    }
+    
+    .dir-rtl .level-2 & {
+        content: '\f284';
+    }
+
+    /* Positioned it absolute for normal list - this is because align border lines */
+
+    @media only screen and (min-width: $wdmediumdevice + 1){
+        .mb2mm-dd & {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            right: 4px;
+        }
+    }
+    
+}
+
+
+
+/* ======================= MENU ITEM SUBTEXT */
+
+.mb2mm-action,
+.mb2mm-mega-action {
+    .mb2mm-sublabel {
+        font-size: $fssmall;                
+    }
+
+    .menu-highlight > & {
+        background-color: var(--mb2-pb-accent1) !important;
+        color: #fff!important;
+
+        .mb2mm-label,
+        .mb2mm-sublabel,
+        .mb2mm-icon {
+            color: #fff!important;
+        }
+
+        .mb2mm-sublabel {
+            opacity: .6 !important;
+        }
+    }
+}
+
+
+
+/* ======================= MENU ITEM ICON */
+
+.mb2mm-action,
+.mb2mm-mega-action,
+.mb2mm-heading {
+    .mb2mm-icon {
+        line-height: 1;
+        display: inline-flex;
+        flex: 0 0 1.5em;
+        width: 1.5em;
+        margin-right: .55em;
+        justify-content: center;
+        transform: scale(1.1);        
+    }
+}
+
+
+/* ======================= HIGHLIGHT LABEL */
+
+.mb2mm-hlabel {
+    display: inline-block;
+    color: var(--mb2mm-hlabelcolor);
+    background-color: var(--mb2mm-hlabelbgcolor);    
+    line-height: 1;
+    font-size: $fsxsmall;
+    font-weight: var(--mb2-pb-fwbold);    
+    padding: 3px 6px;
+    border-radius: .1rem;
+    margin-left: .32rem;
+}
+
+/* ======================= CUSTOM CLASSESS */
+
+.mb2mm-action {
+
+    /* Highlight class */
+    .mb2mm_highlight > & {
+        background-color: var(--mb2-pb-accent1) !important;
+
+        .mb2mm-label:not(.mb2scsb-contrast) {
+            color: #fff !important;
+        }
+        
+    }    
+}
+
+@media only screen and (max-width: $wdmediumdevice){ 
+    .mb2mm_mhide {
+        display: none;
+    }
+}
+
+
+
+
+/* ======================= FIREST LEVEL MENU ITEMS */
+
+.mb2mm {
+    > li {
+        > .mb2mm-action {
+
+            .mb2mm-label {
+                // Style from theme settings
+                @include mb2_font_family($ffmenu);
+			    font-size: $fsmenu;
+			    font-weight: $fwmenu3;
+			    text-transform: $ttmenu;
+            }            
+        }
+    }
+
+    // Accessibility font
+    .acsb_readablefont & {
+        > li {
+            > .mb2mm-action {
+                .mb2mm-label {
+                    font-family: var(--mb2-pb-readablefont); 
+                }
+            }
+        }
+    }
+
+
+    .acsb_dyslexic & {
+        > li {
+            > .mb2mm-action {
+                .mb2mm-label {
+                    font-family: var(--mb2-pb-dyslexicfont); 
+                }
+            }
+        }
+    }
+
+}
+
+
+/* ======================= DROPDOWN ITEM LIST */
+
+.mb2mm-dd {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--mb2mm-ddbgcolor);
+    }
+
+
+    @media only screen and (min-width: $wdmediumdevice + 1){
+        .mb2mm.ddrounded1 &:not(.width-max) {
+            border-radius: .22rem;
+
+            &:before {
+                border-radius: .22rem;
+            }
+        }
+    }
+}
+
+
+
+
+/* ======================= DESKTOP STYLE */
+
+@media only screen and (min-width: $wdmediumdevice + 1){
+
+
+    /* ======================= CORE MENU STYLE */
+
+    #main-navigation {
+
+        &.navigation-header {
+            height: 100%;        
+            
+            .navalignright & {
+                margin-left: auto;
+                margin-right: 15px;
+            }
+            
+            .navalignleft & {
+                margin-right: auto;
+                margin-left: 15px;
+            }
+
+            .navalignjustify &,
+            .navaligncenter & {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ======================= SECOND HEADER MAIN NAVIGATION POSITION */
+
+        .hnavpos2 & {
+            &.navigation-header {
+                margin-right: 0;
+                order: 2;
+            }
+        }
+        
+    }
+
+
+
+    /* ======================= HIDE MENU ITEMS FOR DESKTOP */
+    
+    .mb2mm-heading { 
+
+        .mb2mm-empty > & {
+            @include mb2_sronly();
+        }        
+    }
+
+
+    /* ======================= HIDE ADDITIONAL ITEMS */
+    .m-item {
+        @include mb2_sronly();
+    }
+
+
+
+    /* ======================= FIRST LEVEL MENU */
+
+    .mb2mm {
+        .level-1 {
+
+            display: flex;
+            flex-flow: wrap;
+            height: var(--mb2mm-flhp);
+            align-items: center;            
+
+            > .mb2mm-action {
+                padding: var(--mb2mm-ptb) .7rem;  
+                margin: var(--mb2mm-mtb) .15rem;        
+            }
+
+            &.height100 {
+                height: 100%;
+
+                > .mb2mm-action {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }  
+        
+        
+        .hnavpos2 & {
+            .level-1 {
+                > .mb2mm-action {
+                    margin: 0 0 var(--mb2mm-mtb) .3rem;        
+                }
+            }
+        }
+
+        .menunop & {
+            .level-1 {
+                > .mb2mm-action {
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-left: 1.7rem;
+                }
+
+                --mb2-pb-navhbgcolor: transparent;
+            }
+        }
+
+
+    }
+
+
+    /* ======================= MAIN NAVIGATION IN THE HEADER */
+
+    .navigation-header {
+        .mb2mm {
+            .level-1 {
+                > .mb2mm-action {
+                    border-radius: var(--mb2mm-flbr);                    
+                }
+            }
+        }        
+    }
+
+
+    /* ======================= MAIN NAVIGATION IN THE NAVIGATION BAR */
+
+    .navigation-bar {
+
+        .mb2mm {
+            .level-1 {
+                > .mb2mm-action {
+                    height: var(--mb2mm-mitemheight);
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+
+
+    /* Dislplay menu items inline */
+
+    .mb2mm {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        height: 100%;
+
+        .navalignright & {
+            justify-content: flex-end;
+        }
+
+        .navalignleft & {
+            justify-content: flex-start;
+        }
+
+        .navaligncenter & {
+            justify-content: center;
+        }
+
+        .navalignjustify & {
+            justify-content: space-between;
+        }
+
+        .level-1 {
+            > .mb2mm-action {
+
+                .mb2mm-label,
+                .mb2mm-icon,
+                .mb2mm-arrow {
+                    color: var(--mb2-pb-navcolor);
+                }
+
+                .mb2mm-sublabel {
+                    color: var(--mb2-pb-navsubcolor);
+                }
+                
+            }
+
+            &:hover,
+            &:focus-visible {
+                > .mb2mm-action {
+                    background-color: var(--mb2-pb-navhbgcolor);
+
+                    .mb2mm-label,
+                    .mb2mm-icon,
+                    .mb2mm-arrow {
+                        color: var(--mb2-pb-navhcolor);
+                    }
+
+                    .mb2mm-sublabel {
+                        color: var(--mb2-pb-navsubhcolor);
+                    }
+                }                
+            }
+        }
+    }
+
+
+
+    /* ======================= MY COURSES DROPDOWN LIST */
+
+    .mycourses {
+        .mb2mm-dd {
+            max-height: 274px;
+            overflow-y: auto;
+            background-color: var(--mb2mm-ddbgcolor);
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+
+    /* ======================= LANGUAGE MENU ITEM */
+
+    .lang-item {
+        
+        .mb2mm-action {
+            .lang-shortname {
+                text-transform: uppercase !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .lang-fullname {
+                display: none;
+            }
+        }        
+
+    }
+    
+    
+
+
+    /* ======================= SHOW PARENT MENU ARROWS */
+
+    .mb2mm-arrow {
+        .isparent.onhover & {
+            display: flex;
+            align-items: center;
+        }
+        .level-2 & {
+            width: 20px;
+            height: 20px;
+        }
+        
+    }
+
+
+    /* ======================= SHOW/HIDE SUBMENU */
+
+    .mb2mm-toggle {
+        display: none;
+    }
+
+    .mb2mm {
+
+        .isparent {
+
+            overflow: hidden;
+
+            .mb2mm-dd {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                visibility: hidden;
+                opacity: 0;
+                z-index: -10;
+                transition: opacity .3s cubic-bezier(.42, .01, .59, 1);
+                width: 0; 
+                box-shadow: 0 9px 20px rgb(0,0,0,.2);
+            }
+
+            /* Dropdown arrow element */
+
+            .mb2mm-ddarrow {
+                border: solid 8px transparent;
+                border-bottom-color: var(--mb2mm-ddbgcolor);
+                position: absolute;
+                top: 100%;
+                left: 25%;
+                z-index: -10;
+                margin-top: -16px;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity .3s cubic-bezier(.42, .01, .59, 1);
+            }
+
+            &.ismega {
+                .mb2mm-ddarrow {
+                    border-bottom-color: var(--mb2mm-mddbgcolor);
+                }
+            }
+
+            &.level-1 {               
+
+                > .mb2mm-dd {
+                    top: 100%;
+                    left: 0;
+                }            
+            }
+
+            
+            &.onhover:hover,
+            &.onhover:focus-within {
+                
+                overflow: visible;
+
+                > .mb2mm-dd {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 999;
+                    width: $ddwidth;
+                    
+                    &.lang-list {
+                        width: auto;
+                    } 
+                }
+
+                .mb2mm-ddarrow {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 1000;
+                }
+            }  
+                      
+        }
+
+        ul {
+            > li {
+                &:last-child {
+                    > .mb2mm-action {
+                        border-bottom: 0;
+                    }
+                }     
+            
+            
+                &:hover,
+                &:focus-within {
+                    > .mb2mm-action {
+                        color: var(--mb2mm-ddhcolor);
+                        background-color: var(--mb2mm-ddhbgcolor);
+                        
+                        .mb2mm-sublabel {
+                            color: var(--mb2mm-ddsubhcolor);
+                        }
+    
+                        .mb2mm-icon {
+                            color: var(--mb2mm-ddiconhcolor);
+                        }
+                    }
+                }
+            }
+        }
+        
+    } 
+
+
+    /* ======================= MEGA MENU - MAX WIDTH CONTAINER */
+
+    .mb2mm-wrap {
+
+        &:not(.width-aw) {
+            max-width: 100vw;
+        }
+        
+        right: auto;       
+
+        &:before {
+            background-color: var(--mb2mm-mddbgcolor);
+        }
+
+        // Container width on full width layout
+        .theme-lfw & {
+            &.width-max {
+                width: 100vw !important;
+            }
+        }
+
+        // max width
+        &.width-max {
+
+            &.width-cw {
+                .mb2mm-content {
+                    width: 100%;
+                    max-width: $pagewidth - 30;
+                    margin-left: auto;
+                    margin-right: auto;
+                }                           
+            }
+        } 
+        
+        
+        // max width with header full width
+
+        @media only screen and (min-width: $pagewidth_bp){
+            .headerfw & {
+
+                &.width-max { 
+
+                    &.width-cw {
+                        .mb2mm-content {                            
+                            max-width: 100%;
+                            padding-left: 30px;
+                            padding-right: 30px;                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+
+    }
+
+
+    /* ======================= MEGA MENU LIST COLUMNS */
+
+    .mb2mm-list {
+
+        > li {
+            
+            display: flex;
+            flex-flow: column;
+            min-height: var(--mb2mm-mcminheight);
+            width: var(--mb2mm-mcminwidth); 
+            padding: 1rem;
+            
+            &.mb2mm-extracol {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            &.mb2mm-bgcol {
+                padding: 1rem 2rem;
+            }
+
+            &.iscw {
+                width: var(--mb2mm-mcflexwidth);
+            }
+        }
+
+        /* Big padding */
+        .mb2mm.cpadding_big & {
+            > li {
+                padding: calc(2rem - 16px) 2rem;
+            }
+        }
+
+        /* Alig content vertically */
+
+        .mb2mm-mcatv1 & {
+            > li {
+                justify-content: center;
+            }
+        }        
+            
+        display: flex;
+        flex-flow: wrap;      
+            
+        .mb2mm-wrap.cols-2 & {
+            > li:not(.mb2mm-extracol) {
+                flex: 0 0 var(--mb2mm-mcflexwidth);
+                max-width: 50%
+            }
+        }
+            
+        .mb2mm-wrap.cols-3 & {
+            --mb2mm-mcflexwidth: 33.3333333333%;
+
+            > li:not(.mb2mm-extracol) {
+                flex: 0 0 var(--mb2mm-mcflexwidth);
+                max-width: 33.3333333333%
+            }
+        }        
+            
+        .mb2mm-wrap.cols-4 & {
+            --mb2mm-mcflexwidth: 25%;
+
+            > li:not(.mb2mm-extracol) {
+                flex: 0 0 var(--mb2mm-mcflexwidth);
+                max-width: 25%
+            }
+        }
+            
+        .mb2mm-wrap.cols-5 & {
+            --mb2mm-mcflexwidth: 20%;
+
+            > li:not(.mb2mm-extracol) {
+                flex: 0 0 var(--mb2mm-mcflexwidth);
+                max-width: 20%
+            }
+        }  
+        
+        .mb2mm-wrap.width-aw & {
+            > li:not(.mb2mm-extracol) {
+                max-width: 100%;
+            }
+        }
+
+    }
+
+
+    /* ======================= MEGA MENU COLUMNS HEADINGS */
+
+    ul.mb2mm-list {
+
+        .mb2mm.chupper1 & {
+            .mb2mm-heading {
+                .mb2mm-label {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+
+
+        /* Make border radius */
+
+
+        .mb2mm.ddrounded1 & {
+            
+            > li {
+
+                &:first-child {
+                    border-radius: .22rem .22rem 0 0;
+                    &:before {
+                        border-radius: .22rem .22rem 0 0;
+                    }
+                }
+
+                &:last-child {
+                    border-radius: 0 0 .22rem .22rem;
+                    &:before {
+                        border-radius: 0 0 .22rem .22rem;
+                    }
+                }
+
+                &.mb2mm-firstcol {
+                    border-radius: .22rem 0 0 .22rem;
+
+                    &:before {
+                        border-radius: .22rem 0 0 .22rem;
+                    }
+
+                    &.mb2mm-isextracol {
+
+                        border-radius: .22rem 0 0 0;
+
+                        &:before {
+                            border-radius: .22rem 0 0 0;
+                        }
+                    }
+                }
+
+                &.mb2mm-lastcol {
+                    border-radius: 0 .22rem .22rem 0;
+
+                    &:before {
+                        border-radius: 0 .22rem .22rem 0;
+                    }
+
+                    &.mb2mm-isextracol {
+
+                        border-radius: 0 .22rem 0 0;
+
+                        &:before {
+                            border-radius: 0 .22rem 0 0;
+                        }
+                    }
+                }
+
+                &.mb2mm-extracol {
+                    &:last-child {
+                        border-radius: 0 0 .22rem .22rem;
+
+                        &:before {
+                            border-radius: 0 0 .22rem .22rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        > li {
+                   
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+                    
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: var(--mb2mm-mcbgcolor);  
+                transition: background-color 0.25s ease-in-out;        
+            }
+
+            .mb2mm-heading {
+                color: var(--mb2mm-hcolor);
+                padding: 16px 0;
+                            
+                .mb2mm-label {
+                    font-size: var(--mb2mm-hfs);
+                    font-weight: var(--mb2mm-hfw);
+                }
+                
+                .mb2mm-sublabel {
+                    color: var(--mb2mm-hsubcolor);
+                    margin-top: 16px;
+                }
+    
+                .mb2mm-icon {
+                    color: var(--mb2mm-hiconcolor);
+                    font-size: var(--mb2mm-hifs);
+                    flex: 0 0 cacl(var(--mb2mm-hifs) * 1.2);
+                    width: cacl(var(--mb2mm-hifs) * 1.2);
+                    align-items: center;
+                    margin-right: .8em;
+                    transform: scale(1);                    
+                }
+            }
+            
+            &.mb2mm-iconbg {
+                .mb2mm-heading {
+                    .mb2mm-icon {
+                        flex: 0 0 calc(var(--mb2mm-hifs) * 2.25);
+                        width: calc(var(--mb2mm-hifs) * 2.25);
+                        height: calc(var(--mb2mm-hifs) * 2.25);
+                        background-color: var(--mb2mm-hiconbgcolor);
+                        border-radius: .15rem;
+                    }
+                }
+            }
+            
+            
+            &:hover,
+            &:focus-within {
+
+                &:before {
+                    background-color: var(--mb2mm-mcbghcolor);
+                }                
+
+                > .mb2mm-heading {
+                     color: var(--mb2mm-hhcolor);
+                        
+                    .mb2mm-sublabel {
+                        color: var(--mb2mm-hsubhcolor);
+                    }
+    
+                    .mb2mm-icon {
+                        color: var(--mb2mm-hiconhcolor);
+                        background-color: var(--mb2mm-hiconhbgcolor);
+                    }
+                }
+             }            
+        }
+    }
+
+
+
+    /* ======================= MEGA MENU COLUMN MENU ITEMS */
+
+
+    ul.mb2mm-mega-dd {
+        padding-bottom: 16px; 
+
+        /* Set style for submenu items column */
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+
+        > li {
+            width: 100%;
+        }
+
+        .iscw > & {
+            > li {
+                width: calc(var(--mb2mm-mcminwidth) - 28px);
+            }
+        }
+        
+        /* Set padding top is heading text is null */
+
+        .mb2mm-empty > & {
+            padding-top: 16px;
+        }
+        
+        // .mb2mm-mcis_bg & {
+        //     margin-left: -15px;
+        //     margin-right: -15px;
+        // }
+
+        
+
+        /* Smaller padding for mega menu child items */
+        ul .mb2mm-action {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+
+    .mb2mm-mega-action {
+        padding: 8px 0;
+
+        /* Normal state */
+        color: var(--mb2mm-mcitemcolor);
+
+        .mb2mm-sublabel {
+            color: var(--mb2mm-mcitemsubcolor);
+        }
+
+        .mb2mm-icon {
+            color: var(--mb2mm-mcitemiconcolor);
+        }
+
+        /* Background style */      
+        
+        .mb2mm-mcis_bg & {
+            padding: 12px;
+            border-radius: .15rem;
+        }
+
+        .mb2mm-mcis_bg li:hover > &,
+        .mb2mm-mcis_bg li:focus-within > & {
+            background-color: var(--mb2mm-mcitemhbgcolor);
+        }
+
+        /* Border style */
+
+        .mb2mm-mcis_border & {
+            padding: 12px 0;
+            border-bottom: solid 1px var(--mb2mm-mcitembordercolor);
+        }
+
+        .mb2mm-mcis_border li:last-child > & {
+            border-bottom: 0;
+        }
+
+        li:hover > &,
+        li:focus-within > & {
+            color: var(--mb2mm-mcitemhcolor);
+
+            .mb2mm-sublabel {
+                color: var(--mb2mm-mcitemsubhcolor);
+            }
+    
+            .mb2mm-icon {
+                color: var(--mb2mm-mcitemiconhcolor);
+            }
+        }
+
+
+    }
+
+
+}

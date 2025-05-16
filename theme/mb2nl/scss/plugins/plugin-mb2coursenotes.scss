@@ -1,0 +1,50 @@
+/* ======================= NOTE TEXTAREA */
+
+.format-site.path-local-mb2coursenotes,
+.mb2coursenotes_modal {
+
+    textarea {
+        width: 100%;
+        min-height: 310px;
+        padding: .6rem;
+    }
+    
+}
+
+
+/* ======================= NOTE DETAILS CONTAINER */
+
+.note-details {
+    form & {
+        background-color: #f4f4f4;
+        padding: 1rem;
+        font-size: var(--mb2-pb-fssmall);
+        border-radius: .18rem;
+    }
+}
+
+
+/* ======================= NOTE BUTTON */
+
+button.mb2coursenotes_openform {
+    font-size: 18px;
+
+    &.nmode {
+        margin: .5rem 0 .5rem 1.2rem;
+        padding: 0;
+        width: 18px;
+    }
+
+    .fsmod-course-content &.nmode {
+        display: none;
+    }
+}
+
+
+/* ======================= FORM BUTTONS */
+
+.mb2coursenotes_modal_btn_delete {
+    &[data-itemid="0"] {
+        display: none;
+    }
+}

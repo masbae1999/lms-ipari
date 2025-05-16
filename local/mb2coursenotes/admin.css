@@ -1,0 +1,29 @@
+
+/** DISPLAY NOTE COURSE AND MODULE ======================== */
+
+.mb2coursenotes-admin-note-title div {
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/** NOTE FILTER ======================== */
+
+.mb2coursenotes-filter-notes  {
+    margin-bottom: 1.3rem;
+}
+
+.mb2coursenotes-filter-notes .filter-content {
+    display: none;
+    border: solid 1px rgba(0,0,0,.1);
+    padding: 1rem;
+    border-radius: .22rem;
+    margin-top: 1.3rem;
+}
+
+.mb2coursenotes-filter-notes.open .filter-content {
+    display: block;
+}

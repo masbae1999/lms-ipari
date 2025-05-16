@@ -1,0 +1,286 @@
+/* ================= GENERAL STYLE */
+
+ul.theme-list {
+	list-style: none;
+}
+
+
+.theme-list {
+
+	--mb2-pb-listcolor: var(--mb2-pb-textcolor);
+	--mb2-pb-listhcolor: var(--mb2-pb-linkcolor);
+
+	display: flex;
+	flex-flow: column;
+	gap: var(--mb2-pb-listgap);	
+
+	color: var(--mb2-pb-listcolor);
+	margin: -.2rem 0 0 0;
+	padding: 0;
+	padding-left: var(--mb2-pb-listpl);
+
+
+	/* ================= HORIZONTAL LIST */
+
+	&.horizontal1 {
+		flex-flow: wrap;
+		align-items: center;
+		row-gap: calc(var(--mb2-pb-listgap) * .5);
+	}
+
+
+	/* ================= LIST ALIGNMENT */
+
+	&.list-center {
+		align-items: center;
+
+		&.horizontal1 {
+			justify-content: center;
+		}
+	}
+
+	&.list-left {
+		align-items: flex-start;
+
+		&.horizontal1 {
+			justify-content: flex-start;
+		}
+	}
+
+	&.list-right {
+		align-items: flex-end;
+
+		&.horizontal1 {
+			justify-content: flex-end;
+		}
+	}
+
+
+	@media only screen and (max-width: $wdmediumdevice){
+		.mobcenter1 & {
+			align-items: center !important;
+			justify-content: center !important;
+		}
+
+	}
+
+	
+
+
+	/* ================= LIST TYPES */
+
+	&.list-square {
+		list-style: square;
+	}
+
+	&.list-circle {
+		list-style: circle;
+	}
+
+	&.list-disc {
+		list-style: disc;
+	}
+
+
+	/* ================= LIST ITEM */
+
+	.llink {
+		color: var(--mb2-pb-listcolor);
+
+		&:hover,
+		&:focus {
+			color: var(--mb2-pb-listhcolor);
+		}
+	}
+
+
+	/* ================= PARAGRAPHS */
+
+	p {
+		display: inline-flex;
+		margin: 0;
+	}
+	
+
+	
+}
+
+
+
+
+
+
+/* ================= ICON LIST */
+
+.theme-listicon {
+	// Basic variable for icon
+	--mb2-pb-listicon-isize: 2.65rem;
+	--mb2-pb-listicon-space: .45rem;
+	--mb2-pb-listicon-fs: 1rem;
+
+    list-style: none !important;
+    padding: 0;
+	margin: 0;
+	font-size: var(--mb2-pb-listicon-fs);
+	display: flex;
+	flex-flow: column;
+	gap: var(--mb2-pb-listicon-space);
+
+	.dark & {
+		color: #fff;
+	}
+
+	li {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+		> a {
+			color: inherit !important;
+		}
+	}
+
+	.item-content {
+		display: flex;
+	    flex-flow: row;
+	    align-items: center;
+	}
+
+	.iconel {
+		font-size: calc(var(--mb2-pb-listicon-isize) * .65);
+		margin-right: calc(var(--mb2-pb-listicon-isize) * .1);
+		width: var(--mb2-pb-listicon-isize);
+		flex: 0 0 var(--mb2-pb-listicon-isize);
+		@include mb2_border_radius(25rem);
+
+		i {
+			line-height: inherit;
+		}
+	}
+
+	&.iconbg1 {
+
+		.iconel {
+			height: var(--mb2-pb-listicon-isize);			
+			background-color: var(--mb2-pb-accent1);
+			margin-right: calc(var(--mb2-pb-listicon-isize) * .23);
+			color: #fff;
+		}
+	}
+
+	&.iconbg0 {
+		.iconel {
+			background-color: transparent !important;
+		}
+	}
+
+
+	&.horizontal1 {
+		flex-flow: wrap;
+		align-items: center;
+		row-gap: calc(var(--mb2-pb-listicon-space) * .55);		
+	}
+
+
+
+	/* ================= ALIGNMENT - NORMAL AND HORIZONTAL LAYOUTS */
+
+	&.aligncenter {
+		align-items: center;
+
+		&.horizontal1 {
+			justify-content: center;
+		}
+	}
+
+	&.alignright {
+		align-items: flex-end;
+
+		&.horizontal1 {
+			justify-content: flex-end;
+		}
+	}
+
+
+
+	/* ================= TWO COLUMNS LAYOUT */
+
+	&.horizontal2 {
+		align-items: center;
+
+		li {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+
+		@media only screen and (min-width: $wmediumdevice + 1){
+
+			justify-content: space-between;
+			flex-flow: wrap;
+
+			li {
+				flex: 0 0 calc(50% - calc(var(--mb2-pb-listicon-space)/2));
+				max-width: calc(50% - calc(var(--mb2-pb-listicon-space)/2));
+			}
+		}
+
+	}
+
+
+	/* ================= CENTER ON MOBILE */
+
+	.mobcenter1 & {
+
+		@media only screen and (max-width: $wdmediumdevice){
+
+			align-items: center !important;
+
+			&.horizontal1 {
+				justify-content: center !important;
+			}
+		}
+
+	}
+
+
+	&.border1 {
+		.list-text {
+			border-bottom: solid 1px $textcolor;
+		}
+	}
+}
+
+
+
+@media only screen and (max-width: $wmediumdevice){
+
+    .theme-list {
+        &.list-col-3,
+        &.list-col-4,
+        &.list-col-5 {
+            li {
+                width: 50% !important;
+            }
+        }
+
+    }
+
+}
+
+
+
+@media only screen and (max-width: $wxsmalldevice){
+
+    .theme-list {
+        &.list-col-2,
+        &.list-col-3,
+        &.list-col-4,
+        &.list-col-5 {
+            li {
+                width: 100% !important;
+            }
+        }
+
+    }
+
+}

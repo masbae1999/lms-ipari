@@ -1,0 +1,267 @@
+/* ================ GENERAL STYLE FOR LOGIN FORM ON LOGIN PAGE */
+
+.custom-login,
+.default-login {
+	#login {
+
+		input {
+
+			background-color: transparent;
+			border-color: rgba(0,0,0,.1);
+			border-width: 2px;
+
+			&[type="text"],
+			&[type="password"] {
+				height: 42px;
+				padding-left: 35px;
+				width: 100%;
+
+				&:focus {
+					border-color: $color_success;
+				}
+			}
+		}
+
+
+		.form-group {
+			position: relative;
+
+			&:before {
+				@include mb2_font_remix();
+				content: '\eece';
+				position: absolute;
+				height: 30px;
+				width: 38px;
+				font-size: 20px;
+				text-align: center;
+				line-height: 30px;
+				top: 50%;
+				margin-top: -15px;
+				left: 0;
+				background-color: transparent;
+				color: rgba(0,0,0,.2);
+			}
+
+			.pass_show {
+				position: absolute;
+				height: 30px;
+				line-height: 30px;
+				top: 50%;
+				margin-top: -15px;
+				display: none;
+				width: auto;
+			    left: auto;
+			    right: .7rem;
+			    font-size: $fsxsmall;
+			    text-transform: uppercase;
+			    color: $textcolor_lighten;
+				cursor: pointer;
+				background-color: #fff;
+
+				&.filled {
+					display: inline-block;
+				}
+			}
+
+			&.login-form-submit,
+			&.login-form-forgotpassword {
+				&:before {
+					display: none;
+				}
+			}
+
+		}
+
+		.form-item {
+			margin-bottom: 1.35rem;
+		}
+
+		input[type="hidden"] + .form-group {
+			&:before {
+				content: '\f264';
+			}
+		}
+
+	}
+
+	.guest-login-form,
+	.cookies-notice {
+		margin-top: 3rem;
+	}
+
+	.text-separator {
+	    margin: 1.4rem 0;
+	}
+
+	.potentialidp {
+		margin-bottom: 1rem;
+	}
+
+
+}
+
+
+/* ================ GENERAL STYLE FOR CUSTOM LOGIN PAGE */
+
+.custom-login {
+
+	/* ================ PAGE LAYOUT STYLE */
+
+	--mb2-lpagew: 587px;
+	--mb2-lpageiw: 363px;
+
+
+	/* ================ HEADER AND LOGO */
+
+	.logo-wrap {
+		margin-top: 3rem;
+		margin-right: 0;
+		max-width: 100%;
+
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	.pagelayout-content {
+		background-color: transparent;
+	}
+
+	.pagelayout-b {
+		background-color: #fff;
+	}
+
+	#main-content {
+	    padding: 0;
+	}
+
+	.card,
+	.card-body,
+	.card-header {
+	    background-color: transparent;
+	    border: 0;
+	}
+
+	.card {
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-bottom: 40px;
+	}
+
+	.lang-footer {
+		margin-top: 0;
+	}
+
+	.footer-social {
+		margin: 1rem 0 0 0;
+		--mb2-social-size: 24px;
+	}
+
+	.loginleft,
+	.loginright {
+		padding-top: 3rem;
+	}
+
+	.login-footer {
+		margin: 4rem 0 3rem 0;	
+
+		.footer-inner {
+			padding-top: 2rem;
+			border-top: solid 1px rgba(0,0,0,.1);
+		}
+	}
+
+	
+
+	/* ================ CUSTOM STYLE */
+
+	&.llayout1,
+	&.llayout2,
+	&.llayout3 {
+
+		text-align: center;
+
+		.pagelayout-b {
+			width: var(--mb2-lpagew);
+    		flex: 0 0 var(--mb2-lpagew);
+		}
+
+		.pagelayout-content {
+			width: var(--mb2-lpageiw);
+    		flex: 0 0 var(--mb2-lpageiw);
+			max-width: 100%;
+			margin: 0 auto;
+		}
+
+	
+		/* ================ FOOTER */
+
+		.login-footer {
+			font-size: var(--mb2-pb-fssmall);
+			color: var(--mb2-pb-textcolor_lighten);
+		}
+
+		.lang-list,
+		.social-list {
+			justify-content: center;
+		}
+		
+	}
+
+	&.llayout1 {
+		.pagelayout-b {
+			margin-right: auto;
+			box-shadow: 3px 0 5px rgba(0,0,0,.15);
+		}
+
+		&:before,
+		.page-bgimg {
+			left: var(--mb2-lpagew);
+		}
+
+		&.dir-rtl {
+			.pagelayout-b {
+				box-shadow: -3px 0 5px rgba(0,0,0,.15);
+			}
+		}
+	}	
+
+
+	&.llayout2 {
+		.pagelayout-b {
+			margin-left: auto;
+			box-shadow: -3px 0 5px rgba(0,0,0,.15);
+		}
+
+		&:before,
+		.page-bgimg {
+			right: var(--mb2-lpagew);
+		}
+
+		&.dir-rtl {
+			.pagelayout-b {
+				box-shadow: 3px 0 5px rgba(0,0,0,.15);
+			}
+		}
+	}
+
+	&.llayout3 { 
+		.pagelayout {
+			padding: 3rem 0;
+		}
+
+		.pagelayout-b {
+			box-shadow: 0 0 5px rgba(0,0,0,.15);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		text-align: center;
+
+		.social-list {
+			justify-content: center;
+		}
+	}
+	
+
+}

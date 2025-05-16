@@ -1,0 +1,38 @@
+.tnavheader_transparent {
+	
+
+	#main-header {
+		--mb2-pb-navcolor: #fff;
+		--mb2-pb-navsubcolor: rgba(255,255,255,.65);
+		--mb2-pb-navhcolor: var(--mb2-pb-navcolor);
+		--mb2-pb-navsubhcolor: var(--mb2-pb-navsubcolor);
+		--mb2-pb-navhbgcolor: rgba(255,255,255,.1);
+	}	
+
+
+	@media only screen and (min-width: $wmediumdevice){
+		#master-header {
+
+			&.sticky-el {			
+				
+				.master-header-inner {
+					background-color: var(--mb2-pb-mhbgcolor);
+					@include mb2_box_shadow(0 3px 5px, rgba(0,0,0,.15));
+				}
+
+			}
+
+		}
+
+		&.tpheader_color {
+			#master-header {
+
+				&.sticky-el { 
+					background-color: var(--mb2-pb-headerbgcolor);
+				}
+			}
+		}
+	}
+
+
+}

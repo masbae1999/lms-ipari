@@ -1,0 +1,68 @@
+
+.mb2-pb-animnum {
+	--mb2-b-anum-sizei: 3rem;
+}
+
+
+.pbanimnum-item {
+
+	display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+	padding: 1rem;
+	background-color: rgba($accent2, .3);
+
+	.center1 & {
+		text-align: center;
+	}
+
+	.nopadding1 & {
+		padding: 0;
+	}
+}
+
+.pbanimnum-icon,
+.pbanimnum-number {
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;	
+}
+
+.pbanimnum-number {
+	&.fsitalic {
+		text-indent: -.2em;
+	}
+}
+
+
+&.center1 {
+	.pbanimnum-icon,
+	.pbanimnum-number {
+		justify-content: center;
+	}
+}
+
+.pbanimnum-icon {
+
+	font-size: var(--mb2-b-anum-sizei);
+	height: var(--mb2-b-anum-sizei);
+
+	.icon0 & {
+		display: none;
+	}
+}
+
+.pbanimnum-title {
+	margin: 0;
+}
+
+.pbanimnum-subtitle {
+
+	.subtitle0 & {
+		display: none;
+	}
+
+	display: inline-block;
+	margin-top: .5rem;
+}

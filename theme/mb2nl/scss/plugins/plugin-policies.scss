@@ -1,0 +1,80 @@
+
+.eupopup-container {
+
+	color: $textcolor;
+	background-color: #fff;
+	right: 30px;
+    left: auto;
+    bottom: 30px;
+	max-width: 600px;
+	font-size: inherit;
+	line-height: inherit;
+	padding: 15px;
+	overflow: hidden;
+	@include mb2_border_radius(.15rem);
+	@include mb2_box_shadow(0 0 15px, rgba(0,0,0,.2));
+	z-index: 3;
+
+	.eupopup-body {
+		a {
+			color: $linkcolor;
+		}
+	}
+
+
+	ul {
+		li {
+			margin: 0 .2rem;
+			padding: 0 .2rem;
+			position: relative;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.eupopup-button {
+		@include mb2_button($btncolor);
+		@include button-size(.19rem, .55rem, $fssmall, $fssmall_lh, .15rem);
+		@include button-variant($color_success, $color_success);
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	.eupopup-closebutton {
+		top: -1px;
+		right: -7px;
+		font-size: 1.2rem;
+		line-height: 0;
+		display: block;
+		opacity: 1;
+		text-indent: -999999999px;
+
+		&:after {
+			display: block;
+			text-indent: 0;
+			content: '\00d7';
+			visibility: visible;
+			line-height: 29px;
+			width: 29px;
+			height: 29px;
+			text-align: center;
+			@include mb2_border_radius(50%);
+			@include mb2_transition1(all, .25s);
+			color: rgba(0,0,0,.6);
+		}
+	}
+}
+
+
+@media only screen and (max-width: 660px){
+	.eupopup-container {
+		max-width: 90%;
+		left: 5%;
+		right: 5%;
+	}
+
+}

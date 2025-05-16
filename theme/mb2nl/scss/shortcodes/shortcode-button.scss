@@ -1,0 +1,297 @@
+
+/* ======================= CORE STYLE */
+
+.mb2-pb-btn {
+
+	// Normal colors
+	--mb2-pb-btn-color: #fff;
+	--mb2-pb-btn-borcolor: var(--mb2-pb-btn-bgcolor);
+
+	// Hover active colors
+	--mb2-pb-btn-hcolor: #fff;
+	--mb2-pb-btn-borhcolor: var(--mb2-pb-btn-bghcolor);
+
+	// Other variables
+	--mb2-pb-btn-padding: .3rem 1rem;
+	--mb2-pb-btn-fsize: #{$fsgeneral};
+	--mb2-pb-btn-lheight: calc(1.65 * #{$fsgeneral});
+	--mb2-pb-btn-radius: .18rem;
+
+	
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	vertical-align: middle;
+	gap: .65em;
+	font-weight: var(--mb2-pb-fwmedium);
+	padding: var(--mb2-pb-btn-padding);
+	line-height: var(--mb2-pb-btn-lheight);
+	color: var(--mb2-pb-btn-color);
+	font-size: var(--mb2-pb-btn-fsize);
+	background-color: var(--mb2-pb-btn-bgcolor);
+	border: solid 2px var(--mb2-pb-btn-borcolor);
+	border-radius: var(--mb2-pb-btn-radius);
+	transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+	/* Add style for svg image */
+	svg {
+		transition: color .15s ease-in-out;
+	}
+
+	path {
+		fill: var(--mb2-pb-btn-hcolor);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--mb2-pb-btn-hcolor);
+		background-color: var(--mb2-pb-btn-bghcolor);
+		border-color: var(--mb2-pb-btn-borhcolor);
+
+		path {
+			fill: var(--mb2-pb-btn-hcolor);
+		}
+	}
+
+	/* Font weight */
+	&.fwlight {
+		font-weight: $fwlight;
+	}
+
+	&.fwnormal {
+		font-weight: $fwnormal;
+	}
+
+	&.fwbold {
+		font-weight: $fwbold;
+	}
+
+
+	/* Accessibility style */
+
+	&:focus {
+        outline: .2rem solid transparent;
+    }
+
+
+	/* ======================= BUTTON ICON AND IMAGE */
+
+	.btn-image,
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		@include mb2_transform_scale(1.38);
+
+		svg {
+			height: 16px;			
+		}
+	}
+
+	&.iafter1 {
+		.btn-image,
+		.btn-icon {
+			order: 2;
+		}
+	}
+
+	
+
+
+	/* ======================= BORDERED BUTTONS */
+
+	&.btnborder1 {
+		--mb2-pb-btn-color: var(--mb2-pb-btn-bgcolor);
+		--mb2-pb-btn-borcolor: var(--mb2-pb-btn-bgcolor);
+		--mb2-pb-btn-radius: .24rem;
+
+		background-color: transparent;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--mb2-pb-btn-hcolor);
+			background-color: var(--mb2-pb-btn-bghcolor);
+			border-color: var(--mb2-pb-btn-borhcolor);
+		}
+	}
+
+	.dark &.btnborder1.typedefault {
+		--mb2-pb-btn-color: #fff;
+		--mb2-pb-btn-borcolor: #fff;
+	}
+
+
+	/* ======================= BUTTON TYPES */
+
+	&.typeprimary {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-btn-primarybgcolor); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($btnprimarycolor,6%)}; // Hover active colors
+	}
+
+	&.typesecondary {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-accent3); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($accent3,6%)}; // Hover active colors
+	}
+
+	&.typesuccess {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-color_success); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($color_success,6%)}; // Hover active colors
+	}
+
+	&.typewarning {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-color_warning); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($color_warning,6%)}; // Hover active colors
+	}
+
+	&.typeinfo {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-color_info); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($color_info,6%)}; // Hover active colors
+	}
+
+	&.typedanger {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-color_danger); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($color_danger,6%)}; // Hover active colors
+	}
+
+	&.typeinverse {
+		--mb2-pb-btn-bgcolor: var(--mb2-pb-accent2); // Normal colors
+		--mb2-pb-btn-bghcolor: #{darken($accent2,6%)}; // Hover active colors
+	}
+
+	&.typelink {
+		// Normal colors
+		--mb2-pb-btn-color: var(--mb2-pb-textcolor);
+		--mb2-pb-btn-bgcolor: transparent;
+		--mb2-pb-btn-borcolor: transparent;
+
+		// Hover active colors
+		--mb2-pb-btn-hcolor: var(--mb2-pb-linkcolor);
+		--mb2-pb-btn-bghcolor: transparent;
+		--mb2-pb-btn-borhcolor: transparent;
+
+		padding-left: 0;
+		padding-right: 0;
+		border-left: 0;
+		border-right: 0;
+
+		&:after {
+			@include mb2_font_bootstrapicons();
+			content: '\f285';
+			transform: scale(1.38);
+		}
+
+		&.isicon1 {
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	.dir-rtl & {
+		&.typelink {
+			&:after {
+				content: '\f284';
+			}
+		}
+	}
+
+
+	/* ======================= BUTTON SIZES */
+
+	&.sizexs,
+	&.sizesm {
+		--mb2-pb-btn-fsize: #{$fssmall};
+		--mb2-pb-btn-lheight: #{$fssmall_lh};
+	}
+
+	&.sizexs {
+		--mb2-pb-btn-padding: .07rem .45rem;
+	}
+
+	&.sizesm {
+		--mb2-pb-btn-padding: .2rem .55rem;
+	}
+
+	&.sizelg,
+	&.sizexlg {
+		--mb2-pb-btn-radius: .24rem;
+	}
+
+	&.sizelg {
+		--mb2-pb-btn-padding: .84rem 1.6rem;
+		--mb2-pb-btn-fsize: 1.17rem;
+		--mb2-pb-btn-lheight: calc(var(--mb2-pb-btn-fsize) * #{$lhtime});
+
+		@media (max-width: $wdmediumdevice) {
+			--mb2-pb-btn-lheight: 1.2;
+		}
+	}
+
+	&.sizexlg {
+		--mb2-pb-btn-padding: .9rem 2rem; // 1.1rem 1.6rem;
+		--mb2-pb-btn-fsize: 1.3rem;
+		--mb2-pb-btn-lheight: calc(var(--mb2-pb-btn-fsize) * #{$lhtime}); 
+
+		@media (max-width: $wdmediumdevice) {
+			--mb2-pb-btn-lheight: 1.2;
+		}
+	}
+
+	@media only screen and (max-width: $wmediumdevice){
+		&.sizelg,
+		&.sizexlg {
+			--mb2-pb-btn-padding: .5rem 1.1rem;
+			--mb2-pb-btn-fsize: 1.2rem;
+		}
+	}
+
+	.sticky-el & {
+		&.sizelg,
+		&.sizexlg {
+			--mb2-pb-btn-padding: .3rem 1rem;
+    		--mb2-pb-btn-fsize: 1rem;
+    		--mb2-pb-btn-lheight: calc(1.65 * 1rem);
+    		--mb2-pb-btn-radius: .18rem;
+		}
+	}
+
+
+	/* ======================= ROUNDED BUTTONS */
+
+	&.rounded1 {
+		--mb2-pb-btn-radius: 30rem;
+	}
+
+	&.rounded-1 {
+		--mb2-pb-btn-radius: 0;
+	}
+
+	/* ======================= FULL WIDTH BUTTONS */
+
+	&.fw1 {
+		width: 100%;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	/* ======================= CENTER BUTTONS ON MOBILE */
+
+	.mobcenter1 & {
+		@media (max-width: $wdmediumdevice) {
+			margin-left: 8px !important;
+			margin-right: 8px !important;
+		}
+
+		@media (max-width: $wsmalldevice) {
+			margin-left: 5px !important;
+			margin-right: 5px !important;
+		}
+	}
+
+	
+
+
+}

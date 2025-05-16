@@ -1,0 +1,68 @@
+
+
+#block-region-slider {
+	.theme-lfw.isiconmenu & {
+		.mb2slider .lSAction > .lSNext {
+			right: 58px;
+		}
+	}
+}
+
+.mb2slider {
+	.lSAction {
+		> a {
+			color: #fff!important;
+		}
+	}
+}
+
+
+.mb2slider.carousel {
+	.mb2slider-title {
+		font-size: $fsheading4 !important;
+	}
+}
+
+
+.mb2slider-caption-content {
+	&.border {
+		border: 0!important;
+	}
+}
+
+
+
+
+@media only screen and (max-width:$wmediumdevice){
+
+	.mb2slider.nocarousel {
+		.mb2slider-title {
+			font-size: $fsheading3 !important;
+		}
+
+		.mb2slider-description {
+			font-size: $fsgeneral !important;
+		}
+
+		.mb2slider-btn-mobile {
+			background-color: var(--mb2-pb-accent1);
+		}
+	}
+}
+
+
+
+@media only screen and (max-width: $wxsmalldevice){
+
+
+	.mb2slider.nocarousel {
+		.mb2slider-title {
+			font-size: $fsheading4 !important;
+		}
+
+		.mb2slider-description {
+			font-size: $fssmall !important;
+			line-height: $fssmall_lh;
+		}
+	}
+}

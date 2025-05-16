@@ -1,0 +1,106 @@
+
+/* ======================= CHARTS AREA */
+
+.dshb-wrap {
+    .chart-wrap {
+        margin-top: -1rem;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* ======================= BLOCK */
+
+.dshb-block {    
+    gap: .65rem;
+    padding: 0 .6rem;
+    height: 5.5rem;
+    margin: 8px 0;
+    width: 100%;
+
+    > div {
+        z-index: 1;
+    }
+
+    @media only screen and (min-width: $wsmalldevice){
+        .dshb-cols-2 & {
+            width: calc(50% - 15px);
+        }       
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        border-radius: .45rem;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:before {
+        border: solid 1px var(--mb2-dshb-color);
+        opacity: .44;
+    }
+
+    &:after {
+        background-color: var(--mb2-dshb-color);
+        opacity: .05;
+    }
+
+}
+
+.dshb-block-icon {
+    color: var(--mb2-dshb-color);
+    font-size: 2.6rem;    
+}
+
+
+.dshb-block-content {
+
+    .value,
+    .block-name {
+        color: var(--mb2-pb-headingscolor);
+        font-weight: var(--mb2-pb-fwheadings);
+    }
+
+    .block-value {
+        line-height: 1;
+        gap: .3rem;        
+    }
+
+    .suffix {
+        top: -3px;
+        color: var(--mb2-pb-headingscolor);
+    }
+
+    .value {
+        font-size: 2.2rem;
+        letter-spacing: -2px;
+    }
+
+}
+
+
+
+/* =======================  WELCOME BOX */
+
+.dshb-wbox {
+    border: solid 1px var(--mb2-pb-bordercolor);
+	@include mb2_box_shadow(0 2px 3px, rgba(0,0,0,.06));
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: .22rem;
+    background-image: url([[pix:theme|wave-bg-black]]);
+    background-repeat: no-repeat;
+    background-position: 50% 101%;
+    background-size: 120%;
+
+    .timeago {
+        font-weight: var(--mb2-pb-fwbold);
+    }
+}

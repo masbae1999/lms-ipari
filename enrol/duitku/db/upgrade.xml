@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="enrol/duitku/db" VERSION="20250514" COMMENT="XMLDB file for Moodle enrol/duitku membership tables"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="enrol_duitku_membership" COMMENT="Stores information about user memberships">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="User ID who has the membership"/>
+        <FIELD NAME="payment_type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="Type of payment (membership)"/>
+        <FIELD NAME="payment_status" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Status of payment"/>
+        <FIELD NAME="purchase_time" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Time when membership was purchased"/>
+        <FIELD NAME="expiry_time" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Time when membership expires"/>
+        <FIELD NAME="processed" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Whether expiry was processed"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="userid-expiry" UNIQUE="false" FIELDS="userid, expiry_time"/>
+      </INDEXES>
+    </TABLE>
+    
+    <TABLE NAME="enrol_duitku_transactions" COMMENT="Stores information about membership payment transactions">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="User ID who made the payment"/>
+        <FIELD NAME="reference" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="Payment reference from Duitku"/>
+        <FIELD NAME="payment_type" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="Type of payment"/>
+        <FIELD NAME="payment_status" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Status of payment"/>
+        <FIELD NAME="amount" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Amount paid"/>
+        <FIELD NAME="payment_time" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Time when payment was made"/>
+        <FIELD NAME="merchant_order_id" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Merchant order ID"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="reference" UNIQUE="true" FIELDS="reference"/>
+        <INDEX NAME="merchant_order_id" UNIQUE="false" FIELDS="merchant_order_id"/>
+      </INDEXES>
+    </TABLE>
+    
+    <TABLE NAME="enrol_duitku_log" COMMENT="Stores log entries for membership operations">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timestamp" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Time when the log entry was created"/>
+        <FIELD NAME="log_type" TYPE="char" LENGTH="50" NOTNULL="true" SEQUENCE="false" COMMENT="Type of log entry"/>
+        <FIELD NAME="data" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Additional data related to the log entry"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="Status of the operation"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="timestamp" UNIQUE="false" FIELDS="timestamp"/>
+        <INDEX NAME="log_type" UNIQUE="false" FIELDS="log_type"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

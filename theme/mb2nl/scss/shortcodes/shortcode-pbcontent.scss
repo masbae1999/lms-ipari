@@ -1,0 +1,195 @@
+
+
+/* Elements */
+
+.mb2-pb-content-img {
+	margin-bottom: 15px;
+}
+
+.mb2-pb-content-item-b {
+	padding-top: 10px;
+}
+
+.mb2-pb-content-readmore {
+	padding-top: 15px;
+}
+
+
+.mb2-pb-content-title {
+	margin: 0;
+
+	a {
+		color: var(--mb2-pb-headingscolor);
+	}
+
+	.dark & {
+		a {
+			color: #fff;
+		}
+	}
+}
+
+.mb2-pb-content-details {
+	font-size: $fssmall;
+	color: $textcolor_lighten;
+
+	.dark & {
+		color: rgba(255,255,255,.5);
+	}
+}
+
+.color-el {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: .8;
+}
+
+
+.mb2-pb-content-price {
+	color: var(--mb2-pb-accent1);
+	font-size: $fsheading4;
+	font-weight: var(--mb2-pb-fwheadings);
+	padding-top: 15px;
+
+	.freeprice {
+		color: green;
+	}
+
+	.oldprice {
+		font-size: $fsbase;
+		color: $textcolor_lighten;
+		margin: 0 3px;
+	}
+}
+
+
+
+
+
+
+/* ====================== PRE STYLE - NLEARNING ====================== */
+
+
+.mb2-pb-content.prestylenlearning {
+
+	.mb2-pb-content-item-inner {
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+	}
+
+
+	.mb2-pb-content-title {
+
+		color: #fff;
+		margin-bottom: 25px;
+
+      	a {
+			color: #fff;
+			&:hover,
+			&:focus {
+				color: #fff;
+			}
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin-left: -30px;
+			width: 60px;
+			height: 1px;
+			border-bottom: solid 1px #fff;
+			@include mb2_transition1(all, .25s);
+		}
+	}
+
+
+	.mb2-pb-content-details {
+		color: #fff;
+		font-size: $fsgeneral;
+	}
+
+
+	.mb2-pb-content-img {
+		margin: 0;
+
+		img {
+			@include mb2_transition1(all, .25s);
+		}
+	}
+
+	.mb2-pb-content-item:hover {
+		.mb2-pb-content-img {
+			img {
+				@include mb2_transform_scale(1.15);
+			}
+		}
+
+		.mb2-pb-content-title {
+			&:after {
+				width: 100%;
+				left: 0;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.mb2-pb-content-item-b {
+		display: none;
+	}
+
+	.mb2-pb-content1 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.mb2-pb-content2 {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+
+	.mb2-pb-content3 {
+		display: table-cell;
+		vertical-align: middle;
+		background-color: rgba(var(--mb2-pb-accent1),.6);
+
+		.color & {
+			background-color: transparent;
+		}
+	}
+
+	.mb2-pb-content4 {
+		padding: 0 10px;
+	}
+
+	.mb2-pb-content-title,
+	.mb2-pb-content-details {
+		position: relative;
+		z-index: 1;
+	}
+
+
+	.color .color-el {
+		display: block;
+		opacity: .6;
+	}
+
+
+
+}
+
+
+
+

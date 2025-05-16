@@ -1,0 +1,22 @@
+.dark1 {
+	color: var(--mb2-pb-textcolorondark);
+}
+
+.dark {
+	color: #fff;
+}
+
+
+.dark,
+.dark1 {
+	.h1,.h2,.h3,.h4,.h5,.h6,
+	h1,h2,h3,h4,h5,h6 {
+		color: #fff;
+	}
+
+	a:not(.mb2-pb-btn):not(.arrowlink):not(.llink):not(.tree-link):not(.social-link):hover,
+	a:not(.mb2-pb-btn):not(.arrowlink):not(.llink):not(.tree-link):not(.social-link):focus {
+		color: #fff;
+	}
+
+}

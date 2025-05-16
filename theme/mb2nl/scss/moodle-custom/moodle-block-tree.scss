@@ -1,0 +1,61 @@
+
+
+.block_tree {
+
+	[aria-selected="true"] {
+	  font-weight: inherit;
+	}
+
+	p {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	a {
+		color: var(--mb2-pb-textcolor);
+
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+
+	ul {
+	    padding-left: 1.26rem
+	}
+
+	li {
+		padding: .13rem 0 !important;
+	}
+
+	/* Hide empty icons */
+
+	[class="icon fa fa-fw fa-fw navicon"],
+ 	[class="icon fa fa-fw fa-fw "] {
+    	display: none
+	}
+
+	.hasicon {
+		img {
+			margin-left: -2px !important;
+    		margin-right: 4px !important;
+		}
+
+		.icon {
+			font-size: .95rem;
+		}
+	}
+
+}
+
+
+/* Hide block navigation when toc is enabled */
+
+.nonav {
+	.enrol-sidebar,
+	.sidebar-col {
+		.block_navigation {
+			@include mb2_sronly();
+		}		
+	}
+}

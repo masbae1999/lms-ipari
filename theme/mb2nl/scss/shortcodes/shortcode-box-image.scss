@@ -1,0 +1,435 @@
+
+.theme-boxesimg {
+
+	--mb2-pb-bxbgcolor: transparent;
+
+	&.type-1 {
+		--mb2-pb-bxbocolor: #fff;
+	}
+
+	&.type-1,
+	&.type-2,
+	&.type-3 {
+		--mb2-pb-bxtcolor: #fff;
+		--mb2-pb-bxtxcolor: #fff;
+		--mb2-pb-bxbgcolor: color-mix(in srgb,var(--mb2-pb-accent1),#0000 40%);
+	}
+
+	&.type-5 {
+		--mb2-pb-bxbgcolor: #{lighten($color_gray3, 3%)};
+	}
+
+
+	&.type-6 {
+		--mb2-pb-bxaccolor: #{$accent3};
+	}
+
+
+}
+
+
+.theme-boximg {
+
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	border: solid var(--mb2-pb-bxborder) var(--mb2-pb-bxbocolor);
+
+	.theme-boxes.shadow1 & {
+		@include mb2_box_shadow(0 20px 30px, rgb(0,0,0,.1));	
+	}
+
+	.theme-boximg-imgel {
+		display: none;
+	}
+
+	.boxes-small & {
+		padding: 38px 10px;
+	}
+
+	.box-image {
+		text-align: center;
+	}
+
+	.theme-boximg-color {
+		background-color: var(--mb2-pb-bxbgcolor);
+	}
+
+	.rounded1 & {
+		border-radius: .35rem;
+
+		/* This will fix problem in safari web browser */
+	    -webkit-backface-visibility: hidden;
+	    -moz-backface-visibility: hidden;
+	    -webkit-transform: translate3d(0, 0, 0);
+	    -moz-transform: translate3d(0, 0, 0);
+	    z-index: 1;
+	}
+
+	.rounded0 & {
+		.theme-boximg-img {
+			border-radius: 0;
+		}
+	}	
+
+	.box-title {
+		margin: 0;
+		color: var(--mb2-pb-bxtcolor);
+
+		a {
+			color: inherit !important;
+		}
+	}
+
+	.box-desc {		
+		color: var(--mb2-pb-bxtxcolor);
+	}
+
+	.box-title,
+	.box-desc,
+	.box-readmore {
+		z-index: 3;
+		position: relative;
+	}
+
+	.box-content {
+		margin: 0;
+		padding: 20px;
+		position: relative;
+
+		.theme-boximg-color {
+			display: none;
+		}
+	}
+
+	.desc0 & {
+		.box-desc {
+			display: none;
+		}
+	}
+
+	
+	.type-0 & {
+
+		.theme-boximg-color {
+			display: none;
+		}
+
+		.box-content {
+			padding: 30px;
+		}
+
+	}
+
+
+	/* ======================== TYPE 1 */
+
+	.type-1 & {
+
+		h4 {
+			position:relative;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				margin-left: -30px;
+				width: 60px;
+				height: 1px;
+				border-bottom: solid 1px var(--mb2-pb-bxbocolor);
+				@include mb2_transition1(all, .25s);
+			}
+		}
+	}
+
+	.type-1 &,
+	.type-2 &,
+	.type-3 & {
+		text-align: center;
+	}
+
+
+
+	.theme-boximg-img {
+		@include mb2_transition1(all, .25s);
+		width: 100%;
+	}
+
+	.theme-boximg-color {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+
+	.theme-boximg-color {
+		z-index: 2;
+	}
+
+	&.opcolor {
+		.theme-boximg-color {
+			opacity: .6;
+		}
+	}
+
+
+	/* ======================== TYPE 2 */
+
+	.type-2 & {
+
+		.theme-boximg-color {
+			display: none;
+		}
+
+		.box-content {
+			.theme-boximg-color {
+				display: block;
+			}
+		}
+
+	}
+
+	&.opcolor {
+		.box-content {
+			.theme-boximg-color {
+				opacity: .75;
+			}
+		}
+	}
+
+
+	.type-1 &,
+	.type-2 &,
+	.type-3 & {
+
+		&:hover {
+
+			.theme-boximg-img {
+				 @include mb2_transform_scale(1.1);
+			}
+
+			h4 {
+
+				&:after {
+					width: 100%;
+					left: 0;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+
+	.type-1 &,
+	.type-2 &,
+	.type-3 & {
+		.vtable-wrapp {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 3;
+
+			.vtable {
+				display: table;
+				height: 100%;
+				width: 100%;
+
+				.vtable-cell {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+
+
+	/* ======================== TYPE 3 */
+
+	.type-3 & {
+		text-align: inherit;
+
+		.vtable-wrapp {
+			bottom: -1px;
+
+			.vtable {
+				.vtable-cell {
+					vertical-align: bottom;
+				}
+			}
+		}
+
+		.box-content {
+			padding: 30px;
+		}
+
+	}
+
+
+	/* ======================== TYPE 4 */
+
+	.type-4 & {
+
+		top: 0;
+		@include mb2_transition1(all, .25s);
+
+		.box-content {
+			padding: 30px;
+		}
+
+		.theme-boximg-img {
+			position: relative;
+			z-index: 3;
+		}
+
+		&:hover {
+			top: -15px;
+		}
+
+	}
+
+
+
+
+	/* ======================== TYPE 5 */
+
+	.type-5 & {
+
+		@include mb2_transition1(all, .15s);
+
+		.theme-boximg-img,
+		.theme-boximg-img-link {
+		  	display: none;
+		}
+
+		.box-content {
+			padding: 30px;
+			width: 65%;
+			@media only screen and (max-width: $wmediumdevice){
+				width: 85%;
+			}
+
+			@media only screen and (max-width: $wsmalldevice){
+				width: 90%;
+			}
+		}
+
+		.theme-boximg-imgel {
+			display: block;
+		  	position: absolute;
+		  	top: 0;
+		  	right: 0;
+		  	width: 42%;
+		  	height: 100%;
+		  	background-repeat: no-repeat;
+		  	background-position: 50% 50%;
+		  	background-size: cover;
+		  	z-index: 2;
+
+			.gradient-left {
+				position: absolute;
+		  	  	width: 45%;
+		  	  	height: 100%;
+		  	  	left: 0;
+		  	  	top: 0;
+				@include gradient-x(var(--mb2-pb-bxbgcolor), rgba(255,255,255,0));
+
+				@media only screen and (max-width: $wmediumdevice){
+					width: 100%;
+				}
+			}
+		}
+
+		.theme-boximg-color {
+			background-color: var(--mb2-pb-bxbgcolor);
+		}
+
+	}
+
+
+	.theme-col-2.type-5 & {
+		.box-content {
+			width: 85%;
+		}
+
+		.gradient-left {
+			width: 100%;
+		}
+	}
+
+	.theme-col-3.type-5 &,
+	.theme-col-4.type-5 &,
+	.theme-col-5.type-5 & {
+		.box-content {
+			width: 90% !important;
+		}
+
+		.gradient-left {
+			width: 100%;
+		}
+	}
+
+
+	/* ======================= BOX STYLE 6 */
+
+	.type-6 & {
+
+		.box-allcontent {
+		    position: relative;
+		    z-index: 3;
+		    padding: 2rem;
+
+			@media only screen and (min-width: $wmediumdevice){
+				display: flex;
+			    flex-flow: row;
+			    flex-direction: row-reverse;
+			    justify-content: space-between;
+			    align-items: center;
+			}
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			width: 300px;
+			height: 300px;
+			border: 30px solid var(--mb2-pb-bxaccolor);
+			position: absolute;
+			border-radius: 50%;
+			top: -89px;
+			left: 60%;
+			z-index: 2;
+		}
+
+		.box-content {
+		    padding: 0;
+		}
+
+		@media only screen and (min-width: $wmediumdevice){
+
+			.vtable-wrapp {
+				flex: 0 0 calc(60% - 20px);
+			}
+
+			.box-image {
+				flex: 0 0 40%;
+			}
+
+		}
+
+		@media only screen and (max-width: $wmediumdevice){
+			.box-image {
+				margin-bottom: 23px;
+			}
+		}
+
+	}
+
+
+}

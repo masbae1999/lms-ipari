@@ -1,0 +1,102 @@
+
+.theme-footer {
+	position: relative;
+	padding-top: 30px;
+
+	.container-fluid {
+		padding-bottom: 30px;
+	}
+}
+
+
+.footer-text {
+	p {
+		margin-bottom: 0;
+	}
+
+	max-width: 70%;
+}
+
+
+.footer-tools {
+
+	.theme-footer & {
+		padding-top: 1.2rem;
+		margin-top: 1.35rem;
+	}
+
+	> * {
+		display: inline-block;
+		margin-right: .65rem;
+		margin-bottom: 0;
+
+		&.helplink {
+			i {
+				display: none;
+			}
+		}
+
+		&:last-child {
+			border-right: 0;
+			padding: 0;
+		}
+	}
+}
+
+
+
+
+
+
+@media only screen and (max-width:$wmediumdevice){
+
+	.theme-footer {
+
+		.lang-list,
+		.flexcols {
+			justify-content: center;
+		}
+
+		.social-list {
+			margin-top: 30px;
+		}
+	}
+
+	.footer-tools,
+	.footer-text {
+		max-width: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	footer {
+		.lang-list,
+		.social-list {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+}
+
+
+
+
+
+
+/* ====================== CUSTOM FOOTER */
+
+.custom-footer {
+    position: relative;
+}
+
+.mb2-pb-footertools {
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: $linkcolor;
+		}
+	}
+}

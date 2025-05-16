@@ -1,0 +1,90 @@
+
+@mixin mb2_card_body () {
+	z-index: 1;
+}
+
+
+.card {
+	border-color: var(--mb2-pb-bordercolor);
+	
+	&.block {
+		background-color: transparent;
+	}
+
+	&:not(.dashboard-card):not(.filemanager-container):not(.fp-navbar):not(.block):not(.fp-content):not(.node_category):not([role="listitem"]) {
+		border: 0;
+	}
+
+	.tgsdb-blocks .card-deck.one-row &,
+	.sidebar-col .card-deck.one-row & {
+		margin-left: 0;
+		margin-right: 0;		
+	}
+
+	.tgsdb-blocks & {
+		margin-bottom: .34rem;
+	}
+
+	.tgsdbc_dark .tgsdb-blocks & {
+		background-color: transparent;
+		border-color: rgba(255,255,255,.1);		
+	}
+}
+
+
+.card-header {
+	h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 0;
+		font-size: $fsheading4;
+	}
+
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	border-color: var(--mb2-pb-bordercolor);
+}
+
+.block {
+	.block-cards {
+		.progress-text {
+			color: #000;
+		}
+	}
+}
+
+.card,
+.card-img {
+	//@include mb2_border_radius(0);
+}
+
+.card-img {
+
+	.dashboard-card-deck .dashboard-card &.dashboard-card-img {
+		height: 145px;
+	}
+
+}
+
+
+
+.card-body {
+
+	.block-cards &,
+	.block-cards &.course-info-container {
+		@include mb2_card_body();
+	}
+
+	@include mb2_card_body();
+
+	.block > & {
+		border-bottom: 0;
+		background-color: transparent;
+		padding: 0 !important;
+		z-index: auto;
+	}
+
+}
+
+
+.card-footer {
+	@include mb2_border_radius(0);
+}

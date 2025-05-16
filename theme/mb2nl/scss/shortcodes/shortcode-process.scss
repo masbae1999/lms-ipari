@@ -1,0 +1,204 @@
+
+
+/* ======================== PROCESS ITEM */
+
+.mb2-pb-process {
+
+	/* ======================== TYPE 1 */
+	.type1 {
+
+		text-align: center;
+
+		.boxprocess-label {
+		    display: flex;
+		    flex-flow: row;
+		    align-items: center;
+		    justify-content: center;
+			margin-bottom: 40px;
+
+			&:before,
+			&:after {
+				content: '';
+			    display: inline-block;
+			    width: calc(50% - 108px);
+			    border-top: 4px dotted rgba(0,0,0,.1);
+			}
+		}
+
+
+		.label-content {
+		    text-align: center;
+		    display: inline-block;
+		    margin: 0 51px;
+			line-height: 56px;
+		    position: relative;
+			color: #fff;
+
+			.colorel {
+			    background-color: var(--mb2-pb-accent1);
+			    display: inline-block;
+			    border-radius: 50%;
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+
+				&.colorel1 {
+				    width: 96px;
+				    height: 96px;
+				    margin-top: -48px;
+				    margin-left: -48px;
+				    opacity: .2;
+				}
+
+				&.colorel2 {
+					width: 76px;
+				    height: 76px;
+				    margin-top: -38px;
+				    margin-left: -38px;
+				    opacity: .4;
+				}
+
+				&.colorel3 {
+					width: 56px;
+				    height: 56px;
+				    margin-top: -28px;
+				    margin-left: -28px;
+				}
+			}
+		}
+
+		.boxprocess-text,
+		.boxprocess-icon {
+			position: relative;
+			z-index: 1;
+			height: 56px;
+			@include mb2_transition1(all, .25s);
+		}
+
+		.boxprocess-text {
+			font-weight: $fwbold;
+			font-size: 2.1rem;
+		}
+
+		.boxprocess-icon {
+			font-size: 28px;
+
+			i {
+				line-height: 56px;
+			}
+		}
+
+		&.isicon1 {
+			.boxprocess-text {
+				position: absolute;
+			    top: -24px;
+			    right: -24px;
+			    height: 2rem;
+			    width: 2rem;
+			    background-color: rgba(0,0,0,.8);
+			    line-height: 2rem;
+			    font-size: 1.4rem;
+			    border-radius: 50%
+			}
+		}
+
+		&.isicon1 {
+
+			.mb2-pb-process_item:hover {
+				.boxprocess-icon {
+					@include mb2_transform_scale(1.35);
+				}
+			}
+
+		}
+
+		&.isicon0:hover {
+
+			.mb2-pb-process_item:hover {
+				.boxprocess-text {
+					@include mb2_transform_scale(1.35);
+				}
+			}
+		}
+
+
+
+		/* ======================== TYPE 1 - VERTICAL LAYOUT */
+
+		&.theme-col-1 {
+
+			@media only screen and (min-width: $wdmediumdevice){
+
+
+				.boxprocess-inner {
+				    display: flex;
+				    flex-flow: row;
+				    align-items: center
+				}
+
+				.boxprocess-label {
+					flex: 0 0 96px;
+					margin: 0 23px 0 0;
+
+					&:before,
+					&:after {
+						display: none;
+					}
+				}
+
+
+				.label-content {
+					margin: 0;
+				}
+
+				.boxprocess-content {
+					text-align: left;
+				}
+
+
+				&.labelposright {
+					.boxprocess-inner {
+						flex-flow: row-reverse;
+					}
+
+					.boxprocess-label {
+						margin: 0 0 0 23px;
+					}
+
+					.boxprocess-content {
+						text-align: right;
+					}
+				}
+
+
+				.colorel1 {
+					&:before,
+					&:after {
+						content: '';
+					    display: block;
+					    position: absolute;
+					    width: 1px;
+					    height: 20px;
+					    border-top: 0;
+					    border-left: 4px dotted rgba(0,0,0,.5);
+					    left: 50%;
+					    margin-left: -1px
+					}
+
+					&:before {
+						bottom: 100%;
+					    margin-bottom: 5px;
+					}
+
+					&:after {
+						top: 100%;
+   				    	margin-top: 5px;
+					}
+				}
+
+			}
+
+		}
+
+	}
+}

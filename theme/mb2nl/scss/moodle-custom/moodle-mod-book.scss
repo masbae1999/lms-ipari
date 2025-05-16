@@ -1,0 +1,21 @@
+
+.navimages {
+	[aria-hidden="true"] {
+		display: none;
+	}
+
+	a {
+		color: inherit;
+	}
+}
+
+.book_toc {
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: $linkcolor;
+		}
+	}
+}

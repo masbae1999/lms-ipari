@@ -1,0 +1,148 @@
+
+:root {
+    // Header height
+    --headerh: calc(#{$logoh} + 40px);
+    --mb2-rowtoph: var(--headerh);
+    --menuh: #{$menuh};
+
+    // Variables for acsb
+    --mb2-pb-color_white: #fff;
+    --mb2-pb-textcolorondark: #{$textcolorondark};
+    --mb2-pb-readablefont: Arial, Helvetica, sans-serif;
+    --mb2-pb-dyslexicfont: 'OpenDyslexic';
+    --mb2-pb-fwgeneral: #{$fwgeneral3};
+    --mb2-pb-fwheadings: #{$fwheadings3};
+    --mb2-pb-bigcursor: url([[pix:theme|bigblackcursor]]), default;
+    --mb2-pb-bigpointer: url([[pix:theme|bigblackpointer]]), default;
+    --mb2-pb-lhgeneral: #{$lhgeneral};
+    //--mb2-pb-lhsmall: #{$fssmall_lh};
+    --mb2-pb-lhheadings: #{$lhheadings}; 
+    //--mb2-acsb_color1: #001d62;      
+
+    // General variables
+    --mb2-pb-bordercolor: rgba(0,0,0,.1);
+    --mb2-pb-btn-bghcolor: #{darken($btncolor,6%)};
+    --mb2-pb-acc-tcolor: var(--mb2-pb-headingscolor);
+    --mb2-pb-acc-thcolor: var(--mb2-pb-headingscolor);
+    --mb2-pb-color_gray2: #{$color_gray2};
+    --mb2-pb-acc-color_gray2: var(--mb2-pb-color_gray2);
+
+    // Font size
+    --mb2-pb-fssmall: #{$fssmall};
+    --mb2-pb-fsxsmall: #{$fsxsmall};
+
+    // Navigation
+    --mb2-pb-navbarbgcolor: #{$accent2};
+    --mb2-pb-navcolor: var(--mb2-pb-headingscolor);
+    --mb2-pb-navsubcolor: var(--mb2-pb-textcolor_lighten);
+	--mb2-pb-navhcolor: var(--mb2-pb-navcolor);
+    --mb2-pb-navsubhcolor: var(--mb2-pb-navsubcolor);
+	--mb2-pb-navhbgcolor: rgba(0,0,0,.04);
+    --mb2-pb-mbtncolor: var(--mb2-pb-navcolor);
+    --mb2-qlinksbtnc: var(--mb2-pb-navcolor);
+
+    // Font icons
+    --fa-style-family__theme: 'FontAwesome';
+    --fa-style-style__theme: normal;
+    --fa-style-variant__theme: normal;
+    --fa-style-weight__theme: normal;
+    --fa-style-size__theme: inherit;
+    --fa-style-lineheight__theme: 1;
+
+    // Page header gradient
+    --mb2-pb-pheadergrad1: #{$headerbgcolor};
+    --mb2-pb-pheadergrad2: #{$headerbgcolor};
+
+    // Spinner
+    --mb2-pb-spinner: #{$spinner};
+
+    // Top bar height
+    --mb2-topbarh: 36px;
+
+    // Social icons
+    --mb2-social-size: 30px;
+    --mb2-social-space: 6px;
+    --mb2-social-color: var(--mb2-pb-headingscolor);
+    --mb2-social-bgcolor: transparent;
+    --mb2-social-borcolor: var(--mb2-social-color);
+    --mb2-social-hcolor: #fff;
+    --mb2-social-hbgcolor: var(--mb2-social-color);
+    --mb2-social-hborcolor: var(--mb2-social-color);
+
+    // Theme user menu
+    --mb2-usermenu-bgcolor: #fafafa;
+    --mb2-usermenu-color: var(--mb2-pb-textcolor);
+    --mb2-usermenu-bcolor: rgba(0,0,0,.1);
+
+    // Page header
+    --mb2-pb-hspace: 55px;
+
+    // Login separator
+    --mb2-sepcolor: #{$textcolor_lighten};
+
+    // Language list
+    --mb2-pb-langgap: 1em;
+
+    // Page builder elements
+    --mb2-vpopups: 4rem;
+    --mb2-iconcolor: #{$accent1};
+	--mb2-iconbgcolor: transparent;
+	--mb2-iconbocolor: #{$accent1};
+	--mb2-color: var(--mb2-pb-headingscolor);
+    --mb2-vpopupfs: 1.3rem;
+    --mb2-vpopupms: 67;
+    //
+    --mb2-pb-bxaccolor: #{$accent1};
+    --mb2-pb-bxicolor: #{$headingscolor};
+    --mb2-pb-bxbgcolor: #{lighten($color_gray3, 3%)};
+	--mb2-pb-bxtcolor: #{$headingscolor};
+	--mb2-pb-bxtxcolor: #{$textcolor};
+    --mb2-pb-bxbocolor: rgba(0,0,0,.1);
+    --mb2-pb-bxborder: 0;
+    //
+    --mb2-pb-listgap: .8rem;
+    --mb2-pb-listpl: 0;
+    //
+    --mb-pb-row_bgcolor: transparent;
+    --mb-pb-row_bordertcolor: #ddd;
+	--mb-pb-row_borderbcolor: #ddd;
+    //
+    --mb-pb-ba_bgcolor: var(--mb2-pb-headerbgcolor);
+    --mb-pb-ba_color: #fff;
+    --mb-pb-ba_tcolor: #fff;
+    //
+    --mb-pb-ba_imghpos: 0%;
+    --mb2-pb-ba_imgmt: 0;
+    --mb-pb-ba_cwidth: 450px;
+    //
+    --mb2-pb-coursetabsacc: #{$accent1};
+    --mb2-pb-coursetabsc: #{$textcolor};
+    //
+    --mb-pb-selecth: 54px;
+    --mb-pb-selectmh: 80;
+    --mb-pb-selectfs: 1rem;
+    --mb-pb-swidth: 300px;
+    //
+    --mb2-pb-herovm: 0;
+    // Category colors
+    --mb2-catcolor0: inherit;
+    --mb2-catcolor1: inherit;
+
+    // Course list
+    --mb2-crandpct: 50%;
+
+}
+
+/* ======================= VARIABLES FOR MOODLE 4.2+ */
+
+// Font Awesome style
+.css_hy9f {
+    --fa-style-family__theme: 'Font Awesome 6 Free';
+    --fa-style-weight__theme: 900;
+    --fa-style-size__theme: 14px;
+}
+
+// Gradient background 
+.tpheader_gradient {
+    --mb2-pb-pheadergrad2: var(--mb2-pb-headerbgcolor2);
+}

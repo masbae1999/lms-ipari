@@ -1,0 +1,30 @@
+
+@mixin mb2_course_section() {
+
+    margin: 3rem 0 2rem 0;
+    padding: .75rem 1rem;
+    background-color: lighten($color_gray3, 3%);
+    font-size: $fsheading4;
+    //border-left: solid 2px $accent1;
+    @include mb2_transition1(background-color, .15s);
+    @include mb2_border_radius(.15rem);
+
+    a:not(.dropdown-item):not(.menu-action),
+    > h3 a {
+        color: var(--mb2-pb-headingscolor) !important;        
+    }
+
+    &:hover {
+        background-color: $color_gray3;
+    }
+
+}
+
+
+
+
+@mixin mb2_course_section_main() {
+    // border: solid 1px rgba(255,255,255,0);
+    // border-bottom-width: 2px;
+    // border-bottom-color: $accent1;
+}

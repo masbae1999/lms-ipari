@@ -1,0 +1,24 @@
+
+.easy-enrol-from {
+  margin-bottom: 2.5rem;
+
+  .form-group {
+    margin: 0 !important;
+  }
+
+  form {
+    justify-content: center;
+
+    button {
+      margin-left: .3rem;
+    }
+
+    .btn.qr-button {
+      color: inherit !important;
+      margin-right:-2px;
+      border-color: $color_border !important;
+      border-width: 1px;
+    }
+  }
+
+}

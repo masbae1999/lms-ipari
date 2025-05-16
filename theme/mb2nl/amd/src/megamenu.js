@@ -1,0 +1,6 @@
+/**
+ *
+ * @package   theme_mb2nl
+ * @copyright 2017 - 2024 Mariusz Boloz (lmsstyle.com)
+ * @license   PHP and HTML: http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later. Other parts: http://themeforest.net/licenses
+ */ define(["jquery"],function(t){var s=function(){t(".mb2mm-wrap.width-max").each(function(){var s=t(this).closest(".ismega").offset().left,e=t(".pagelayout-b");t("body").hasClass("theme-lfx")&&(s-=e.offset().left,t(this).css("width",e.outerWidth())),t(this).css("left",-1*s)}),t(".mb2mm-wrap.width-aw").each(function(){var s=t(window).width(),i=t(this).closest(".ismega"),a=i.offset().left,n=a+.5*i.outerWidth(),o=e(t(this)),r=.5*o-.5*i.outerWidth(),c=.5*o>n;n+.5*o>s&&!c?r+=n+.5*o-s:c&&(r=a),t(this).css("width",o),t(this).css("left",-1*r)})},e=function(s){var e=0;return s.find(".level-2").each(function(){e+=Number(t(this).attr("data-cw"))}),e};return{setWrapPos:function(){t(window).resize(function(){s()}),t(window).scroll(function(){s()}),s()},toggleSubmenus:function(){t(document).on("click",".mb2mm-toggle",function(){var s=t(this).closest(".isparent");s.hasClass("open")?(s.removeClass("open"),t(this).attr("aria-expanded","false")):(s.addClass("open"),t(this).attr("aria-expanded","true"))})}}});

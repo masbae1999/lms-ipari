@@ -1,0 +1,666 @@
+
+
+
+/* ================= BASIC LAYOUT STYLE */
+
+.pagelayout-b {
+	width: 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.pagelayout,
+.pagelayout-content {
+	flex: 1;
+}
+
+
+
+
+/* Column container */
+
+.flexcols {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	> div {
+		
+		flex: 0 0 auto;
+
+		// &.header-tools {
+		// 	display: inline-flex;
+		// 	align-items: center;
+		// }
+	}
+
+	@media only screen and (max-width: $wdmediumdevice){
+		#page-header &,
+		.page-breadcrumb & {
+			flex-flow: column;
+		}
+	}
+}
+
+
+
+
+/* Contaicner width for theme tester plugin */
+
+.container {
+	max-width: 100%;
+}
+
+.container-fluid {
+	max-width: $pagewidth;
+
+
+	@media only screen and (max-width: $wdmediumdevice){
+		.page-b &,
+		.page-c & {
+			max-width: 792px;
+		}
+	}
+
+	@media only screen and (min-width: $wdmediumdevice + 1){ 
+
+		// This is to avoid cover content by teh hide/show sidebars button
+		// And for boxed layout
+		padding-left: 30px;
+		padding-right: 30px;
+		
+	}
+
+	.pagelayout-popup & {
+		max-width: 100% !important;
+	}
+
+}
+
+.pagelayout-embedded {
+	.container-fluid,
+	.row {
+		> div {
+			position: static;
+		}
+	}
+}
+
+
+
+#page-content {
+
+	position: relative;
+
+	> div[role="main"] {
+		@include clearfix();
+	}
+}
+
+
+
+
+/* ================= BOXED LAYOUT */
+
+
+.theme-lfx {
+	
+	@media only screen and (min-width: $wdmediumdevice + 1){ 
+		#main-header:before,
+		.pagelayout-b:after {
+			content: '\00a0';
+			width: 100%;
+			height: 2rem;
+			display: flex;
+		}
+	}
+
+	.pagelayout-content {
+		background-color: #fff;
+	}
+
+	#main-header,
+	.pagelayout-b {		
+		width: $fx_pagewidth;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;		
+	}
+
+	.pagelayout-b {		
+		flex: 0 0 $fx_pagewidth;
+	}
+
+	background-color: $color_gray2;
+
+}
+
+
+.pagelayout-mb2builder.page-layout-fx {
+
+	#page-content {
+		width: 95%;
+		max-width: $fx_pagewidth;
+		margin: auto;
+		z-index: 1;
+		background-color: #fff;
+	}
+}
+
+
+
+
+
+/* Fixed bar */
+.fixed-bar {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: center;
+    width: 530px;
+    position: fixed;
+    z-index:999;
+	transform: rotate(270deg);
+    transform-origin: 0% 0%;
+	top: 530px;
+
+	button {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		justify-content: center;
+		background-color: $accent1;
+		font-size: $fssmall;
+		font-weight: var(--mb2-pb-fwmedium);
+		padding: .45rem 1rem;
+		color: #fff;
+		margin: 0 .2rem;
+		border: 0;
+
+		span {
+			display: inline-flex;
+
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+
+		&.textbutton {
+			svg {
+				width: 1.15em;
+    			margin-right: .45rem;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+
+		&.iconbutton {
+			padding: 0;
+			width: 38px;
+			height: 38px;
+			
+			svg {
+				width: 1.3em;
+    			transform: rotate(90deg);
+    			transform-origin: 50% 50%;
+			}
+		}
+
+		&.fixed-panel-link {
+			background-color: $btncolor;
+			display: none;
+		}
+	}
+
+	.panellinkpass & {
+		.fixed-panel-link {
+			display: inline-block;
+		}
+	}
+
+	.editing & {
+		.theme-hide-sidebar {
+			display: none;
+		}
+	}
+
+	.dir-rtl & {
+		@include mb2_transform_rotate(90deg, 0 0);
+	    transform-origin: 100% 0%;
+	}
+
+
+}
+
+.theme-hide-sidebar {
+
+	.icon-compress,
+	.text2 {
+		display: none;
+	}
+
+	.hide-sidebars & {
+		.icon-compress,
+		.text2 {
+			display: inline-block;
+		}
+
+		.icon-expand,
+		.text1 {
+			display: none;
+		}
+	}
+
+	&.tgsdb-mode  {
+		right: 10px;
+		bottom: 100%;
+		line-height: 1;
+		font-size: 23px;
+		
+		@media only screen and (max-width: $wdmediumdevice){
+			display: none !important;
+		}
+	}
+
+	.content-col.order-2 &,
+	.content-col.order-3 & {
+		&.tgsdb-mode {
+			transform: scaleX(-1);
+			right: auto;
+			left: 15px;
+		}
+	}
+
+	.dir-rtl & {
+		&.tgsdb-mode {
+			transform: scaleX(-1);
+		}
+	}
+
+	.dir-rtl .content-col.order-2 &,
+	.dir-rtl .content-col.order-3 & {
+		transform: none;
+	}
+}
+
+
+
+.content-col {
+
+	&#region-main {
+		padding: 0 15px;
+		border: 0;
+		overflow-x: visible;
+		min-width: 0;
+		@include mb2_border_radius(0);
+	}
+
+	.enrollment-layout-3 & {
+		&#region-main {
+			padding: 0;
+		}
+	}
+}
+
+
+@media only screen and (max-width: $wdmediumdevice){
+	.fixed-bar {
+		display: none;
+	}
+
+	.content-col {
+		order: 1 !important;
+	}
+
+
+	.sidebar-col {
+		margin-top: 30px;
+		order: 2 !important;
+	}
+
+}
+
+
+@media only screen and (min-width: $wdmediumdevice){
+
+	.sidebar-col {
+		.hide-sidebars.noediting & {
+			@include mb2_sronly();
+		}
+
+		.editing-fw.editing & {
+			width: 50% !important;
+			max-width: 50% !important;
+			flex-basis: 50% !important;
+			left: 0 !important;
+			right: 0 !important;
+			order: 2;
+		}
+	}
+
+	.content-col {
+
+		.hide-sidebars.noediting &,
+		.editing-fw.editing & {
+			width: 100% !important;
+			max-width: 100% !important;
+			flex-basis: 100% !important;
+			left: 0 !important;
+			right: 0 !important;
+			order: 1;
+		}
+
+	}
+
+
+
+}
+
+
+
+/* ================= DASHBOARD BACKGROUND COLOR */
+
+.page-mycourses,
+.path-my {
+	#region-main {
+		background-color: transparent;
+	}
+
+	.page-b {
+		background-color: #f6f6f6;
+	}
+
+	&.tpheader_dark {
+		.page-breadcrumb.breadcrumb_classic {
+			background-color: #eee;
+		}
+	}
+	
+}
+
+
+
+
+/* Hide some region from none-admin users */
+
+.theme-hidden-region {
+	display: none !important;
+}
+
+.hidden1 {
+	opacity: .4;
+
+	.hidden1 {
+		opacity: 1;
+	}
+}
+
+
+
+/* Change layout for page builder */
+.builderpage {
+
+	#main-content {
+		padding: 0;
+		min-height: 100px;
+
+		> .container-fluid {
+		    max-width: 100%;
+		    padding: 0;
+
+			> .row {
+			    display: block;
+			    margin: 0;
+			}
+		}
+
+		.no-overflow {
+			overflow: visible;
+		}
+	}
+
+	#region-main {
+		overflow: visible;
+	}
+
+	#maincontent {
+		height: auto;
+	}
+
+	div[role="main"] {
+		@include mb2_sronly();
+	}
+
+	.content-col {
+	    display: block;
+	    max-width: 100%;
+	    width: 100%;
+	    padding: 0 !important;
+
+		.generalbox {
+		    padding: 0 !important;
+
+			+br {
+				display: none;
+			}
+		}
+	}
+
+	#page-content {
+		> #user-notifications {
+			.alert {
+			    max-width: 800px;
+			    margin: 10px auto;
+				z-index: 1;
+			}
+		}
+	}
+
+	.fixed-bar,
+	.sidebar-col,
+	//.panel-link,
+	.theme-cbanner,
+	.activity-information,
+	.course-section-header,
+	// moodle 4
+	.activity-name,
+	.activity-header,
+	.page-secnav {
+		@include mb2_sronly();
+	}
+
+	&.builderheading0,
+	&.pagelayout-frontpage {
+		#page-header,
+		.page-breadcrumb,
+		.activity-navigation {
+			@include mb2_sronly();
+		}
+	}
+
+	&.builderheading1 {
+		.site-menu {
+			padding-bottom: 1.5rem;
+		}
+
+		.activity-navigation {
+			display: block;
+			margin-bottom: 1.3rem !important;
+		}
+	}
+
+
+	&.builderheading0,
+	&.builderheading1.pagelayout-frontpage,
+	&.pagelayout-frontpage {
+		.site-menu {
+			padding-top: .3rem;
+			padding-bottom: .3rem;
+		}
+	}
+
+	#frontpage-available-course-list,
+	#frontpage-category-names,
+	#frontpage-category-combo,
+	#frontpage-course-list,
+	&.pagelayout-frontpage #site-news-forum {
+	    width: 100%;
+	    max-width: 1240px;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    margin-left: auto;
+	    margin-right: auto;
+		margin-top: 3rem;
+	}
+
+	.content-top {
+		.block {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	/* Moodle 4 */
+
+	li.section {
+		padding: 0 !important;
+		margin: 0 !important;
+
+		[data-for="sectioninfo"] {
+			margin-bottom: 0 !important;
+		}
+
+		.content {
+			> div {
+				margin: 0 !important;
+			}
+		}
+
+		.section_availability {
+			@include sr_only();
+		}
+	}
+
+	.course-content {
+		+ br {
+			display: none;
+		}
+	}
+
+	.section-item {
+		border-radius: 0 !important;
+		margin: 0 !important;
+	}
+
+}
+
+
+/* Edit page link */
+
+.builder-links {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: block;
+    z-index: 11;
+
+	.fsmod-wrap & {
+		display: none;
+	}
+
+	@media only screen and (max-width: $wmediumdevice){
+		display: none;
+	}
+
+	a {
+		display: inline-block;
+	    background-color: $linkcolor;
+	    color: #fff!important;
+	    padding: 0 .4rem;
+	}
+
+	.nobuilderpage & {
+		top: 48px;
+    	right: 0;
+
+		.buildpage-moodle,
+		.buildpage-fp {
+		    display: none;
+		}
+	}
+
+	.nobuilderpage.pagelayout-frontpage & {
+		top: 0;
+	}
+
+}
+
+
+
+
+
+/* Order on small screens */
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.moborder1 {
+		order: 1;
+	}
+
+	.moborder2 {
+		order: 2;
+	}
+
+	.moborder3 {
+		order: 3;
+	}
+
+	.moborder4 {
+		order: 4;
+	}
+
+
+	.flexmobcenter1 {
+		justify-content: center !important;
+	}
+
+
+}
+
+
+/* =============== ELEMENTS HIDDEN ON MOBILE */
+
+@media only screen and (max-width: $wdmediumdevice){
+	.el_onmobile0 {
+		display: none;
+	}
+
+}
+
+
+
+/* =============== HEADER FULL WIDTH */
+
+
+
+
+@media only screen and (min-width: $pagewidth_bp){
+	.headerfw {
+		#main-header  {
+
+			.container-fluid {
+				max-width: 100%;
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+		}
+		
+	}
+
+}

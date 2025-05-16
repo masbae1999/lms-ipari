@@ -1,0 +1,389 @@
+
+
+html {
+	font-size: $fsbase;
+	font-family: sans-serif;
+
+	/* Adjust font size */
+	-webkit-text-size-adjust: $fsbase;
+
+	&.theme-fs2 {
+		font-size: $fsbase2;
+	}
+
+	&.theme-fs3 {
+		font-size: $fsbase3;
+	}
+}
+
+
+body {
+	background-color: #fff;
+	font-family: $ffgeneral, sans-serif;
+	color: var(--mb2-pb-textcolor);
+	font-weight: var(--mb2-pb-fwgeneral);
+	font-size: $fsgeneral;
+	line-height: var(--mb2-pb-lhgeneral);
+
+	html:not(.acsb_readablefont):not(.acsb_dyslexic) & {
+		/* ====== FOR BETTER TEXT RENDERING */
+		/* Font varient */
+		font-variant-ligatures: none;
+		-webkit-font-variant-ligatures: none;
+		/* Smoothing */
+		text-rendering: optimizeLegibility;
+		-moz-osx-font-smoothing: grayscale;
+		font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+	}
+	
+}
+
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+	@include mb2_font_family($ffheadings);
+	margin-bottom: 1.2rem;
+	font-weight: var(--mb2-pb-fwheadings);
+	line-height: var(--mb2-pb-lhheadings);
+	color: var(--mb2-pb-headingscolor);
+	@include mb2_headings();
+
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: inherit;
+			outline: none;
+		}
+	}
+}
+
+.h4 {
+	&.d-flex {
+		margin-bottom: 0;
+	}
+}
+
+legend {
+	font-weight: var(--mb2-pb-fwheadings);
+	color: var(--mb2-pb-headingscolor);
+}
+
+
+h1,.h1 {font-size: $fsheading1;}
+h2,.h2 {font-size: $fsheading2;}
+h3,.h3 {font-size: $fsheading3;}
+h4,.h4 {font-size: $fsheading4;}
+h5,.h5 {font-size: $fsheading5;}
+h6,.h6 {font-size: $fsheading6;}
+
+@media only screen and (max-width: $wdmediumdevice){
+	h1,.h1 {font-size: $fsheading1 * .85;}
+	h2,.h2 {font-size: $fsheading2 * .85;}
+	h3,.h3 {font-size: $fsheading3 * .85;}
+	h4,.h4 {font-size: $fsheading4 * .85;}
+}
+
+@media only screen and (max-width: $wmediumdevice){
+	h1,.h1 {font-size: $fsheading1 * .75;}
+	h2,.h2 {font-size: $fsheading2 * .75;}
+	h3,.h3 {font-size: $fsheading3 * .75;}
+	h4,.h4 {font-size: $fsheading4 * .75;}
+}
+
+
+/* ======================= STYLE FOR TEXT SCALE */
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	$wdmediumdevice_ttime: .85;
+
+	&.pbtsize-6 {
+		font-size: 6rem * $wdmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-5 {
+		font-size: 5rem * $wdmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-4 {
+		font-size: 4rem * $wdmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-3 {
+		font-size: 3rem * $wdmediumdevice_ttime !important;
+	}
+
+}
+
+@media only screen and (max-width: $wmediumdevice){
+
+
+	$wmediumdevice_ttime: .75;
+
+	&.pbtsize-6 {
+		font-size: 6rem * $wmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-5 {
+		font-size: 5rem * $wmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-4 {
+		font-size: 4rem * $wmediumdevice_ttime !important;
+	}
+
+	&.pbtsize-3 {
+		font-size: 3rem * $wmediumdevice_ttime !important;
+	}
+
+}
+
+
+@media only screen and (max-width: $wsmalldevice){
+
+	$wsmalldevice_ttime: .65;
+
+	&.pbtsize-6 {
+		font-size: 6rem * $wsmalldevice_ttime !important;
+	}
+
+	&.pbtsize-5 {
+		font-size: 5rem * $wsmalldevice_ttime !important;
+	}
+
+	&.pbtsize-4 {
+		font-size: 4rem * $wsmalldevice_ttime !important;
+	}
+
+	&.pbtsize-3,
+	&.pbtsize-2 {
+		font-size: 3rem * $wsmalldevice_ttime !important;
+	}
+
+}
+
+
+a {
+	color: $linkcolor;
+	outline: none;
+
+	&:hover {
+		text-decoration: none;
+		color: $linkhcolor;
+	}
+
+	.footer-tools &,
+	.footer-text &,
+	.theme-list & {
+		@include mb2_transition1(color, .15s);
+	}
+}
+
+
+
+/* table */
+
+
+th,
+th > a,
+th > a:hover,
+th > a:focus {
+	color: var(--mb2-pb-headingscolor);
+}
+
+.dark1 {
+	th {
+		color: #fff;
+	}
+}
+
+
+abbr[title],
+abbr[data-original-title] {
+	border: 0;
+	text-decoration: none;
+}
+
+
+/* Hr */
+
+hr {
+	border-color: $color_border;
+}
+
+b,
+.strong,
+strong {
+	font-weight: $fwbold;
+	//color: var(--mb2-pb-headingscolor);
+
+	.dark & {
+		color: #fff;
+	}
+}
+
+.small, small {
+	font-size: var(--mb2-pb-fssmall);
+
+	.badge & {
+		font-size: var(--mb2-pb-fsxsmall);		
+	}
+}
+
+pre,
+.code {
+	font-family: Courier, monospace;
+}
+
+.sr-only {
+    @include sr-only();
+
+	.editor_atto_toolbar &:not(legend) {
+	  position: absolute !important;
+	  height: 1px !important;
+	  overflow: hidden !important;
+	}
+}
+
+[aria-selected="false"] {
+    font-weight: inherit;
+}
+
+
+ul {
+    padding-left: 2rem;
+}
+
+
+
+
+
+/* ========= MOBILE CENTER */
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.mobcenter1 {
+
+		text-align: center !important;
+
+		.align-center,
+		.align-left,
+		.align-right {
+			text-align: center !important;
+		}
+
+	}
+
+}
+
+
+.upper1 {
+	text-transform: uppercase;
+}
+
+.tsizenormal {
+	font-size: $fsgeneral;
+}
+
+.tsizesmall {
+	font-size: var(--mb2-pb-fssmall);
+}
+
+.tsizexsmall {
+	font-size: var(--mb2-pb-fsxsmall);
+}
+
+.tsizexxsmall {
+	font-size: .67rem;
+}
+
+.tcolorl {
+	color: var(--mb2-pb-textcolor_lighten);
+}
+
+.tcenter1 {
+	text-align: center;
+}
+
+.tcolorn {
+	color: var(--mb2-pb-textcolor);
+
+	path {
+		fill: var(--mb2-pb-textcolor);
+	}
+
+	.tgsdbc_dark .toggle-sidebar & {
+		color: rgba(255,255,255,.5);
+	}
+}
+
+.tcolorh {
+	color: var(--mb2-pb-headingscolor);
+
+	.tgsdbc_dark .toggle-sidebar & {
+		color: #fff;
+	}
+}
+
+/* Font weight */
+
+.fwlight {
+	font-weight: $fwlight;
+}
+
+.fwnormal {
+	font-weight: $fwnormal;
+}
+
+.fwmedium {
+	font-weight: var(--mb2-pb-fwmedium);
+}
+
+.fwheadings {
+	font-weight: var(--mb2-pb-fwheadings);
+}
+
+.fwbold {
+	font-weight: $fwbold;
+}
+
+.fsitalic {
+	font-style: italic;
+}
+
+/* Line height ============= it's only for headings */
+
+.lhnormal {
+	line-height: $lhtime;
+}
+
+.lhsmall {
+	line-height: 1 !important;
+}
+
+.lhmedium {
+	line-height: $lhheadings;
+}
+
+.nline1 {
+	display: block;
+}
+
+
+/* =========================== MOODLE 4.2+ ***/
+
+.css_hy9f {
+
+	/* =========================== ICON SIZE ***/
+	.icon {
+		font-size: var(--mb2-pb-fsbase);
+		width: var(--mb2-pb-fsbase);
+		height: var(--mb2-pb-fsbase);
+	}
+
+}
+

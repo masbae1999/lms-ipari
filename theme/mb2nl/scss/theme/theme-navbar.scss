@@ -1,0 +1,24 @@
+
+.tnavbar {
+
+	&:not(.tnavbar_light2) {
+		#main-header {
+			--mb2-pb-navcolor: #fff;
+			--mb2-pb-navhcolor: #fff;
+			--mb2-pb-mbtncolor: var(--mb2-pb-headingscolor);
+			--mb2-qlinksbtnc: var(--mb2-pb-headingscolor);
+		}
+	}
+
+	#main-navigation {
+		
+		.main-navigation-inner {
+			@media only screen and (min-width: $wdmediumdevice + 1){
+				background-color: var(--mb2-pb-navbarbgcolor);
+			}
+		}
+	}
+
+	
+
+}

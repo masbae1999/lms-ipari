@@ -1,0 +1,35 @@
+
+
+.theme-scrolltt {
+    position: fixed;
+    bottom: -100px;
+    right: 33px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    background-color: $accent1 !important;
+    opacity: .6;
+    padding: 0;
+    color: #fff!important;
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+    @include mb2_border_radius(.15rem);
+    transition: opacity 0.15s ease-in-out, bottom 0.25s ease-in-out !important;
+   
+	&.active {
+		bottom: 86px;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+
+
+    .bulkenabled &.active {
+		bottom: 126px;
+	}
+
+}

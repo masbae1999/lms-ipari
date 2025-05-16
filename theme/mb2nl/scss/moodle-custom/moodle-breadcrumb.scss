@@ -1,0 +1,57 @@
+
+.breadcrumb {
+	//font-size: $fssmall;
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-flex;
+			align-items: center;
+
+			+li {
+				&:before {
+					padding-left: .4rem !important;
+					padding-right: .4rem !important;
+					margin: 0;
+					@include mb2_font_bootstrapicons();
+					font-size: 1.3rem;
+					content: '\f285' !important;
+				}
+			}
+		}
+	}
+
+	.dir-rtl & {
+
+		ul,ol {
+
+			li {
+
+				+li {
+					&:before {
+						content: '\f284' !important;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+@media only screen and (max-width: $wmediumdevice) {
+
+	.breadcrumb {
+		display: block;
+
+		nav,
+		ul,
+		ol {
+			width: 100%;
+		}
+	}
+
+}

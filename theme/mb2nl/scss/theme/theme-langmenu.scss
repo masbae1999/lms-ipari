@@ -1,0 +1,93 @@
+
+
+/* Language menu flag */
+
+.lang-flag {
+    margin-right: .45em;
+    width: 1.1em;
+    flex: 0 0 1.1rem;
+}
+
+.lang-fullname {
+    white-space: nowrap;
+}
+
+.lang-list.lang-footer {
+    gap: var(--mb2-pb-langgap);
+    row-gap: .35em;
+    padding: 0;
+    margin: .6rem 0 0 0;
+    list-style: none;
+
+    li {
+
+        a {
+             color: inherit;
+        }
+    }
+
+    .lang-shortname {
+         display: none;
+    }
+}
+
+
+
+@media only screen and (max-width: $wdmediumdevice){
+
+    .lang-shortname {
+        display: none;
+    }
+
+    .lang-fullname {
+        display: inline-block;
+    }
+}
+
+
+/* ==================== SHORTCODE */
+
+.mb2-pb-languages {
+
+    .lang-shortname {
+        display: none;
+    }
+
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            color: $linkcolor;
+        }
+    }
+
+    &.image0 {
+        .lang-flag {
+            display: none;
+        }
+    }
+
+    &.horizontal1 {
+        ul {
+
+            li {
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+    }
+
+    &.horizontal0 {
+        ul {
+            flex-flow: column;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+
+.tnavheader_light {
+
+	--theme-header-shadow-color: rgba(0,0,0,.05);
+
+	.header-inner2 {
+		@include mb2_box_shadow(0 3px 5px, var(--theme-header-shadow-color));
+	}	
+
+}

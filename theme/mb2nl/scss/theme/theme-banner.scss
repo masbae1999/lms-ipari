@@ -1,0 +1,41 @@
+
+.theme-cbanner {
+
+	.cbanner-bg {
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+
+		.banner-bg-inner {
+			padding: 1.6rem 0;
+			background-color: rgba(0,0,0,.5);
+			background-image: url([[pix:theme|svg/strip1_white10]]);
+			min-height: 4.8rem;
+		}
+	}
+
+	h1 {
+		margin: 0;
+		color: #fff;
+	}
+
+
+	&.noimage {
+
+		@include gradient-y(rgba(255,255,255,0), $color_gray2);
+
+		.banner-bg-inner {
+			padding: .6rem;
+			background-color: transparent;
+			background-image: url([[pix:theme|svg/strip1_black8]]);
+			border-bottom: solid 1px lighten($color_border, 9%);
+			min-height: 0;
+		}
+
+		h1 {
+			color: var(--mb2-pb-headingscolor);
+		}
+
+	}
+
+}

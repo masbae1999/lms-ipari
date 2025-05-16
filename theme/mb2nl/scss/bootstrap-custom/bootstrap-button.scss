@@ -1,0 +1,256 @@
+
+.btn,
+.button,
+[type="submit"],
+input[type="button"],
+a[data-action="addstandardtag"],
+.addresourcemodchooser a {
+
+	@include mb2_button($btncolor);
+
+	& img {
+		//display: none;
+		margin-top: -2px;
+		margin-right: 5px;
+	}
+
+	i {
+		color: inherit !important;
+	}
+
+}
+
+button,
+[type="button"] {
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}
+
+
+
+.btn-primary,
+[type="submit"],
+//button[type="submit"],
+input.btn-primary,
+button.btn-primary {
+	@include button-variant($btnprimarycolor, $btnprimarycolor);
+
+	&.btn-secondary {
+		@include button-variant($btnprimarycolor, $btnprimarycolor);
+
+	}
+}
+
+.btn-outline-success,
+.btn-success {
+  	@include button-variant($color_success, $color_success);
+}
+
+.btn-warning {
+  	@include button-variant($color_warning, $color_warning);
+	color: #fff!important;
+}
+
+.btn-danger,
+.fp-file-delete,
+.btn[name="cancel"] {
+  	@include button-variant($color_danger, $color_danger);
+}
+
+.btn-xlg {
+  	@include button-size(.9rem, 2rem, 1.3rem, (1.3rem * $lhtime), .24rem);
+}
+
+.btn-lg {
+	@include button-size(.84rem, 1.6rem, 1.17rem, (1.17rem * $lhtime), .24rem);
+}
+
+.btn-sm {
+  	@include button-size(.2rem, .55rem, $fssmall, $fssmall_lh, .15rem);
+}
+
+.btn-xs {
+  	@include button-size(.07rem, .45rem, $fssmall, $fssmall_lh, .15rem);
+}
+
+@media only screen and (max-width: $wmediumdevice){
+
+	.btn-lg {
+	  	@include button-size(.5rem, 1.1rem, 1.2rem, (1.2rem * $lhtime), .24rem);
+	}
+
+	.btn-xlg {
+	  	@include button-size(.8rem, 1.5rem, 1.2rem, (1.2rem * $lhtime), .24rem);
+	}
+}
+
+.moodle-dialogue-bd {
+	.btn {
+		@include button-size(.2rem, .55rem, $fssmall, $fssmall_lh, .15rem);
+	}
+}
+
+
+.navitem,
+.availability-field {
+	.btn,
+	.button,
+	//button,
+	[type="submit"],
+	input[type="button"]
+	{
+		@include button-size(.1rem, .45rem, $fssmall, $fssmall_lh, .15rem);
+	}
+}
+
+
+.loading {
+	.loading-icon {
+		display: inline-block;
+	}
+}
+
+
+.addresourcemodchooser a,
+#changenumsections .add-sections {
+	@include mb2_button($color_success);
+	@include button-size(.19rem, .55rem, $fssmall, $fssmall_lh, .15rem);
+}
+
+
+/* Special success buttons */
+button[data-action="link-competency"],
+button[data-action="add"],
+div[data-region="plans"] .singlebutton input[type="submit"],
+.fp-file-download,
+a[data-action="addstandardtag"],
+#combinetags_submit,
+#chooserform input[type="submit"].submitbutton,
+.atto_mb2shortcodes_imgbrowser,
+.maincalendar .header .buttons .btn,
+input[type="button"].fp-btn-choose  {
+  @include button-variant($color_success, $color_success);
+}
+
+
+
+/* Special buttons - danger */
+#tag-management-delete,
+#combinetags_cancel,
+input[type="submit"].addcancel {
+  @include button-variant($color_danger, $color_danger);
+}
+
+
+/* Button link */
+
+.btn.btn-link:not(.activityiconcontainer),
+.btn-link:not(.activityiconcontainer) {
+	@include mb2_btn_link();
+}
+
+
+/* Set button margins */
+
+.btn {
+	+ .btn:not(.fw1):not(.btn-block):not(.link-replace) {
+		margin-left: .45rem;
+	}
+
+	.btn-group & {
+		+ .btn {
+			margin-left: 0 !important;
+		}
+	}
+
+	&.text-reset {
+		border: 0 !important;
+		background-color: transparent !important;
+		border-radius: 0;
+	}
+}
+
+
+.activity-information [data-region="completion-info"] {
+	.btn {
+		@include button-size(.07rem, .45rem, $fssmall, $fssmall_lh, 15rem);
+	}
+}
+
+
+/* Easy enrolment plugin */
+
+.btn.qr-button {
+	background-color: transparent!important;
+	border-color: rgba(0,0,0,.1) !important;
+}
+
+/* Reset button style */
+
+
+button {
+
+	/* ======================= ACCESSIBILITY STYLE */
+
+	[class*="acsb_textspacing"] & {
+		word-spacing: inherit;
+    	letter-spacing: inherit;
+	}
+
+	[class*="acsb_lineheight"] &:not(.tgsdb-btn):not(.theme-scrolltt):not(.close) {
+		line-height: inherit !important;
+	}	
+
+	&.themereset {
+		border: 0;	  	
+	  	margin: 0;
+	  	background-color: transparent;
+		font-weight: inherit;
+
+		&:not([data-toggle="collapse"]):not(.mb2mm-action):not(.mb2mm-mega-action):not(.theme-scrolltt):not(.swiper-button-nav) {
+			@include mb2_transition_none();
+		}
+
+	}
+
+	.theme-course-search &,
+	.theme-searchform & {
+		@include mb2_transition_none();
+	}
+}
+
+
+
+
+
+.btn-icon {
+	.dropdown > & {
+		@include mb2_btn_moodle_icon();
+	}
+}
+
+/* Moodle 4 */
+
+.footer-tools {
+	button {
+		@include mb2_button($btnprimarycolor);
+		@include button-size(.07rem, .45rem, $fssmall, $fssmall_lh, .15rem);
+	}
+}
+
+
+
+.css_31a2 {
+
+	.btn.toggle-card-button {
+		padding: .4rem .6rem;
+		line-height: 1;
+	}
+	
+	i.toggle-card-icon {
+		font-size: 1.25em !important;
+	}
+}
+

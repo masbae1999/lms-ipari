@@ -1,0 +1,51 @@
+
+.sliding-panel {
+	background-color: $accent2;
+	position: relative;
+	z-index: 12;
+	background-image: url([[pix:theme|svg/strip1_white8]]);
+}
+
+
+.sliding-panel:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 5px;
+	background-color: lighten($accent2,12%);
+}
+
+
+
+
+
+.sliding-panel {
+
+	margin-top: -1px;
+
+	.panel-item {
+		display: none;
+	}
+
+	&[data-open="login"] {
+		.panel-login {
+			display: block;
+		}
+	}
+
+	&[data-open="search"] {
+		.panel-search {
+			display: block;
+		}
+	}
+
+	&[data-open="settings"] {
+		.panel-links {
+			display: block;
+		}
+	}
+
+}

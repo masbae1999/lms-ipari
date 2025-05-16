@@ -1,0 +1,32 @@
+
+.no-overflow {
+	
+	.block & {
+		overflow: visible;
+	}
+}
+
+#user-notifications {
+	clear: both;
+}
+
+
+.path-mod-page {
+
+	#page-content {
+		.generalbox.py-3 {
+			padding: 0 !important;
+		}
+	}
+
+}
+
+
+/* ======================= COURSE MAIN PAGE */
+
+/* Require for swiper slider shortcode */
+
+.contentwithoutlink,
+.description-inner {
+	max-width: 100%;
+}

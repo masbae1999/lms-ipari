@@ -1,0 +1,14 @@
+.block_online_users {
+
+	.listentry {
+		img {
+			@include mb2_border_radius(999px);
+		}
+
+		a {
+			color: inherit;
+		}
+
+		padding: .35rem 0 !important;
+	}
+}

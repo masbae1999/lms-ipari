@@ -1,0 +1,313 @@
+
+.theader_transparent_light,
+.theader_transparent {
+
+
+	#master-header:not(.sticky-el) {
+
+		.mb2mm {
+			--mb2mm-ptb: .65rem;
+			--mb2mm-mtb: .8rem;
+    		--mb2mm-flhp: auto;
+			--mb2mm-flbr: .18rem;
+		}
+
+	}
+	
+
+	#main-header {
+		z-index: 11;
+	}
+
+	&.pagelayout-maintenance {
+
+		#main-header {
+			border-bottom-color: $textcolor_lighten;
+		}
+
+	}
+
+	.header-inner2 {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	#page-header {
+
+		.inner {
+			margin-top: var(--headerh);
+		}
+	}
+
+	@media only screen and (max-width: $wdmediumdevice){
+
+		.top-bar {
+			display: none;
+		}
+	}
+
+
+	/* Page builder links */
+
+	&.builderpage {
+		#user-notifications {
+			position: absolute;
+			top: 200px;
+			left: 5%;
+			right: 5%;
+			z-index: 3;
+		}
+	}
+
+
+
+
+	/* ================= ROW TOP GAP FOR BUILDER PAGES */
+
+	&.pagelayout-frontpage, /* On the front page show always */
+	&.path-mod-page.builderheading0, /* On other pages - only if page heading is disabled */
+	&.path-local-mb2builder /* On builder editing page */
+	{
+		.mb2-pb-row {
+			&:first-child:not(.isslider) {
+				.row-topgap {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.path-local-mb2builder /* On builder editing page. This code is require for the header placeholder. */
+	{
+		.mb2-pb-row.isslider {
+			.row-topgap {
+				display: block !important;
+				height: 0;
+				z-index: 2;
+			}
+		}
+	}
+
+
+	/* ================= TOP GAP MASK IN PAGE BUILDER EDITING */
+	
+	&.path-local-mb2builder {
+
+		.row-topgap {
+			&:before {
+				content: 'header placeholder';
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+				background-color: rgba(0,0,0,.15);
+				height: var(--mb2-rowtoph);
+			}
+		}
+	}
+	
+
+
+	/* ================= ENROLMENT PAGE */
+
+	&.enrollment-page {
+		.row-topgap {
+			display: block;
+		}
+	}
+
+
+}
+
+
+
+/* ================= DARK TRANSPARENT HEADER */
+
+.theader_transparent {
+
+	#main-header {
+
+		.main-header-list {
+
+			color: #fff;
+
+			li {
+
+				a:not(.btn) {
+					color: inherit;
+
+					&:hover,
+					&:focus,
+					&:visited {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+
+	#page-header {
+
+		.action-menu {
+			.dropdown-toggle {
+				border-color: rgba(255,255,255, .2);
+			}
+		}
+
+	}
+
+	/* Top bar */
+
+	#main-header {	
+
+		.top-bar {
+			background-color: var(--mb2-pb-tbbgcolor);
+		}
+	}
+
+
+	&.tpheader_color {
+		.master-header-inner {
+			background-color: var(--mb2-pb-mhbgcolor);
+		}
+	}
+
+	.topmenu {
+		
+		--mb2-topmenu-color: #fff;
+		--mb2-topmenu-borcolor: rgba(255,255,255,.2);
+
+	}
+
+
+	/* ================= BACKGROUND COLOR FOR THE TOGGOLE SIDEBAR OPEN STATE */
+
+	@media only screen and (min-width: $wdmediumdevice){
+
+		&.tgsdb_open.theme-lfw {
+			.master-header-inner {
+				background-color: var(--mb2-pb-mhbgcolor);
+			}
+
+			&.tpheader_color {
+				.header-inner2 {
+					background-color: var(--mb2-pb-headerbgcolor);
+				}
+			}
+		}
+		
+		
+	}
+
+	@media only screen and (max-width: $tgsdbbp){
+		&.tgsdb_mopen {
+			.master-header-inner  {
+				background-color: var(--mb2-pb-mhbgcolor);
+			}
+
+			&.tpheader_color {
+				.header-inner2 {
+					background-color: var(--mb2-pb-headerbgcolor);
+				}
+			}
+		}
+
+		.rowpt-0 .row-topgap {
+			background-color: var(--mb2-pb-mhbgcolor);
+		}
+
+
+		&.tpheader_color {
+			.rowpt-0 .row-topgap {
+				background-color: var(--mb2-pb-headerbgcolor);
+			}
+		}
+	}
+
+
+}
+
+
+
+/* ================= LIGHT TRANSPARENT HEADER */
+
+.theader_transparent_light {
+
+
+	#page-header {
+
+		.action-menu {
+			.dropdown-toggle {
+				border-color: rgba(0,0,0, .2);
+			}
+		}
+
+	}
+
+	/* Top bar */
+
+	#main-header {
+
+		.top-bar {
+			background-color: var(--mb2-pb-tbbgcolorl);
+		}
+	}
+
+
+
+	&.tpheader_color {
+		.master-header-inner {
+			background-color: var(--mb2-pb-mhbgcolorl);
+		}
+	}
+
+
+	/* ================= BACKGROUND COLOR FOR THE TOGGOLE SIDEBAR OPEN STATE */
+
+	@media only screen and (min-width: $wdmediumdevice){
+
+		&.tgsdb_open.theme-lfw {
+			.master-header-inner {
+				background-color: var(--mb2-pb-mhbgcolorl);
+			}
+
+			&.tpheader_color {
+				.header-inner2 {
+					background-color: var(--mb2-pb-headerlbgcolor);
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: $tgsdbbp){
+
+		&.tgsdb_mopen {
+			.master-header-inner {
+				background-color: var(--mb2-pb-mhbgcolorl);
+			}
+
+			&.tpheader_color {
+				.header-inner2 {
+					background-color: var(--mb2-pb-headerlbgcolor);
+				}
+			}
+		}
+
+		.rowpt-0 .row-topgap {
+			background-color: var(--mb2-pb-mhbgcolorl);
+		}
+
+		&.tpheader_color {
+			.rowpt-0 .row-topgap {
+				background-color: var(--mb2-pb-headerlbgcolor);
+			}
+		}
+	}
+
+}

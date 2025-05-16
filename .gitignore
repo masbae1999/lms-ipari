@@ -1,0 +1,91 @@
+# Moodle .gitignore file
+
+# Config file
+config.php
+
+# Data directory
+moodledata/
+
+# PHP Storm project files
+.idea/
+
+# Visual Studio Code project files
+.vscode/
+
+# Cache, temp and log files
+*/cache/*
+*/temp/*
+*/log/*
+
+# Session files
+*/sessions/*
+
+# Error logs
+error_log
+php_error.log
+
+# Database dumps
+*.sql
+*.sqlite
+*.sqlite3
+
+# Composer
+composer.phar
+/vendor/
+
+# NPM / Node.js
+node_modules/
+npm-debug.log
+
+# Compiled CSS and JS
+/theme/**/style/*.css
+/theme/**/style/*.css.map
+/theme/**/javascript/*.js
+/theme/**/javascript/*.js.map
+
+# Generated documentation
+/phpdocs/
+
+# Mac-specific files
+.DS_Store
+._*
+
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux-specific files
+*~
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Duitku payment gateway logs and sensitive files
+enrol/duitku/logs/*
+enrol/duitku/keys/*
+enrol/duitku/config/*.json
+
+# Moodle development plugins
+local/codechecker/
+local/moodlecheck/
+local/ci/
+
+# Auto-generated language files
+**/lang/*/generated_*
+
+# Uploaded files
+*/draft/*
+
+# Debug files
+debug.php
+debuginfo.php

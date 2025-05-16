@@ -1,0 +1,99 @@
+
+
+.block_timeline {
+
+	.list-group-item {
+		background-color: rgba(0,0,0,.04);
+		padding: .4rem !important;
+
+		h6 {
+			font-size: $fssmall;
+			font-weight: var(--mb2-pb-fwheadings);
+		}
+	}
+
+	.list-group.unstyled {
+		> .list-group-item {
+			background-color: transparent;
+			padding: 0 !important;
+		}
+	}
+
+	h4 {
+		margin-bottom: 0;
+		font-weight: var(--mb2-pb-fwheadings);
+		font-size: $fsgeneral;
+
+		a {
+			color: var(--mb2-pb-headingscolor);
+		}
+	}
+
+	.paged-content-page-container {
+		h5 {
+			font-size: $fssmall;
+			font-weight: var(--mb2-pb-fwheadings);
+			background-color: rgba(0,0,0,.1);
+			color: var(--mb2-pb-headingscolor);
+			border-left: solid 2px $accent1;
+			padding: .1rem .4rem;
+		}
+	}
+
+	.block-timeline {
+
+		> [class^="px-"],
+		> [class*=" px-"] {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
+		> .container {
+
+			&.border-bottom.pb-3 {
+				border-bottom: 0 !important;
+				padding-bottom: 0 !important;
+			}
+
+			> .no-gutters {
+				background-color: rgba(0,0,0,.072);
+				padding: .4rem !important;
+				border-bottom: 0 !important;
+			}
+
+		}
+	}
+
+	.border-bottom {
+		border-bottom: 0 !important;
+	}
+}
+
+
+
+
+.block_recentlyaccesseditems {	
+
+	.css_6wum & {
+		.activityiconcontainer {
+			padding: .475rem;
+			width: 30px;
+			height: 30px;
+			@include mb2_border_radius(.15rem);
+			background-color: rgba($headerbgcolor,.05);
+		}
+	}
+
+	.tgsdbc_dark .tgsdb-blocks & {
+		.activityiconcontainer {
+			img {
+				filter: brightness(0) saturate(100%) invert(92%) sepia(46%) saturate(0%) hue-rotate(28deg) brightness(101%) contrast(104%);
+			}
+		}
+	}
+}
+
+
+
+
+

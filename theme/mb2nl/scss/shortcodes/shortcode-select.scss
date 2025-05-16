@@ -1,0 +1,241 @@
+
+/* ================= SIZE STYLE */
+
+.mb2-pb-select {
+
+    --mb-pb-selectmhpct: calc(var(--mb-pb-selecth) * (var(--mb-pb-selectmh)/100));
+
+
+    .select-button {
+        a {
+            @media only screen and (max-width: $wdmediumdevice){
+                --mb-pb-selectfs: 1rem;
+            }
+
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0 !important;
+            height: var(--mb-pb-selectmhpct);
+            font-size: var(--mb-pb-selectfs);
+        }
+    }
+
+    &.center1 {
+        margin-left: auto;
+        margin-right: auto;
+
+        .select-container {
+            justify-content: center;
+        }
+    }
+
+    &.center1.layoutv {
+        .select-container {
+            align-items: center;
+        }
+    }  
+
+
+    @media only screen and (min-width: $wdmediumdevice + 1){
+        .select-button {
+            a {
+                height: var(--mb-pb-selecth);
+            }
+        }
+
+        .select-dropdown {
+            button {
+                height: var(--mb-pb-selecth);
+            }
+        }
+    }
+
+
+    /* ================= CENTER ON MOBILE */
+
+    @media only screen and (max-width: $wdmediumdevice){
+        .mobcenter1 & {
+
+            .select-container {
+                justify-content: center !important;
+            }
+            
+        }
+    }
+
+}
+
+
+.select-container {
+    
+    display: flex;
+    gap: 1rem;
+    flex-flow: wrap;
+
+    > div {
+        max-width: 100%;
+    }
+
+    .mb2-pb-select.layoutv & {
+        flex-flow: column;
+    }
+
+}
+
+.select-label {
+
+    .mb2-pb-select.center1 & {
+        text-align: center;
+    }
+
+    margin-bottom: .6rem;
+}
+
+
+
+/* ================= DROPDOWN BUTTON */
+
+.select-dropdown  {
+	button {
+		border: solid 2px transparent;
+        padding: 0 .8rem;
+	    background-color: #fff;
+	    width: var(--mb-pb-swidth);
+        max-width: 100%;
+	    text-align: left;
+		color: $textcolor;
+        height: var(--mb-pb-selectmhpct);
+        font-size: var(--mb-pb-selectfs);
+
+        border-radius: .18rem;
+
+        &.rounded1 {
+            border-radius: 30rem;
+        }
+    
+        &.rounded-1 {
+            border-radius: 0;
+        }
+
+        @media only screen and (max-width: $wdmediumdevice){
+            --mb-pb-selectfs: 1rem;
+        }
+	}
+
+    
+}
+
+.select-btn-arrow {
+
+    font-size: 1.4rem;
+
+	&:before {
+		@include mb2_font_bootstrapicons();
+		content: '\f282';
+	}
+
+	.mb2-pb-select.active & {
+		&:before {
+			content: '\f286';
+		}
+	}
+}
+
+.select-btn-text {
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+
+
+/* ================= SELECT ITEMS CONTAINER */
+
+.select-items-container {
+    background-color: #fff;
+    border: solid 1px $color_border;
+    @include mb2_border_radius(.22rem);
+    width: 100%;
+	position: absolute;
+	margin-top: 18px;
+    z-index: 99;
+    @include mb2_box-shadow(0 15px 20px, rgb(0 0 0, .25));
+
+    .builderpage & {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+	.path-admin-local-mb2builder & {
+		position: relative;
+        max-width: 300px;
+        padding: .55rem 1.3rem;
+	}
+
+	&:before {
+		content: '';
+	    display: block;
+	    border: solid 1px $color_border;
+        border-bottom-color: rgba(255,255,255,0);
+        border-right-color: rgba(255,255,255,0);
+        @include mb2_transform_rotate(45deg, 39px 36px);
+        background-color: #fff;
+        width: 24px;
+        height: 24px;
+	    top: 0;
+	    left: 0;
+	    position: absolute;
+	}
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+/* ================= SELECT ITEM */
+
+.mb2-pb-select_item {
+    padding: .67rem 1.3rem;
+    cursor: pointer;
+    color: $textcolor;
+
+    &:hover,
+    &:focus {
+        background-color: $color_gray2;
+    }
+
+    &:first-child {
+        @include mb2_border_radius(.22rem .22rem 0 0);
+    }
+
+    &:last-child {
+        @include mb2_border_radius(0 0 .22rem .22rem);
+    }
+}
+
+.select-image {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border-radius: 50% !important;
+    border: solid 2px rgba(0,0,0,.1);
+}
+
+.select-btn-image {
+    width: 28px;
+    flex: 0 0 28px;
+}
+
+.mb2-pb-select.isimage0 {
+	.select-text,
+	.select-btn-text {
+		width: 100%;
+	}
+}

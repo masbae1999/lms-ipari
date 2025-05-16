@@ -1,0 +1,43 @@
+
+
+@mixin mb2_dialog_header() {
+
+    position: relative;
+    @include mb2_border_radius(.15rem .15rem 0 0);
+    background-color: $color_gray2;
+    border-bottom: 0;
+    padding: .45rem 1rem !important;
+
+
+    .modal-title,
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 1.16rem;
+        margin: 0;
+    }
+
+    .close,
+    button.close {
+    	position: absolute;
+    	margin: 0;
+    	padding: 0;
+    	width: 30px;
+    	height: 36px;
+    	top: 50%;
+        margin-top: -18px;
+    	right: .3rem;
+    	font-size: 1.8rem;
+        line-height: 1;
+    	font-weight: inherit;
+    	background-color: transparent !important;
+    	border: 0 !important;
+    	color: $textcolor;
+    	text-shadow: none;
+        @include mb2_border_radius(0);
+
+        &:focus,
+    	&:hover {
+    		color: $textcolor;
+    	}
+    }
+
+}

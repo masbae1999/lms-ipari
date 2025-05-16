@@ -1,0 +1,29 @@
+
+
+/* Header tools */
+
+.tnavbar_dark {
+
+    &.tnavbar {
+        #main-header {
+			--mb2-pb-mbtncolor: #fff;
+            --mb2-qlinksbtnc: #fff;
+		}
+    }
+
+    @media only screen and (min-width: $wmediumdevice){
+
+        .header-tools {
+            &.tools-pos1 {
+
+                .header-tools-link,
+                .popover-region-toggle {
+                    background-color: rgba(255,255,255,.1);
+                }
+
+            }
+        }
+
+    }
+
+}

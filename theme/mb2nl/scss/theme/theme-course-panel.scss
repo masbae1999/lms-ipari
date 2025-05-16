@@ -1,0 +1,366 @@
+
+#course-panel {
+
+	.container-fluid {
+		max-width: 100%;
+
+		.row > div {
+			margin-bottom: 20px;
+		}
+	}
+
+	.teacher-panel,
+	.student-panel-a,
+	.student-panel-b {
+		padding: 30px 15px 10px 15px;
+	}
+
+
+
+
+	.teacher-panel,
+	.student-panel-a {
+		.box {
+			@include mb2_border_radius(.15rem);
+			border: solid 1px $color_box_border;
+			background-color: $color_box_bg;
+			margin: 0 0 20px 0;
+
+			> h3 {
+				background-color: $color_gray2;
+				font-size: $fsgeneral;
+				margin: 0;
+				border-bottom: solid 1px $color_box_border;
+				padding: .55rem 1rem;
+				@include mb2_border_radius(.15rem .15rem 0 0);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				i {
+					margin-right: 7px;
+					color: $accent1;
+					display: none;
+				}
+			}
+
+
+			/* Custom colors */
+
+			&.box-qbank,
+			&.box-contacts,
+			&.box-modulenav {
+				> h3 {
+					i {
+						color: $color_info;
+					}
+				}
+			}
+
+
+			&.box-badges,
+			&.box-badges2 {
+				> h3 {
+					i {
+						color: $color_warning;
+					}
+				}
+			}
+
+
+			&.box-students,
+			&.box-students2 {
+				> h3 {
+					i {
+						color: $color_success;
+					}
+				}
+			}
+
+
+			/* Special style fo moduele navigation block */
+
+			&.box-modulenav {
+				border-width: 2px;
+				border-color: $color_info;
+			}
+
+			/* Course box */
+
+			&.box-course {
+				background-color: transparent;
+				border: 0;
+
+				> h3 {
+					@include mb2_border_radius(0);
+					margin: 0 0 13px 0;
+				}
+			}
+
+
+
+
+			&.box-contacts {
+				> ul {
+
+					list-style: none;
+					padding: .4rem 0;
+					max-height: 296px;
+					overflow-y: auto;
+
+					> li {
+						@include clearfix();
+						padding: 0 1rem;
+						border-bottom: solid 1px $color_box_border;
+
+						&:last-child {
+							border: 0;
+						}
+					}
+				}
+
+				.user-picture {
+					width: 45px;
+					
+					/* Moodle 4 + */
+					.userinitials {
+						width: 45px;
+						height: 45px;
+					}
+				}
+
+				.rolename {
+					font-weight: bold;
+				}
+
+				.user-contacts {
+					gap: .25rem;
+
+					a {
+						color: inherit;
+					}
+				}
+
+			}
+
+
+		}
+	}
+
+
+
+	.student-panel-a {
+		.box {
+			margin-bottom: 0;
+		}
+	}
+
+
+
+	.boxlist {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			list-style: none;
+			padding: 0 0 .25rem .6rem;
+			background-color: rgba(0,0,0,.035);
+			position: relative;
+			top: -1px;
+			border-top: solid 1px $color_box_border;
+		}
+
+		> li {
+			margin: 0;
+			padding: 0;
+
+
+			a {
+				display: block;
+				color: $textcolor;
+
+				&:hover,
+				&:focus {
+					color: $linkcolor;
+				}
+			}
+
+			> span {
+				display: block;
+			}
+
+			> a,
+			> span {
+				padding: .3rem 1rem;
+				border-bottom: solid 1px $color_box_border;
+
+				> img {
+					margin-right: .85rem;
+					width: 1.18rem;
+					height: 1.18rem;
+				}
+			}
+
+			> a {
+				&:hover,
+				&:focus {
+					background-color: darken($color_box_bg,3%);
+				}
+
+				position: relative;
+
+				> .details {
+					font-size: $fssmall;
+					background-color: $accent1;
+					display: inline-block;
+					vertical-align: top;
+					margin: -2px 7px 0 7px;
+					height: 20px;
+					line-height: 20px;
+					color: #fff;
+					padding: 0 5px;
+					@include mb2_border_radius(3px);
+				}
+			}
+
+			&:last-child {
+				> a {
+					border: 0;
+				}
+			}
+
+
+			> span {
+				position: relative;
+				outline: none;
+
+				&.nolink-item {
+					background-color: rgba(0,0,0,.04);
+					font-weight: bold;
+				}
+			}
+
+
+			ul {
+				display: none;
+
+				li > a,
+				li > span {
+					padding: .35rem .6rem;
+					display: block;
+				}
+
+				li > span {
+					font-weight: bold;
+				}
+			}
+
+		}
+	}
+
+
+	.boxlist-toggle {
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+		cursor: pointer;
+		text-align: center;
+		right: .4rem;
+		font-size: 1.3rem;
+		top: 50%;
+		margin-top: -18px;
+		color: $textcolor_lighten;
+
+		&:before {
+			@include mb2_font_fa();
+			content: '\f107';
+		}
+
+		&.active {
+			&:before {
+				content: '\f106';
+			}
+		}
+	}
+
+
+	.progress {
+		margin: 0 0 -1px 0;
+		@include mb2_border_radius(0 0 .15rem .15rem);
+		height: 36px;
+
+		.progress-bar {
+			line-height: 36px;
+			font-size: $fsheading4;
+			font-weight: var(--mb2-pb-fwheadings);
+			min-width: 50px;
+		}
+	}
+
+
+	.student-panel-b {
+		background-color: $color_gray2;
+		background-image: url([[pix:theme|svg/strip1_black8]]);
+
+		.box {
+			background-color: $color_success;
+			color: #fff;
+			text-align: center;
+			@include mb2_border_radius(.15rem);
+
+			a {
+				display: block;
+				color: #fff;
+
+				> h3 {
+					color: #fff;
+					margin: 0;
+					padding: 9px 15px;
+					background-color: rgba(0,0,0,.1);
+					font-size: 1.3rem;
+				}
+
+				i {
+					font-size: 34px;
+					margin: 11px 0;
+				}
+			}
+
+			&.box-studentbadges {
+				background-color: $color_warning;
+			}
+
+
+			&.box-competencies {
+				background-color: $color_info;
+			}
+
+			&:empty {
+				height: 100%;
+				background-color: rgba(0,0,0,.1);
+
+				&:before {
+					@include mb2_font_fa();
+					position: absolute;
+					width: 36px;
+					height: 36px;
+					text-align: center;
+					line-height: 36px;
+					content: '\f0ad';
+					font-size:36px;
+					left: 50%;
+					top: 50%;
+					margin-top: -18px;
+					margin-left: -18px;
+				}
+			}
+
+
+		}
+
+	}
+
+}

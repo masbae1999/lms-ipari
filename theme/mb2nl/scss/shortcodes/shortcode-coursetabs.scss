@@ -1,0 +1,178 @@
+
+/* ======================= CORE STYLE */
+
+.coursetabs-content {
+    display: none;
+    min-height: 150px;
+    position: relative;
+
+    &.active {
+        display: block;
+    }
+}
+
+
+/* ======================= TAB LIST */
+
+.coursetabs-tablist {
+    margin: 0;
+    margin-bottom: 2.4rem;
+    padding: 0;
+    list-style: none;   
+    column-gap: 1.7rem;
+    row-gap: .4rem;
+
+    &.tcenter1 {
+        justify-content: center;
+    }
+
+    .coursetabs-catitem {
+        
+        cursor: pointer;
+
+        .catname {
+            color: var(--mb2-pb-coursetabsc);
+        }
+
+        .coursecount {
+            margin-left: .15rem;
+            color: $textcolor_lighten;
+            font-size: $fssmall;
+        }
+
+        &.active {
+
+            .catname {
+                font-weight: $fwbold;
+            }
+        }
+
+    }
+
+    .dark & {
+       
+
+        .coursetabs-catitem {
+
+            .coursecount {
+                color: rgba(255,255,255,.5);
+            }
+
+        }
+    }
+
+
+    /* ======================= TAB STYLE 1 */
+
+    &.tabstyle1 {
+
+        @media only screen and (min-width: $wdmediumdevice + 1){
+            border-bottom: solid 1px rgba(0,0,0,.1);
+        }
+        
+        .coursetabs-catitem {
+
+            padding: 0 0 .6rem 0;
+
+            &.active {
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: var(--mb2-pb-coursetabsacc);
+                }
+            }
+        }
+
+    }
+
+    .dark &.tabstyle1 {
+        border-color: rgba(255,255,255,.1);
+    }
+
+    
+
+
+    /* ======================= TAB STYLE 2 */
+
+    &.tabstyle2 {
+
+        column-gap: .4rem;
+
+        .coursetabs-catitem {
+
+            padding: .3rem 1rem;
+            border: solid 2px rgba(0,0,0,0);
+            border-radius: 999px;
+
+            &.active {
+                border-color: var(--mb2-pb-coursetabsacc);
+            }
+        }
+    }
+
+    .coursecount0 & {
+        .coursecount {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+/* ======================= CATEGORY DESCRIPTION */
+
+.coursetabs-category {
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+
+    .catdesc0 & {
+        display: none;
+    }
+
+    .category-desc {
+        flex: 0 0 65%;
+
+        @media only screen and (max-width: 680px){
+            flex: 0 0 100%;
+        }
+
+        img {
+            &:first-child {
+                display: none;
+            }
+        }
+    }
+
+    .category-image {
+       display: flex;
+       flex: 0 0 35%;
+       justify-content: flex-end;
+
+       @media only screen and (max-width: 680px){
+           display: none;
+       }
+
+       .catimage {
+           width: 200px;
+           height: 200px;
+           background-repeat: no-repeat;
+           background-position: 50% 50%;
+           background-size: cover;
+          @include mb2_border_radius(999px);
+       }
+    }
+
+    .category-readmore {
+        padding-top: .65rem;
+    }
+}

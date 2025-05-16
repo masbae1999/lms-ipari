@@ -1,0 +1,484 @@
+/* ======================= HIDE SOME MOBILE ELEMENTS ON DECKTOP */
+
+.menu-toggle,
+.mnavtop,
+.mobile-navbottom {
+	display: none;
+
+	--mb2-usermenu-bcolor: var(--mb2mm-ddbordercolor);
+	--mb2-sepcolor: var(--mb2mm-m1lcolor);
+}
+
+
+
+
+
+@media only screen and (max-width: $wdmediumdevice){
+	
+	
+
+	/* ======================= SHOW MOBILE TOP AND BOTTO CONTENT */
+
+	.mnavtop, 
+	.mobile-navbottom {
+		display: block;
+	}
+
+
+	/* ======================= HIDE DRIPDOWN CONTAINER ARROW */
+
+	.mb2mm-ddarrow {
+		display: none;
+	}
+
+	/* ======================= REMOVE SUBLABEL MORE TEXT */
+
+	.mb2mm-sublabel-more {
+		display: none;
+	}
+
+
+	/* ======================= MAIN NAVIGATION CONTAINER */
+
+	#main-navigation {		
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: var(--mb2mm-m1lbgcolor); // Set the same color like first-level menu items	
+		box-shadow: 0 5px 9px rgba(0,0,0, .18);
+
+		.theme-lfx & {
+			left: -15px;
+			right: -15px;
+		}
+
+		&.open {
+			display: block;
+		}
+
+		> div > .container-fluid {
+			padding: 0;
+
+			> .row {
+				margin: 0;
+
+				> .col-md-12 {
+					padding: 0;
+				}
+			}			
+		}	
+
+	}	
+	
+
+
+	/* ======================= MOBILE MENU TOGGLE BUTTON */
+
+	.menu-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		order: 1; // Mobile menu toggle button is first, but we need move it at the end visally
+		margin-left: auto;
+	}
+	
+	.show-menu {
+	  font-size: 2.57rem;
+	  color: var(--mb2-pb-mbtncolor);
+	}
+
+
+
+	/* ======================= HEADER CONTENT LIST ON MOBILE MENU */
+
+	.mobile-header-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin: 0 8px;
+		}
+
+		a {
+			color: $textcolor;
+
+			&:hover,
+			&:focus {
+				color: $textcolor;
+			}
+		}
+
+		.static-icon {
+			margin-right: .4rem;
+		}
+	}
+
+	/* ======================= MEGA MENU CONTAINER */
+	
+	.mb2mm-wrap {
+		width: 100% !important;
+		left: 0 !important;
+	}
+
+
+
+	/* ======================= REMOVE BACKGROUND IMAGES */
+
+	ul.mb2mm {		
+		border-top: solid 1px var(--mb2mm-m1lbordercolor);
+
+		li {
+			background-image: none !important;
+		}
+	}
+
+
+	/* ========================== TOP MENU STYLE */
+
+	.topmenu {
+
+		&.inheader {
+			display: none;
+		}
+
+		margin-left: -15px;
+		margin-right: -15px;
+
+		.link-replace {
+			@include mb2_font_family($ffmenu);
+			font-size: $fsmenu;
+			font-weight: $fwmenu3;
+			text-transform: $ttmenu;
+
+			display: flex;
+			padding: 16px 15px;	
+			height: var(--mb2mm-mitemheight);
+			color: var(--mb2mm-m1lcolor);
+			background-color: var(--mb2mm-m1lbgcolor);	
+			border-bottom: solid 1px var(--mb2mm-m1lbordercolor);
+		}
+	}
+
+	/* ========================== MENU ITEMS - GENERAL STYLE */
+
+	
+	.mb2mm-action,
+	.mb2mm-mega-action,
+	.mb2mm-heading {
+		// Set indent element width
+		// This is for better navigation on sub-menu items
+		&:before {
+			content: '';
+			display: inline-flex;
+			width: var(--mb2mm-mindent);
+		}
+
+		padding: 16px 15px;	
+		height: var(--mb2mm-mitemheight);	
+		
+		/* Style - the same style like for dropdown items */
+
+		color: var(--mb2mm-ddcolor);
+		border-bottom: solid 1px var(--mb2mm-ddbordercolor);
+
+		&.themereset {
+			border-bottom: solid 1px var(--mb2mm-ddbordercolor);
+		}
+
+		.mb2mm-sublabel {
+			color: var(--mb2mm-ddsubcolor);    
+			font-size: var(--mb2-pb-fssmall);
+			line-height: 1.12;  
+			white-space: nowrap;
+    		max-width: 60vw;
+    		overflow: hidden;
+    		text-overflow: ellipsis;       
+		}
+		
+		.mb2mm-icon {
+			color: var(--mb2mm-ddiconcolor);
+		} 
+
+
+		/* Open */
+		.open > & {
+			
+			color: var(--mb2mm-ddhcolor);
+			background-color: var(--mb2mm-ddhbgcolor);
+				
+			.mb2mm-sublabel {
+				color: var(--mb2mm-ddsubhcolor);
+			}
+
+			.mb2mm-icon {
+				color: var(--mb2mm-ddiconhcolor);
+			}
+			
+		}
+
+
+
+
+		.isparent & {
+			padding-right: var(--mb2mm-mitemheight) !important;
+		}
+
+
+		// Style for the first leven menu on mobile
+
+		.level-1 > & {
+			
+			color: var(--mb2mm-m1lcolor);
+			background-color: var(--mb2mm-m1lbgcolor);	
+			border-bottom: solid 1px var(--mb2mm-m1lbordercolor);
+			
+			.mb2mm-sublabel {
+				color: var(--mb2mm-m1subcolor);
+			}
+
+			.mb2mm-icon {
+				color: var(--mb2mm-m1iconcolor);
+			}
+		}
+
+		.level-1.open > & {
+			
+			color: var(--mb2mm-m1locolor);
+			background-color: var(--mb2mm-m1lbgocolor);
+			
+			.mb2mm-sublabel {
+				color: var(--mb2mm-m1subocolor);
+			}
+
+			.mb2mm-icon {
+				color: var(--mb2mm-m1iconocolor);
+			}
+
+		}
+		
+	}
+
+
+	/* ========================== SUBMENU TOGGLE BUTTON */
+	
+	.mb2mm-toggle {
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		height: var(--mb2mm-mitemheight);
+		width: var(--mb2mm-mitemheight);
+		top: 0;
+		right: 0;
+		font-size: 1.6rem !important;
+
+		.css_hy9f & {
+			--fa-style-size__theme: 22px;
+		}
+
+		&:before {			
+			content: '\f285';
+		}
+
+		.dir-rtl &:before {
+			content: '\f284';
+		}
+
+		.dir-rtl .isparent.open > &,
+		.isparent.open > & {
+			&:before {			
+				content: '\f282';
+			}
+		}
+
+		/* Next levels */
+		
+		.level-1 & {
+			color: var(--mb2mm-m1lcolor);
+		}
+
+		.level-1.open > & {
+			color: var(--mb2mm-m1locolor);
+		}
+
+		/* Next levels */
+
+		.level-2 & {
+			color: var(--mb2mm-ddcolor);
+		}
+
+		.level-2.open > & {
+			color: var(--mb2mm-ddhcolor);
+		}
+
+	}
+
+
+	/* ========================== DROPDOWN LIST STYLE */
+
+	.mb2mm-dd,
+	.mb2mm-mega-dd {
+		display: none;
+		position: relative; // This is required because of the :before background color
+
+		// Open dropdown list by click
+		.isparent.open > & {
+			display: block;
+		}		
+	}
+
+
+	/* ========================== ICON SIDE MENU */
+
+	.theme-iconnav-mobile {
+		max-width: 380px;
+		list-style: none;
+		padding: 0;
+		color: var(--mb2mm-m1lcolor);
+		font-weight: $fwmenu3;
+		border-top: solid 1px var(--mb2mm-m1lbordercolor);
+
+		a {
+			color: var(--mb2mm-m1lcolor) !important;
+		}
+
+		.link-replace {
+			display: flex;
+			flex-flow: row;
+			align-items: center;
+			padding: .75rem 1rem;
+			border-bottom: solid 1px var(--mb2mm-m1lbordercolor);
+		}
+
+		.static-icon {
+			display: inline-flex;
+			flex: 0 0 1.5em;
+			margin-right: .55rem;
+			width: 1.5em;
+			justify-content: center;
+			transform: scale(1.1);
+			line-height: 1;
+		}
+	}
+
+
+
+
+	/* ===================== HEADER EXTRA CONTENT */
+
+	.menu-staticontentcontainer {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+
+
+	.menu-extracontent-controls {
+		background-color: var(--mb2mm-m1lbgcolor);
+		border-top: solid 1px var(--mb2mm-m1lbordercolor);
+		height: var(--mb2mm-mitemheight);
+
+		button {
+			flex: 0 0 64px;
+			height: 100%;
+			color: var(--mb2mm-m1lcolor);
+			font-size: 1.6rem;
+			line-height: 1;
+			overflow: hidden;
+			white-space: nowrap;
+
+			&.active {
+				background-color: var(--mb2mm-m1lbgocolor);
+				color: var(--mb2mm-m1locolor);
+			}
+
+			span {
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+	}
+
+	/* Search and content container */
+
+	.menu-extracontent-content {
+		display: none;
+		background-color: var(--mb2mm-ddbgcolor);
+		padding: 16px 15px;
+		border-top: solid 1px var(--mb2mm-m1lbordercolor);
+		color: var(--mb2mm-ddcolor);
+
+		.h4 {
+			color: var(--mb2mm-ddcolor);
+		}
+
+		&.open {
+			display: block;
+		}
+
+		a {
+			color: var(--mb2mm-ddcolor);
+
+			&:hover,
+			&:focus {
+				color: inherit;
+			}
+
+			i {
+				color: var(--mb2mm-ddiconcolor);
+			}
+		}
+	}
+
+
+	/* ===================== BOTTOM NAVIGATION AREA */
+
+	.mobile-navbottom {
+		background-color: var(--mb2mm-m1lbgcolor);
+		padding: 0 15px 30px 15px;
+	}
+
+	.mobile-buttons {
+		gap: .45rem;
+	}
+
+
+
+
+}
+
+
+
+
+@media only screen and (max-width: $wdlargedevice) and (min-width: $wdmediumdevice + 1){ // 1100
+	
+	.mb2mm {
+		.level-1 {
+			> .mb2mm-action {
+				padding-left: .35rem;
+				padding-right: .35rem;
+
+				.mb2mm-sublabel {
+					font-size: 1rem !important;
+					text-transform: none !important;
+				}
+
+				.lang-flag,
+				.mb2mm-sublabel,
+				.mb2mm-icon,
+				.mb2mm-hlabel {
+					display: none;
+				}
+			}
+		}
+	}
+}

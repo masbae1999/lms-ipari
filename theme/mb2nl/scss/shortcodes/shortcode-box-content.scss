@@ -1,0 +1,391 @@
+
+/* ======================== NEW BOX CONTENT */
+
+.theme-boxescontent {
+
+	--mb2-pb-bxaccolor: #{$accent3};
+
+	&.btnhor1 {
+		@media only screen and (min-width: $wdmediumdevice + 1){
+
+			.boxcontent-inner {
+				display: flex;
+				flex-flow: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.boxcontent-readmore {
+				white-space: nowrap;
+				margin-top: 0;
+			}
+		}
+	}
+
+	.boxcontent-readmore {
+		margin-top: 1.32rem;
+	}
+	
+
+	&.itemlink1 {
+		.boxcontent-title {
+			a {
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.boxcontent {
+	    overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+		background-color: var(--mb2-pb-bxbgcolor);
+		border: solid var(--mb2-pb-bxborder) var(--mb2-pb-bxbocolor);	
+	}
+
+	.boxcontent-title {
+		color: var(--mb2-pb-bxtcolor);
+	}
+
+	.boxcontent-desc {
+		color: var(--mb2-pb-bxtxcolor);
+	}
+
+	.elcolor-el,
+	.elcolor1,
+	.elcolor2 {
+		position: absolute;
+	}
+
+	.elcolor-el {
+		display: none;
+	}
+
+	&.paddingm {
+		.boxcontent {
+			padding: 1.6rem;
+		}
+	}
+
+	&.paddingl {
+		.boxcontent {
+			padding: 2.4rem;
+		}
+	}
+
+	&.shadow1 {
+		.boxcontent {
+			@include mb2_box_shadow(0 20px 30px, rgb(0,0,0,.1));
+		}
+
+	}
+
+	.boxcontent-inner {
+	    position: relative;
+	    z-index: 1
+	}
+
+	.bgcolor {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--mb2-pb-bxbgcolor);
+	}
+
+	&.rounded1 {
+		.boxcontent {
+			@include mb2_border_radius(.35rem);
+
+			/* This will fix problem in safari web browser */
+		    -webkit-backface-visibility: hidden;
+		    -moz-backface-visibility: hidden;
+		    -webkit-transform: translate3d(0, 0, 0);
+		    -moz-transform: translate3d(0, 0, 0);
+		    z-index: 1;
+		}
+	}
+
+
+	/* ======================== TYPE 1 */
+
+	&.type-1 {
+		.boxcontent {
+
+			.elcolor-el {
+				left: 60%;
+			    top: 50%;
+			    margin-top: -300px;
+			    height: 600px;
+			    width: 600px;
+				display: block;
+			}
+
+			.elcolor1,
+			.elcolor2 {
+			    @include mb2_border_radius(50%);
+			    background-color: transparent !important;
+			    border: solid 30px var(--mb2-pb-bxaccolor);
+			}
+
+			.elcolor1 {
+				bottom: -50px;
+			    left: -100px;
+			    width: 350px;
+			    height: 350px;
+			}
+
+			.elcolor2 {
+				right: -300px;
+			    top: -200px;
+			    width: 650px;
+			    height: 650px;
+			}
+
+		}
+
+
+	}
+
+
+	/* ======================== TYPE 2 */
+
+	&.type-2 {
+
+		.boxcontent {
+
+			@include mb2_transition1(color, .15s);
+
+			.boxcontent-title,
+			a:not(.btn) {
+				@include mb2_transition1(color, .15s);
+			}
+
+			.elcolor-el {
+				display: block;
+				right: 0;
+				bottom: 0;
+			}
+
+			.elcolor1 {
+			    @include mb2_border_radius(50%);
+			    background-color: var(--mb2-pb-bxaccolor);
+				border-color: transparent !important;
+				width: 100px;
+    			height: 100px;
+				top: calc(100% - 50px);
+   				left: calc(100% - 50px);
+				@include mb2_transition1(all, .35s);
+			}
+
+			&:hover {
+
+				.elcolor1 {
+					@include mb2_transform_scale(12);
+				}
+
+				.boxcontent-title {
+					--mb2-pb-bxtcolor: #fff;
+				}
+			
+				.boxcontent-desc {
+					--mb2-pb-bxtxcolor: #fff;
+				}	
+				
+				
+			}
+
+		}
+
+	}
+
+
+	/* ======================== TYPE 3 */
+
+	&.type-3 {
+
+		.boxcontent {
+			top: 0;
+			border-top: solid 3px var(--mb2-pb-bxaccolor);
+			@include mb2_transition1(all, .25s);
+
+			&:hover {
+				top: -1rem;
+			}
+		}
+		
+	}
+
+	
+
+
+
+
+
+}
+
+
+
+
+/* ====================== ANNOUNCEMENTS TICKER ====================== */
+
+.mb2-pb-announcements {
+
+	--mb2-pb-ancts-h: 36px;
+	--mb2-pb-ancts-twidth: 180px;
+	--mb2-pb-ancts-bgcolor: var(--mb2-pb-accent1);
+	--mb2-pb-ancts-cbgcolor: #fff;
+	--mb2-pb-ancts-ccolor: var(--mb2-pb-textcolor);
+
+	background-color: var(--mb2-pb-ancts-cbgcolor);
+
+	&.border1 {
+		border: solid 2px var(--mb2-pb-ancts-bgcolor);
+	}
+
+	&.rounded1 {
+		border-radius: var(--mb2-pb-ancts-h);
+		.mb2-pb-announcements-title {
+			margin-left: -1px;
+		}
+	}
+
+	.mb2-pb-content-inner {
+		display: flex;
+    	flex-flow: row;
+		height: var(--mb2-pb-ancts-h);
+
+		> div {			
+			line-height: 1.1;
+		}
+	}	
+
+	.swiper {
+		padding: 0 1rem;
+	}
+
+	.swiper-wrapper,
+	.swiper-slide {
+		height: var(--mb2-pb-ancts-h) !important;
+	}
+
+	.swiper-slide {
+		display: flex;
+    	flex-flow: column;
+    	justify-content:center;
+	}	
+
+
+	@media only screen and (min-width: $wsmalldevice){
+		&.icon1 {
+			.title-text {
+				@include mb2_sronly();
+			}
+		}
+		
+		&.icon0 .title-icon {
+			display: none;
+		}
+	}
+
+
+	@media only screen and (max-width: $wsmalldevice){
+
+		.title-text {
+			@include mb2_sronly();
+		}
+
+		.title-icon {
+			display: inline-flex;			
+		}
+	}
+
+	.title-icon {
+		font-size: 1.35rem;
+	}
+
+
+	/* ====================== NAVIGATION */
+
+	button.swiper-button-nav {
+		width: 13px;
+		height: 20px;
+		margin: 0 1px;
+		left: auto;
+		right: auto;
+		top: 0;
+		position: relative;
+		display: inline-flex;
+		background-color: transparent;
+		box-shadow: none;
+
+		&::after {
+			font-size: var(--mb2-pb-fssmall);
+			color: var(--mb2-pb-ancts-ccolor);
+		}
+	}
+	
+	.theme-carousel-nav {
+		position: absolute;
+		right: 6px;
+		width: 30px;
+		height: 20px;
+		margin-top: -10px;
+		top: 50%;
+	}
+	
+
+}
+
+.mb2-pb-announcements-title {
+	
+	@media only screen and (max-width: $wsmalldevice){
+		--mb2-pb-ancts-twidth: 60px;
+	}
+
+	background-color: var(--mb2-pb-ancts-bgcolor);
+	color: #fff;
+	width: var(--mb2-pb-ancts-twidth);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	word-break: break-word;
+	font-weight: var(--mb2-pb-fwheadings);
+
+	.mb2-pb-announcements.rounded1 & {
+		border-radius: var(--mb2-pb-ancts-h);
+	}
+
+	a {
+		color: inherit !important;
+		font-weight: inherit;
+	}
+}
+
+.mb2-pb-announcements-content {
+
+	@media only screen and (max-width: $wsmalldevice){
+		--mb2-pb-ancts-twidth: 60px;
+	}
+
+	width: calc(100% - var(--mb2-pb-ancts-twidth));
+}
+
+.mb2-pb-announcements-item {
+	display: inline-block;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	margin-right: 25px;
+	color: var(--mb2-pb-ancts-ccolor) !important;
+}

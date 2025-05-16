@@ -1,0 +1,57 @@
+<XMLDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PATH="local/mb2builder/db" VERSION="20150505" COMMENT="XMLDB file for Moodle local/mb2builder" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="local_mb2builder_pages" COMMENT="Custom Items">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="pageid" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="title" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="content" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="democontent" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="modifiedby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="heading" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="footer" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />                
+                <FIELD NAME="headerstyle" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="pagecss" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="menu" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="tgsdb" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="mpage" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />             
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="local_mb2builder_layouts" COMMENT="Custom Layouts">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="name" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="content" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="modifiedby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="local_mb2builder_footers" COMMENT="Custom Footers">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="footerid" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="name" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="content" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="democontent" TYPE="text" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="modifiedby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

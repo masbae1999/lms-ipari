@@ -1,0 +1,13 @@
+
+
+.badge {
+	@include mb2_border_radius(999px);
+	font-size: var(--mb2-pb-fsxsmall) !important;
+	padding: .2rem .42rem;
+	box-shadow: none !important;
+	line-height: 1.1 !important;
+
+	&.badge-info:not(.tag_list .badge-info) {
+		background-color: $color_info;
+	}
+}

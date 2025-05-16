@@ -1,0 +1,80 @@
+
+#changenumsections {
+	@include clearfix();
+
+	.css_6wum & {
+		border-top: 0;
+	}
+
+}
+
+$tilestopheight: 36px;
+
+.format-tiles {
+
+	.progress-indic {
+	  	color: $textcolor_lighten;
+	  	font-size: $fssmall;
+	}
+
+	.course-content {
+		ul.tiles {
+			.tile {
+
+				@include mb2_box_shadow(2px 2px 6px 0, rgba(0,0,0,.15));
+
+				h3 {
+					color: var(--mb2-pb-headingscolor);
+			  	  	font-size: $fsheading4;
+				}
+			}
+
+			.tile,
+			.tile_bar {
+				 background-color: $color_gray2 !important;
+			}
+
+			.tile-top {
+				height: $tilestopheight;
+				margin-top: 8px;
+			}
+		}
+	}
+
+	.tileiconcontainer,
+	.tileiconcontainer img,
+	.tileiconcontainer .icon {
+	   	width: $tilestopheight;
+	  	height: $tilestopheight;
+	}
+
+	.tileiconcontainer {
+		.icon.fa {
+			font-size: $tilestopheight;
+		}
+	}
+
+
+	.course-content,
+	.iconpickericons,
+	.iconpickericons {
+		.icon {
+			color: var(--mb2-pb-headingscolor);
+		}
+	}
+
+
+
+	.sectiontitle {
+		h2 {
+			font-size: $fsheading4;
+			font-weight: var(--mb2-pb-fwheadings);
+			color: var(--mb2-pb-headingscolor);
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+}

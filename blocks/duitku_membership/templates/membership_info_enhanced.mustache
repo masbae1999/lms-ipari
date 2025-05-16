@@ -1,0 +1,107 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_duitku_membership/membership_info_enhanced
+    
+    Enhanced template for the duitku membership block with improved UI
+    
+    Classes required for JS:
+    * none
+    
+    Data attributes required for JS:
+    * none
+    
+    Context variables required for this template:
+    * hasmembership - boolean whether the user has active membership
+    * expirydate - string formatted expiry date
+    * daysremaining - int number of days remaining
+    * percentremaining - int percentage of membership remaining
+    * price - formatted membership price
+    * colorclass - string CSS class for color (success, warning, danger)
+    * showrenewalnotice - boolean whether to show renewal notice
+    * membershipurl - URL to the membership page
+}}
+<div class="duitku-membership-block" style="padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <div style="text-align: center; margin-bottom: 10px;">
+        <div style="background-color: #e63946; height: 5px; border-radius: 5px; margin-bottom: 15px;"></div>
+        <h5 style="color: #e63946; font-weight: bold; margin: 0;">{{#str}}annual_membership, block_duitku_membership{{/str}}</h5>
+    </div>
+    
+    {{#hasmembership}}
+        <div class="membership-active" style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; position: relative;">
+            <div class="badge badge-success" style="position: absolute; top: 10px; right: 10px;">
+                {{#str}}active, enrol_duitku{{/str}}
+            </div>
+            
+            <div style="text-align: center; margin-top: 5px;">
+                <h6 style="color: #333; margin: 0; font-weight: bold;">{{#str}}membership_role_name, block_duitku_membership{{/str}}</h6>
+                <p class="expiry-date" style="margin: 5px 0; color: #666;">
+                    <i class="fa fa-calendar"></i> {{#str}}expires_on, enrol_duitku{{/str}} <strong>{{expirydate}}</strong>
+                </p>
+            </div>
+            
+            <div class="progress" style="height: 10px; margin: 15px 0; background-color: #e9ecef; border-radius: 10px; overflow: hidden;">
+                <div class="progress-bar" style="width: {{percentremaining}}%; background-color: #e63946; border-radius: 10px;"
+                    role="progressbar" aria-valuenow="{{percentremaining}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-bottom: 15px;">
+                <span>0%</span>
+                <span><strong>{{daysremaining}} {{#str}}days_remaining, enrol_duitku{{/str}}</strong></span>
+                <span>100%</span>
+            </div>
+            
+            {{#showrenewalnotice}}
+                <div class="alert alert-warning" style="margin: 10px 0; padding: 8px; border-radius: 5px; font-size: 0.85rem;">
+                    <i class="fa fa-exclamation-triangle"></i> {{#str}}renewal_notice, enrol_duitku{{/str}}
+                </div>
+            {{/showrenewalnotice}}
+            
+            <div class="text-center mt-3">
+                <a href="{{membershipurl}}" class="btn btn-block" 
+                   style="background-color: #e63946; color: white; border-radius: 5px; padding: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
+                    {{#str}}renew_now, block_duitku_membership{{/str}}
+                </a>
+            </div>
+        </div>
+    {{/hasmembership}}
+    
+    {{^hasmembership}}
+        <div class="membership-inactive" style="background-color: #f8f9fa; border-radius: 8px; padding: 15px;">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <div class="badge badge-danger" style="margin-bottom: 10px;">{{#str}}not_subscribed, block_duitku_membership{{/str}}</div>
+                <p style="margin: 15px 0; color: #666;">
+                    {{#str}}membership_benefits_brief, block_duitku_membership{{/str}}
+                </p>
+                <h5 style="color: #e63946; font-weight: bold;">Rp {{price}}</h5>
+                <p style="font-size: 0.8rem; color: #666;">{{#str}}per_year, block_duitku_membership{{/str}}</p>
+            </div>
+            
+            <div class="text-center">
+                <a href="{{membershipurl}}" class="btn btn-block" 
+                   style="background-color: #e63946; color: white; border-radius: 5px; padding: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
+                    {{#str}}subscribe_now, block_duitku_membership{{/str}}
+                </a>
+            </div>
+        </div>
+    {{/hasmembership}}
+    
+    <div class="text-center" style="margin-top: 15px; font-size: 0.85rem;">
+        <a href="{{membershipurl}}" style="color: #666; text-decoration: none; display: block; padding: 5px;">
+            <i class="fa fa-info-circle"></i> {{#str}}view_benefits, block_duitku_membership{{/str}}
+        </a>
+    </div>
+</div>

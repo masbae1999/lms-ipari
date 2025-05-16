@@ -1,0 +1,194 @@
+
+
+.theme-searchform-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: $fssmall;
+
+	li {
+		display: inline-block;
+		margin: 0 8px;
+	}
+
+	a {
+		@include mb2_transition1(all, .15s);
+	}
+}
+
+
+.sliding-panel {
+
+	.theme-searchform {
+		padding-top: 20px;
+		padding-bottom: 22px;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 840px;
+		text-align: center;
+		@include clearfix();
+
+		input {
+			width: 100%;
+			max-width: 220px;
+			border-color: #fff;
+
+			@media only screen and (max-width:360px){
+				&[type="text"] {
+					display: block;
+					margin: 0 auto 15px auto;
+				}
+			}
+
+		}
+
+		input,
+		button {
+			padding-top: 0;
+			padding-bottom: 0;
+			height: 34px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 5px;
+		}
+
+		button {
+			border: 0;
+			position: relative;
+			top: 0;
+			padding-left: 0;
+			padding-right: 0;
+			width: 34px;
+		}
+	}
+
+
+	.theme-searchform-links {
+		margin: 6px 0 -10px 0;
+
+		li {
+			.strong {
+				color: #fff;
+			}
+		}
+
+		a {
+			color: var(--mb2-pb-textcolorondark);
+
+			&:hover,
+			&:focus {
+				color: #fff;
+			}
+		}
+	}
+
+
+}
+
+
+
+
+.modal {
+
+	.theme-searchform {
+
+		input[type="text"] {
+			border: 0;
+			padding: 0 15px;
+			width: calc(100% - 65px);
+			height: 65px;
+			font-size: $fsheading4;
+		}
+
+		button {
+			background-color: transparent !important;
+			border: 0;
+			color: $textcolor !important;
+			padding: 0;
+			width: 65px;
+			font-size: 2rem;
+			@include mb2_box_shadow_none();
+		}
+
+	}
+
+	.theme-searchform-links {
+		padding: 8px 7px;
+		position: absolute;
+		background-color: var(--mb2-pb-accent1);
+		left: 3%;
+		right: 3%;
+		top: 100%;
+		@include mb2_border_radius(0 0 .185rem .185rem);
+		text-align: center;
+		color: #fff;
+
+		a {
+			color: rgba(255,255,255,.75);
+
+			&:hover,
+			&:focus {
+				color: #fff;
+			}
+		}
+	}
+
+}
+
+
+
+
+/* Form search in mobile menu */
+
+.menu-searchcontainer {
+
+	.form-inner {
+	    width: 380px;
+	    margin: 0 auto;
+	    max-width: 100%;
+	    @include mb2_border_radius(.15rem);
+		background-color: #fff;
+		border: solid 1px rgba(0,0,0,.1);		
+	}
+
+	form {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		height: 3rem;
+	}
+
+	input {
+		border: 0;
+		width: calc(100% - 48px);
+		height: 100%;
+		background-color: transparent;
+	}
+
+	button {
+		height: 100%;
+		width: 48px;
+		padding: 0;
+		border: 0;
+		font-size: 1.45rem;
+		background-color: transparent !important;
+		color: $textcolor !important;
+		@include mb2_box_shadow_none();
+	}
+
+	.theme-searchform-links {
+		text-align: center;
+		margin-top: .9rem;
+		line-height: 1.4;
+	}
+
+}
+
+
+.menu-logincontainer {
+	.form-inner {
+		max-width: 380px;
+		margin: 0 auto;
+	}
+}
+

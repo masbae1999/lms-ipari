@@ -1,0 +1,370 @@
+
+#page-header {
+	
+	background-color: var(--mb2-pb-pheadergrad1);
+	background-image: linear-gradient(155deg, var(--mb2-pb-pheadergrad1) 3.6%, var(--mb2-pb-pheadergrad2) 100.2%);
+	position: relative;
+
+	> .inner {
+		padding: var(--mb2-pb-hspace) 0;
+
+		@media only screen and (max-width: $wdmediumdevice){
+			padding: 1.45rem 0;
+		}
+		
+	}
+	
+
+	.tpheader_light & {
+		background-color: $headerlbgcolor;
+		--mb2-pb-pheadergrad1: var(--mb2-pb-headerlbgcolor);
+		--mb2-pb-pheadergrad2: var(--mb2-pb-headerlbgcolor2);
+	}
+
+	&.nobg:before {
+		content: '';
+	    display: block;
+	    position: absolute;
+		bottom: 0;
+		height: 100%;
+		background-repeat: no-repeat;		
+		background-size: 100%;
+		background-position: 50% 100%;
+	}
+
+	.tpheader_wave &.nobg:before {		
+	    left: 0;	   
+	    width: 100%;	    
+		background-image: url([[pix:theme|wave-bg]]);		
+
+		@media only screen and (max-width: $wdmediumdevice){
+			background-size: 170%;
+		}
+	}
+	
+	
+	.tpheaderl_modern & {
+		color: #fff;
+	}
+
+
+	.page-heading {
+
+		h1 {
+			margin: 0;
+			font-weight: var(--mb2-pb-fwheadings);
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+
+	.tpheader_dark & {
+		.page-heading {
+
+			h1 {
+				color: #fff;
+			}
+		}
+	}
+
+	.pagelayout-frontpage & {
+		@include sr-only();
+	}
+
+	.action-menu {
+
+		margin: 0;
+		position: relative;
+		display: inline-block !important;
+
+		.dropdown-toggle {
+			margin: 0;
+			vertical-align: middle;
+			@include mb2_border_radius(.15rem);
+			@include mb2_box_shadow_none();
+			color: #fff!important;
+
+			i {
+				font-size: 1rem;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	.tpheader_light & {
+		.action-menu {
+
+			.dropdown-toggle {
+				color: var(--mb2-pb-headingscolor) !important;
+			}
+		}		
+	}
+
+	.tpheader_wave.tpheader_light & {
+		&.nobg:before {
+			background-image: url([[pix:theme|wave-bg-black]]);
+		}
+	}
+
+	#region-main-settings-menu {
+		display: inline-block;
+		width: auto;
+		float: none;
+	}
+	
+
+}
+
+
+.page-header-img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: .15;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.page-header-right {
+
+	text-align: right;
+
+	.singlebutton {
+		margin: 0;
+	}
+
+	button,
+	input[type="submit"],
+	input[type="button"],
+	button[type="submit"],
+	input[type="button"] {
+		margin: 0 0 0 10px;
+	}
+
+	.simplesearchform,
+	.forumsearch {
+
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 5px;
+
+		button,
+		input[type="submit"],
+		input[type="button"],
+		button[type="submit"],
+		input[type="button"] {
+			margin: 0;
+			border-color: $color_gray3;
+			background-color: $color_gray3;
+			color: inherit;
+		}
+
+		[type="text"] {
+			margin-right: 0;
+			@include mb2_border_radius(.15rem 0 0 .15rem);
+		}
+
+		.text-info {
+			position: relative;
+			top: .3rem;
+		}
+
+		.tpheader_dark & {
+
+			[type="text"] {
+				border-color: #fff;
+			}
+		}
+	}
+
+	#coursesearchnavbar {
+		display: none;
+	}
+
+
+	.panel-link .panel-icon,
+	.theme-turnediting {
+		display: inline-block;
+		cursor: pointer;
+		color: #fff;
+
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+
+		.text {
+			margin-right: .35rem;
+		}
+	}
+
+	.tpheader_light & {
+
+		.panel-link .panel-icon,
+		.theme-turnediting {
+			color: var(--mb2-pb-headingscolor);
+
+			&:hover,
+			&:focus {
+				color: var(--mb2-pb-headingscolor);
+			}
+		}
+	}
+
+	.theme-turnediting {
+		margin-left: 1rem;
+		min-width: 34px;
+
+		i {
+			display: inline-flex;
+			transform: scale(1.3);
+		}
+
+		@media only screen and (max-width: $wdmediumdevice){
+			margin: 0 .45rem;
+		}
+	}
+
+}
+
+
+.page-header-left {
+	max-width: 65%;
+}
+
+
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.page-header-right {
+
+		text-align: center;
+
+		button,
+		input[type="submit"],
+		input[type="button"],
+		button[type="submit"],
+		input[type="button"] {
+			margin: .45rem;
+		}
+	}
+
+}
+
+
+@media only screen and (max-width: $wdmediumdevice){
+	
+	.page-heading {
+		text-align: center;
+	}
+
+	.page-header-right {
+		margin-top: 7px;
+	}
+}
+
+
+
+.page-breadcrumb {
+
+	padding-bottom: .9rem;
+	
+	&.breadcrumb_classic {
+		background-color: $color_gray2;
+		padding-top: .9rem;
+	}
+	
+	.tpheader_light &.breadcrumb_classic {
+		background-color: darken($headerlbgcolor, 3%);
+	}
+
+	#region-main-settings-menu {
+		float: none;
+
+		> div {
+			position: relative;
+			margin: 0;
+		}
+
+		.dropdown-toggle {
+			line-height:1;
+			vertical-align: middle;
+			color: var(--mb2-pb-headingscolor);
+
+			i {
+				font-size: 16px;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	/* Hide serach form in Moodle 4.0 */
+	.path-admin.css_6wum &,
+	.path-user.css_6wum & {
+		.simplesearchform {
+			display: none !important;
+		}
+	}
+
+	.btn-icon {
+		@include mb2_btn_moodle_icon();
+
+		&.icon-size-3 {
+			border: solid 1px var(--mb2-pb-textcolor) !important;
+    		width: 34px !important;
+    		height: 34px !important;
+			display: inline-flex;
+    		align-items: center;
+    		justify-content: center;
+
+			i {
+				padding: 0 !important;
+				color: var(--mb2-pb-textcolor) !important;
+			}
+		}
+	}
+
+	.tpheader_dark &.breadcrumb_modern {
+		.btn-icon {
+			&.icon-size-3 {
+				border-color: #fff !important;
+
+				i {
+					color: #fff !important;
+				}
+			}
+		}
+	}
+
+	.actions > * {
+		@media only screen and (max-width: $wdmediumdevice){
+			margin-top: .5rem;
+		}
+	}
+
+
+}
+
+
+
+.singlebutton {
+	.path-mod-book & {
+		display: none;
+	}
+
+	.fsmod-wrap & {
+		margin-bottom: 1rem;
+	}
+}

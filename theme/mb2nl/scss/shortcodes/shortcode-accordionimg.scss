@@ -1,0 +1,123 @@
+
+/* ======================= LOCAL VARIABLES */
+
+.mb2-pb-accordionimg {
+	--mb2-pb-accimg-navw: 280px;
+
+	--mb2-pb-accimg-tfs: #{$fsheading4};
+	--mb2-pb-accimg-tcolor: #{$headingscolor};
+	--mb2-pb-accimg-bcolor: rgba(0,0,0,.1);
+	--mb2-pb-accimg-pluscolor: #{$textcolor_lighten};	
+	--mb2-pb-accimg-space: 2rem;
+	--mb2-pb-accimg-vspace: 1rem;
+}
+
+
+/* ======================= GENERAL STYLE TO SHOW/HIDE ITEM CONTENT */
+
+.accimg-content {
+	display: none;
+	overflow: hidden;
+}
+
+/* ======================= TITLE */
+
+.accimg-btn {
+	padding: 0;
+	text-align: inherit;
+	width: 100%;		
+}
+
+.accimg-title {	
+	color: var(--mb2-pb-accimg-tcolor);
+	font-size: var(--mb2-pb-accimg-tfs);
+}
+
+.accimg-plus {
+
+	color: var(--mb2-pb-accimg-pluscolor);
+	font-weight: var(--mb2-pb-fwlight);
+	font-size: 1.4rem;
+
+	&:before {
+		display: inline-flex;
+		content: '\002B';
+	}
+
+	.accimg-item.show & {
+		&:before {
+			content: '\2212';
+		}
+	}
+}
+
+
+/* ======================= CONTENT */
+
+.accimg-content-inner {
+	padding-top: 1rem;
+}
+
+
+
+/* ======================= PREVIEW IMAGE */
+
+.accimg-img-preview {
+	display: none;
+}
+
+.accimg-nav {
+	border-top: solid 1px var(--mb2-pb-accimg-bcolor);
+}
+
+.accimg-item {
+	border-bottom: solid 1px var(--mb2-pb-accimg-bcolor);
+	padding: var(--mb2-pb-accimg-vspace) .4rem;
+}
+
+.accimg-image {
+	text-align: center;
+	padding-top: 1.4rem;
+	
+	@media only screen and (min-width: $wdmediumdevice){
+		@include mb2_sronly();
+	}
+}
+
+.accimg-preview-inner {
+	width: 100%;
+	padding-left: var(--mb2-pb-accimg-space);
+}
+
+.accimg-preview {
+	display: none;
+
+	&.show {
+		display: inline-block;
+	}
+}
+
+
+@media only screen and (min-width: $wdmediumdevice){
+	
+	.mb2-pb-accordionimg_inner {		
+		display: flex;
+		align-items: center;		
+	}
+
+	/* ======================= FLEX LAYOUT */
+
+	.accimg-nav {
+		width: var(--mb2-pb-accimg-navw);
+		flex: 0 0 var(--mb2-pb-accimg-navw);
+	}
+
+	.accimg-img-preview {
+		display: flex;
+		width: calc(100% - var(--mb2-pb-accimg-navw));
+		flex: 0 0 calc(100% - var(--mb2-pb-accimg-navw));
+		text-align: center;
+	}
+}
+
+

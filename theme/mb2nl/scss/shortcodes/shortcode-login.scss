@@ -1,0 +1,106 @@
+
+
+.mb2-pb-login {
+
+	margin-left: auto;
+	margin-right: auto;
+
+	.form-content {
+		background-color: lighten($color_gray2, 1%);
+		padding: 20px;
+	}
+
+	.form-title {
+		background-color: darken($color_gray2, 6%);
+		padding: 15px 20px;
+	    margin: 0;
+	    text-align: center;
+	}
+
+	&.istitle0 {
+		.form-title {
+			display: none;
+		}
+	}
+
+	.form-field {
+	    position: relative;
+	    margin-bottom: 20px;
+		@include mb2_border_radius(.15rem);
+		overflow: hidden;
+
+		label {
+		    position: absolute;
+		    display: block;
+		    width: 42px;
+		    height: 42px;
+		    text-align: center;
+		    line-height: 42px;
+		    top: 50%;
+		    margin-top: -21px;
+			font-size: 1.2rem;
+			color: rgba(0,0,0,.25);
+			background-color: rgba(0,0,0,.1);
+		}
+
+		input {
+		    padding-left: 56px;
+		    width: 100%;
+		    height: 42px;
+			border: 0;
+		}
+	}
+
+	.form-button {
+		input {
+			padding: 0 15px;
+			width: 100%;
+			height:42px;
+			border: 0;
+		}
+	}
+
+	.logininfo {
+	    margin-top: 20px;
+	    font-size: $fssmall;
+
+		a {
+		     color: inherit;
+		}
+	}
+
+	.dark & {
+
+		.form-content {
+			background-color: rgba(0,0,0,.15);
+		}
+
+		.form-title {
+			background-color: rgba(0,0,0,.3);
+		}
+
+		.form-field {
+
+			input {
+				border-color: #ffff;
+			}
+		}
+
+	}
+
+
+	.form-content.loggedin {
+		text-align: center;
+
+		.user-picture {
+		    display: inline-block;
+
+			img {
+			    border-radius: 999px;
+			    @include mb2_box_shadow(0 0 0 5px, rgba(0,0,0,.03));
+			}
+		}
+	}
+
+
+}

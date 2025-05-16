@@ -1,0 +1,113 @@
+
+#page-course-index-category {
+
+	.generalbox {
+		&.info {
+			padding: 0 !important;
+			border: 0;
+			margin-bottom: 4rem;
+			@include clearfix();
+		}
+	}
+}
+
+
+
+/* Hide layout switcher if there is no courses */
+
+.course-layout-switcher {
+
+	a {
+		display: inline-block;
+		margin: 0 .3rem;
+		font-size: 1.35rem;
+		color: $accent1;
+
+		&.active {
+			color: inherit;
+			opacity: .2;
+			cursor: not-allowed;
+		}
+	}
+}
+
+
+.categorypicker {
+
+	@include clearfix();
+	text-align: inherit !important;
+	@include mb2_element_header();
+	padding: .4rem 1rem;
+
+	#page-course-index-category & {
+		margin-top: 0;
+		margin-bottom: 2.5rem;
+	}
+
+}
+
+
+.cshortname {
+    display: block;
+    opacity: .5;
+    font-size: .75em;
+    line-height: 1;
+}
+
+
+
+@media only screen and (max-width: $wsmalldevice){
+
+	.categorypicker {
+
+		text-align: center !important;
+
+		.course-layout-switcher {
+			float: none;
+			margin: .5rem 0 0 0;
+			top: 0;
+		}
+
+	}
+}
+
+
+
+/* =================== HIDE BLOCKS WHEN COURSE FILTER IS ENABLED */
+
+.pagelayout-coursecategory {
+
+	&.coursegrid1.noediting {
+		.sidebar-col {
+			.block-region {
+				@include mb2_sronly();
+			}
+		}
+	}
+}
+
+
+
+/* =================== HIDE CATEGRORY SELECT IN MOODLE 4 */
+
+.path-course-index.coursegrid1 {
+	.tertiary-navigation {
+		.navitem:not(.dropdown) {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.path-course-index {
+		.sidebar-col {
+			order: 1 !important;
+		}
+
+		.content-col {
+			order: 2 !important;
+		}
+	}
+}
+

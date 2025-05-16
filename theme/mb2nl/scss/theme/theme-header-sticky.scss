@@ -1,0 +1,110 @@
+
+
+@media only screen and (max-width: $wdmediumdevice){
+	/* ======================= REMOVE STICKY HEADER FEATURE ON MOBILE */
+
+	.sticky-replace-el {
+		display: none;
+	}
+
+}
+
+
+
+
+@media only screen and (min-width: $wdmediumdevice + 1){
+
+	.hnavpos2 {
+		.sticky-el {
+			.hnav2-wrap {
+				margin: 0;
+				height: 100%;
+			}
+		}
+	}
+	
+
+	#master-header {
+
+		@include mb2_transition1(top, .5s);
+
+		&.sticky-el {
+
+			.flexcols {
+				height: $logohsm + 15px;
+			}
+
+			position: fixed;
+		  	width: 100%;
+		  	left: 0;
+		  	top: -500px;
+
+			.logo-wrap {
+				margin-right: 24px;
+			}
+
+			.master-header-inner {
+				background-color: #fff;
+				@include mb2_box_shadow(0 3px 5px, rgba(0,0,0,.15));
+			}
+
+			.hnav2-tools {
+				display: none !important;
+			}
+
+		}
+
+		.theme-lfx & {
+			&.sticky-el {
+
+				.master-header-inner {
+					width: $pagewidth;
+					max-width: 100%;				
+					margin: 0 auto;
+				}
+			}
+		}
+
+		&.sticky-el-jump {
+			top: 0;
+		}
+
+	}
+
+
+	#main-navigation {
+
+		@include mb2_transition1(top, .5s);
+
+		&.sticky-el {
+			position: fixed;
+		  	width: 100%;
+		  	left: 0;
+		  	top: -500px;
+
+			.main-navigation-inner {
+				@include mb2_box_shadow(0 3px 5px, rgba(0,0,0,.15));
+			}
+		}
+
+		&.sticky-el-jump {
+			top: 0;
+		}
+
+		.theme-lfx & {
+
+			&.sticky-el {
+				.main-navigation-inner {
+					width: $pagewidth;
+					max-width: 100%;					
+					margin: 0 auto;
+				}
+			}
+
+
+		}
+
+	}
+
+
+}

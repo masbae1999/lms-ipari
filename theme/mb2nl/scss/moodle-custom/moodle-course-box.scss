@@ -1,0 +1,162 @@
+
+/* ================= GENERAL STYLE */
+
+.coursebox {
+
+	--mb2-catcolor0: rgba(0,0,0,.1);
+
+	background-color: $color_gray2;
+
+	&.course-hidden {
+		opacity: .5;
+	}
+
+	.subcategories +.courses & {
+		&.noinfobox {
+			&:first-child {
+				margin-top: 3.5rem;
+			}
+		}
+	}
+
+	&.noinfobox {
+		padding: 0 !important;
+        background-color: transparent;
+        border: 0 !important;
+		margin-bottom: 4rem !important;
+	}
+
+	/* ================= CATEGORY COLOR ELEMENT */
+
+	&.isinfobox:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 2px;
+		top: 0;
+		height: 100%;
+		width: 2px;
+		background-color: var(--mb2-catcolor0);
+	}
+
+	.course-media {
+		img {
+			border-radius: .15rem;
+		}
+	}
+
+	&.objfit {
+		.course-media {
+			img {
+				object-fit: cover;
+    			aspect-ratio: 1.65;
+			}
+		}
+	}
+
+	.content-inner {
+		
+		gap: 2rem;
+
+
+		@media only screen and (max-width: $wdmediumdevice){
+			flex-flow: column;
+		}
+
+		
+		@media only screen and (min-width: $wdmediumdevice + 1){
+			
+			.course-content {
+				max-width: calc(60% - 1rem);
+				flex: 0 0 calc(60% - 1rem);
+			}
+	
+			.course-media {
+				max-width: calc(40% - 1rem);
+				flex: 0 0 calc(40% - 1rem);
+			}
+		}
+
+		
+
+		.summary,
+		.coursecat,
+		.teachers,
+		.courseimage,
+		.coursefile {
+			float: none;
+		}
+
+		.summary {
+			margin: 0;
+			width: 100%;
+		}
+
+		.coursename {
+			font-size: $fsheading4;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		.enrolmenticons {
+			display: inline-block;
+			background-color: rgba(0,0,0,.08);
+			color: rgba(0,0,0,.35);
+			padding: 0 0 0 .5rem;
+			margin-bottom: 1rem;
+			@include mb2_border_radius(.15rem);
+		}
+
+		.teachers,
+		.coursecat {
+			margin: 1rem .6rem .3rem 0 !important;
+			text-align: left;
+			font-size: $fssmall;
+			padding: 0 .45rem;
+			background-color: $color_box_bg;
+			border: solid 1px lighten($color_border,3%);
+			@include mb2_border_radius(.15rem);
+			display: inline-block;
+			width: auto;
+
+			a {
+				color: inherit;
+
+				&:hover,
+				&:focus {
+					color: $linkcolor;
+				}
+			}
+
+		}
+
+		.course-readmore {
+			margin-top: 1.2rem;
+		}
+
+	}
+
+	&.isinfobox {
+		.course-content {
+			.enrolmenticons {
+				display: none;
+			}
+		}
+
+	}
+
+
+}
+
+
+/* Moodle 4.3 */
+
+.course-section {
+	.summarytext {
+		img {
+			border-radius: 0;
+		}
+	}
+}

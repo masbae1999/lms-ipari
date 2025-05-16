@@ -1,0 +1,177 @@
+
+@mixin mb2_collabsible_item_icon() {
+    $icon_size: 2.1rem;
+
+    &:before {
+        @include mb2_font_bootstrapicons();
+        
+        position: absolute;
+        display: inline-flex !important;
+        width: $icon_size;
+        flex: 0 0 $icon_size;
+        height: $icon_size;
+        right: .45rem;
+        top: 50%;
+        margin-top: ($icon_size/2) * -1;
+        justify-content: center;
+        align-items: center;
+        color: $textcolor;
+        font-size: 1.4rem;
+        font-weight: var(--mb2-pb-fwlight);
+        cursor: pointer;
+    }
+
+}
+
+
+@mixin mb2_collabsible_item() {
+    margin-left: 0;
+    border: 0;
+    margin-bottom: .8rem;
+
+    legend,
+    .categoryname,
+    [data-toggle="collapse"] {
+
+        margin: 0 !important;
+        font-size: inherit;
+        position: relative;
+        font-weight: var(--mb2-pb-fwheadings) !important;
+        padding: .7rem 1rem !important;
+        background-color: lighten($color_gray3, 2%);
+        line-height: inherit;
+        @include mb2_transition1(all, .15s);
+		@include mb2_border_radius(.15rem);
+		border: 0;
+
+        > button,
+        > a {
+            color: inherit;
+        }
+
+    }
+
+   
+    /* ======================= STYLE FOR MOODLE SETTINGS COLLAPSIBLE ITEM */
+
+    legend {
+
+        &.sr-only {
+            padding: 0 !important;
+            border: 0;
+            background-color: transparent !important;
+        }
+
+        > a {
+
+            &.fheader {
+                padding: 0 !important;
+                margin-left: 0;
+                display: block;
+                position: relative;
+                background-image: none !important;
+                @include mb2_collabsible_item_icon();
+
+                &:before {
+                    right: 0;
+                    text-indent: 1px;
+                    line-height: 22px !important;
+                }
+            }
+
+            &.btn {
+                position: absolute;
+                right: 3rem;
+                top: .6rem;
+            }
+        }
+
+
+    }
+
+    &.collapsed {
+        legend {
+            > a {
+                &.fheader {
+                    &:before {
+                        content: '\0002b';
+                    }
+                }
+            }
+
+            background-color: lighten($color_gray3,2.8%);
+
+        }
+    }
+
+    /* ======================= STYLE FOR COURSE CATEGORIES TREE */
+
+    .categoryname {
+
+        --mb2-catcolor0: rgba(0,0,0,.1);
+
+        padding: .7rem 2.45rem !important;
+        background-image: none !important;
+        @include mb2_collabsible_item_icon();
+
+    
+        .categoryname {
+            margin-top: .8rem !important;
+        }
+
+        > .spinner {
+            opacity: .25;
+            margin-left: .4rem;
+            animation: mb2spinn 2s infinite linear;
+
+            @keyframes mb2spinn {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(359deg);
+                }
+            }
+        }
+
+
+        /* ================= CATEGORY COLOR ELEMENT */
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: calc(1.225rem - 5px);
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            margin-top: -5px;
+            border-radius: 50%;
+            background-color: var(--mb2-catcolor0);
+        }
+
+    }
+
+    &.with_children {
+        > div > .categoryname {
+            &:before {
+                content: '\f286';
+            }            
+        }
+    }
+
+    &.with_children.collapsed {
+        > div > .categoryname {
+            &:before {
+                content: '\f282';
+            }
+        }
+    }
+
+    /* ======================= STYLE FOR COLLAPSIBLE CONTENT CONTAINER */
+
+    .fcontainer {
+        padding: 1.25rem 1rem;
+    }
+
+}

@@ -1,0 +1,229 @@
+
+.dir-rtl .course-popover,
+.course-popover {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 320px;
+	margin-top: -30px;
+	z-index: 1;
+
+	&.arrtop {
+		margin-top: 0;
+	}
+
+	&.open {
+		display: block;
+	}
+
+	&.arrleft {
+		padding-left: 24px;
+	}
+
+	&.arrright {
+		padding-right: 24px;
+	}
+
+	&.arrtop {
+		padding-top: 24px;
+	}
+}
+
+.course-popover-inner {
+	position: relative;
+	min-height: 250px;
+	background-color: #fff;
+	border: solid 1px rgba(0,0,0,.15);
+	padding: 20px 20px 27px 20px;
+	@include mb2_box_shadow(0 2px 6px, rgba(0,0,0,.18));
+
+	.span1 {
+		opacity: 0;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(255,255,255,.95);
+		@include mb2_transition1(opacity, .25s);
+		z-index: 1;
+	}
+
+	.span2 {
+		display: none;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: 50%;
+		left: 50%;
+		margin-left: -20px;
+		margin-top: -20px;
+		background-image: var(--mb2-pb-spinner);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 2;
+	}
+
+	&.loading {
+		.span1 {
+			opacity: 2;
+			top: 0;
+		}
+
+		.span2 {
+			display: block;
+		}
+
+	}
+}
+
+
+.popover-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: solid 20px rgba(255,255,255,0);
+
+	.arrleft &,
+	.arrright & {
+		top: 50px;
+		border-bottom-color:rgba(0,0,0,.15);
+
+		&:before {
+			border-bottom-color: #fff;
+			top: -21px;
+		}
+
+		&:after {
+			top:-12px;
+		}
+	}
+
+	&:before,
+	&:after {
+		content: '';
+    	display: block;
+    	position: absolute;
+    	border: solid 20px rgba(255,255,255,0);
+	}
+
+	&:after {
+		background-color: #fff;
+	}
+
+	.dir-rtl .arrleft &,
+	.arrleft & {
+		left: 7px;
+		@include mb2_transform_rotate2(20deg);
+
+		&:before {
+		    left: -18px;
+		}
+
+		&:after {
+			top:-12px;
+		    left: 2px;
+			@include mb2_transform_rotate2(-20deg);
+		}
+	}
+
+	.dir-rtl .arrright &,
+	.arrright & {
+		@include mb2_transform_rotate2(-20deg);
+       	right: 7px;
+
+		&:before {
+		    right: -18px;
+		}
+
+		&:after {
+		    right: 2px;
+			@include mb2_transform_rotate2(20deg);
+		}
+	}
+
+
+	.dir-rtl .arrtop &,
+	.arrtop & {
+		top: 12px;
+    	left: 50%;
+    	margin-left: -40px;
+		border-right-color:rgba(0,0,0,.15);
+		@include mb2_transform_rotate2(-20deg);
+
+		&:before {
+		     border-right-color:#fff;
+			 top: -18px;
+		     right: -19px;
+		}
+
+		&:after {
+			top:-4px;
+			right: -24px;
+			@include mb2_transform_rotate2(20deg);
+		}
+	}
+}
+
+
+/* ======================= QUICK VIEW COURSE STYE */
+
+.course-quick {
+	position: relative;
+	z-index: 1;
+
+	.course-quick-title {
+		margin: 0;
+	}
+
+	.course-quick-meta {
+		margin-top: 0.45rem;
+    	font-size: $fssmall;
+
+		.course-cbadges {
+			//padding: 4px 8px;
+			margin-right: .8rem;
+		}
+
+		.course-date {
+			display: inline-block;
+			color: $accent1;
+
+			.date-label {
+				font-weight: $fwbold;
+			}
+		}
+	}
+
+	.course-quick-content {
+	  margin-top: 1rem;
+	}
+
+
+	.course-quick-skills {
+
+		margin-top: 1rem;
+
+		.theme-listicon {
+			--mb2-pb-listicon-isize: 2.5rem;
+		}
+
+		.iconel {
+			color: $color_success;
+		}
+
+	}
+
+	.course-quick-footer {
+	  	margin-top: 1.1rem;
+	  	text-align: center;
+
+		.btn {
+			width: 100%;
+			padding-top: .65rem;
+			padding-bottom: .65rem;
+		}
+	}
+
+}

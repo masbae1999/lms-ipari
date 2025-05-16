@@ -1,0 +1,74 @@
+
+
+
+// ==================== TAG BLOG PAGE
+
+.tag-management-box {
+    .inline-list {
+        font-size: $fssmall;
+
+        a {
+            color: $textcolor;
+        }
+    }
+}
+
+
+.path-tag {
+    .tag-index-items {
+        .tagarea {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+
+            h3 {
+                color: var(--mb2-pb-headingscolor);
+                text-transform: none;
+                font-weight: var(--mb2-pb-fwheadings);
+                font-size: 1.2rem;
+                border: 0;
+                padding: 0;
+            }
+
+            .media-list {
+                padding: 0;
+
+                li {
+                    padding: .8rem 0;
+                }
+
+                .media-heading {
+                    font-weight: var(--mb2-pb-fwheadings);
+
+                    a {
+                        color: var(--mb2-pb-headingscolor);
+                    }
+                }
+
+                .itemimage {
+                    .userpicture {
+                        margin: 0;
+                        @include mb2_border_radius(50%);
+                    }
+
+                     a {
+                         color: $textcolor !important;
+                     }
+                }
+
+                .muted {
+                    font-size: $fssmall;
+                    color: $textcolor_lighten;
+
+                    a {
+                        color: inherit;
+
+                        &:hover,
+                        &:focus {
+                            color: $textcolor
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

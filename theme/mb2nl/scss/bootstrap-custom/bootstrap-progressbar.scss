@@ -1,0 +1,10 @@
+
+
+.progress {
+	border: 0 !important;
+	background-color: lighten($color_gray1, 8%) !important;
+}
+
+.progress-bar {
+	background-color: $color_success;
+}

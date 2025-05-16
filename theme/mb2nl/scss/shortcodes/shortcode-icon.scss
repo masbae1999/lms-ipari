@@ -1,0 +1,130 @@
+.icon-size-s {
+	i {
+		font-size: 15px;
+	}
+}
+
+.icon-size-l {
+	i {
+		font-size: 28px;
+	}
+}
+
+.icon-size-xl {
+	i {
+		font-size: 48px;
+	}
+}
+
+
+
+/*  New icon style */
+
+.icon-bg {
+
+    display: inline-block;
+	vertical-align: middle;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+
+	.circle1 & {
+		@include mb2_border_radius(999px);
+	}
+
+	i {
+		line-height: inherit;
+		font-size: 1.18rem;
+	}
+
+	.sizel & {
+
+		width: 64px;
+	    height: 64px;
+	    line-height: 64px;
+
+		i {
+			font-size: 38px;
+			text-indent: 2px;
+		}
+	}
+
+	.sizexl & {
+
+		width: 76px;
+	    height: 76px;
+	    line-height: 76px;
+
+		i {
+			font-size: 46px;
+			text-indent: 2px;
+		}
+	}
+
+	.sizexxl & {
+
+		width: 114px;
+	    height: 114px;
+	    line-height: 114px;
+
+		i {
+			font-size: 72px;
+			text-indent: 2px;
+		}
+	}
+
+}
+
+.icon-desc {
+
+	display: inline-block;
+	vertical-align: middle;
+
+	.desc0 & {
+		display: none;
+	}
+
+	margin-left: 3px;
+}
+
+.tmpl-icon-bg {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	@include mb2_border_radius(999px);
+
+	.icon-size-l & {
+		width: 48px;
+		height: 48px;
+		line-height: 48px;
+	}
+
+	.icon-size-xl & {
+		width: 76px;
+		height: 76px;
+		line-height: 76px;
+	}
+
+	i {
+		line-height: inherit;
+	}
+}
+
+
+
+.tmpl-icon-wrap {
+	color: var(--mb2-pb-headingscolor);
+
+	.dark &,
+	.dark1 & {
+		color: var(--mb2-pb-textcolorondark);
+	}
+
+	.tmpl-icon-content {
+		font-weight: var(--mb2-pb-fwmedium);
+		margin: 0 .3rem;
+	}
+}

@@ -1,0 +1,32 @@
+
+#page-content {
+	.modified {
+		font-size: $fssmall;
+		color: $textcolor_lighten;
+	}
+}
+
+.path-mod {
+	.activity-header {
+		// &:not(:empty) {
+		// 	padding-top: 1rem;
+		// 	padding-bottom: 1rem;
+		// }
+
+		p {
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		> div {
+			width: 100%;
+		}
+	}
+
+	.activity-description {
+		padding-top: 1rem;
+    	padding-bottom: 1rem;
+		font-size: var(--mb2-pb-fssmall);
+	}
+}

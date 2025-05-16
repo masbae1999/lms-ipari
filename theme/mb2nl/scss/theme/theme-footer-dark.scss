@@ -1,0 +1,57 @@
+
+
+#bottom,
+#bottom-abcd {
+	background-color: $accent2;
+}
+
+#bottom {
+	background-image: url([[pix:theme|svg/strip1_white8]]);
+	border-bottom: solid 1px rgba(255,255,255,.08);
+}
+
+.partners {
+	background-color: darken($accent2, 1.5%);
+}
+
+.theme-footer {
+	background-color: darken($accent2, 3%);
+
+	.usertour {
+		a {
+			color: var(--mb2-pb-textcolorondark);
+
+			&:hover,
+			&:focus {
+				color: $linkcolor;
+			}
+		}
+	}
+
+	.lang-list {
+		a {
+			&:hover,
+			&:focus {
+				color: $linkcolor;
+			}
+		}
+
+		
+	}
+
+
+
+.footer-tools {
+	border-top: solid 1px rgba(255,255,255,.08);
+
+	a {
+		color: var(--mb2-pb-textcolorondark);
+
+		&:hover,
+		&:focus {
+			color: $linkcolor;
+		}
+	}
+}
+
+}

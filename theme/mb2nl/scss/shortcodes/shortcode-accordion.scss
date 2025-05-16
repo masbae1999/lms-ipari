@@ -1,0 +1,348 @@
+
+
+/* ======================= REMOVE BOOTSTRAP CARD STYLE */
+
+.accordion > .card {
+	overflow: visible;
+
+	.card-header {
+		margin-bottom: 0;
+	}
+}
+
+
+
+/* ======================= SHORTCODE ACCORDION STYLE */
+
+.mb2-accordion {
+
+	/* ======================= LOCAL VARIABLES */
+
+	--mb2-pb-acc-hbgcolor: #f4f4f4;
+	--mb2-pb-acc-hbghcolor: #f0f0f0;
+	--mb2-pb-acc-cbgcolor: transparent;
+	--mb2-pb-acc-iconcolor: inherit;
+	--mb2-pb-acc-iconhcolor: inherit;
+	--mb2-pb-acc-bordercolor: rgba(0,0,0,.1);
+
+	/* ======================= */
+
+	.card-header {
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+	}
+
+	.card {
+		margin-bottom: .5rem;
+		background-color: transparent;
+		border-radius: 0;
+	}
+
+	.card-body {
+		border: 0;
+		padding-top: 1.3rem;
+		padding-bottom: 1.3rem;
+		padding-left: 0;
+		padding-right: 0;
+		background-color: transparent;
+	}
+
+	&.padding1 {
+		.card-body {
+			padding-left: 1.3rem;
+			padding-right: 1.3rem;
+		}
+	}
+
+	margin-bottom: 1.3rem;
+
+	.panel-title {
+		margin: 0;
+	}
+
+	.accorion-item {
+		margin-bottom: .8rem;
+	}
+
+
+	/* ======================= CORE STYLE */
+
+	[data-toggle="collapse"] {
+		width: 100%;
+		text-align: inherit;
+		padding: .65rem 1.3rem;
+		position: relative;
+		font-size: 1rem;
+
+		&.themereset {
+			@include mb2_transition1(background-color, .15s);
+		}
+
+		// Hover/active status
+		color: var(--mb2-pb-acc-thcolor);
+
+		i {
+			color: var(--mb2-pb-acc-iconhcolor);
+			font-size: 1.52em;
+    		margin-right: 0.4em;
+    		vertical-align: middle;
+			width: 1.54em;
+			text-align: center;
+		}
+
+		// Normal status
+		&.collapsed {
+			color: var(--mb2-pb-acc-tcolor);
+
+			i {
+				color: var(--mb2-pb-acc-iconcolor);
+			}
+		}
+
+		&:hover {
+			color: var(--mb2-pb-acc-thcolor);
+
+			i {
+				color: var(--mb2-pb-acc-iconhcolor);
+			}
+		}
+
+		/* ======================= CLOSE/OPEN SHAPE */
+
+		&:before {
+			content: '\2212';
+			display: block;
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			top: 50%;
+			margin-top: -12px;
+			right: .65rem;
+			text-align: center;
+			line-height: 24px;
+			font-size: 1.52em;
+			//font-weight: normal !important;
+		}
+
+		// Normal status
+		&.collapsed {
+			&:before {
+				content: '\002B';
+			}
+		}
+
+		/* ======================= ARROW SHAPE */
+
+		&.arrows:before {
+            @include mb2_font_fa();
+            content: '\f107';
+			line-height: 24px;
+			font-size: 1.7rem;
+        }
+
+		&.arrows.collapsed {
+			&:before {
+				content: '\f105';
+			}
+		}
+
+	}
+
+
+	.dir-rtl & {
+
+		[data-toggle="collapse"] {
+			&.arrows.collapsed:before {
+				content: '\f104';
+			}
+		}
+
+	}
+
+
+
+	/* ======================= DEFAULT STYLE */
+
+	&.style-default {
+		[data-toggle="collapse"] {
+
+			// Hover/active status
+			background-color: var(--mb2-pb-acc-hbghcolor);
+
+
+			// Normal status
+			&.collapsed {
+				background-color: var(--mb2-pb-acc-hbgcolor);
+			}
+
+			&:hover {
+				background-color: var(--mb2-pb-acc-hbghcolor);
+			}
+		}
+
+		.card-body {
+			background-color: var(--mb2-pb-acc-cbgcolor);
+		}
+
+		&.rounded1 {
+			[data-toggle="collapse"] {
+				border-radius: .35rem;
+			}
+
+			.card-body {
+				margin-top: -.35rem;
+				border-radius: 0 0 .35rem .35rem;
+
+				.inner {
+					padding-top: .35rem;
+				}
+			}
+		}
+	}
+
+
+	/* ======================= SIZE - MEDIUM */
+
+	&.sizem {
+
+		[data-toggle="collapse"] {
+			padding: 1.22rem 1.3rem;
+		}
+
+		.card-body {
+			padding-top: 1.3rem;
+			padding-bottom: 1.3rem;
+		}
+
+	}
+
+	/* ======================= SIZE - LARGE */
+
+	&.sizel {
+
+		[data-toggle="collapse"] {
+			padding: 2.2rem 1.5rem;
+		}
+
+		.card-body {
+			padding-top: 2.2rem;
+			padding-bottom: 2.2rem;
+		}
+
+		&.padding1 {
+			.card-body {
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+		}
+	}
+
+
+	/* ======================= MINIMAL STYLE */
+
+	&.style-minimal {
+
+		[data-toggle="collapse"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.card {
+			border-bottom: solid 1px rgba(0,0,0,.1) !important;
+			margin-bottom: 0;
+		}
+	}
+
+
+
+
+	/* ======================= MINIMAL STYLE ON DARK BACKGROUND */
+
+	.dark & {
+		&.style-minimal {
+			[data-toggle="collapse"] {
+				color: #fff;
+
+
+				&:before {
+					color: rgba(255,255,255,.6);
+				}
+
+				&:hover,
+				&:focus {
+					&:before {
+						color: #fff;
+					}
+				}
+			}
+
+			.card {
+				border-color: rgba(255,255,255,.2) !important;
+			}
+		}
+	}
+
+	/* ======================= BORDERED STYLE */
+
+	&.style-bordered {
+
+		border: solid 1px var(--mb2-pb-acc-bordercolor);
+	   	border-top: 0;
+	   	border-radius: .22rem;
+
+		[data-toggle="collapse"] {
+
+			// Hover/active status
+			background-color: lighten($color_gray2, 1.5%);
+			font-weight: $fwbold;
+			padding-right: 2rem;
+
+
+			// Normal status
+			&.collapsed {
+				//background-color: transparent;
+			}
+
+		}
+
+		.card,
+		.card-body {
+			border-top: solid 1px var(--mb2-pb-acc-bordercolor) !important;
+		    margin-bottom: 0;
+		}
+
+		.card-body {
+			padding: 1.3rem;
+		}
+
+		.card {
+			&:first-child {
+				border-radius: .22rem .22rem 0 0;
+
+				[data-toggle="collapse"] {
+					border-radius: .22rem .22rem 0 0;
+				}
+			}
+
+			&:last-child {
+				[data-toggle="collapse"] {
+					&.collapsed {
+						border-radius: 0 0 .22rem .22rem;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+
+.card-header {
+	.mb2-accordion.isicon0 & {
+		i {
+			display: none;
+		}
+	}
+}

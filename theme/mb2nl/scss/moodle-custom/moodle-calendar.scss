@@ -1,0 +1,175 @@
+
+
+.maincalendar  {
+
+	.header .btn {
+	    padding-top: .22rem;
+	    padding-bottom: .22rem;
+	}
+
+	.path-calendar & {
+
+
+		.bottom {
+			padding-top: 1.3rem;
+		}
+
+
+		.calendarmonth {
+
+			font-size: $fssmall;
+
+			th,
+			td {
+				border-color: var(--mb2-pb-bordercolor);
+				border-style: solid;
+				padding: .22rem;
+				text-align: center !important;
+
+				&.dayblank {
+					background-image: url([[pix:theme|svg/strip1_black8]]);
+				}
+
+				&.clickable {
+					@include mb2_transition1(all, .15s);
+
+					&:hover {
+						@include mb2_box_shadow(0 0 20px, rgba(0,0,0,.15));
+						background-color: #fff;
+					}
+				}
+
+				li[data-region="event-item"] {
+					padding-bottom: 0;
+
+					a {
+						color: inherit;
+						text-decoration: none !important;
+
+						.eventname {
+							font-weight: var(--mb2-pb-fwheadings);
+							color: var(--mb2-pb-headingscolor);
+						}
+
+						.badge {
+							position: relative;
+							top: -.08rem;
+						}
+					}
+				}
+
+				a[data-action="view-day-link"] {
+					color: inherit;
+					display: block;
+					@include mb2_element_header();
+					margin-bottom: .45rem;
+					font-weight: var(--mb2-pb-fwheadings);
+					color: var(--mb2-pb-headingscolor);
+					@include mb2_box_shadow_none();
+					@include mb2_border_radius_imp(0);
+				}
+			}
+		}
+	}
+
+
+	.calendarwrapper {
+
+		> .header {
+			@include mb2_element_header();
+			margin-bottom: 1.3rem;
+			padding: .4rem 1rem;
+		}
+
+		> .controls {
+			@include clearfix();
+			margin: 1.6rem auto;
+			padding: .4rem 0;
+			border-top: solid 1px var(--mb2-pb-bordercolor);
+			border-bottom: solid 1px var(--mb2-pb-bordercolor);
+
+			.calendar-controls {
+				.current {
+					margin: 0 !important;
+					font-size: $fsheading4;
+					color: var(--mb2-pb-headingscolor);
+				}
+
+				.arrow_link {
+					color: inherit;
+
+					.arrow {
+						font-size: .7rem;
+						position: relative;
+						top: -.2rem;
+					}
+				}
+			}
+
+		}
+	}
+
+	.sidebar-col & {
+		.calendarwrapper { 
+			> .controls {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+
+
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.maincalendar  {
+		.calendarwrapper {
+			> .controls {
+				.calendar-controls {
+					.current {
+						font-size: $fsgeneral;
+					}
+				}
+			}
+
+		}
+	}
+
+}
+
+
+@media only screen and (max-width: 630px){
+
+	.maincalendar  {
+		.calendarwrapper {
+
+			> .header {
+
+				text-align: center;
+
+				.btn {
+					float: none !important;
+					display: block;
+					margin: .5rem auto 0 auto;
+				}
+			}
+		}
+	}
+
+}
+
+
+.maincalendar {
+	.eventlist {
+		.card-header {
+			.mt-1 {
+				.icon {
+					position: relative;
+					top: -.2rem;
+					margin-right: .1rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+/**
+ *
+ * @package    local_mb2megamenu
+ * @copyright  2018 - 2022 Mariusz Boloz (mb2moodle.com)
+ * @license    Commercial https://themeforest.net/licenses
+ */ jQuery(document).ready(function(t){var e=t(document),n=function(){var n=function(e){var n=e.closest(".mb2megamenu-menu-import").attr("data-baseurl"),a=e.closest(".mb2megamenu-menu-import").attr("data-sesskey"),i=n+"import.php?dataid="+e.attr("data-id")+"&sesskey="+a;if(e.hasClass("importing")||e.hasClass("importdone"))return null;e.removeClass("noaction"),e.addClass("importing"),t.ajax({type:"GET",url:i,dataType:"html",beforeSend:function(){},error:function(t,e,n){},success:function(t){setTimeout(function(){e.removeClass("importing"),e.addClass("importdone"),setTimeout(function(){location.reload()},600)},1e3)}})};return{import_menu:function(){e.on("click",".mb2megamenu-import-item button",function(){n(t(this))})},import_list:function(){e.on("click",".mb2megamenu-import-header",function(){var e=t(this).closest(".mb2megamenu-menu-import");e.hasClass("active")?e.removeClass("active"):e.addClass("active")})}}};n().import_list(),n().import_menu()});

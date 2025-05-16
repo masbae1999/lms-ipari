@@ -1,0 +1,87 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_duitku_membership/membership_info
+    
+    Template for the duitku membership block to display membership status
+    
+    Classes required for JS:
+    * none
+    
+    Data attributes required for JS:
+    * none
+    
+    Context variables required for this template:
+    * hasmembership - boolean whether the user has active membership
+    * expirydate - string formatted expiry date
+    * daysremaining - int number of days remaining
+    * percentremaining - int percentage of membership remaining
+    * price - formatted membership price
+    * percentremaining - int percentage of membership period remaining
+    * colorclass - string CSS class for color (success, warning, danger)
+    * showrenewalnotice - boolean whether to show renewal notice
+    * membershipurl - URL to the membership page
+}}
+<div class="duitku-membership-block" style="padding: 10px;">
+    {{#hasmembership}}
+        <div class="membership-active">
+            <div class="badge badge-success mb-2">{{#str}}active, enrol_duitku{{/str}}</div>
+            <h5 style="margin-top: 5px; color: #e63946;">{{#str}}membership_role_name, block_duitku_membership{{/str}}</h5>
+            <p class="expiry-date">{{#str}}expires_on, enrol_duitku{{/str}} {{expirydate}}</p>
+            
+            <div class="progress" style="height: 20px; margin: 15px 0;">
+                <div class="progress-bar bg-{{colorclass}}" role="progressbar" style="width: {{percentremaining}}%;"
+                    aria-valuenow="{{percentremaining}}" aria-valuemin="0" aria-valuemax="100">
+                    {{daysremaining}} {{#str}}days_remaining, enrol_duitku{{/str}}
+                </div>
+            </div>
+            
+            {{#showrenewalnotice}}
+                <div class="alert alert-warning" style="margin-top: 10px; padding: 5px 10px;">
+                    <small>{{#str}}renewal_notice, enrol_duitku{{/str}}</small>
+                </div>
+            {{/showrenewalnotice}}
+            
+            <div class="text-center mt-3">
+                <a href="{{membershipurl}}" class="btn btn-sm" style="background-color: #e63946; color: white;">
+                    {{#str}}renew_now, block_duitku_membership{{/str}}
+                </a>
+            </div>
+        </div>
+    {{/hasmembership}}
+    
+    {{^hasmembership}}
+        <div class="membership-inactive">
+            <div class="badge badge-danger mb-2">{{#str}}expired, enrol_duitku{{/str}}</div>
+            <p>{{#str}}not_subscribed, block_duitku_membership{{/str}}</p>
+            
+            <div class="text-center mt-3">
+                <a href="{{membershipurl}}" class="btn btn-sm" style="background-color: #e63946; color: white;">
+                    {{#str}}subscribe_now, enrol_duitku{{/str}}
+                </a>
+            </div>
+        </div>
+    {{/hasmembership}}
+    
+    <hr style="margin: 15px 0;">
+    
+    <div class="text-center">
+        <small>
+            <a href="{{membershipurl}}">{{#str}}view_benefits, block_duitku_membership{{/str}}</a>
+        </small>
+    </div>
+</div>

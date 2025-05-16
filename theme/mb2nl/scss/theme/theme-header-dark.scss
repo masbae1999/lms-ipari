@@ -1,0 +1,36 @@
+
+.theader_dark {
+
+	.pagelayout-maintenance & {
+
+		.header-innner {
+			border-bottom-color: $textcolor_lighten;
+		}
+
+	}
+
+	.header-inner2 {
+		background-color: var(--mb2-pb-mhbgcolor);
+
+		.main-header-list {
+			color: rgba(255,255,255,.6);
+
+			li {
+				a:not(.btn) {
+					color: inherit;
+
+					&:hover,
+					&:focus {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+
+	.header-tools {
+		color: #fff;
+	}
+
+}

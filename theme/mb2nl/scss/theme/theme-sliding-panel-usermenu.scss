@@ -1,0 +1,38 @@
+
+.sliding-panel {	
+
+	.user-picture-container {
+
+		font-size: $fssmall;
+		color: var(--mb2-pb-textcolorondark) !important;
+
+		.userinitials,
+		img {
+			width: 34px;
+			height: 34px;
+			margin-right: .4rem;
+			@include mb2_box_shadow(0 0 0 3px, rgba(255,255,255,.2));
+		}
+
+		.aabtn {
+			flex: 0 0 34px;
+		}
+	}
+
+
+
+	--mb2-usermenu-color: var(--mb2-pb-textcolorondark);
+	
+	.theme-usermenu {
+		font-size: var(--mb2-pb-fssmall);
+		border: 0;
+
+		li {
+			border: 0;
+			margin-right: .44rem;
+		}
+	}
+	
+	
+}
+

@@ -1,0 +1,130 @@
+
+
+.social-list {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-flow: wrap;
+	margin-left: calc((var(--mb2-social-space)/2) * -1);
+	margin-right: calc((var(--mb2-social-space)/2) * -1);
+	margin-bottom: -3px;
+
+}
+
+
+
+@media only screen and (max-width: $wdmediumdevice){
+
+	.social-list {
+		text-align: center;
+		justify-content: center;
+	}
+
+}
+
+
+.mb2-pb-social {
+
+	&.sizel  {
+		--mb2-social-size: 39px;
+	}
+
+	&.sizexl  {
+		--mb2-social-size: 52px;
+	}
+
+	&.sizexxl  {
+		--mb2-social-size: 64px;
+	}
+
+	a {
+		border-radius: .12rem;
+	}
+
+	&.rounded1 {
+		.social-list {
+			a {
+				border-radius: 50%;
+			}
+		}		
+	}
+
+	&.rounded-1 {
+		.social-list {
+			a {
+				border-radius: 0;
+			}
+		}
+	}	
+}
+
+
+
+.social-list {	
+
+	
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+
+	a {
+		text-decoration: none;
+		color: #fff;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: .12rem;
+		width: var(--mb2-social-size);
+		height: var(--mb2-social-size);
+		text-align: center;
+		font-size: calc(var(--mb2-social-size) * .49);
+		margin-left: calc(var(--mb2-social-space)/2);
+		margin-right: calc(var(--mb2-social-space)/2);	
+		margin-bottom: 3px;	
+		//@include mb2_transition1(all, .15s);
+		transition: background-color .15s ease-in-out, border-color .15s ease-in-out, transform .15s ease-in-out;
+		position: relative;
+
+		
+
+		&:hover,
+		&:focus {
+			@include mb2_trabsform_y(-3px);
+			color: #fff;
+		}
+	}
+
+
+	.mb2-pb-social.type2 & {
+
+		a {			
+		    color: var(--mb2-social-color);
+			background-color: var(--mb2-social-bgcolor);
+		    border: solid 1px var(--mb2-social-borcolor);
+
+			&:hover,
+			&:focus {
+				@include mb2_trabsform_y(0);
+				background-color: var(--mb2-social-hbgcolor);
+				border-color: var(--mb2-social-hborcolor);
+			    color: var(--mb2-social-hcolor);
+			}
+		}
+	}
+
+}
+
+
+
+.li-android a {background-color: $color_android;} 		.li-dribbble a {background-color: $color_dribbble;} 	.li-dropbox a {background-color: $color_dropbox;}
+.li-facebook a {background-color: $color_facebook;}		.li-flickr a {background-color: $color_flickr;}			.li-github a {background-color: $color_github;}
+.li-google-plus a {background-color: $color_google;}	.li-instagram a {background-color: $color_instagram;}	.li-linkedin a {background-color: $color_linkedin;}
+.li-pinterest a {background-color: $color_pinterest;}	.li-rss a {background-color: $color_rss;}				.li-skype a {background-color: $color_skype;}
+.li-tumblr a {background-color: $color_tumblr;}			.li-twitter a {background-color: $color_twitter;}		.li-vimeo a {background-color: $color_vimeo;}
+.li-xing a {background-color: $color_xing;}				.li-youtube-play a {background-color: $color_youtube;}	.li-vk a {background-color: $color_vk;}
+.li-whatsapp a {background-color: $color_whatsapp;}		.li-apple a {background-color: $color_apple;}			.li-envelope a {background-color: $color_email;}
+.li-globe a {background-color: $color_web;}				.li-telegram a {background-color: $color_telegram;}		.li-spotify a {background-color: $color_spotify;}
+.li-tiktok a {background-color: $color_tiktok;}	

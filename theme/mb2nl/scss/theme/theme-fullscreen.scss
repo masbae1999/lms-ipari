@@ -1,0 +1,563 @@
+
+$fsmode_headerh:  $logohsm + 15px;
+
+/* ======================= BASIC LAYOUT */
+
+.fsmod-wrap {
+    display: flex;
+    flex-flow: wrap;
+    position: fixed;
+    left: 0;
+    top: $fsmode_headerh;
+    right: 0;
+    bottom: 0;
+    background-color: #f6f6f6;
+
+    @media only screen and (min-width: $tgsdbbp + 1) {
+        .tgsdb_open & {
+            left: var(--tgsdb_width);
+        }
+    }
+
+    .toggle-sidebar {
+        --tgsdb_cheight: #{$fsmode_headerh};
+    }  
+
+ }
+
+.fsmod-course-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .mod_introbox {
+        padding: 0;
+    }
+
+    .content-a {
+        flex: 1;
+        padding: 3rem;
+
+        @media only screen and (max-width: $wdmediumdevice) {
+            padding: 2rem;
+        }
+    
+        @media only screen and (max-width: $wsmalldevice) {
+            padding: 2rem 1rem;
+        }
+    }
+}
+
+.fsmod1 #main-content,
+.fsmod-sections-wrap {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.fsmod-wrap .content-col#region-main {
+    max-width: $fx_pagewidth;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+    background-color: transparent;
+}
+
+.fsmod-footer {
+    max-width: $fx_pagewidth;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    text-align: center;
+    
+    .lang-list {
+        justify-content: center;
+    }
+}
+
+.fsmod-breadcrumb {
+    margin-bottom: 1rem !important;
+}
+
+
+/* ======================= HEADER STYLE */
+
+#fsmod-header {
+        
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+
+    .dropdown-toggle {
+        margin: 0 6px;
+        padding: 0;
+        box-shadow: none !important;
+        color: #fff !important;
+        font-size: 17px;
+        line-height: 1;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .fsmodelh & {
+        background-color: #fff;
+        @include mb2_box_shadow(0 5px 10px, rgba(0,0,0,.09));
+        border-bottom: solid 1px rgba(0,0,0,.155);
+
+        .dropdown-toggle {
+            color: $textcolor !important;
+        }
+    }
+    
+    .fsmodedh & {
+        background-color: $headerbgcolor;
+    }
+
+    .fsmod-header-inner {
+        height: $fsmode_headerh;
+    }
+
+    
+}
+
+.fsmod-header-inner {
+    .fsmod-ctitle {
+        max-width: 42%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-left: 1.2rem;
+    }
+
+    .fsmodedh & {
+        .progress-text,
+        .fsmod-ctitle {
+            color: #fff;
+        }
+    }
+
+    .chart-circle {
+        margin-left: .45rem;
+
+        @media only screen and (max-width: 320px) {
+            display: none !important;
+        }
+    }
+
+    .progress-text {
+        line-height: 1;
+        white-space: nowrap;
+    }
+}
+
+.fsmod-header-links {
+    margin-left: auto;
+    margin-right: calc(30px + 1.6rem);
+
+    button {
+        color: var(--mb2-pb-textcolor);
+    }
+
+    .fsmodedh & {
+        button {
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+.fsmod-backlink {
+    position: absolute;
+    width: $fsmode_headerh;
+    height: 100%;
+    right: 0;
+    top: 0;
+    line-height: $fsmode_headerh;
+    text-align: center;    
+    font-size: 42px;   
+
+    &:hover,
+    &:focus {
+        color: $textcolor;
+    }
+
+    i {
+        line-height: inherit;
+    }
+
+    .fsmodelh & {
+        color: $textcolor;
+    }
+
+    .fsmodedh & {
+        color: #fff;
+    }
+}
+
+
+/* ======================= MY COURSES */
+
+#fsmod-header {
+    .mycourses {
+        ul {
+            display: none;
+        }
+    }
+}
+
+
+
+/* ======================= TOGGLE TABLE OF CONTENT AND BLOCKS */
+
+.fsmod-section-tools {
+    background-color: $color_gray2;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    position: absolute;
+    height: 46px;
+    left: 0;
+    right: -1px;
+    top: -46px;
+    border-bottom: solid 1px rgba(0,0,0,.1);
+    border-right: solid 1px rgba(0,0,0,.1);
+
+    button {
+        height: 32px;
+        width: 32px;
+        font-size: $fssmall;
+        color: $textcolor;
+        font-weight: $fwbold;
+        margin: 0 .2rem;
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 32px;
+        padding: 0;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;            
+        }
+
+        path {
+            fill: var(--mb2-pb-textcolor_lighten);
+        }
+
+        &.active {
+            path {
+                fill: var(--mb2-pb-textcolor);
+            }
+        }
+
+
+
+        &[aria-controls="fsmod-sidebar-toc"] {
+            svg {
+                width: 17px;
+            }           
+        }
+        
+        &[aria-controls="fsmod-sidebar-quicklinks"] {
+
+            svg {
+                width: 25px;
+                height: 25px;
+            }           
+            
+        }
+    }
+}
+
+.fsmod-toggle-sidebar {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* ======================= SIDEBAR BLOCKS */
+
+.fsmod-section {
+    display: none;
+    background-color: #fff;    
+    border-bottom: solid 1px rgba(0,0,0,.1);
+
+    &.active {
+        display: block;
+    }
+
+    .quicklinks-list {
+        padding: 1rem .65rem;
+    }
+}
+
+.fsmod-home,
+.fsmod-blocks {
+    padding: 2rem 1.4rem;
+
+    .block {
+        margin-bottom: 2rem !important;
+    }
+}
+
+
+
+/* ======================= MENU TOGGLE BUTTON */
+
+.fsmod-showhide-sidebar {
+
+    .fsmod-header-inner & {
+        margin-left: 1.4rem;
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .fsmodedh & {
+        color: #fff;
+    }
+
+}
+
+
+
+/* ======================= COURSE PANEL BUTTON */
+
+.panel-link {
+    .fsmod-header-inner & {
+        font-size: 18px;
+        margin-left: auto;
+        line-height: 1;
+    }
+}
+
+
+/* ======================= COURSE PROGRESS */
+
+.theme-course-progress {
+
+    line-height: 1;
+    font-size: var(--mb2-pb-fssmall);
+
+    .fsmod-progress-bar {
+        background-color: rgba($color_success, .16);
+        @include mb2_border_radius(999px);
+        margin-top: .3rem;
+
+        > div {
+            background-color: $color_success;
+            height: 6px;
+            @include mb2_border_radius(999px);
+        }
+    }
+
+    .progress-value {
+        font-weight: $fwbold;
+        color: var(--mb2-pb-headingscolor);
+    }
+
+    .fsmod-course-sections & {
+        padding: 1rem 1.4rem;
+        font-size: $fssmall;
+    }
+
+    .sidebar-col & {
+		margin-bottom: 2.5rem;
+		max-width: 170px;
+	}
+
+
+    .fsmod-course-content & {
+        max-width: $fx_pagewidth;
+        margin: -1rem auto 1rem auto;        
+    }
+
+
+
+}
+
+
+
+
+/* ======================= HIDE REGULAR ELEMENTS */
+
+.fsmod1 {
+
+    .usertour {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+}
+
+
+
+/* ======================= COURSE HOME SIDEBAR */
+
+.mb2-pb-btn.fsmod-backbtn {
+    font-size: var(--mb2-pb-fssmall);
+    font-weight: var(--mb2-pb-fwbold);
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    .btn-image {
+        svg {
+            height: 14px;			
+        }
+    }
+
+    .dir-rtl & {
+        .btn-image {
+            svg {
+                transform: scaleX(-1);
+            }            
+        }
+    }
+    
+}
+
+
+
+
+/* ======================= COURSE NAVIGATION */
+
+.coursenav1.issection1 {
+    .section-navigation {
+        display: none !important;
+    }
+}
+
+
+
+.theme-coursenav.flexcols {
+    margin-top: 3rem;
+
+    .fsmod-course-content & {
+        margin-top: 2rem;
+    }
+    
+    .builderpage.builderheading0 & {
+        @include mb2_sronly();
+    }
+
+    .builderpage.builderheading1 & {
+		max-width: $pagewidth;
+		margin: 0 auto 3rem auto;
+		padding: 0 15px;
+	}
+
+    > div {
+        flex: 0 0 49%;
+        width: 49%;
+        max-width: 550px;
+    }
+
+    &.onlynext {
+        justify-content: flex-end;
+    }
+
+    @media only screen and (max-width: $wxsmalldevice) {
+        justify-content: center;
+        margin-top: 1rem;
+
+        > div {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-top: 1rem;
+        }
+
+        .coursenav-link {
+            align-items: center !important;
+        }
+    }
+
+}
+
+.coursenav-link {
+    border: solid 1px rgba(0,0,0,.1);
+    padding: .63rem 1.2rem;
+    @include mb2_border_radius(.18rem);
+    @include mb2_transition1(all, .15s);
+
+    &:hover,
+    &:focus {
+        border-color: rgba(0,0,0,.07);
+        @include mb2_box_shadow(0 8px 14px, rgba(0,0,0,.1));
+    }
+
+     span {
+         display: block;
+     }
+
+     .coursenav-text {
+       color: var(--mb2-pb-headingscolor);
+       font-weight: var(--mb2-pb-fwheadings);
+       margin-bottom: .3rem;
+       line-height: 1;
+     }
+
+     .coursenav-modname {
+       color: $textcolor_lighten;
+       font-size: $fssmall;
+       line-height: var(--mb2-pb-lhheadings);
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       max-width: 100%;
+     }
+}
+
+
+.coursenav-text {
+    &:before,
+    &:after {
+        @include mb2_font_bootstrapicons();
+        font-size: 1.4rem;
+    }
+}
+
+
+.coursenav-prev {
+
+    .coursenav-text {
+        &:before {
+            content: '\F12F';
+            margin-right: .3rem;
+        }
+    }
+
+    .dir-rtl & {
+        .coursenav-text {
+            &:before {
+                content: '\F138';
+            }
+        }
+    }
+}
+
+.coursenav-next {
+
+    .coursenav-text {
+        &:after {
+            content: '\F138';
+            margin-left: .3rem;
+        }
+    }
+
+    .dir-rtl & {
+        .coursenav-text {
+            &:after {
+                content: '\F12F';
+            }
+        }
+    }
+}
