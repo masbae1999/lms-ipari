@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2025051500;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2025051901;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2024100100;        // Requires this Moodle version.
 $plugin->component = 'block_duitku_membership'; // Full name of the plugin (used for diagnostics)
 $plugin->dependencies = [

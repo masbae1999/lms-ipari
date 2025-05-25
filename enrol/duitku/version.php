@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 // Reference https://docs.moodle.org/dev/version.php
 
-$plugin->version    = 2025051500; // Format: YYYYMMDDXX (XX is an incremental number)
+$plugin->version    = 2025051901; // Format: YYYYMMDDXX (XX is an incremental number)
 $plugin->requires   = 2022112800; // Moodle Version 4.1 (minimum required for this plugin)
 $plugin->maturity   = MATURITY_STABLE;
 $plugin->release    = '1.1.0';
