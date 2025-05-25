@@ -36,6 +36,12 @@ if (!enrol_is_enabled('duitku')) {
     throw new moodle_exception('errdisabled', 'enrol_duitku');
 }
 
+// Validate session - block guest users
+if (!isloggedin() || isguestuser()) {
+    http_response_code(403);
+    die('Access denied');
+}
+
 // Log the callback
 $eventlogger = $DB->insert_record('enrol_duitku_log', [
     'timestamp' => time(),
@@ -68,25 +74,25 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
         http_response_code(400);
         exit('Invalid merchantOrderId format');
     }
-    
+
     // Calculate signature for validation
     $params = $merchantcode . $amount . $merchantorderid . $apikey;
     $calcsignature = md5($params);
-    
+
     // Validate the signature
     if ($signature !== $calcsignature) {
         // Invalid signature
         http_response_code(400);
         exit('Invalid signature');
     }
-    
+
     // Check result code from Duitku
     if ($resultcode === duitku_status_codes::CHECK_STATUS_SUCCESS) {
         // Process the membership payment
         if (duitku_membership::process_membership_payment($userid, $reference, (int)$amount)) {
             // Enroll user in all paid courses
             $autopaymentuser = $DB->get_record('user', ['id' => $userid], '*', MUST_EXIST);
-            
+
             // Get all paid courses with Duitku enrollment
             $sql = "SELECT e.*, c.id as courseid, c.fullname 
                     FROM {enrol} e 
@@ -94,13 +100,13 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
                     WHERE e.enrol = 'duitku' 
                     AND e.cost > 0 
                     AND e.status = 0";
-            
+
             $paidcoursesenrolments = $DB->get_records_sql($sql);
-            
+
             // Enroll the user in each paid course
             foreach ($paidcoursesenrolments as $enrol) {
                 $plugin = enrol_get_plugin('duitku');
-                
+
                 // Check if user is already enrolled
                 if (!is_enrolled(\context_course::instance($enrol->courseid), $autopaymentuser)) {
                     // Get the role ID to assign
@@ -108,10 +114,10 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
                     if (!$roleid) {
                         $roleid = $plugin->get_config('roleid');
                     }
-                    
+
                     // Enroll the user in the course
                     $plugin->enrol_user($enrol, $userid, $roleid);
-                    
+
                     // Log the enrollment
                     $DB->insert_record('enrol_duitku_log', [
                         'timestamp' => time(),
@@ -121,14 +127,18 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
                     ]);
                 }
             }
-            
+
             // Update transaction record
-            $DB->set_field('enrol_duitku_transactions', 'payment_status', duitku_status_codes::CHECK_STATUS_SUCCESS, 
-                ['reference' => $reference]);
-            
+            $DB->set_field(
+                'enrol_duitku_transactions',
+                'payment_status',
+                duitku_status_codes::CHECK_STATUS_SUCCESS,
+                ['reference' => $reference]
+            );
+
             // Log successful payment processing
             $DB->set_field('enrol_duitku_log', 'status', 'success', ['id' => $eventlogger]);
-            
+
             echo "SUCCESS";
             exit;
         } else {
@@ -147,11 +157,11 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
     // Not a membership transaction, should be handled by regular callback
     // Pass the control to the normal callback
     $callbackurl = "$CFG->wwwroot/enrol/duitku/callback.php";
-    
+
     // Redirect to normal callback with all parameters
     $params = $_REQUEST;
     $params['redirected_from'] = 'membership';
-    
+
     // Use curl to forward the request
     $ch = curl_init($callbackurl);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -160,7 +170,7 @@ if (strpos($merchantorderid, 'MBRS-') === 0) {
     $response = curl_exec($ch);
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    
+
     http_response_code($httpcode);
     echo $response;
     exit;

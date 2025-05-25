@@ -24,6 +24,10 @@
 $string['pluginname'] = 'Duitku Payment';
 $string['pluginname_desc'] = 'The Duitku module allows you to set up paid courses.  If the cost for any course is zero, then students are not asked to pay for entry.  There is a site-wide cost that you set here as a default for the whole site and then a course setting that you can set for each course individually. The course cost overrides the site cost.';
 
+// Security message
+$string['noguestaccess'] = 'Guest users cannot access paid courses. Please login with a full account to continue.';
+$string['invalidcontext'] = 'Invalid context detected. Course context is required.';
+
 // Membership strings
 $string['membership'] = 'Yearly Membership';
 $string['membership_desc'] = 'Yearly membership allows access to all paid courses on the site.';

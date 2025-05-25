@@ -25,6 +25,7 @@
 namespace enrol_duitku;
 
 use curl;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -33,7 +34,8 @@ defined('MOODLE_INTERNAL') || die();
  * @author  2022 Michael David <mikedh2612@gmail.com>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class duitku_helper {
+class duitku_helper
+{
 
     /**
      * @var string The base API URL
@@ -69,7 +71,8 @@ class duitku_helper {
      * @param string    $merchantorderid    Customly genereted Merchant Order Id at call.php.
      * @param string    $environment        Environment string (sandbox or production).
      */
-    public function __construct(string $merchantcode, string $apikey, string $merchantorderid, string $environment) {
+    public function __construct(string $merchantcode, string $apikey, string $merchantorderid, string $environment)
+    {
         $this->merchantcode = $merchantcode;
         $this->apikey = $apikey;
         $this->merchantorderid = $merchantorderid;
@@ -84,17 +87,18 @@ class duitku_helper {
      * @param string              $timestamp        Timestamp in Milliseconds. Not generated in here to synchronize with the time given in the return Url.
      * @param \context            $context          Context needed for request logging (can be context_course or context_system)
      */
-    public function create_transaction(string $paramsstring, string $timestamp, \context $context) {
+    public function create_transaction(string $paramsstring, string $timestamp, \context $context)
+    {
         global $USER, $CFG;
         require_once($CFG->libdir . '/filelib.php');
 
         $url = "{$this->baseurl}/createInvoice";
-        $signature = hash('sha256', $this->merchantcode.$timestamp.$this->apikey);
+        $signature = hash('sha256', $this->merchantcode . $timestamp . $this->apikey);
 
         $curl = new curl();
         $curl->resetopt();
         $url = "{$this->baseurl}/createInvoice";
-        $signature = hash('sha256', $this->merchantcode.$timestamp.$this->apikey);
+        $signature = hash('sha256', $this->merchantcode . $timestamp . $this->apikey);
 
         $curloptheader = [
             'Content-Type: application/json',
@@ -152,7 +156,8 @@ class duitku_helper {
      * Checks the transaction of a user who has just returned from the Duitku Page and logs the request
      * @param \context    $context    Context needed for request logging (can be context_course or context_system)
      */
-    public function check_transaction(\context $context) {
+    public function check_transaction(\context $context)
+    {
         global $USER, $CFG;
         require_once($CFG->libdir . '/filelib.php');
 
@@ -221,8 +226,31 @@ class duitku_helper {
      * Logs any incoming/outgoing requests (including callbacks).
      * @param array    $eventarray    Course context needed for request logging
      */
-    public function log_request($eventarray) {
+    public function log_request($eventarray)
+    {
         $event = \enrol_duitku\event\duitku_request_log::create($eventarray);
         $event->trigger();
+    }
+
+    /**
+     * Validates user access to ensure guest users cannot access paid courses
+     * Security fix to prevent guest users from accessing paid content
+     * 
+     * @return void
+     */
+    public static function validate_access()
+    {
+        global $USER, $PAGE;
+
+        if (isguestuser() || !isloggedin()) {
+            // Redirect to login with session termination
+            require_logout();
+            redirect(new \moodle_url('/login/index.php'));
+        }
+
+        // Validate course context
+        if ($PAGE->context->contextlevel != CONTEXT_COURSE) {
+            throw new \moodle_exception('invalidcontext', 'enrol_duitku');
+        }
     }
 }

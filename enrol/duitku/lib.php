@@ -32,7 +32,8 @@ defined('MOODLE_INTERNAL') || die();
  *
  * @return void
  */
-function enrol_duitku_before_footer() {
+function enrol_duitku_before_footer()
+{
     global $USER, $DB;
 
     if (!enrol_is_enabled('duitku')) {
@@ -56,13 +57,15 @@ function enrol_duitku_before_footer() {
  * @author  Michael David - based on code by Eugene Venter, Martin Dougiamas and others
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class enrol_duitku_plugin extends enrol_plugin {
+class enrol_duitku_plugin extends enrol_plugin
+{
 
     /**
      * Returns the list of currencies supported by Duitku
      * @return array
      */
-    public function get_currencies() {
+    public function get_currencies()
+    {
         $code = 'IDR';
         $currencies = [];
         $currencies[$code] = new lang_string($code, 'core_currencies');
@@ -74,7 +77,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param array $instances
      * @return boolean
      */
-    public function get_info_icons(array $instances) {
+    public function get_info_icons(array $instances)
+    {
         $found = false;
         foreach ($instances as $instance) {
             if ($instance->enrolstartdate != 0 && $instance->enrolstartdate > time()) {
@@ -86,14 +90,15 @@ class enrol_duitku_plugin extends enrol_plugin {
             $found = true;
             break;
         }
-            return ($found) ? [new pix_icon('icon', get_string('pluginname', 'enrol_duitku'), 'enrol_duitku')] : [];
+        return ($found) ? [new pix_icon('icon', get_string('pluginname', 'enrol_duitku'), 'enrol_duitku')] : [];
     }
 
     /**
      * Does this plugin assign protected roles are can they be manually removed?
      * @return false
      */
-    public function roles_protected() {
+    public function roles_protected()
+    {
         // Users with role assign cap may tweak the roles later.
         return false;
     }
@@ -105,7 +110,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $instance course enrol instance
      * @return bool - true means user with 'enrol/xxx:unenrol' may unenrol others freely, false means nobody may touch user_enrolments
      */
-    public function allow_unenrol(stdClass $instance) {
+    public function allow_unenrol(stdClass $instance)
+    {
         // Users with unenrol cap may unenrol other users manually - requires enrol/duitku:unenrol.
         return true;
     }
@@ -118,11 +124,11 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $instance course enrol instance
      * @return bool - true means it is possible to change enrol period and status in user_enrolments table
      */
-    public function allow_manage(stdClass $instance) {
+    public function allow_manage(stdClass $instance)
+    {
         // Users with manage cap may tweak period and status - requires enrol/duitku:manage.
         return true;
     }
-
     /**
      * Does this plugin support some way to user to self enrol?
      *
@@ -130,8 +136,27 @@ class enrol_duitku_plugin extends enrol_plugin {
      *
      * @return bool - true means show "Enrol me in this course" link in course UI
      */
-    public function show_enrolme_link(stdClass $instance) {
+    public function show_enrolme_link(stdClass $instance)
+    {
         return ($instance->status == ENROL_INSTANCE_ENABLED);
+    }
+
+    /**
+     * Prevent guest access to paid courses via Duitku enrollment
+     * @param stdClass $instance
+     * @return bool
+     */
+    public function allow_enrol(stdClass $instance)
+    {
+        global $USER;
+
+        // Block total access for guest users
+        if (isguestuser() || !isloggedin()) {
+            throw new \moodle_exception('noguestaccess', 'enrol_duitku');
+        }
+
+        // Normal enroll logic for authenticated users
+        return true;
     }
 
     /**
@@ -139,7 +164,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param int $courseid
      * @return boolean
      */
-    public function can_add_instance($courseid) {
+    public function can_add_instance($courseid)
+    {
         $context = \context_course::instance($courseid, MUST_EXIST);
 
         if (!has_capability('moodle/course:enrolconfig', $context) or !has_capability('enrol/duitku:config', $context)) {
@@ -155,7 +181,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      *
      * @return boolean
      */
-    public function use_standard_editing_ui() {
+    public function use_standard_editing_ui()
+    {
         return true;
     }
 
@@ -165,7 +192,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param array $fields instance fields
      * @return int id of new instance, null if can not be created
      */
-    public function add_instance($course, array $fields = null) {
+    public function add_instance($course, array $fields = null)
+    {
         if ($fields && !empty($fields['cost'])) {
             $fields['cost'] = unformat_float($fields['cost']);
         }
@@ -178,7 +206,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $data modified instance fields
      * @return boolean
      */
-    public function update_instance($instance, $data) {
+    public function update_instance($instance, $data)
+    {
         if ($data) {
             $data->cost = unformat_float($data->cost);
         }
@@ -192,7 +221,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $instance
      * @return string html text, usually a form in a text box
      */
-    public function enrol_page_hook(stdClass $instance) {
+    public function enrol_page_hook(stdClass $instance)
+    {
         global $CFG, $USER, $OUTPUT, $PAGE, $DB;
 
         ob_start();
@@ -217,22 +247,32 @@ class enrol_duitku_plugin extends enrol_plugin {
         $strcourses = get_string("courses");
 
         // Pass $view=true to filter hidden caps if the user cannot see them.
-        if ($users = get_users_by_capability($context, 'moodle/course:update', 'u.*', 'u.id ASC',
-                                             '', '', '', '', false, true)) {
+        if ($users = get_users_by_capability(
+            $context,
+            'moodle/course:update',
+            'u.*',
+            'u.id ASC',
+            '',
+            '',
+            '',
+            '',
+            false,
+            true
+        )) {
             $users = sort_by_roleassignment_authority($users, $context);
             $teacher = array_shift($users);
         } else {
             $teacher = false;
         }
 
-        if ( (float) $instance->cost <= 0 ) {
+        if ((float) $instance->cost <= 0) {
             $cost = (float) $this->get_config('cost');
         } else {
             $cost = (float) $instance->cost;
         }
 
         if (abs($cost) < 0.01) { // No cost, other enrolment methods (instances) should be used.
-            echo '<p>'.get_string('nocost', 'enrol_duitku').'</p>';
+            echo '<p>' . get_string('nocost', 'enrol_duitku') . '</p>';
         } else {
 
             // Calculate localised and "." cost, make sure we send duitku the same value,
@@ -242,9 +282,9 @@ class enrol_duitku_plugin extends enrol_plugin {
 
             if (isguestuser()) { // Force login only for guest user, not real users with guest role.
                 $wwwroot = $CFG->wwwroot;
-                echo '<div class="mdl-align"><p>'.get_string('paymentrequired').'</p>';
-                echo '<p><b>'.get_string('cost').": $instance->currency $localisedcost".'</b></p>';
-                echo '<p><a href="'.$wwwroot.'/login/">'.get_string('loginsite').'</a></p>';
+                echo '<div class="mdl-align"><p>' . get_string('paymentrequired') . '</p>';
+                echo '<p><b>' . get_string('cost') . ": $instance->currency $localisedcost" . '</b></p>';
+                echo '<p><a href="' . $wwwroot . '/login/">' . get_string('loginsite') . '</a></p>';
                 echo '</div>';
             } else {
                 // Sanitise some fields before building the duitku form.
@@ -259,9 +299,8 @@ class enrol_duitku_plugin extends enrol_plugin {
                 $instancename    = $this->get_instance_name($instance);
                 $logo            = $OUTPUT->image_url('duitkuw', 'enrol_duitku');
 
-                include($CFG->dirroot.'/enrol/duitku/enrol.html');
+                include($CFG->dirroot . '/enrol/duitku/enrol.html');
             }
-
         }
 
         return $OUTPUT->box(ob_get_clean());
@@ -275,7 +314,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $course
      * @param int $oldid
      */
-    public function restore_instance(restore_enrolments_structure_step $step, stdClass $data, $course, $oldid) {
+    public function restore_instance(restore_enrolments_structure_step $step, stdClass $data, $course, $oldid)
+    {
         global $DB;
         if ($step->get_task()->get_target() == backup::TARGET_NEW_COURSE) {
             $merge = false;
@@ -306,7 +346,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param int $userid
      * @param int $oldinstancestatus
      */
-    public function restore_user_enrolment(restore_enrolments_structure_step $step, $data, $instance, $userid, $oldinstancestatus = null) {
+    public function restore_user_enrolment(restore_enrolments_structure_step $step, $data, $instance, $userid, $oldinstancestatus = null)
+    {
         $this->enrol_user($instance, $userid, null, $data->timestart, $data->timeend, $data->status);
     }
 
@@ -315,9 +356,12 @@ class enrol_duitku_plugin extends enrol_plugin {
      *
      * @return array
      */
-    protected function get_status_options() {
-        $options = [ENROL_INSTANCE_ENABLED  => get_string('yes'),
-                         ENROL_INSTANCE_DISABLED => get_string('no')];
+    protected function get_status_options()
+    {
+        $options = [
+            ENROL_INSTANCE_ENABLED  => get_string('yes'),
+            ENROL_INSTANCE_DISABLED => get_string('no')
+        ];
         return $options;
     }
 
@@ -328,7 +372,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param context $context
      * @return array
      */
-    protected function get_roleid_options($instance, $context) {
+    protected function get_roleid_options($instance, $context)
+    {
         if ($instance->id) {
             $roles = get_default_enrol_roles($context, $instance->roleid);
         } else {
@@ -346,7 +391,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param context $context
      * @return bool
      */
-    public function edit_instance_form($instance, MoodleQuickForm $mform, $context) {
+    public function edit_instance_form($instance, MoodleQuickForm $mform, $context)
+    {
 
         $mform->addElement('text', 'name', get_string('custominstancename', 'enrol'));
         $mform->setType('name', PARAM_TEXT);
@@ -399,7 +445,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      *         or an empty array if everything is OK.
      * @return void
      */
-    public function edit_instance_validation($data, $files, $instance, $context) {
+    public function edit_instance_validation($data, $files, $instance, $context)
+    {
         $errors = [];
 
         if (!empty($data['enrolenddate']) and $data['enrolenddate'] < $data['enrolstartdate']) {
@@ -435,7 +482,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param progress_trace $trace
      * @return int exit code, 0 means ok
      */
-    public function sync(progress_trace $trace) {
+    public function sync(progress_trace $trace)
+    {
         $this->process_expirations($trace);
         return 0;
     }
@@ -446,7 +494,8 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $instance
      * @return bool
      */
-    public function can_delete_instance($instance) {
+    public function can_delete_instance($instance)
+    {
         $context = \context_course::instance($instance->courseid);
         return has_capability('enrol/duitku:config', $context);
     }
@@ -457,8 +506,27 @@ class enrol_duitku_plugin extends enrol_plugin {
      * @param stdClass $instance
      * @return bool
      */
-    public function can_hide_show_instance($instance) {
+    public function can_hide_show_instance($instance)
+    {
         $context = \context_course::instance($instance->courseid);
         return has_capability('enrol/duitku:config', $context);
+    }
+
+    /**
+     * Prevent guest access to paid courses via Duitku enrollment
+     * @param stdClass $instance
+     * @return bool
+     */
+    public function allow_enrol(stdClass $instance)
+    {
+        global $USER;
+
+        // Block total access for guest users
+        if (isguestuser() || !isloggedin()) {
+            throw new moodle_exception('noguestaccess', 'enrol_duitku');
+        }
+
+        // Normal enroll logic for authenticated users
+        return parent::allow_enrol($instance);
     }
 }
