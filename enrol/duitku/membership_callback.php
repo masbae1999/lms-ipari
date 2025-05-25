@@ -36,11 +36,8 @@ if (!enrol_is_enabled('duitku')) {
     throw new moodle_exception('errdisabled', 'enrol_duitku');
 }
 
-// Validate session - block guest users
-if (!isloggedin() || isguestuser()) {
-    http_response_code(403);
-    die('Access denied');
-}
+// For callback from payment gateway, we can't require login
+// as the request comes from the payment gateway, not the user
 
 // Log the callback
 $eventlogger = $DB->insert_record('enrol_duitku_log', [

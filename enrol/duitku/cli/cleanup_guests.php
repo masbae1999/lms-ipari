@@ -25,7 +25,9 @@
 
 define('CLI_SCRIPT', true);
 
-require(__DIR__ . '/../../../config.php');
+// Use proper path resolution to find config.php
+$dirroot = dirname(dirname(dirname(__DIR__)));
+require($dirroot . '/config.php');
 require_once($CFG->libdir . '/clilib.php');
 require_once($CFG->libdir . '/adminlib.php');
 

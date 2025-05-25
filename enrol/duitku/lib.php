@@ -142,24 +142,6 @@ class enrol_duitku_plugin extends enrol_plugin
     }
 
     /**
-     * Prevent guest access to paid courses via Duitku enrollment
-     * @param stdClass $instance
-     * @return bool
-     */
-    public function allow_enrol(stdClass $instance)
-    {
-        global $USER;
-
-        // Block total access for guest users
-        if (isguestuser() || !isloggedin()) {
-            throw new \moodle_exception('noguestaccess', 'enrol_duitku');
-        }
-
-        // Normal enroll logic for authenticated users
-        return true;
-    }
-
-    /**
      * Returns true if the user can add a new instance in this course.
      * @param int $courseid
      * @return boolean
@@ -511,7 +493,6 @@ class enrol_duitku_plugin extends enrol_plugin
         $context = \context_course::instance($instance->courseid);
         return has_capability('enrol/duitku:config', $context);
     }
-
     /**
      * Prevent guest access to paid courses via Duitku enrollment
      * @param stdClass $instance
@@ -521,8 +502,27 @@ class enrol_duitku_plugin extends enrol_plugin
     {
         global $USER;
 
+        // Skip the guest check for Duitku callbacks or CLI scripts
+        if (defined('CLI_SCRIPT') && CLI_SCRIPT) {
+            return parent::allow_enrol($instance);
+        }
+
+        // Check for AJAX requests which might not have full user context
+        if (defined('AJAX_SCRIPT') && AJAX_SCRIPT) {
+            return parent::allow_enrol($instance);
+        }
+
         // Block total access for guest users
         if (isguestuser() || !isloggedin()) {
+            if (
+                isset($_SERVER['HTTP_X_DUITKU_CALLBACK']) ||
+                strpos($_SERVER['PHP_SELF'], 'membership_callback.php') !== false ||
+                strpos($_SERVER['PHP_SELF'], 'verify_callback.php') !== false
+            ) {
+                // Allow Duitku callbacks to pass through
+                return parent::allow_enrol($instance);
+            }
+            // Normal web access from guest user - block it
             throw new moodle_exception('noguestaccess', 'enrol_duitku');
         }
 

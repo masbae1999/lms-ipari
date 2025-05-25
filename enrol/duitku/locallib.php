@@ -33,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  */
 function check_course_access($courseid)
 {
-    global $USER;
+    global $USER, $DB;
 
     if (isguestuser() || !isloggedin()) {
         // Block access to course content
@@ -41,14 +41,36 @@ function check_course_access($courseid)
         return false;
     }
 
-    // Check membership status
-    $membership = \enrol_duitku\duitku_membership::get_user_membership($USER->id);
-    if (!$membership || !$membership->is_active()) {
-        // User doesn't have an active membership
-        return false;
+    // First check if this is an admin/manager who should always have access
+    if (is_siteadmin() || has_capability('moodle/course:manageactivities', context_course::instance($courseid))) {
+        return true;
     }
 
-    return true;
+    // Check membership status - safely with error handling
+    try {
+        if (class_exists('\\enrol_duitku\\duitku_membership')) {
+            $memberships = $DB->get_records('enrol_duitku_membership', ['userid' => $USER->id]);
+            if (!empty($memberships)) {
+                foreach ($memberships as $membership) {
+                    // Simple active check (expiry time in future)
+                    if ($membership->expiry_time > time()) {
+                        return true;
+                    }
+                }
+            }
+        }
+    } catch (Exception $e) {
+        // Just log the error and continue with normal enrollment checks
+        error_log('Error checking membership: ' . $e->getMessage());
+    }
+
+    // If no membership, check standard enrollment
+    $context = context_course::instance($courseid);
+    if (is_enrolled($context)) {
+        return true;
+    }
+
+    return false;
 }
 
 /**

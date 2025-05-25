@@ -231,7 +231,6 @@ class duitku_helper
         $event = \enrol_duitku\event\duitku_request_log::create($eventarray);
         $event->trigger();
     }
-
     /**
      * Validates user access to ensure guest users cannot access paid courses
      * Security fix to prevent guest users from accessing paid content
@@ -248,9 +247,12 @@ class duitku_helper
             redirect(new \moodle_url('/login/index.php'));
         }
 
-        // Validate course context
-        if ($PAGE->context->contextlevel != CONTEXT_COURSE) {
-            throw new \moodle_exception('invalidcontext', 'enrol_duitku');
+        // Only validate course context when we're in a course
+        if (isset($PAGE->context) && $PAGE->context->contextlevel == CONTEXT_COURSE) {
+            // Additional course-specific validation can be done here if needed
+            return true;
         }
+
+        return true;
     }
 }
