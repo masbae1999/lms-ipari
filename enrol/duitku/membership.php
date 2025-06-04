@@ -28,9 +28,11 @@ use enrol_duitku\duitku_status_codes;
 use enrol_duitku\duitku_mathematical_constants;
 
 require("../../config.php");
+require_login(null, false);
 require_once("{$CFG->dirroot}/enrol/duitku/lib.php");
-
-require_login();
+if ($USER->id == 1) {
+     redirect(new moodle_url('/login/index.php'));
+}
 
 // Get parameters
 $action = optional_param('action', '', PARAM_ALPHA);
@@ -286,4 +288,12 @@ switch ($action) {
         echo '</div>'; // .membership-page
         
         echo $OUTPUT->footer();
+?>
+<script>
+    console.log("USER ID: <?php echo $USER->id; ?>");
+    console.log("USERNAME: '<?php echo $USER->username; ?>'");
+    console.log("FULLNAME: '<?php echo fullname($USER); ?>'");
+    console.log("IS LOGGED IN: <?php echo isloggedin() ? 'true' : 'false'; ?>");
+</script>
+<?php
 }

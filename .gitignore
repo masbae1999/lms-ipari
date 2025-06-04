@@ -17,9 +17,13 @@ moodledata/
 .vscode/
 
 # Cache, temp and log files
-*/cache/*
 */temp/*
 */log/*
+
+# Ignore runtime cache dirs only
+cache/stores/
+cache/temp/
+cache/lock/
 
 # Session files
 */sessions/*
@@ -40,7 +44,6 @@ php_error.log
 
 # Composer
 composer.phar
-/vendor/
 
 # NPM / Node.js
 node_modules/
