@@ -2,6 +2,10 @@
 
 # Config file
 config.php
+config.php
+config.php.bak
+config.old.php
+config-dist.php
 
 # Data directory
 moodledata/
@@ -19,8 +23,13 @@ moodledata/
 
 # Session files
 */sessions/*
+localcache/*
+trashdir/
+muc/
 
 # Error logs
+*.log
+logs/
 error_log
 php_error.log
 
@@ -58,10 +67,20 @@ Desktop.ini
 # Linux-specific files
 *~
 
-# Backup files
+# === DEBUG / BACKUP FILES ===
 *.bak
 *.swp
 *.swo
+debug.php
+debuginfo.php
+
+# === BEHAT / TEST OUTPUT ===
+behat/
+behat.yml
+behat.yml.local
+phpunit.xml
+phpunit.xml.dist
+coverage/
 
 # Local environment files
 .env
@@ -89,3 +108,11 @@ local/ci/
 # Debug files
 debug.php
 debuginfo.php
+
+# === TEMPORARY FILES BY OS ===
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~

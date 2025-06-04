@@ -1,0 +1,6664 @@
+.
+├── CONTRIBUTING.md
+├── COPYING.txt
+├── Gruntfile.js
+├── INSTALL.txt
+├── README.md
+├── TRADEMARK.txt
+├── UPGRADING.md
+├── admin
+│   ├── UPGRADING.md
+│   ├── ai.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── antiviruses.php
+│   ├── auth.php
+│   ├── blocks.php
+│   ├── category.php
+│   ├── classes
+│   │   ├── admin
+│   │   ├── external
+│   │   ├── form
+│   │   ├── local
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   └── table
+│   ├── cli
+│   │   ├── adhoc_task.php
+│   │   ├── alternative_component_cache.php
+│   │   ├── automated_backups.php
+│   │   ├── backup.php
+│   │   ├── build_theme_css.php
+│   │   ├── cfg.php
+│   │   ├── check_database_schema.php
+│   │   ├── checks.php
+│   │   ├── cron.php
+│   │   ├── dashboard_reset.php
+│   │   ├── delete_course.php
+│   │   ├── emailstop.php
+│   │   ├── fix_course_sequence.php
+│   │   ├── fix_deleted_users.php
+│   │   ├── fix_orphaned_calendar_events.php
+│   │   ├── fix_orphaned_question_categories.php
+│   │   ├── generate_key.php
+│   │   ├── import.php
+│   │   ├── install.php
+│   │   ├── install_database.php
+│   │   ├── kill_all_sessions.php
+│   │   ├── maintenance.php
+│   │   ├── mysql_collation.php
+│   │   ├── mysql_compressed_rows.php
+│   │   ├── purge_caches.php
+│   │   ├── reset_password.php
+│   │   ├── restore_backup.php
+│   │   ├── scheduled_task.php
+│   │   ├── svgtool.php
+│   │   ├── uninstall_plugins.php
+│   │   └── upgrade.php
+│   ├── communication.php
+│   ├── contentbank.php
+│   ├── course
+│   │   └── resetindentation.php
+│   ├── courseformats.php
+│   ├── cron.php
+│   ├── customfields.php
+│   ├── dataformats.php
+│   ├── editors.php
+│   ├── enrol.php
+│   ├── environment.php
+│   ├── environment.xml
+│   ├── filters.php
+│   ├── hooks.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── localplugins.php
+│   ├── lock.php
+│   ├── mailout-debugger.php
+│   ├── media.php
+│   ├── message.php
+│   ├── mnet
+│   │   ├── access_control.php
+│   │   ├── delete.php
+│   │   ├── index.php
+│   │   ├── peer_forms.php
+│   │   ├── peers.php
+│   │   ├── profilefields.php
+│   │   ├── profilefields_form.php
+│   │   ├── services.php
+│   │   ├── services_form.php
+│   │   ├── tabs.php
+│   │   ├── testclient.php
+│   │   ├── trustedhosts.html
+│   │   └── trustedhosts.php
+│   ├── modules.php
+│   ├── moodlenet_oauth2_callback.php
+│   ├── oauth2callback.php
+│   ├── phpinfo.php
+│   ├── plagiarism.php
+│   ├── plugins.php
+│   ├── portfolio.php
+│   ├── presets
+│   │   ├── classes
+│   │   └── tests
+│   ├── process_email.php
+│   ├── purgecaches.php
+│   ├── qbankplugins.php
+│   ├── qbehaviours.php
+│   ├── qtypes.php
+│   ├── registration
+│   │   ├── check.php
+│   │   ├── confirmregistration.php
+│   │   ├── forms.php
+│   │   ├── index.php
+│   │   ├── lib.php
+│   │   ├── register.php
+│   │   └── renewregistration.php
+│   ├── renderer.php
+│   ├── reports.php
+│   ├── repository.php
+│   ├── repositoryinstance.php
+│   ├── resetemoticons.php
+│   ├── roles
+│   │   ├── UPGRADING.md
+│   │   ├── admins.php
+│   │   ├── ajax.php
+│   │   ├── allow.php
+│   │   ├── assign.php
+│   │   ├── check.php
+│   │   ├── classes
+│   │   ├── define.php
+│   │   ├── lib.php
+│   │   ├── manage.php
+│   │   ├── managetabs.php
+│   │   ├── module.js
+│   │   ├── override.php
+│   │   ├── permissions.php
+│   │   ├── role_schema.xml
+│   │   ├── tests
+│   │   └── usersroles.php
+│   ├── search.php
+│   ├── searchareas.php
+│   ├── searchreindex.php
+│   ├── settings
+│   │   ├── ai.php
+│   │   ├── analytics.php
+│   │   ├── appearance.php
+│   │   ├── badges.php
+│   │   ├── competency.php
+│   │   ├── courses.php
+│   │   ├── development.php
+│   │   ├── fileredact.php
+│   │   ├── frontpage.php
+│   │   ├── grades.php
+│   │   ├── h5p.php
+│   │   ├── language.php
+│   │   ├── license.php
+│   │   ├── location.php
+│   │   ├── messaging.php
+│   │   ├── mnet.php
+│   │   ├── moodlenet.php
+│   │   ├── payment.php
+│   │   ├── plugins.php
+│   │   ├── reportbuilder.php
+│   │   ├── security.php
+│   │   ├── server.php
+│   │   ├── subsystems.php
+│   │   ├── top.php
+│   │   ├── userfeedback.php
+│   │   └── users.php
+│   ├── settings.php
+│   ├── swaggerui.php
+│   ├── tasklogs.php
+│   ├── templates
+│   │   ├── header_search_input.mustache
+│   │   ├── local
+│   │   ├── setting.mustache
+│   │   ├── setting_configcheckbox.mustache
+│   │   ├── setting_configcolourpicker.mustache
+│   │   ├── setting_configdirectory.mustache
+│   │   ├── setting_configduration.mustache
+│   │   ├── setting_configempty.mustache
+│   │   ├── setting_configexecutable.mustache
+│   │   ├── setting_configfile.mustache
+│   │   ├── setting_configfilesize.mustache
+│   │   ├── setting_confightmleditor.mustache
+│   │   ├── setting_configmulticheckbox.mustache
+│   │   ├── setting_configmultiselect.mustache
+│   │   ├── setting_configmultiselect_optgroup.mustache
+│   │   ├── setting_configpasswordunmask.mustache
+│   │   ├── setting_configselect.mustache
+│   │   ├── setting_configselect_optgroup.mustache
+│   │   ├── setting_configtext.mustache
+│   │   ├── setting_configtextarea.mustache
+│   │   ├── setting_configtime.mustache
+│   │   ├── setting_configtoggle.mustache
+│   │   ├── setting_courselist_frontpage.mustache
+│   │   ├── setting_description.mustache
+│   │   ├── setting_devicedetectregex.mustache
+│   │   ├── setting_emoticons.mustache
+│   │   ├── setting_encryptedpassword.mustache
+│   │   ├── setting_filetypes.mustache
+│   │   ├── setting_flag.mustache
+│   │   ├── setting_gradecat_combo.mustache
+│   │   ├── setting_heading.mustache
+│   │   ├── setting_manage_plugins.mustache
+│   │   ├── setting_savebutton.mustache
+│   │   ├── setting_special_calendar_weekend.mustache
+│   │   ├── settings.mustache
+│   │   ├── settings_search_results.mustache
+│   │   ├── table
+│   │   ├── themeselector
+│   │   └── webservice_token_new.mustache
+│   ├── testoutgoingmailconf.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── external
+│   │   └── reportbuilder
+│   ├── themeselector.php
+│   ├── thirdpartylibs.php
+│   ├── timezone.php
+│   ├── tool
+│   │   ├── UPGRADING.md
+│   │   ├── admin_presets
+│   │   ├── analytics
+│   │   ├── availabilityconditions
+│   │   ├── behat
+│   │   ├── brickfield
+│   │   ├── capability
+│   │   ├── certificate
+│   │   ├── cohortroles
+│   │   ├── componentlibrary
+│   │   ├── customlang
+│   │   ├── dataprivacy
+│   │   ├── dbtransfer
+│   │   ├── filetypes
+│   │   ├── generator
+│   │   ├── httpsreplace
+│   │   ├── installaddon
+│   │   ├── langimport
+│   │   ├── licensemanager
+│   │   ├── log
+│   │   ├── lp
+│   │   ├── lpimportcsv
+│   │   ├── lpmigrate
+│   │   ├── messageinbound
+│   │   ├── mfa
+│   │   ├── mobile
+│   │   ├── monitor
+│   │   ├── moodlenet
+│   │   ├── multilangupgrade
+│   │   ├── oauth2
+│   │   ├── phpunit
+│   │   ├── policy
+│   │   ├── profiling
+│   │   ├── recyclebin
+│   │   ├── replace
+│   │   ├── spamcleaner
+│   │   ├── task
+│   │   ├── templatelibrary
+│   │   ├── unsuproles
+│   │   ├── upgrade.txt
+│   │   ├── uploadcourse
+│   │   ├── uploaduser
+│   │   ├── usertours
+│   │   └── xmldb
+│   ├── updatesetting.php
+│   ├── upgrade.txt
+│   ├── upgradesettings.php
+│   ├── user
+│   │   ├── lib.php
+│   │   ├── user_bulk.php
+│   │   ├── user_bulk_cohortadd.php
+│   │   ├── user_bulk_cohortadd_form.php
+│   │   ├── user_bulk_confirm.php
+│   │   ├── user_bulk_delete.php
+│   │   ├── user_bulk_display.php
+│   │   ├── user_bulk_download.php
+│   │   ├── user_bulk_forcepasswordchange.php
+│   │   ├── user_bulk_forms.php
+│   │   ├── user_bulk_message.php
+│   │   └── user_message_form.php
+│   ├── user.php
+│   └── webservice
+│       ├── documentation.php
+│       ├── forms.php
+│       ├── lib.php
+│       ├── protocols.php
+│       ├── service.php
+│       ├── service_functions.php
+│       ├── service_user_settings.php
+│       ├── service_users.php
+│       ├── testclient.php
+│       ├── testclient_forms.php
+│       └── tokens.php
+├── ai
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── admin
+│   │   ├── ai_image.php
+│   │   ├── aiactions
+│   │   ├── cache
+│   │   ├── external
+│   │   ├── manager.php
+│   │   ├── placement.php
+│   │   ├── privacy
+│   │   ├── process_base.php
+│   │   ├── provider.php
+│   │   ├── rate_limiter.php
+│   │   └── table
+│   ├── placement
+│   │   ├── courseassist
+│   │   └── editor
+│   ├── provider
+│   │   ├── azureai
+│   │   └── openai
+│   ├── templates
+│   │   ├── admin_noproviders.mustache
+│   │   ├── policyblock.mustache
+│   │   └── policymodal.mustache
+│   └── tests
+│       ├── ai_image_test.php
+│       ├── aiactions
+│       ├── behat
+│       ├── external
+│       ├── fixtures
+│       ├── manager_test.php
+│       ├── provider
+│       └── rate_limiter_test.php
+├── analytics
+│   ├── classes
+│   │   ├── action.php
+│   │   ├── admin_setting_predictor.php
+│   │   ├── analysable.php
+│   │   ├── analysis.php
+│   │   ├── bulk_action.php
+│   │   ├── calculable.php
+│   │   ├── calculation_info.php
+│   │   ├── classifier.php
+│   │   ├── course.php
+│   │   ├── dataset_manager.php
+│   │   ├── default_bulk_actions.php
+│   │   ├── insights_generator.php
+│   │   ├── local
+│   │   ├── manager.php
+│   │   ├── model.php
+│   │   ├── model_config.php
+│   │   ├── packable.php
+│   │   ├── prediction.php
+│   │   ├── prediction_action.php
+│   │   ├── predictor.php
+│   │   ├── privacy
+│   │   ├── regressor.php
+│   │   ├── requirements_exception.php
+│   │   ├── site.php
+│   │   ├── stats.php
+│   │   └── user.php
+│   ├── lib.php
+│   ├── templates
+│   │   ├── insight_info_message.mustache
+│   │   ├── insight_info_message_prediction.mustache
+│   │   └── notification_styles.mustache
+│   ├── tests
+│   │   ├── analysis_test.php
+│   │   ├── behat
+│   │   ├── calculation_info_test.php
+│   │   ├── community_of_inquiry_activities_completed_by_test.php
+│   │   ├── course_test.php
+│   │   ├── dataset_manager_test.php
+│   │   ├── fixtures
+│   │   ├── indicator_test.php
+│   │   ├── manager_test.php
+│   │   ├── model_test.php
+│   │   ├── prediction_actions_test.php
+│   │   ├── prediction_test.php
+│   │   ├── privacy
+│   │   ├── stats_test.php
+│   │   └── time_splittings_test.php
+│   └── upgrade.txt
+├── auth
+│   ├── cas
+│   │   ├── CAS
+│   │   ├── README-CAS
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── languages.php
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── thirdpartylibs.xml
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── classes
+│   │   ├── digital_consent.php
+│   │   ├── external.php
+│   │   ├── form
+│   │   ├── output
+│   │   └── privacy
+│   ├── db
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── email
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── index.html
+│   ├── ldap
+│   │   ├── README-LDAP
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── locallib.php
+│   │   ├── ntlmsso_attempt.php
+│   │   ├── ntlmsso_finish.php
+│   │   ├── ntlmsso_magic.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── lti
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── login.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── manual
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── mnet
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── jump.php
+│   │   ├── land.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── nologin
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── lang
+│   │   └── version.php
+│   ├── none
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── oauth2
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── confirm-account.php
+│   │   ├── confirm-linkedlogin.php
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── linkedlogins.php
+│   │   ├── login.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── test.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── shibboleth
+│   │   ├── README.txt
+│   │   ├── auth.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── login.php
+│   │   ├── logout.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── test_settings.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── digital_consent_test.php
+│   │   ├── external
+│   │   └── privacy
+│   ├── upgrade.txt
+│   └── webservice
+│       ├── auth.php
+│       ├── classes
+│       ├── lang
+│       └── version.php
+├── availability
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── capability_checker.php
+│   │   ├── condition.php
+│   │   ├── frontend.php
+│   │   ├── info.php
+│   │   ├── info_module.php
+│   │   ├── info_section.php
+│   │   ├── multiple_messages.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── result.php
+│   │   ├── tree.php
+│   │   └── tree_node.php
+│   ├── condition
+│   │   ├── UPGRADING.md
+│   │   ├── completion
+│   │   ├── date
+│   │   ├── grade
+│   │   ├── group
+│   │   ├── grouping
+│   │   └── profile
+│   ├── renderer.php
+│   ├── templates
+│   │   └── availability_info.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── capability_checker_test.php
+│   │   ├── component_test.php
+│   │   ├── fixtures
+│   │   ├── info_test.php
+│   │   └── tree_test.php
+│   ├── upgrade.txt
+│   └── yui
+│       ├── build
+│       └── src
+├── backup
+│   ├── backup.class.php
+│   ├── backup.php
+│   ├── backupfilesedit.php
+│   ├── backupfilesedit_form.php
+│   ├── cc
+│   │   ├── cc112moodle.php
+│   │   ├── cc2moodle.php
+│   │   ├── cc_includes.php
+│   │   ├── cc_lib
+│   │   ├── entities.class.php
+│   │   ├── entities11.class.php
+│   │   ├── entity.forum.class.php
+│   │   ├── entity.label.class.php
+│   │   ├── entity.quiz.class.php
+│   │   ├── entity.resource.class.php
+│   │   ├── entity11.basiclti.class.php
+│   │   ├── entity11.forum.class.php
+│   │   ├── entity11.lti.class.php
+│   │   ├── entity11.quiz.class.php
+│   │   ├── entity11.resource.class.php
+│   │   ├── includes
+│   │   ├── restore_cc.php
+│   │   ├── schemas
+│   │   ├── schemas11
+│   │   ├── sheets
+│   │   └── validator.php
+│   ├── controller
+│   │   ├── backup_controller.class.php
+│   │   ├── base_controller.class.php
+│   │   ├── restore_controller.class.php
+│   │   └── tests
+│   ├── converter
+│   │   ├── convertlib.php
+│   │   ├── imscc1
+│   │   ├── imscc11
+│   │   └── moodle1
+│   ├── copy.php
+│   ├── copyprogress.php
+│   ├── externallib.php
+│   ├── import.php
+│   ├── log.php
+│   ├── moodle2
+│   │   ├── backup_activity_task.class.php
+│   │   ├── backup_block_task.class.php
+│   │   ├── backup_course_task.class.php
+│   │   ├── backup_coursereport_plugin.class.php
+│   │   ├── backup_custom_fields.php
+│   │   ├── backup_default_block_task.class.php
+│   │   ├── backup_enrol_plugin.class.php
+│   │   ├── backup_final_task.class.php
+│   │   ├── backup_format_plugin.class.php
+│   │   ├── backup_gradingform_plugin.class.php
+│   │   ├── backup_local_plugin.class.php
+│   │   ├── backup_plagiarism_plugin.class.php
+│   │   ├── backup_plan_builder.class.php
+│   │   ├── backup_plugin.class.php
+│   │   ├── backup_qbank_plugin.class.php
+│   │   ├── backup_qtype_extrafields_plugin.class.php
+│   │   ├── backup_qtype_plugin.class.php
+│   │   ├── backup_report_plugin.class.php
+│   │   ├── backup_root_task.class.php
+│   │   ├── backup_section_task.class.php
+│   │   ├── backup_settingslib.php
+│   │   ├── backup_stepslib.php
+│   │   ├── backup_subplugin.class.php
+│   │   ├── backup_theme_plugin.class.php
+│   │   ├── backup_tool_plugin.class.php
+│   │   ├── backup_xml_transformer.class.php
+│   │   ├── restore_activity_task.class.php
+│   │   ├── restore_block_task.class.php
+│   │   ├── restore_course_task.class.php
+│   │   ├── restore_coursereport_plugin.class.php
+│   │   ├── restore_default_block_task.class.php
+│   │   ├── restore_enrol_plugin.class.php
+│   │   ├── restore_final_task.class.php
+│   │   ├── restore_format_plugin.class.php
+│   │   ├── restore_gradingform_plugin.class.php
+│   │   ├── restore_local_plugin.class.php
+│   │   ├── restore_plagiarism_plugin.class.php
+│   │   ├── restore_plan_builder.class.php
+│   │   ├── restore_plugin.class.php
+│   │   ├── restore_qbank_plugin.class.php
+│   │   ├── restore_qtype_extrafields_plugin.class.php
+│   │   ├── restore_qtype_plugin.class.php
+│   │   ├── restore_report_plugin.class.php
+│   │   ├── restore_root_task.class.php
+│   │   ├── restore_section_task.class.php
+│   │   ├── restore_settingslib.php
+│   │   ├── restore_stepslib.php
+│   │   ├── restore_subplugin.class.php
+│   │   ├── restore_theme_plugin.class.php
+│   │   ├── restore_tool_plugin.class.php
+│   │   └── tests
+│   ├── restore.php
+│   ├── restorefile.php
+│   ├── restorefile_form.php
+│   ├── tests
+│   │   ├── async_backup_test.php
+│   │   ├── async_restore_test.php
+│   │   ├── automated_backup_test.php
+│   │   ├── backup_cleanup_task_test.php
+│   │   ├── backup_restore_base_testcase.php
+│   │   ├── backup_restore_group_test.php
+│   │   ├── backup_restore_permission_test.php
+│   │   ├── externallib_test.php
+│   │   ├── privacy
+│   │   ├── quiz_restore_decode_links_test.php
+│   │   └── roles_backup_restore_test.php
+│   ├── upgrade.txt
+│   ├── util
+│   │   ├── checks
+│   │   ├── dbops
+│   │   ├── destinations
+│   │   ├── factories
+│   │   ├── helper
+│   │   ├── includes
+│   │   ├── interfaces
+│   │   ├── loggers
+│   │   ├── output
+│   │   ├── plan
+│   │   ├── settings
+│   │   ├── structure
+│   │   ├── ui
+│   │   └── xml
+│   └── view.php
+├── badges
+│   ├── UPGRADING.md
+│   ├── action.php
+│   ├── alignment.php
+│   ├── alignment_action.php
+│   ├── alignment_form.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── assertion.php
+│   ├── award.php
+│   ├── backpack-add.php
+│   ├── backpack-connect.php
+│   ├── backpack-export.php
+│   ├── backpackemailverify.php
+│   ├── backpacks.php
+│   ├── badge.php
+│   ├── badge_json.php
+│   ├── badgeclass.php
+│   ├── classes
+│   │   ├── assertion.php
+│   │   ├── backpack_api.php
+│   │   ├── backpack_api2p1.php
+│   │   ├── backpack_api2p1_mapping.php
+│   │   ├── backpack_api_mapping.php
+│   │   ├── badge.php
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── form
+│   │   ├── helper.php
+│   │   ├── oauth2
+│   │   ├── observer.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── criteria
+│   │   ├── award_criteria.php
+│   │   ├── award_criteria_activity.php
+│   │   ├── award_criteria_badge.php
+│   │   ├── award_criteria_cohort.php
+│   │   ├── award_criteria_competency.php
+│   │   ├── award_criteria_course.php
+│   │   ├── award_criteria_courseset.php
+│   │   ├── award_criteria_manual.php
+│   │   ├── award_criteria_overall.php
+│   │   └── award_criteria_profile.php
+│   ├── criteria.php
+│   ├── criteria_action.php
+│   ├── criteria_form.php
+│   ├── criteria_settings.php
+│   ├── edit.php
+│   ├── endorsement.php
+│   ├── endorsement_form.php
+│   ├── endorsement_json.php
+│   ├── external.php
+│   ├── image_author_json.php
+│   ├── index.php
+│   ├── issuer_json.php
+│   ├── lib
+│   │   ├── awardlib.php
+│   │   └── bakerlib.php
+│   ├── lib.php
+│   ├── mybackpack.php
+│   ├── mybadges.php
+│   ├── newbadge.php
+│   ├── overview.php
+│   ├── preferences.php
+│   ├── preferences_form.php
+│   ├── recipients.php
+│   ├── related.php
+│   ├── related_action.php
+│   ├── related_form.php
+│   ├── renderer.php
+│   ├── templates
+│   │   ├── award_badge.mustache
+│   │   ├── badge_more_nav.mustache
+│   │   ├── external_backpacks_page.mustache
+│   │   ├── issued_badge.mustache
+│   │   ├── manage_badge.mustache
+│   │   └── manage_badges.mustache
+│   ├── tests
+│   │   ├── badge_test.php
+│   │   ├── badgeslib_test.php
+│   │   ├── behat
+│   │   ├── events_test.php
+│   │   ├── external
+│   │   ├── generator
+│   │   ├── output
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── upgrade.txt
+│   ├── upgradelib.php
+│   └── view.php
+├── behat.yml.dist
+├── blocks
+│   ├── accessreview
+│   │   ├── amd
+│   │   ├── block_accessreview.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── activity_modules
+│   │   ├── block_activity_modules.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── activity_results
+│   │   ├── backup
+│   │   ├── block_activity_results.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── admin_bookmarks
+│   │   ├── block_admin_bookmarks.php
+│   │   ├── classes
+│   │   ├── create.php
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── badges
+│   │   ├── block_badges.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── blog_menu
+│   │   ├── block_blog_menu.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── blog_recent
+│   │   ├── block_blog_recent.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── blog_tags
+│   │   ├── block_blog_tags.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── calendar_month
+│   │   ├── block_calendar_month.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── calendar_upcoming
+│   │   ├── block_calendar_upcoming.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── classes
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── navigation
+│   │   ├── output
+│   │   └── privacy
+│   ├── comments
+│   │   ├── block_comments.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── completionstatus
+│   │   ├── block_completionstatus.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── details.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── course_list
+│   │   ├── block_course_list.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── course_summary
+│   │   ├── block_course_summary.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── duitku_membership
+│   │   ├── ADMIN.md
+│   │   ├── DEVELOPER.md
+│   │   ├── USER.md
+│   │   ├── block_duitku_membership.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── edit_form.php
+│   ├── feedback
+│   │   ├── block_feedback.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   └── version.php
+│   ├── globalsearch
+│   │   ├── block_globalsearch.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── glossary_random
+│   │   ├── backup
+│   │   ├── block_glossary_random.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── html
+│   │   ├── backup
+│   │   ├── block_html.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── index.html
+│   ├── login
+│   │   ├── block_login.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── lp
+│   │   ├── block_lp.php
+│   │   ├── classes
+│   │   ├── competencies_to_review.php
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── plans_to_review.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── mb2azcourses
+│   │   ├── assets
+│   │   ├── block_mb2azcourses.php
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── index.html
+│   │   ├── lang
+│   │   ├── lib
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── scripts
+│   │   ├── styles.css
+│   │   └── version.php
+│   ├── mentees
+│   │   ├── block_mentees.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── mnet_hosts
+│   │   ├── block_mnet_hosts.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── moodleblock.class.php
+│   ├── myoverview
+│   │   ├── amd
+│   │   ├── block_myoverview.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── myprofile
+│   │   ├── block_myprofile.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── navigation
+│   │   ├── amd
+│   │   ├── block_navigation.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── renderer.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── news_items
+│   │   ├── block_news_items.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── online_users
+│   │   ├── amd
+│   │   ├── block_online_users.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── private_files
+│   │   ├── amd
+│   │   ├── block_private_files.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit.php
+│   │   ├── lang
+│   │   ├── renderer.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── recent_activity
+│   │   ├── block_recent_activity.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── renderer.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── recentlyaccessedcourses
+│   │   ├── amd
+│   │   ├── block_recentlyaccessedcourses.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── recentlyaccesseditems
+│   │   ├── amd
+│   │   ├── block_recentlyaccesseditems.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── rss_client
+│   │   ├── backup
+│   │   ├── block_rss_client.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── editfeed.php
+│   │   ├── lang
+│   │   ├── managefeeds.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── viewfeed.php
+│   ├── search_forums
+│   │   ├── block_search_forums.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── section_links
+│   │   ├── block_section_links.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── renderer.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── selfcompletion
+│   │   ├── block_selfcompletion.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   └── version.php
+│   ├── settings
+│   │   ├── amd
+│   │   ├── block_settings.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── renderer.php
+│   │   ├── styles.css
+│   │   └── version.php
+│   ├── site_main_menu
+│   │   ├── block_site_main_menu.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── social_activities
+│   │   ├── block_social_activities.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── starredcourses
+│   │   ├── amd
+│   │   ├── block_starredcourses.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── tag_flickr
+│   │   ├── block_tag_flickr.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── tag_youtube
+│   │   ├── block_tag_youtube.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── tags
+│   │   ├── backup
+│   │   ├── block_tags.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── edit_form.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── coverage.php
+│   │   ├── externallib_test.php
+│   │   └── privacy
+│   ├── timeline
+│   │   ├── amd
+│   │   ├── block_timeline.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   └── upgrade.txt
+├── blog
+│   ├── classes
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── external_blog_edit.php
+│   ├── external_blog_edit_form.php
+│   ├── external_blogs.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── locallib.php
+│   ├── preferences.php
+│   ├── preferences_form.php
+│   ├── renderer.php
+│   ├── rsslib.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── event
+│   │   ├── external
+│   │   ├── generator
+│   │   ├── lib_test.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   └── upgrade.txt
+├── brokenfile.php
+├── cache
+│   ├── README.md
+│   ├── UPGRADING.md
+│   ├── admin.php
+│   ├── classes
+│   │   ├── administration_helper.php
+│   │   ├── allow_temporary_caches.php
+│   │   ├── application_cache.php
+│   │   ├── cache.php
+│   │   ├── cache_lock_interface.php
+│   │   ├── cacheable_object_array.php
+│   │   ├── cacheable_object_interface.php
+│   │   ├── cached_object.php
+│   │   ├── config.php
+│   │   ├── config_writer.php
+│   │   ├── configurable_cache_interface.php
+│   │   ├── data_source_interface.php
+│   │   ├── definition.php
+│   │   ├── disabled_cache.php
+│   │   ├── disabled_config.php
+│   │   ├── disabled_factory.php
+│   │   ├── dummy_cachestore.php
+│   │   ├── exception
+│   │   ├── factory.php
+│   │   ├── form
+│   │   ├── helper.php
+│   │   ├── key_aware_cache_interface.php
+│   │   ├── loader_interface.php
+│   │   ├── loader_with_locking_interface.php
+│   │   ├── local
+│   │   ├── lockable_cache_interface.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── request_cache.php
+│   │   ├── searchable_cache_interface.php
+│   │   ├── session_cache.php
+│   │   ├── store.php
+│   │   ├── store_interface.php
+│   │   ├── ttl_wrapper.php
+│   │   ├── version_wrapper.php
+│   │   └── versionable_data_source_interface.php
+│   ├── forms.php
+│   ├── locks
+│   │   └── file
+│   ├── stores
+│   │   ├── apcu
+│   │   ├── file
+│   │   ├── redis
+│   │   ├── session
+│   │   └── static
+│   ├── templates
+│   │   └── usage.mustache
+│   ├── testperformance.php
+│   ├── tests
+│   │   ├── administration_helper_test.php
+│   │   ├── allow_temporary_caches_test.php
+│   │   ├── behat
+│   │   ├── cache_helper_test.php
+│   │   ├── cache_test.php
+│   │   ├── config_writer_test.php
+│   │   ├── fixtures
+│   │   └── store_test.php
+│   ├── upgrade.txt
+│   └── usage.php
+├── calendar
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── action_factory.php
+│   │   ├── export_form.php
+│   │   ├── external
+│   │   ├── local
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── rrule_manager.php
+│   │   ├── type_base.php
+│   │   └── type_factory.php
+│   ├── delete.php
+│   ├── event.php
+│   ├── event_form.php
+│   ├── export.php
+│   ├── export_execute.php
+│   ├── externallib.php
+│   ├── import.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── managesubscriptions.php
+│   ├── renderer.php
+│   ├── templates
+│   │   ├── add_event_button.mustache
+│   │   ├── calendar_day.mustache
+│   │   ├── calendar_mini.mustache
+│   │   ├── calendar_month.mustache
+│   │   ├── calendar_upcoming.mustache
+│   │   ├── calendar_upcoming_mini.mustache
+│   │   ├── day_detailed.mustache
+│   │   ├── day_navigation.mustache
+│   │   ├── event_delete_modal.mustache
+│   │   ├── event_details.mustache
+│   │   ├── event_filter.mustache
+│   │   ├── event_filter_key.mustache
+│   │   ├── event_icon.mustache
+│   │   ├── event_item.mustache
+│   │   ├── event_list.mustache
+│   │   ├── event_subscription.mustache
+│   │   ├── event_summary_body.mustache
+│   │   ├── event_summary_modal.mustache
+│   │   ├── export_calendar_url.mustache
+│   │   ├── footer_options.mustache
+│   │   ├── header.mustache
+│   │   ├── minicalendar_day_link.mustache
+│   │   ├── modal_event_form.mustache
+│   │   ├── month_detailed.mustache
+│   │   ├── month_mini.mustache
+│   │   ├── month_navigation.mustache
+│   │   ├── subscription_update_result.mustache
+│   │   ├── upcoming_detailed.mustache
+│   │   ├── upcoming_mini.mustache
+│   │   └── view_selector.mustache
+│   ├── tests
+│   │   ├── action_event_test.php
+│   │   ├── action_factory_test.php
+│   │   ├── action_test.php
+│   │   ├── behat
+│   │   ├── calendar_event_exporter_test.php
+│   │   ├── calendar_information_test.php
+│   │   ├── calendartype_test.php
+│   │   ├── calendartype_test_example.php
+│   │   ├── cm_info_proxy_test.php
+│   │   ├── container_test.php
+│   │   ├── coursecat_proxy_test.php
+│   │   ├── event
+│   │   ├── event_description_test.php
+│   │   ├── event_factory_test.php
+│   │   ├── event_mapper_test.php
+│   │   ├── event_test.php
+│   │   ├── event_times_test.php
+│   │   ├── event_vault_test.php
+│   │   ├── events_related_objects_cache_test.php
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── helpers.php
+│   │   ├── lib_test.php
+│   │   ├── local_api_test.php
+│   │   ├── privacy
+│   │   ├── raw_event_retrieval_strategy_test.php
+│   │   ├── repeat_event_collection_test.php
+│   │   ├── rrule_manager_test.php
+│   │   └── std_proxy_test.php
+│   ├── type
+│   │   └── gregorian
+│   ├── upgrade.txt
+│   └── view.php
+├── cohort
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── assign.php
+│   ├── classes
+│   │   ├── customfield
+│   │   ├── external
+│   │   ├── output
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── customfield.php
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── externallib.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── locallib.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── customfield
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── lib_test.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── upgrade.txt
+│   ├── upload.php
+│   └── upload_form.php
+├── comment
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── comment.js
+│   ├── comment_ajax.php
+│   ├── comment_post.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── locallib.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── context_freeze_test.php
+│   │   ├── externallib_test.php
+│   │   ├── generator
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   └── upgrade.txt
+├── communication
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── admin
+│   │   ├── api.php
+│   │   ├── communication_provider.php
+│   │   ├── constants.php
+│   │   ├── form
+│   │   ├── form_provider.php
+│   │   ├── helper.php
+│   │   ├── hook_listener.php
+│   │   ├── privacy
+│   │   ├── processor.php
+│   │   ├── room_chat_provider.php
+│   │   ├── room_user_provider.php
+│   │   ├── synchronise_provider.php
+│   │   ├── task
+│   │   └── user_provider.php
+│   ├── configure.php
+│   ├── lib.php
+│   ├── provider
+│   │   ├── customlink
+│   │   ├── matrix
+│   │   └── upgrade.txt
+│   ├── tests
+│   │   ├── api_test.php
+│   │   ├── behat
+│   │   ├── communication_test_helper_trait.php
+│   │   ├── fixtures
+│   │   ├── helper_test.php
+│   │   ├── hook_listener_test.php
+│   │   └── processor_test.php
+│   └── upgrade.txt
+├── competency
+│   ├── classes
+│   │   ├── api.php
+│   │   ├── competency.php
+│   │   ├── competency_framework.php
+│   │   ├── competency_rule.php
+│   │   ├── competency_rule_all.php
+│   │   ├── competency_rule_points.php
+│   │   ├── course_competency.php
+│   │   ├── course_competency_settings.php
+│   │   ├── course_module_competency.php
+│   │   ├── evidence.php
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── persistent.php
+│   │   ├── plan.php
+│   │   ├── plan_competency.php
+│   │   ├── privacy
+│   │   ├── related_competency.php
+│   │   ├── reportbuilder
+│   │   ├── template.php
+│   │   ├── template_cohort.php
+│   │   ├── template_competency.php
+│   │   ├── url.php
+│   │   ├── user_competency.php
+│   │   ├── user_competency_course.php
+│   │   ├── user_competency_plan.php
+│   │   ├── user_evidence.php
+│   │   └── user_evidence_competency.php
+│   ├── lib.php
+│   ├── tests
+│   │   ├── api_test.php
+│   │   ├── competency_override_test.php
+│   │   ├── competency_rule_test.php
+│   │   ├── competency_test.php
+│   │   ├── course_competency_settings_test.php
+│   │   ├── course_competency_test.php
+│   │   ├── course_module_competency_test.php
+│   │   ├── event
+│   │   ├── external
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── hooks_test.php
+│   │   ├── lib_test.php
+│   │   ├── performance_helper_test.php
+│   │   ├── plan_test.php
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── task
+│   │   ├── template_test.php
+│   │   └── user_evidence_competency_test.php
+│   └── upgrade.txt
+├── completion
+│   ├── UPGRADING.md
+│   ├── classes
+│   │   ├── activity_custom_completion.php
+│   │   ├── api.php
+│   │   ├── bulkedit_form.php
+│   │   ├── cm_completion_details.php
+│   │   ├── defaultedit_form.php
+│   │   ├── edit_base_form.php
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── form
+│   │   ├── manager.php
+│   │   ├── privacy
+│   │   └── progress.php
+│   ├── completion_aggregation.php
+│   ├── completion_completion.php
+│   ├── completion_criteria_completion.php
+│   ├── criteria
+│   │   ├── completion_criteria.php
+│   │   ├── completion_criteria_activity.php
+│   │   ├── completion_criteria_course.php
+│   │   ├── completion_criteria_date.php
+│   │   ├── completion_criteria_duration.php
+│   │   ├── completion_criteria_grade.php
+│   │   ├── completion_criteria_role.php
+│   │   ├── completion_criteria_self.php
+│   │   └── completion_criteria_unenrol.php
+│   ├── data_object.php
+│   ├── tests
+│   │   ├── activity_custom_completion_test.php
+│   │   ├── api_test.php
+│   │   ├── behat
+│   │   ├── bulk_update_test.php
+│   │   ├── capabilities_test.php
+│   │   ├── cm_completion_details_test.php
+│   │   ├── completion_criteria_test.php
+│   │   ├── coverage.php
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── privacy
+│   │   └── progress_test.php
+│   └── upgrade.txt
+├── composer.json
+├── composer.lock
+├── config-dist.php
+├── config.php
+├── contentbank
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── content.php
+│   │   ├── contentbank.php
+│   │   ├── contenttype.php
+│   │   ├── customfield
+│   │   ├── external
+│   │   ├── form
+│   │   ├── helper.php
+│   │   ├── output
+│   │   └── privacy
+│   ├── contenttype
+│   │   └── h5p
+│   ├── customfield.php
+│   ├── edit.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── templates
+│   │   ├── bankcontent
+│   │   ├── bankcontent.mustache
+│   │   ├── contentbankmenu.mustache
+│   │   ├── copycontent.mustache
+│   │   ├── customfields.mustache
+│   │   ├── renamecontent.mustache
+│   │   ├── viewcontent
+│   │   └── viewcontent.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── content_test.php
+│   │   ├── contentbank_test.php
+│   │   ├── contenttype_test.php
+│   │   ├── external
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   └── privacy
+│   ├── upgrade.txt
+│   └── view.php
+├── course
+│   ├── UPGRADING.md
+│   ├── admin.php
+│   ├── ajax
+│   │   └── management.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── bulkcompletion.php
+│   ├── category.ajax.php
+│   ├── changenumsections.php
+│   ├── classes
+│   │   ├── analytics
+│   │   ├── cache
+│   │   ├── category.php
+│   │   ├── customfield
+│   │   ├── deletecategory_form.php
+│   │   ├── editcategory_form.php
+│   │   ├── external
+│   │   ├── hook
+│   │   ├── list_element.php
+│   │   ├── local
+│   │   ├── management
+│   │   ├── management_renderer.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── search
+│   │   └── task
+│   ├── completion.php
+│   ├── completion_form.php
+│   ├── customfield.php
+│   ├── defaultcompletion.php
+│   ├── delete.php
+│   ├── dndupload.js
+│   ├── dndupload.php
+│   ├── dnduploadlib.php
+│   ├── downloadcontent.php
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── editbulkcompletion.php
+│   ├── editcategory.php
+│   ├── editsection.php
+│   ├── editsection_form.php
+│   ├── enrol.php
+│   ├── externallib.php
+│   ├── format
+│   │   ├── README.txt
+│   │   ├── UPGRADING.md
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── formatlegacy.php
+│   │   ├── lib.php
+│   │   ├── singleactivity
+│   │   ├── social
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── topics
+│   │   ├── upgrade.txt
+│   │   └── weeks
+│   ├── index.php
+│   ├── info.php
+│   ├── jumpto.php
+│   ├── lib.php
+│   ├── loginas.php
+│   ├── management.php
+│   ├── mod.php
+│   ├── modduplicate.php
+│   ├── modedit.php
+│   ├── modlib.php
+│   ├── modregrade.php
+│   ├── moodleform_mod.php
+│   ├── pending.php
+│   ├── recent.php
+│   ├── recent_form.php
+│   ├── recommendations.php
+│   ├── renderer.php
+│   ├── report
+│   │   └── lib.php
+│   ├── report.php
+│   ├── request.php
+│   ├── request_form.php
+│   ├── reset.php
+│   ├── reset_form.php
+│   ├── resources.php
+│   ├── rest.php
+│   ├── scales.php
+│   ├── search.php
+│   ├── section.php
+│   ├── switchrole.php
+│   ├── switchrole_form.php
+│   ├── tags.php
+│   ├── tags_form.php
+│   ├── templates
+│   │   ├── activity_date.mustache
+│   │   ├── activity_info.mustache
+│   │   ├── activity_list.mustache
+│   │   ├── activity_navigation.mustache
+│   │   ├── activitychooser.mustache
+│   │   ├── activitychooserbutton.mustache
+│   │   ├── activityinstance.mustache
+│   │   ├── addresourceoractivitybutton.mustache
+│   │   ├── bulkactivitycompletion.mustache
+│   │   ├── category_actionbar.mustache
+│   │   ├── completion_action_bar.mustache
+│   │   ├── completion_automatic.mustache
+│   │   ├── completion_manual.mustache
+│   │   ├── coursecard.mustache
+│   │   ├── coursecards.mustache
+│   │   ├── defaultactivitycompletion.mustache
+│   │   ├── editbulkactivitycompletion.mustache
+│   │   ├── editdefaultcompletion.mustache
+│   │   ├── favouriteicon.mustache
+│   │   ├── initials_dropdown_form.mustache
+│   │   ├── local
+│   │   ├── manage_category_actionbar.mustache
+│   │   ├── no-courses.mustache
+│   │   ├── participants_actionbar.mustache
+│   │   ├── placeholder-course.mustache
+│   │   └── view-cards.mustache
+│   ├── tests
+│   │   ├── analytics
+│   │   ├── backup
+│   │   ├── backup_restore_activity_test.php
+│   │   ├── behat
+│   │   ├── caching_content_item_readonly_repository_test.php
+│   │   ├── category_hooks_test.php
+│   │   ├── category_test.php
+│   │   ├── content_item_readonly_repository_test.php
+│   │   ├── content_item_test.php
+│   │   ├── course_delete_modules_test.php
+│   │   ├── course_format_function_test.php
+│   │   ├── course_image_cache_test.php
+│   │   ├── course_summary_exporter_test.php
+│   │   ├── courselib_test.php
+│   │   ├── courserequest_test.php
+│   │   ├── coverage.php
+│   │   ├── customfield_test.php
+│   │   ├── event
+│   │   ├── exporters_content_item_test.php
+│   │   ├── exporters_content_items_test.php
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── management_helper_test.php
+│   │   ├── modlib_test.php
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── search
+│   │   ├── services_content_item_service_test.php
+│   │   ├── targets_test.php
+│   │   └── task
+│   ├── togglecompletion.php
+│   ├── upgrade.txt
+│   ├── user.php
+│   ├── view.php
+│   └── yui
+│       ├── build
+│       └── src
+├── customfield
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── api.php
+│   │   ├── category.php
+│   │   ├── category_controller.php
+│   │   ├── data.php
+│   │   ├── data_controller.php
+│   │   ├── event
+│   │   ├── field.php
+│   │   ├── field_config_form.php
+│   │   ├── field_controller.php
+│   │   ├── handler.php
+│   │   ├── output
+│   │   └── privacy
+│   ├── externallib.php
+│   ├── field
+│   │   ├── checkbox
+│   │   ├── date
+│   │   ├── number
+│   │   ├── select
+│   │   ├── text
+│   │   ├── textarea
+│   │   └── upgrade.txt
+│   ├── lib.php
+│   ├── templates
+│   │   ├── field_data.mustache
+│   │   ├── list.mustache
+│   │   └── nofields.mustache
+│   ├── tests
+│   │   ├── api_test.php
+│   │   ├── behat
+│   │   ├── category_controller_test.php
+│   │   ├── data_controller_test.php
+│   │   ├── field_controller_test.php
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── handler_test.php
+│   │   └── privacy
+│   └── upgrade.txt
+├── dataformat
+│   ├── csv
+│   │   ├── classes
+│   │   ├── lang
+│   │   └── version.php
+│   ├── excel
+│   │   ├── classes
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── html
+│   │   ├── classes
+│   │   ├── lang
+│   │   └── version.php
+│   ├── json
+│   │   ├── classes
+│   │   ├── lang
+│   │   └── version.php
+│   ├── ods
+│   │   ├── classes
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── pdf
+│   │   ├── classes
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   └── upgrade.txt
+├── draftfile.php
+├── editmode.php
+├── enrol
+│   ├── README.txt
+│   ├── UPGRADING.md
+│   ├── ajax.php
+│   ├── bulkchange_forms.php
+│   ├── category
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── classes
+│   │   ├── form
+│   │   ├── hook
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── cohort
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── database
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── duitku
+│   │   ├── FIX_INSTRUCTIONS.md
+│   │   ├── MEMBERSHIP_FIXES.md
+│   │   ├── README.md
+│   │   ├── SECURITY.md
+│   │   ├── SECURITY_FIX.md
+│   │   ├── SECURITY_IMPLEMENTATION.md
+│   │   ├── call.php
+│   │   ├── callback.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── enrol.html
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── membership.php
+│   │   ├── membership_callback.php
+│   │   ├── membership_dashboard.php
+│   │   ├── membership_return.php
+│   │   ├── pix
+│   │   ├── reference_check.php
+│   │   ├── return.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── verify_callback.php
+│   │   ├── verify_membership.php
+│   │   ├── verify_transaction.php
+│   │   └── version.php
+│   ├── editenrolment.php
+│   ├── editenrolment_form.php
+│   ├── editinstance.php
+│   ├── editinstance_form.php
+│   ├── externallib.php
+│   ├── fee
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── flatfile
+│   │   ├── adminlib.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── example.txt
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── guest
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── imsenterprise
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── examples
+│   │   ├── importnow.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── index.php
+│   ├── instances.php
+│   ├── ldap
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── settingslib.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── locallib.php
+│   ├── lti
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── cartridge.php
+│   │   ├── classes
+│   │   ├── configure.php
+│   │   ├── db
+│   │   ├── ims-blti
+│   │   ├── index.php
+│   │   ├── jwks.php
+│   │   ├── lang
+│   │   ├── launch.php
+│   │   ├── launch_deeplink.php
+│   │   ├── lib.php
+│   │   ├── login.php
+│   │   ├── manage_deployment.php
+│   │   ├── pix
+│   │   ├── proxy.php
+│   │   ├── register.php
+│   │   ├── register_platform.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   ├── tool.php
+│   │   ├── upgradelib.php
+│   │   ├── version.php
+│   │   └── xml
+│   ├── manual
+│   │   ├── ajax.php
+│   │   ├── amd
+│   │   ├── bulkchangeforms.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── externallib.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── manage.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── unenrolself.php
+│   │   └── version.php
+│   ├── meta
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── mnet
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── enrol.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── otherusers.php
+│   ├── paypal
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── enrol.html
+│   │   ├── ipn.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── return.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── unenrolself.php
+│   │   └── version.php
+│   ├── renameroles.php
+│   ├── renderer.php
+│   ├── self
+│   │   ├── bulkchangeforms.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── externallib.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── unenrolself.php
+│   │   └── version.php
+│   ├── test_settings.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── course_enrolment_manager_test.php
+│   │   ├── enrollib_test.php
+│   │   ├── externallib_test.php
+│   │   ├── privacy
+│   │   └── role_external_test.php
+│   ├── unenroluser.php
+│   ├── upgrade.txt
+│   ├── users_forms.php
+│   └── yui
+│       ├── otherusersmanager
+│       └── rolemanager
+├── error
+│   ├── index.php
+│   └── plainpage.php
+├── favourites
+│   ├── classes
+│   │   ├── local
+│   │   ├── privacy
+│   │   └── service_factory.php
+│   └── tests
+│       ├── component_favourite_service_test.php
+│       ├── privacy
+│       ├── repository_test.php
+│       └── user_favourite_service_test.php
+├── file.php
+├── files
+│   ├── UPGRADING.md
+│   ├── classes
+│   │   ├── archive_writer.php
+│   │   ├── conversion.php
+│   │   ├── converter.php
+│   │   ├── converter_interface.php
+│   │   ├── external
+│   │   ├── hook
+│   │   ├── local
+│   │   ├── privacy
+│   │   ├── redactor
+│   │   ├── reportbuilder
+│   │   └── task
+│   ├── converter
+│   │   ├── classes
+│   │   ├── googledrive
+│   │   └── unoconv
+│   ├── coursefilesedit.php
+│   ├── coursefilesedit_form.php
+│   ├── externallib.php
+│   ├── index.php
+│   ├── renderer.php
+│   ├── tests
+│   │   ├── archive_writer_test.php
+│   │   ├── behat
+│   │   ├── classes
+│   │   ├── conversion_test.php
+│   │   ├── converter_test.php
+│   │   ├── external
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── hook
+│   │   ├── local
+│   │   ├── privacy
+│   │   ├── redactor
+│   │   └── reportbuilder
+│   └── upgrade.txt
+├── filter
+│   ├── UPGRADING.md
+│   ├── activitynames
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── algebra
+│   │   ├── AlgParser.pm
+│   │   ├── algebra2tex.pl
+│   │   ├── algebradebug.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── pix.php
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   └── version.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── external
+│   │   ├── filter_manager.php
+│   │   ├── filter_object.php
+│   │   ├── form
+│   │   ├── null_filter_manager.php
+│   │   ├── performance_measuring_filter_manager.php
+│   │   ├── privacy
+│   │   └── text_filter.php
+│   ├── codehighlighter
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── readme_moodle.txt
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   └── version.php
+│   ├── data
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── displayh5p
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── emailprotect
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── tests
+│   │   └── version.php
+│   ├── emoticon
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── glossary
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── index.html
+│   ├── local_settings_form.php
+│   ├── manage.php
+│   ├── mathjaxloader
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── readme_moodle.txt
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   └── version.php
+│   ├── mb2shortcodes
+│   │   ├── classes
+│   │   ├── lang
+│   │   ├── lib
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mediaplugin
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── dev
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── multilang
+│   │   ├── README.txt
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── tests
+│   │   └── external
+│   ├── tex
+│   │   ├── README.mimetex
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── displaytex.php
+│   │   ├── filter.php
+│   │   ├── lang
+│   │   ├── latex.php
+│   │   ├── lib.php
+│   │   ├── mimetex.darwin
+│   │   ├── mimetex.exe
+│   │   ├── mimetex.freebsd
+│   │   ├── mimetex.linux
+│   │   ├── mimetex.linux.aarch64
+│   │   ├── pix.php
+│   │   ├── readme_moodle.txt
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── texdebug.php
+│   │   ├── thirdpartylibs.xml
+│   │   └── version.php
+│   ├── upgrade.txt
+│   └── urltolink
+│       ├── classes
+│       ├── db
+│       ├── filter.php
+│       ├── lang
+│       ├── settings.php
+│       ├── tests
+│       └── version.php
+├── githash.php
+├── grade
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── component_gradeitem.php
+│   │   ├── component_gradeitems.php
+│   │   ├── external
+│   │   ├── form
+│   │   ├── grades
+│   │   ├── local
+│   │   ├── output
+│   │   └── privacy
+│   ├── edit
+│   │   ├── letter
+│   │   ├── outcome
+│   │   ├── scale
+│   │   ├── settings
+│   │   └── tree
+│   ├── export
+│   │   ├── grade_export_form.php
+│   │   ├── index.php
+│   │   ├── key.php
+│   │   ├── key_form.php
+│   │   ├── keymanager.php
+│   │   ├── lib.php
+│   │   ├── ods
+│   │   ├── txt
+│   │   ├── upgrade.txt
+│   │   ├── xls
+│   │   └── xml
+│   ├── grading
+│   │   ├── classes
+│   │   ├── form
+│   │   ├── lib.php
+│   │   ├── manage.php
+│   │   ├── pick.php
+│   │   ├── pick_form.php
+│   │   ├── renderer.php
+│   │   ├── tests
+│   │   └── yui
+│   ├── import
+│   │   ├── csv
+│   │   ├── direct
+│   │   ├── grade_import_form.php
+│   │   ├── index.php
+│   │   ├── key.php
+│   │   ├── key_form.php
+│   │   ├── keymanager.php
+│   │   ├── lib.php
+│   │   └── xml
+│   ├── index.php
+│   ├── lib.php
+│   ├── querylib.php
+│   ├── renderer.php
+│   ├── report
+│   │   ├── grader
+│   │   ├── history
+│   │   ├── index.php
+│   │   ├── lib.php
+│   │   ├── mygrades.php
+│   │   ├── outcomes
+│   │   ├── overview
+│   │   ├── singleview
+│   │   ├── summary
+│   │   ├── upgrade.txt
+│   │   └── user
+│   ├── templates
+│   │   ├── bulkactions
+│   │   ├── category_settings.mustache
+│   │   ├── cellmenu.mustache
+│   │   ├── course_outcomes_action_bar.mustache
+│   │   ├── edit_tree.mustache
+│   │   ├── edit_tree_sticky_footer.mustache
+│   │   ├── export_action_bar.mustache
+│   │   ├── export_key_manager_action_bar.mustache
+│   │   ├── export_publish_action_bar.mustache
+│   │   ├── feedback_modal.mustache
+│   │   ├── general_action_bar.mustache
+│   │   ├── grade_category_visibility_toggle.mustache
+│   │   ├── grade_letters_action_bar.mustache
+│   │   ├── gradebook_setup_action_bar.mustache
+│   │   ├── grades
+│   │   ├── import_action_bar.mustache
+│   │   ├── import_key_manager_action_bar.mustache
+│   │   ├── initials_dropdown_form.mustache
+│   │   ├── manage_outcomes_action_bar.mustache
+│   │   ├── scales_action_bar.mustache
+│   │   ├── searchwidget
+│   │   ├── status_icons.mustache
+│   │   ├── user_heading.mustache
+│   │   ├── weight_field.mustache
+│   │   └── weight_override_field.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── component_gradeitem_test.php
+│   │   ├── component_gradeitems_test.php
+│   │   ├── edittreelib_test.php
+│   │   ├── event
+│   │   ├── export_test.php
+│   │   ├── external
+│   │   ├── fixtures
+│   │   ├── grades
+│   │   ├── importlib_test.php
+│   │   ├── lib_test.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── querylib_test.php
+│   │   ├── report_graderlib_test.php
+│   │   ├── reportlib_test.php
+│   │   └── reportuserlib_test.php
+│   └── upgrade.txt
+├── group
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── assign.php
+│   ├── autogroup.php
+│   ├── autogroup_form.php
+│   ├── classes
+│   │   ├── customfield
+│   │   ├── external
+│   │   ├── hook
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   └── visibility.php
+│   ├── clientlib.js
+│   ├── customfield.php
+│   ├── delete.php
+│   ├── externallib.php
+│   ├── group.php
+│   ├── group_form.php
+│   ├── grouping.php
+│   ├── grouping_customfield.php
+│   ├── grouping_form.php
+│   ├── groupings.php
+│   ├── import.php
+│   ├── import_form.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── members.php
+│   ├── module.js
+│   ├── overview.php
+│   ├── tabs.php
+│   ├── templates
+│   │   ├── comboboxsearch
+│   │   ├── group_details.mustache
+│   │   └── index.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── customfield
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── lib_test.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   └── upgrade.txt
+├── h5p
+│   ├── ajax.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── api.php
+│   │   ├── core.php
+│   │   ├── editor.php
+│   │   ├── editor_ajax.php
+│   │   ├── editor_framework.php
+│   │   ├── event
+│   │   ├── external.php
+│   │   ├── factory.php
+│   │   ├── file_storage.php
+│   │   ├── form
+│   │   ├── framework.php
+│   │   ├── helper.php
+│   │   ├── local
+│   │   ├── output
+│   │   ├── player.php
+│   │   └── privacy
+│   ├── edit.php
+│   ├── embed.php
+│   ├── h5plib
+│   │   └── v127
+│   ├── js
+│   │   ├── embed.js
+│   │   └── h5p_overrides.js
+│   ├── lib.php
+│   ├── libraries.php
+│   ├── overview.php
+│   ├── pix
+│   │   └── icon.svg
+│   ├── templates
+│   │   ├── h5pdiv.mustache
+│   │   ├── h5peditor.mustache
+│   │   ├── h5pembed.mustache
+│   │   ├── h5perror.mustache
+│   │   ├── h5piframe.mustache
+│   │   ├── h5plibraries.mustache
+│   │   ├── h5presize.mustache
+│   │   └── h5ptoolsoverview.mustache
+│   ├── tests
+│   │   ├── api_test.php
+│   │   ├── behat
+│   │   ├── editor_ajax_test.php
+│   │   ├── editor_framework_test.php
+│   │   ├── editor_test.php
+│   │   ├── event
+│   │   ├── external
+│   │   ├── file_storage_test.php
+│   │   ├── fixtures
+│   │   ├── framework_test.php
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── h5p_core_test.php
+│   │   ├── helper_test.php
+│   │   └── local
+│   └── upgrade.txt
+├── help.php
+├── help_ajax.php
+├── index.php
+├── install
+│   ├── README.txt
+│   ├── css.php
+│   ├── distribution.html
+│   ├── lang
+│   │   ├── ab
+│   │   ├── af
+│   │   ├── am
+│   │   ├── an
+│   │   ├── ar
+│   │   ├── ar_wp
+│   │   ├── arn
+│   │   ├── ast
+│   │   ├── az
+│   │   ├── ba
+│   │   ├── bar
+│   │   ├── be
+│   │   ├── bg
+│   │   ├── bi
+│   │   ├── bm
+│   │   ├── bn
+│   │   ├── br
+│   │   ├── bs
+│   │   ├── ca
+│   │   ├── ca_valencia
+│   │   ├── ca_valencia_racv
+│   │   ├── ca_wp
+│   │   ├── ckb
+│   │   ├── cs
+│   │   ├── cy
+│   │   ├── da
+│   │   ├── da_kursus
+│   │   ├── da_rum
+│   │   ├── da_wp
+│   │   ├── de
+│   │   ├── de_ch
+│   │   ├── de_comm
+│   │   ├── de_du
+│   │   ├── de_kids
+│   │   ├── de_wp
+│   │   ├── dsb
+│   │   ├── dv
+│   │   ├── dz
+│   │   ├── ee
+│   │   ├── el
+│   │   ├── el_kids
+│   │   ├── el_uni
+│   │   ├── el_wp
+│   │   ├── en
+│   │   ├── en_ar
+│   │   ├── en_ca
+│   │   ├── en_kids
+│   │   ├── en_us
+│   │   ├── en_us_k12
+│   │   ├── en_us_wp
+│   │   ├── en_wp
+│   │   ├── eo
+│   │   ├── es
+│   │   ├── es_ar
+│   │   ├── es_co
+│   │   ├── es_mx
+│   │   ├── es_mx_kids
+│   │   ├── es_ve
+│   │   ├── es_wp
+│   │   ├── et
+│   │   ├── eu
+│   │   ├── fa
+│   │   ├── fi
+│   │   ├── fi_co
+│   │   ├── fil
+│   │   ├── fj
+│   │   ├── fkv
+│   │   ├── fo
+│   │   ├── fr
+│   │   ├── fr_ca
+│   │   ├── fr_ca_epi
+│   │   ├── fr_incl
+│   │   ├── fr_wp
+│   │   ├── ga
+│   │   ├── gd
+│   │   ├── gl
+│   │   ├── gu
+│   │   ├── ha
+│   │   ├── hat
+│   │   ├── haw
+│   │   ├── he
+│   │   ├── he_kids
+│   │   ├── he_wp
+│   │   ├── hi
+│   │   ├── hi_kids
+│   │   ├── hi_wp
+│   │   ├── hr
+│   │   ├── hr_schools
+│   │   ├── hsb
+│   │   ├── hu
+│   │   ├── hy
+│   │   ├── ia
+│   │   ├── id
+│   │   ├── ig
+│   │   ├── is
+│   │   ├── it
+│   │   ├── it_wp
+│   │   ├── iu
+│   │   ├── ja
+│   │   ├── ja_kids
+│   │   ├── ja_wp
+│   │   ├── ka
+│   │   ├── kaa
+│   │   ├── kab
+│   │   ├── kk
+│   │   ├── kl
+│   │   ├── km
+│   │   ├── kmr
+│   │   ├── kn
+│   │   ├── ko
+│   │   ├── ky
+│   │   ├── la
+│   │   ├── lb
+│   │   ├── lg
+│   │   ├── lo
+│   │   ├── lt
+│   │   ├── lt_uni
+│   │   ├── lt_wp
+│   │   ├── lv
+│   │   ├── lv_wp
+│   │   ├── mg
+│   │   ├── mh
+│   │   ├── mi
+│   │   ├── mi_tn
+│   │   ├── mi_wwow
+│   │   ├── mis
+│   │   ├── mk
+│   │   ├── ml
+│   │   ├── mn
+│   │   ├── mn_mong
+│   │   ├── mr
+│   │   ├── ms
+│   │   ├── mwl
+│   │   ├── my
+│   │   ├── nb
+│   │   ├── ne
+│   │   ├── nl
+│   │   ├── nl_wp
+│   │   ├── nn
+│   │   ├── no
+│   │   ├── no_gr
+│   │   ├── no_wp
+│   │   ├── oc_es
+│   │   ├── oc_gsc
+│   │   ├── oc_lnc
+│   │   ├── om
+│   │   ├── or
+│   │   ├── pan
+│   │   ├── pap
+│   │   ├── pcm
+│   │   ├── pl
+│   │   ├── prs
+│   │   ├── ps
+│   │   ├── pt
+│   │   ├── pt_br
+│   │   ├── pt_br_kids
+│   │   ├── pt_br_uni
+│   │   ├── pt_br_wp
+│   │   ├── qu
+│   │   ├── qxr
+│   │   ├── rm_surs
+│   │   ├── ro
+│   │   ├── ro_wp
+│   │   ├── ru
+│   │   ├── rw
+│   │   ├── sa
+│   │   ├── sc
+│   │   ├── scn
+│   │   ├── sd_ap
+│   │   ├── se
+│   │   ├── sgs
+│   │   ├── si
+│   │   ├── sk
+│   │   ├── sl
+│   │   ├── sm
+│   │   ├── sma
+│   │   ├── smj
+│   │   ├── so
+│   │   ├── sq
+│   │   ├── sr_cr
+│   │   ├── sr_lt
+│   │   ├── sv
+│   │   ├── sv_fi
+│   │   ├── sv_wp
+│   │   ├── sw
+│   │   ├── szl
+│   │   ├── ta
+│   │   ├── ta_lk
+│   │   ├── te
+│   │   ├── tet
+│   │   ├── tg
+│   │   ├── th
+│   │   ├── ti
+│   │   ├── tk
+│   │   ├── tl
+│   │   ├── tn
+│   │   ├── to
+│   │   ├── tpi
+│   │   ├── tr
+│   │   ├── tt
+│   │   ├── ug_lt
+│   │   ├── ug_ug
+│   │   ├── uk
+│   │   ├── ur
+│   │   ├── uz
+│   │   ├── vi
+│   │   ├── wo
+│   │   ├── xct
+│   │   ├── xh
+│   │   ├── yo
+│   │   ├── zgh
+│   │   ├── zh_cn
+│   │   ├── zh_cn_wp
+│   │   ├── zh_tw
+│   │   ├── zh_tw_wp
+│   │   └── zu
+│   ├── stringnames.txt
+│   └── welcome.html
+├── install.php
+├── iplookup
+│   ├── README.txt
+│   ├── earth.jpeg
+│   ├── index.php
+│   ├── lib.php
+│   ├── marker.gif
+│   ├── module.js
+│   └── tests
+│       ├── fixtures
+│       ├── geoip_test.php
+│       └── geoplugin_test.php
+├── lang
+│   ├── README.txt
+│   └── en
+│       ├── access.php
+│       ├── admin.php
+│       ├── adminpresets.php
+│       ├── ai.php
+│       ├── analytics.php
+│       ├── antivirus.php
+│       ├── auth.php
+│       ├── availability.php
+│       ├── backup.php
+│       ├── badges.php
+│       ├── block.php
+│       ├── blog.php
+│       ├── bulkusers.php
+│       ├── cache.php
+│       ├── calendar.php
+│       ├── cohort.php
+│       ├── comment.php
+│       ├── communication.php
+│       ├── competency.php
+│       ├── completion.php
+│       ├── contentbank.php
+│       ├── countries.php
+│       ├── course.php
+│       ├── courseformat.php
+│       ├── currencies.php
+│       ├── customfield.php
+│       ├── dbtransfer.php
+│       ├── debug.php
+│       ├── deprecated.txt
+│       ├── editor.php
+│       ├── edufields.php
+│       ├── enrol.php
+│       ├── error.php
+│       ├── external.php
+│       ├── favourites.php
+│       ├── fileconverter.php
+│       ├── files.php
+│       ├── filters.php
+│       ├── fonts
+│       ├── form.php
+│       ├── grades.php
+│       ├── grading.php
+│       ├── group.php
+│       ├── h5p.php
+│       ├── hub.php
+│       ├── imscc.php
+│       ├── install.php
+│       ├── iso6392.php
+│       ├── langconfig.php
+│       ├── license.php
+│       ├── mathslib.php
+│       ├── media.php
+│       ├── message.php
+│       ├── mimetypes.php
+│       ├── mnet.php
+│       ├── moodle.php
+│       ├── my.php
+│       ├── notes.php
+│       ├── pagetype.php
+│       ├── payment.php
+│       ├── pix.php
+│       ├── plagiarism.php
+│       ├── plugin.php
+│       ├── portfolio.php
+│       ├── privacy.php
+│       ├── question.php
+│       ├── rating.php
+│       ├── report.php
+│       ├── reportbuilder.php
+│       ├── repository.php
+│       ├── role.php
+│       ├── rss.php
+│       ├── search.php
+│       ├── sms.php
+│       ├── table.php
+│       ├── tag.php
+│       ├── timezones.php
+│       ├── user.php
+│       ├── userkey.php
+│       ├── webservice.php
+│       └── xapi.php
+├── lib
+│   ├── UPGRADING.md
+│   ├── accesslib.php
+│   ├── adminlib.php
+│   ├── adodb
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── SECURITY.md
+│   │   ├── adodb-active-record.inc.php
+│   │   ├── adodb-active-recordx.inc.php
+│   │   ├── adodb-csvlib.inc.php
+│   │   ├── adodb-datadict.inc.php
+│   │   ├── adodb-error.inc.php
+│   │   ├── adodb-errorhandler.inc.php
+│   │   ├── adodb-errorpear.inc.php
+│   │   ├── adodb-exceptions.inc.php
+│   │   ├── adodb-lib.inc.php
+│   │   ├── adodb-loadbalancer.inc.php
+│   │   ├── adodb-memcache.lib.inc.php
+│   │   ├── adodb-pager.inc.php
+│   │   ├── adodb-pear.inc.php
+│   │   ├── adodb-perf.inc.php
+│   │   ├── adodb-time.inc.php
+│   │   ├── adodb-xmlschema.inc.php
+│   │   ├── adodb-xmlschema03.inc.php
+│   │   ├── adodb.inc.php
+│   │   ├── datadict
+│   │   ├── drivers
+│   │   ├── index.html
+│   │   ├── lang
+│   │   ├── perf
+│   │   ├── phpdoc
+│   │   ├── phpdoc.dist.xml
+│   │   ├── pivottable.inc.php
+│   │   ├── readme_moodle.txt
+│   │   ├── rsfilter.inc.php
+│   │   ├── toexport.inc.php
+│   │   ├── tohtml.inc.php
+│   │   ├── xmlschema.dtd
+│   │   ├── xmlschema03.dtd
+│   │   └── xsl
+│   ├── ajax
+│   │   ├── ajaxlib.php
+│   │   ├── blocks.php
+│   │   ├── getnavbranch.php
+│   │   ├── getsiteadminbranch.php
+│   │   ├── service-nologin.php
+│   │   ├── service.php
+│   │   └── setuserpref.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── antivirus
+│   │   ├── clamav
+│   │   └── classes
+│   ├── apis.json
+│   ├── apis.schema.json
+│   ├── authlib.php
+│   ├── aws-sdk
+│   │   ├── LICENSE
+│   │   ├── NOTICE
+│   │   ├── README.md
+│   │   ├── THIRD-PARTY-LICENSES
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── badgeslib.php
+│   ├── behat
+│   │   ├── axe
+│   │   ├── behat_base.php
+│   │   ├── behat_deprecated_base.php
+│   │   ├── behat_field_manager.php
+│   │   ├── classes
+│   │   ├── core_behat_file_helper.php
+│   │   ├── extension
+│   │   ├── features
+│   │   ├── form_field
+│   │   └── lib.php
+│   ├── bennu
+│   │   ├── CHANGELOG.txt
+│   │   ├── COPYRIGHT.txt
+│   │   ├── LICENSE.txt
+│   │   ├── README.txt
+│   │   ├── TODO.txt
+│   │   ├── bennu.class.php
+│   │   ├── bennu.inc.php
+│   │   ├── iCalendar_components.php
+│   │   ├── iCalendar_parameters.php
+│   │   ├── iCalendar_properties.php
+│   │   ├── iCalendar_rfc2445.php
+│   │   └── readme_moodle.txt
+│   ├── blocklib.php
+│   ├── cacert.pem
+│   ├── cacert.txt
+│   ├── classes
+│   │   ├── access
+│   │   ├── activity_dates.php
+│   │   ├── analytics
+│   │   ├── antivirus
+│   │   ├── attribute
+│   │   ├── attribute_helper.php
+│   │   ├── aws
+│   │   ├── chart_axis.php
+│   │   ├── chart_bar.php
+│   │   ├── chart_base.php
+│   │   ├── chart_line.php
+│   │   ├── chart_pie.php
+│   │   ├── chart_series.php
+│   │   ├── check
+│   │   ├── clock.php
+│   │   ├── collator.php
+│   │   ├── component.php
+│   │   ├── content
+│   │   ├── content.php
+│   │   ├── context
+│   │   ├── context.php
+│   │   ├── context_helper.php
+│   │   ├── cron.php
+│   │   ├── cssparser.php
+│   │   ├── dataformat
+│   │   ├── dataformat.php
+│   │   ├── date.php
+│   │   ├── deprecation.php
+│   │   ├── di.php
+│   │   ├── dml
+│   │   ├── emoticon_manager.php
+│   │   ├── encryption.php
+│   │   ├── event
+│   │   ├── exception
+│   │   ├── external
+│   │   ├── files
+│   │   ├── filetypes.php
+│   │   ├── form
+│   │   ├── formatting.php
+│   │   ├── geopattern.php
+│   │   ├── grades_external.php
+│   │   ├── grading_external.php
+│   │   ├── hook
+│   │   ├── hooks.php
+│   │   ├── http_client.php
+│   │   ├── hub
+│   │   ├── invalid_persistent_exception.php
+│   │   ├── ip_utils.php
+│   │   ├── lang_string.php
+│   │   ├── local
+│   │   ├── locale.php
+│   │   ├── lock
+│   │   ├── log
+│   │   ├── message
+│   │   ├── minify.php
+│   │   ├── moodlenet
+│   │   ├── navigation
+│   │   ├── notification.php
+│   │   ├── oauth2
+│   │   ├── output
+│   │   ├── param.php
+│   │   ├── param_clientside_regex.php
+│   │   ├── persistent.php
+│   │   ├── php_time_limit.php
+│   │   ├── plugin_manager.php
+│   │   ├── plugininfo
+│   │   ├── privacy
+│   │   ├── progress
+│   │   ├── qrcode.php
+│   │   ├── report_helper.php
+│   │   ├── reportbuilder
+│   │   ├── requirejs.php
+│   │   ├── route
+│   │   ├── router
+│   │   ├── router.php
+│   │   ├── rtlcss.php
+│   │   ├── scss.php
+│   │   ├── session
+│   │   ├── shutdown_manager.php
+│   │   ├── string_manager.php
+│   │   ├── string_manager_install.php
+│   │   ├── string_manager_standard.php
+│   │   ├── system_clock.php
+│   │   ├── task
+│   │   ├── tests
+│   │   ├── text.php
+│   │   ├── update
+│   │   ├── upgrade
+│   │   ├── url.php
+│   │   ├── user.php
+│   │   ├── useragent.php
+│   │   ├── userfeedback.php
+│   │   └── uuid.php
+│   ├── clilib.php
+│   ├── completionlib.php
+│   ├── componentlib.class.php
+│   ├── components.json
+│   ├── conditionlib.php
+│   ├── configonlylib.php
+│   ├── cookies.js
+│   ├── cronlib.php
+│   ├── csslib.php
+│   ├── csvlib.class.php
+│   ├── customcheckslib.php
+│   ├── datalib.php
+│   ├── db
+│   │   ├── access.php
+│   │   ├── analytics.php
+│   │   ├── caches.php
+│   │   ├── events.php
+│   │   ├── hooks.php
+│   │   ├── index.html
+│   │   ├── install.php
+│   │   ├── install.xml
+│   │   ├── legacyclasses.php
+│   │   ├── log.php
+│   │   ├── messageinbound_handlers.php
+│   │   ├── messages.php
+│   │   ├── renamedclasses.php
+│   │   ├── services.php
+│   │   ├── tag.php
+│   │   ├── tasks.php
+│   │   ├── upgrade.php
+│   │   └── upgradelib.php
+│   ├── ddl
+│   │   ├── database_manager.php
+│   │   ├── mssql_sql_generator.php
+│   │   ├── mysql_sql_generator.php
+│   │   ├── oracle_sql_generator.php
+│   │   ├── postgres_sql_generator.php
+│   │   ├── sql_generator.php
+│   │   ├── sqlite_sql_generator.php
+│   │   └── tests
+│   ├── ddllib.php
+│   ├── default.ttf
+│   ├── deprecatedlib.php
+│   ├── dml
+│   │   ├── auroramysql_native_moodle_database.php
+│   │   ├── database_column_info.php
+│   │   ├── mariadb_native_moodle_database.php
+│   │   ├── moodle_database.php
+│   │   ├── moodle_read_slave_trait.php
+│   │   ├── moodle_recordset.php
+│   │   ├── moodle_temptables.php
+│   │   ├── moodle_transaction.php
+│   │   ├── mysqli_native_moodle_database.php
+│   │   ├── mysqli_native_moodle_recordset.php
+│   │   ├── mysqli_native_moodle_temptables.php
+│   │   ├── oci_native_moodle_database.php
+│   │   ├── oci_native_moodle_package.sql
+│   │   ├── oci_native_moodle_recordset.php
+│   │   ├── oci_native_moodle_temptables.php
+│   │   ├── pdo_moodle_database.php
+│   │   ├── pdo_moodle_recordset.php
+│   │   ├── pgsql_native_moodle_database.php
+│   │   ├── pgsql_native_moodle_recordset.php
+│   │   ├── pgsql_native_moodle_temptables.php
+│   │   ├── sqlite3_pdo_moodle_database.php
+│   │   ├── sqlsrv_native_moodle_database.php
+│   │   ├── sqlsrv_native_moodle_recordset.php
+│   │   ├── sqlsrv_native_moodle_temptables.php
+│   │   └── tests
+│   ├── dmllib.php
+│   ├── dtl
+│   │   ├── database_exporter.php
+│   │   ├── database_importer.php
+│   │   ├── database_mover.php
+│   │   ├── dbdata.xsd
+│   │   ├── file_xml_database_exporter.php
+│   │   ├── file_xml_database_importer.php
+│   │   ├── string_xml_database_exporter.php
+│   │   ├── string_xml_database_importer.php
+│   │   ├── xml_database_exporter.php
+│   │   └── xml_database_importer.php
+│   ├── dtllib.php
+│   ├── editor
+│   │   ├── amd
+│   │   ├── atto
+│   │   ├── classes
+│   │   ├── index.html
+│   │   ├── tests
+│   │   ├── textarea
+│   │   └── tiny
+│   ├── editorlib.php
+│   ├── emoji-data
+│   │   ├── data.js.mustache
+│   │   ├── generate_emoji_data.php
+│   │   └── readme_moodle.txt
+│   ├── emptyfile.php
+│   ├── enrollib.php
+│   ├── environmentlib.php
+│   ├── evalmath
+│   │   ├── evalmath.class.php
+│   │   └── readme_moodle.txt
+│   ├── excellib.class.php
+│   ├── external
+│   │   ├── UPGRADING.md
+│   │   ├── classes
+│   │   ├── externallib.php
+│   │   └── tests
+│   ├── externallib.php
+│   ├── filebrowser
+│   │   ├── file_browser.php
+│   │   ├── file_info.php
+│   │   ├── file_info_context_course.php
+│   │   ├── file_info_context_coursecat.php
+│   │   ├── file_info_context_module.php
+│   │   ├── file_info_context_system.php
+│   │   ├── file_info_context_user.php
+│   │   ├── file_info_stored.php
+│   │   ├── tests
+│   │   └── virtual_root_file.php
+│   ├── filelib.php
+│   ├── filestorage
+│   │   ├── file_archive.php
+│   │   ├── file_exceptions.php
+│   │   ├── file_packer.php
+│   │   ├── file_progress.php
+│   │   ├── file_storage.php
+│   │   ├── file_system.php
+│   │   ├── file_system_filedir.php
+│   │   ├── mbz_packer.php
+│   │   ├── stored_file.php
+│   │   ├── tests
+│   │   ├── tgz_extractor.php
+│   │   ├── tgz_packer.php
+│   │   ├── zip_archive.php
+│   │   └── zip_packer.php
+│   ├── filterlib.php
+│   ├── flickrclient.php
+│   ├── flickrlib.php
+│   ├── fonts
+│   │   ├── fa-brands-400.ttf
+│   │   ├── fa-brands-400.woff2
+│   │   ├── fa-regular-400.ttf
+│   │   ├── fa-regular-400.woff2
+│   │   ├── fa-solid-900.ttf
+│   │   ├── fa-solid-900.woff2
+│   │   ├── fa-v4compatibility.ttf
+│   │   └── fa-v4compatibility.woff2
+│   ├── form
+│   │   ├── UPGRADING.md
+│   │   ├── advcheckbox.php
+│   │   ├── amd
+│   │   ├── autocomplete.php
+│   │   ├── button.php
+│   │   ├── cancel.php
+│   │   ├── checkbox.php
+│   │   ├── choicedropdown.php
+│   │   ├── classes
+│   │   ├── cohort.php
+│   │   ├── course.php
+│   │   ├── dateselector.php
+│   │   ├── datetimeselector.php
+│   │   ├── defaultcustom.php
+│   │   ├── dndupload.js
+│   │   ├── duration.php
+│   │   ├── editor.php
+│   │   ├── filemanager.js
+│   │   ├── filemanager.php
+│   │   ├── filepicker.js
+│   │   ├── filepicker.php
+│   │   ├── filetypes.php
+│   │   ├── float.php
+│   │   ├── form.js
+│   │   ├── grading.php
+│   │   ├── group.php
+│   │   ├── header.php
+│   │   ├── hidden.php
+│   │   ├── listing.php
+│   │   ├── modgrade.php
+│   │   ├── modvisible.php
+│   │   ├── password.php
+│   │   ├── passwordunmask.php
+│   │   ├── questioncategory.php
+│   │   ├── radio.php
+│   │   ├── recaptcha.php
+│   │   ├── searchableselector.php
+│   │   ├── select.php
+│   │   ├── selectgroups.php
+│   │   ├── selectwithlink.php
+│   │   ├── selectyesno.php
+│   │   ├── static.php
+│   │   ├── submit.php
+│   │   ├── tags.php
+│   │   ├── templatable_form_element.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── text.php
+│   │   ├── textarea.php
+│   │   ├── upgrade.txt
+│   │   ├── url.js
+│   │   ├── url.php
+│   │   ├── warning.php
+│   │   └── yui
+│   ├── formslib.php
+│   ├── gdlib.php
+│   ├── geopattern-php
+│   │   ├── GeoPattern
+│   │   ├── LICENSE
+│   │   └── readme_moodle.txt
+│   ├── giggsey
+│   │   └── libphonenumber-for-php-lite
+│   ├── google
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── autoload.php
+│   │   ├── curlio.php
+│   │   ├── lib.php
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── googleapi.php
+│   ├── grade
+│   │   ├── constants.php
+│   │   ├── grade_category.php
+│   │   ├── grade_grade.php
+│   │   ├── grade_item.php
+│   │   ├── grade_object.php
+│   │   ├── grade_outcome.php
+│   │   ├── grade_scale.php
+│   │   └── tests
+│   ├── gradelib.php
+│   ├── graphlib.php
+│   ├── grouplib.php
+│   ├── guzzlehttp
+│   │   ├── guzzle
+│   │   ├── kevinrob
+│   │   ├── promises
+│   │   ├── psr7
+│   │   └── readme_moodle.txt
+│   ├── html2text
+│   │   ├── README.md
+│   │   ├── composer.json
+│   │   ├── lib.php
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── htmlpurifier
+│   │   ├── CREDITS
+│   │   ├── HTMLPurifier
+│   │   ├── HTMLPurifier.php
+│   │   ├── HTMLPurifier.safe-includes.php
+│   │   ├── LICENSE
+│   │   ├── locallib.php
+│   │   └── readme_moodle.txt
+│   ├── index.html
+│   ├── installlib.php
+│   ├── javascript-static.js
+│   ├── javascript.php
+│   ├── jmespath
+│   │   ├── CHANGELOG.md
+│   │   ├── LICENSE
+│   │   ├── README.rst
+│   │   ├── composer.json
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── jquery
+│   │   ├── MIT-LICENSE.txt
+│   │   ├── jquery-3.7.1.js
+│   │   ├── jquery-3.7.1.min.js
+│   │   ├── plugins.php
+│   │   ├── readme_moodle.txt
+│   │   └── ui-1.13.2
+│   ├── jslib.php
+│   ├── jssourcemap.php
+│   ├── laravel
+│   │   └── serializable-closure
+│   ├── ldaplib.php
+│   ├── lexer.php
+│   ├── licenselib.php
+│   ├── licenses.json
+│   ├── listlib.php
+│   ├── lti1p3
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── ltiprovider
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── markdown
+│   │   ├── License.md
+│   │   ├── Markdown.php
+│   │   ├── MarkdownExtra.php
+│   │   ├── MarkdownInterface.php
+│   │   ├── Readme.md
+│   │   └── readme_moodle.txt
+│   ├── mathslib.php
+│   ├── maxmind
+│   │   ├── GeoIp2
+│   │   ├── MaxMind
+│   │   └── readme_moodle.txt
+│   ├── messagelib.php
+│   ├── minify
+│   │   ├── matthiasmullie-minify
+│   │   ├── matthiasmullie-pathconverter
+│   │   └── readme_moodle.txt
+│   ├── mlbackend
+│   │   ├── php
+│   │   └── python
+│   ├── modinfolib.php
+│   ├── moodlelib.php
+│   ├── mustache
+│   │   ├── CONTRIBUTING.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── myprofilelib.php
+│   ├── navigationlib.php
+│   ├── nikic
+│   │   ├── fast-route
+│   │   └── readme_moodle.txt
+│   ├── oauthlib.php
+│   ├── odslib.class.php
+│   ├── openspout
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── outputactions.php
+│   ├── outputcomponents.php
+│   ├── outputfactories.php
+│   ├── outputfragmentrequirementslib.php
+│   ├── outputlib.php
+│   ├── outputrenderers.php
+│   ├── outputrequirementslib.php
+│   ├── pagelib.php
+│   ├── pdflib.php
+│   ├── pear
+│   │   ├── HTML
+│   │   ├── PEAR
+│   │   ├── PEAR.php
+│   │   ├── PEAR5.php
+│   │   ├── README.txt
+│   │   └── readme_moodle.txt
+│   ├── php-css-parser
+│   │   ├── CSSList
+│   │   ├── Comment
+│   │   ├── OutputFormat.php
+│   │   ├── OutputFormatter.php
+│   │   ├── Parser.php
+│   │   ├── Parsing
+│   │   ├── Property
+│   │   ├── Renderable.php
+│   │   ├── Rule
+│   │   ├── RuleSet
+│   │   ├── Settings.php
+│   │   ├── Value
+│   │   └── readme_moodle.txt
+│   ├── php-di
+│   │   ├── invoker
+│   │   ├── php-di
+│   │   └── readme_moodle.md
+│   ├── php-enum
+│   │   ├── LICENSE
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── php-jwt
+│   │   ├── CHANGELOG.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── composer.json
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── phpmailer
+│   │   ├── COMMITMENT
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── VERSION
+│   │   ├── language
+│   │   ├── moodle_phpmailer.php
+│   │   ├── moodle_phpmailer_oauth.php
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── phpminimumversionlib.php
+│   ├── phpspreadsheet
+│   │   ├── markbaker
+│   │   ├── phpspreadsheet
+│   │   ├── readme_moodle.txt
+│   │   └── vendor
+│   ├── phpunit
+│   │   ├── bootstrap.php
+│   │   ├── bootstraplib.php
+│   │   ├── classes
+│   │   ├── lib.php
+│   │   ├── phpunit.xsd
+│   │   ├── readme.md
+│   │   └── tests
+│   ├── phpxmlrpc
+│   │   ├── Client.php
+│   │   ├── Encoder.php
+│   │   ├── Exception
+│   │   ├── Exception.php
+│   │   ├── Helper
+│   │   ├── PhpXmlRpc.php
+│   │   ├── Request.php
+│   │   ├── Response.php
+│   │   ├── Server.php
+│   │   ├── Traits
+│   │   ├── Value.php
+│   │   ├── Wrapper.php
+│   │   └── readme_moodle.txt
+│   ├── plagiarismlib.php
+│   ├── plist
+│   │   ├── CODE_OF_CONDUCT.md
+│   │   ├── CONTRIBUTING.md
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── classes
+│   │   └── readme_moodle.txt
+│   ├── plugins.json
+│   ├── plugins.schema.json
+│   ├── polyfills
+│   │   ├── polyfill.js
+│   │   └── readme_moodle.txt
+│   ├── portfolio
+│   │   ├── caller.php
+│   │   ├── constants.php
+│   │   ├── exceptions.php
+│   │   ├── exporter.php
+│   │   ├── formats
+│   │   ├── formats.php
+│   │   ├── forms.php
+│   │   └── plugin.php
+│   ├── portfoliolib.php
+│   ├── psr
+│   │   ├── clock
+│   │   ├── container
+│   │   ├── event-dispatcher
+│   │   ├── http-client
+│   │   ├── http-factory
+│   │   ├── http-message
+│   │   ├── http-server-handler
+│   │   ├── http-server-middleware
+│   │   ├── log
+│   │   └── simple-cache
+│   ├── questionlib.php
+│   ├── ralouphie
+│   │   └── getallheaders
+│   ├── recaptchalib_v2.php
+│   ├── requirejs
+│   │   ├── LICENSE
+│   │   ├── jquery-private.js
+│   │   ├── moodle-config.js
+│   │   ├── readme_moodle.txt
+│   │   ├── require.js
+│   │   └── require.min.js
+│   ├── requirejs.php
+│   ├── resourcelib.php
+│   ├── rsslib.php
+│   ├── rtlcss
+│   │   ├── LICENSE
+│   │   ├── RTLCSS.php
+│   │   └── readme_moodle.txt
+│   ├── scssphp
+│   │   ├── Base
+│   │   ├── Block
+│   │   ├── Block.php
+│   │   ├── Cache.php
+│   │   ├── Colors.php
+│   │   ├── CompilationResult.php
+│   │   ├── Compiler
+│   │   ├── Compiler.php
+│   │   ├── Exception
+│   │   ├── Formatter
+│   │   ├── Formatter.php
+│   │   ├── LICENSE.md
+│   │   ├── Logger
+│   │   ├── Node
+│   │   ├── Node.php
+│   │   ├── OutputStyle.php
+│   │   ├── Parser.php
+│   │   ├── SourceMap
+│   │   ├── Type.php
+│   │   ├── Util
+│   │   ├── Util.php
+│   │   ├── ValueConverter.php
+│   │   ├── Version.php
+│   │   ├── Warn.php
+│   │   └── readme_moodle.txt
+│   ├── searchlib.php
+│   ├── sessionlib.php
+│   ├── setup.php
+│   ├── setuplib.php
+│   ├── simplepie
+│   │   ├── LICENSE.txt
+│   │   ├── README.markdown
+│   │   ├── autoloader.php
+│   │   ├── library
+│   │   ├── moodle_simplepie.php
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── slim
+│   │   ├── readme_moodle.txt
+│   │   └── slim
+│   ├── soaplib.php
+│   ├── spatie
+│   │   └── php-cloneable
+│   ├── statslib.php
+│   ├── symfony
+│   │   └── deprecation-contracts
+│   ├── table
+│   │   ├── UPGRADING.md
+│   │   ├── amd
+│   │   ├── classes
+│   │   └── tests
+│   ├── tablelib.php
+│   ├── tcpdf
+│   │   ├── CHANGELOG.TXT
+│   │   ├── LICENSE.TXT
+│   │   ├── README.md
+│   │   ├── composer.json
+│   │   ├── config
+│   │   ├── fonts
+│   │   ├── include
+│   │   ├── readme_moodle.txt
+│   │   ├── tcpdf.php
+│   │   ├── tcpdf_autoconfig.php
+│   │   ├── tcpdf_barcodes_1d.php
+│   │   ├── tcpdf_barcodes_2d.php
+│   │   └── tcpdf_parser.php
+│   ├── templates
+│   │   ├── action_link.mustache
+│   │   ├── action_menu.mustache
+│   │   ├── action_menu_item.mustache
+│   │   ├── action_menu_link.mustache
+│   │   ├── action_menu_trigger.mustache
+│   │   ├── actions.mustache
+│   │   ├── activity_header.mustache
+│   │   ├── add_block_body.mustache
+│   │   ├── add_block_button.mustache
+│   │   ├── async_backup_progress.mustache
+│   │   ├── async_backup_progress_row.mustache
+│   │   ├── async_backup_status.mustache
+│   │   ├── async_copy_complete_cell.mustache
+│   │   ├── async_restore_progress_row.mustache
+│   │   ├── auth_digital_minor_page.mustache
+│   │   ├── auth_verify_age_location_page.mustache
+│   │   ├── aws
+│   │   ├── block.mustache
+│   │   ├── bulkactions
+│   │   ├── chart.mustache
+│   │   ├── check
+│   │   ├── checkbox-toggleall-master-button.mustache
+│   │   ├── checkbox-toggleall-master.mustache
+│   │   ├── checkbox-toggleall-slave.mustache
+│   │   ├── checkbox.mustache
+│   │   ├── chooser.mustache
+│   │   ├── chooser_item.mustache
+│   │   ├── columns-1to1to1.mustache
+│   │   ├── columns-1to2.mustache
+│   │   ├── columns-2to1.mustache
+│   │   ├── columns-autoflow-1to1to1.mustache
+│   │   ├── comboboxsearch.mustache
+│   │   ├── content
+│   │   ├── context_header.mustache
+│   │   ├── copy_box.mustache
+│   │   ├── custom_menu_item.mustache
+│   │   ├── datafilter
+│   │   ├── dataformat_selector.mustache
+│   │   ├── drag_handle.mustache
+│   │   ├── drawer.mustache
+│   │   ├── dropzone.mustache
+│   │   ├── dynamic_tabs.mustache
+│   │   ├── editswitch.mustache
+│   │   ├── email_fromname.mustache
+│   │   ├── email_html.mustache
+│   │   ├── email_subject.mustache
+│   │   ├── email_text.mustache
+│   │   ├── emoji
+│   │   ├── external_content_banner.mustache
+│   │   ├── filemanager_chooselicense.mustache
+│   │   ├── filemanager_confirmdialog.mustache
+│   │   ├── filemanager_default_searchform.mustache
+│   │   ├── filemanager_fileselect.mustache
+│   │   ├── filemanager_licenselinks.mustache
+│   │   ├── filemanager_loginform.mustache
+│   │   ├── filemanager_modal_generallayout.mustache
+│   │   ├── filemanager_page_generallayout.mustache
+│   │   ├── filemanager_processexistingfile.mustache
+│   │   ├── filemanager_processexistingfilemultiple.mustache
+│   │   ├── filemanager_selectlayout.mustache
+│   │   ├── filemanager_uploadform.mustache
+│   │   ├── form_autocomplete_input.mustache
+│   │   ├── form_autocomplete_layout.mustache
+│   │   ├── form_autocomplete_selection.mustache
+│   │   ├── form_autocomplete_selection_items.mustache
+│   │   ├── form_autocomplete_suggestions.mustache
+│   │   ├── form_input_toggle_sensitive.mustache
+│   │   ├── full_header.mustache
+│   │   ├── help_icon.mustache
+│   │   ├── hover_tooltip.mustache
+│   │   ├── infected_file_email.mustache
+│   │   ├── initials_bar.mustache
+│   │   ├── inplace_editable.mustache
+│   │   ├── loading.mustache
+│   │   ├── local
+│   │   ├── loginform.mustache
+│   │   ├── modal.mustache
+│   │   ├── modal_backdrop.mustache
+│   │   ├── modal_cancel.mustache
+│   │   ├── modal_copytoclipboard.mustache
+│   │   ├── modal_delete_cancel.mustache
+│   │   ├── modal_save_cancel.mustache
+│   │   ├── moodlenet
+│   │   ├── moremenu.mustache
+│   │   ├── moremenu_children.mustache
+│   │   ├── navbar.mustache
+│   │   ├── notification.mustache
+│   │   ├── notification_base.mustache
+│   │   ├── notification_error.mustache
+│   │   ├── notification_info.mustache
+│   │   ├── notification_success.mustache
+│   │   ├── notification_warning.mustache
+│   │   ├── overlay_loading.mustache
+│   │   ├── paged_content.mustache
+│   │   ├── paged_content_page.mustache
+│   │   ├── paged_content_pages.mustache
+│   │   ├── paged_content_paging_bar.mustache
+│   │   ├── paged_content_paging_bar_item.mustache
+│   │   ├── paged_content_paging_dropdown.mustache
+│   │   ├── paged_content_paging_dropdown_item.mustache
+│   │   ├── paging_bar.mustache
+│   │   ├── permissionmanager_panelcontent.mustache
+│   │   ├── permissionmanager_role.mustache
+│   │   ├── pix_icon.mustache
+│   │   ├── pix_icon_fontawesome.mustache
+│   │   ├── popover_region.mustache
+│   │   ├── preferences_groups.mustache
+│   │   ├── progress_bar.mustache
+│   │   ├── report_link_page.mustache
+│   │   ├── search_input.mustache
+│   │   ├── search_input_auto.mustache
+│   │   ├── search_input_navbar.mustache
+│   │   ├── select_menu.mustache
+│   │   ├── select_time.mustache
+│   │   ├── settings_link_page.mustache
+│   │   ├── settings_link_page_single.mustache
+│   │   ├── showmore.mustache
+│   │   ├── signup_form_layout.mustache
+│   │   ├── single_button.mustache
+│   │   ├── single_select.mustache
+│   │   ├── skip_links.mustache
+│   │   ├── sticky_footer.mustache
+│   │   ├── tabtree.mustache
+│   │   ├── tertiary_navigation_selector.mustache
+│   │   ├── time_element.mustache
+│   │   ├── toggle.mustache
+│   │   ├── url_select.mustache
+│   │   ├── user_action_menu_items.mustache
+│   │   ├── user_action_menu_submenu_items.mustache
+│   │   ├── user_menu.mustache
+│   │   ├── user_menu_metadata.mustache
+│   │   ├── userfeedback_footer_link.mustache
+│   │   └── welcome.mustache
+│   ├── testing
+│   │   ├── classes
+│   │   ├── generator
+│   │   ├── lib.php
+│   │   └── tests
+│   ├── tests
+│   │   ├── accesslib_has_capability_test.php
+│   │   ├── accesslib_test.php
+│   │   ├── adminlib_test.php
+│   │   ├── admintree_test.php
+│   │   ├── ajaxlib_test.php
+│   │   ├── analysers_test.php
+│   │   ├── analytics
+│   │   ├── antivirus_test.php
+│   │   ├── attribute_helper_test.php
+│   │   ├── authlib_test.php
+│   │   ├── behat
+│   │   ├── behat_lib_test.php
+│   │   ├── blocklib_test.php
+│   │   ├── check_test.php
+│   │   ├── classes
+│   │   ├── client_test.php
+│   │   ├── collator_test.php
+│   │   ├── completionlib_test.php
+│   │   ├── component_test.php
+│   │   ├── componentlib_test.php
+│   │   ├── configonlylib_test.php
+│   │   ├── content
+│   │   ├── content_test.php
+│   │   ├── context
+│   │   ├── context_block_test.php
+│   │   ├── context_helper_test.php
+│   │   ├── context_test.php
+│   │   ├── core_media_player_native_test.php
+│   │   ├── core_renderer_template_exploit_test.php
+│   │   ├── core_renderer_test.php
+│   │   ├── core_userfeedback_test.php
+│   │   ├── coverage.php
+│   │   ├── cron_test.php
+│   │   ├── csvclass_test.php
+│   │   ├── curl_security_helper_test.php
+│   │   ├── customcontext_test.php
+│   │   ├── dataformat_test.php
+│   │   ├── datalib_test.php
+│   │   ├── datalib_update_with_unique_index_test.php
+│   │   ├── date_legacy_test.php
+│   │   ├── date_test.php
+│   │   ├── db
+│   │   ├── deprecation_test.php
+│   │   ├── di_test.php
+│   │   ├── editorlib_test.php
+│   │   ├── emoticon_manager_test.php
+│   │   ├── encryption_test.php
+│   │   ├── environment_test.php
+│   │   ├── event
+│   │   ├── exporter_test.php
+│   │   ├── external
+│   │   ├── externallib_test.php
+│   │   ├── filelib_test.php
+│   │   ├── filestorage_zip_archive_test.php
+│   │   ├── filetypes_test.php
+│   │   ├── filter_manager_test.php
+│   │   ├── filterlib_test.php
+│   │   ├── fixtures
+│   │   ├── formatting_test.php
+│   │   ├── formslib_test.php
+│   │   ├── gdlib_test.php
+│   │   ├── googlelib_test.php
+│   │   ├── gradelib_test.php
+│   │   ├── grades_external_test.php
+│   │   ├── grading_external_test.php
+│   │   ├── graphlib_test.php
+│   │   ├── grouplib_test.php
+│   │   ├── h5p_clean_orphaned_records_task_test.php
+│   │   ├── hook
+│   │   ├── html2text_test.php
+│   │   ├── htmlpurifier_test.php
+│   │   ├── http_client_test.php
+│   │   ├── hub
+│   │   ├── ip_utils_test.php
+│   │   ├── jquery_test.php
+│   │   ├── ldaplib_test.php
+│   │   ├── licenselib_test.php
+│   │   ├── locale_test.php
+│   │   ├── lock
+│   │   ├── lock_config_test.php
+│   │   ├── lock_test.php
+│   │   ├── markdown_test.php
+│   │   ├── mathslib_test.php
+│   │   ├── medialib_test.php
+│   │   ├── message_test.php
+│   │   ├── messagelib_test.php
+│   │   ├── minify_test.php
+│   │   ├── modinfolib_test.php
+│   │   ├── moodle_page_test.php
+│   │   ├── moodlelib_current_language_test.php
+│   │   ├── moodlelib_partial_test.php
+│   │   ├── moodlelib_test.php
+│   │   ├── moodlenet
+│   │   ├── myprofilelib_test.php
+│   │   ├── navigation
+│   │   ├── navigationlib_test.php
+│   │   ├── notification_test.php
+│   │   ├── oauth2
+│   │   ├── oauth2_test.php
+│   │   ├── other
+│   │   ├── output
+│   │   ├── outputcomponents_test.php
+│   │   ├── outputfactories_test.php
+│   │   ├── outputrenderers_test.php
+│   │   ├── outputrequirementslib_test.php
+│   │   ├── param_test.php
+│   │   ├── pdflib_test.php
+│   │   ├── performance
+│   │   ├── persistent_test.php
+│   │   ├── phpxmlrpc_test.php
+│   │   ├── plugin_manager_test.php
+│   │   ├── plugininfo
+│   │   ├── portfoliolib_test.php
+│   │   ├── privacy
+│   │   ├── progress_display_test.php
+│   │   ├── progress_test.php
+│   │   ├── qrcode_test.php
+│   │   ├── questionlib_test.php
+│   │   ├── regex_test.php
+│   │   ├── report_helper_test.php
+│   │   ├── requirejs_test.php
+│   │   ├── route
+│   │   ├── router
+│   │   ├── router_test.php
+│   │   ├── rsslib_test.php
+│   │   ├── rtlcss_test.php
+│   │   ├── sample_questions.ser
+│   │   ├── sample_questions.xml
+│   │   ├── sample_questions_with_old_image_tag.ser
+│   │   ├── sample_questions_with_old_image_tag.xml
+│   │   ├── sample_questions_wrong.xml
+│   │   ├── scss_test.php
+│   │   ├── session
+│   │   ├── session_redis_cluster_test.php
+│   │   ├── sessionlib_test.php
+│   │   ├── setuplib_test.php
+│   │   ├── statslib_test.php
+│   │   ├── stored_progress_bar_test.php
+│   │   ├── string_manager_standard_test.php
+│   │   ├── system_clock_test.php
+│   │   ├── task
+│   │   ├── text_test.php
+│   │   ├── theme_config_test.php
+│   │   ├── update_api_test.php
+│   │   ├── update_checker_test.php
+│   │   ├── update_code_manager_test.php
+│   │   ├── update_validator_test.php
+│   │   ├── upgrade_util_test.php
+│   │   ├── upgradelib_test.php
+│   │   ├── url_test.php
+│   │   ├── user_menu_test.php
+│   │   ├── user_test.php
+│   │   ├── useragent_test.php
+│   │   ├── weblib_format_text_test.php
+│   │   ├── weblib_test.php
+│   │   ├── xhprof_test.php
+│   │   ├── xmlize_test.php
+│   │   └── xsendfilelib_test.php
+│   ├── thirdpartylibs.xml
+│   ├── tokeniserlib.php
+│   ├── upgrade.txt
+│   ├── upgradelib.php
+│   ├── uploadlib.php
+│   ├── userkey
+│   │   ├── classes
+│   │   └── tests
+│   ├── validateurlsyntax.php
+│   ├── wasmlib.php
+│   ├── webauthn
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── composer.json
+│   │   ├── readme_moodle.txt
+│   │   └── src
+│   ├── webdavlib.php
+│   ├── weblib.php
+│   ├── wiki_to_markdown.php
+│   ├── wordlist.txt
+│   ├── xapi
+│   │   ├── classes
+│   │   ├── tests
+│   │   └── upgrade.txt
+│   ├── xhprof
+│   │   ├── CHANGELOG
+│   │   ├── CREDITS
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── readme_moodle.txt
+│   │   ├── xhprof_html
+│   │   ├── xhprof_lib
+│   │   └── xhprof_moodle.php
+│   ├── xhtml.xsl
+│   ├── xmldb
+│   │   ├── xmldb.dtd
+│   │   ├── xmldb.xsd
+│   │   ├── xmldb_constants.php
+│   │   ├── xmldb_field.php
+│   │   ├── xmldb_file.php
+│   │   ├── xmldb_index.php
+│   │   ├── xmldb_key.php
+│   │   ├── xmldb_object.php
+│   │   ├── xmldb_structure.php
+│   │   └── xmldb_table.php
+│   ├── xmlize.php
+│   ├── xsendfilelib.php
+│   ├── yui
+│   │   ├── build
+│   │   ├── common
+│   │   ├── config
+│   │   ├── license.txt
+│   │   └── src
+│   ├── yuilib
+│   │   ├── 2in3
+│   │   ├── 3.18.1
+│   │   ├── gallery
+│   │   └── readme_moodle.txt
+│   └── zipstream
+│       ├── LICENSE
+│       ├── readme_moodle.txt
+│       └── src
+├── local
+│   ├── mb2builder
+│   │   ├── ajax
+│   │   ├── assets
+│   │   ├── builder
+│   │   ├── classes
+│   │   ├── customize.php
+│   │   ├── db
+│   │   ├── delete-footer.php
+│   │   ├── delete-layout.php
+│   │   ├── delete-page.php
+│   │   ├── edit-footer.php
+│   │   ├── edit-layout.php
+│   │   ├── edit-page.php
+│   │   ├── footers.php
+│   │   ├── form-footer.php
+│   │   ├── form-layout.php
+│   │   ├── form-media.php
+│   │   ├── form-page.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── layouts.php
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mb2coursenotes
+│   │   ├── admin.css
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   ├── externallib.php
+│   │   ├── form_filter.php
+│   │   ├── form_note.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── manage.php
+│   │   ├── note2pdf.php
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mb2megamenu
+│   │   ├── ajax
+│   │   ├── builder
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   ├── form-media.php
+│   │   ├── import.php
+│   │   ├── import_data.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── menu_form.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mb2notices
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── notice_form.php
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mb2reviews
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   ├── externallib.php
+│   │   ├── form_filter.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── review_form.php
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── mb2slides
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── settings.php
+│   │   ├── slide_form.php
+│   │   └── version.php
+│   ├── readme.txt
+│   └── upgrade.txt
+├── login
+│   ├── change_password.php
+│   ├── change_password_form.php
+│   ├── confirm.php
+│   ├── digital_minor.php
+│   ├── forgot_password.php
+│   ├── forgot_password_form.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── logout.php
+│   ├── restored_password_form.php
+│   ├── set_password_form.php
+│   ├── signup.php
+│   ├── signup_form.php
+│   ├── tests
+│   │   ├── behat
+│   │   └── login_lib_test.php
+│   ├── token.php
+│   ├── unlock_account.php
+│   └── verify_age_location.php
+├── media
+│   ├── classes
+│   │   ├── manager.php
+│   │   ├── player.php
+│   │   ├── player_external.php
+│   │   ├── player_native.php
+│   │   └── privacy
+│   ├── player
+│   │   ├── html5audio
+│   │   ├── html5video
+│   │   ├── videojs
+│   │   ├── vimeo
+│   │   └── youtube
+│   └── upgrade.txt
+├── message
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── api.php
+│   │   ├── external
+│   │   ├── helper.php
+│   │   ├── hook_callbacks.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── search
+│   │   ├── task
+│   │   ├── tests
+│   │   └── time_last_message_between_users.php
+│   ├── edit.php
+│   ├── externallib.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── module.js
+│   ├── notificationpreferences.php
+│   ├── output
+│   │   ├── airnotifier
+│   │   ├── email
+│   │   ├── lib.php
+│   │   └── popup
+│   ├── pendingcontactrequests.php
+│   ├── renderer.php
+│   ├── templates
+│   │   ├── add_contact_button.mustache
+│   │   ├── contact_request_sent.mustache
+│   │   ├── default_notification_preferences.mustache
+│   │   ├── message_drawer.mustache
+│   │   ├── message_drawer_contacts_list.mustache
+│   │   ├── message_drawer_contacts_list_item_placeholder.mustache
+│   │   ├── message_drawer_conversations_list.mustache
+│   │   ├── message_drawer_conversations_list_items_placeholder.mustache
+│   │   ├── message_drawer_icon_back.mustache
+│   │   ├── message_drawer_icon_forward.mustache
+│   │   ├── message_drawer_lazy_load_list.mustache
+│   │   ├── message_drawer_messages_list.mustache
+│   │   ├── message_drawer_messages_list_item_placeholder.mustache
+│   │   ├── message_drawer_non_contacts_list.mustache
+│   │   ├── message_drawer_view_contact_body.mustache
+│   │   ├── message_drawer_view_contact_body_content.mustache
+│   │   ├── message_drawer_view_contacts_body.mustache
+│   │   ├── message_drawer_view_contacts_body_section_contacts.mustache
+│   │   ├── message_drawer_view_contacts_body_section_requests.mustache
+│   │   ├── message_drawer_view_contacts_body_section_requests_list.mustache
+│   │   ├── message_drawer_view_contacts_header.mustache
+│   │   ├── message_drawer_view_conversation_body.mustache
+│   │   ├── message_drawer_view_conversation_body_confirm_dialogue.mustache
+│   │   ├── message_drawer_view_conversation_body_day.mustache
+│   │   ├── message_drawer_view_conversation_body_day_placeholder.mustache
+│   │   ├── message_drawer_view_conversation_body_message.mustache
+│   │   ├── message_drawer_view_conversation_body_messages.mustache
+│   │   ├── message_drawer_view_conversation_body_placeholder.mustache
+│   │   ├── message_drawer_view_conversation_footer.mustache
+│   │   ├── message_drawer_view_conversation_footer_content.mustache
+│   │   ├── message_drawer_view_conversation_footer_edit_mode.mustache
+│   │   ├── message_drawer_view_conversation_footer_placeholder.mustache
+│   │   ├── message_drawer_view_conversation_footer_require_contact.mustache
+│   │   ├── message_drawer_view_conversation_footer_require_unblock.mustache
+│   │   ├── message_drawer_view_conversation_footer_unable_to_message.mustache
+│   │   ├── message_drawer_view_conversation_header.mustache
+│   │   ├── message_drawer_view_conversation_header_content_type_private.mustache
+│   │   ├── message_drawer_view_conversation_header_content_type_private_no_controls.mustache
+│   │   ├── message_drawer_view_conversation_header_content_type_public.mustache
+│   │   ├── message_drawer_view_conversation_header_content_type_self.mustache
+│   │   ├── message_drawer_view_conversation_header_edit_mode.mustache
+│   │   ├── message_drawer_view_conversation_header_placeholder.mustache
+│   │   ├── message_drawer_view_group_info_body.mustache
+│   │   ├── message_drawer_view_group_info_body_content.mustache
+│   │   ├── message_drawer_view_group_info_participants_list.mustache
+│   │   ├── message_drawer_view_group_info_participants_list_item_placeholder.mustache
+│   │   ├── message_drawer_view_overview_body.mustache
+│   │   ├── message_drawer_view_overview_footer.mustache
+│   │   ├── message_drawer_view_overview_header.mustache
+│   │   ├── message_drawer_view_overview_section.mustache
+│   │   ├── message_drawer_view_overview_section_favourites.mustache
+│   │   ├── message_drawer_view_overview_section_group_messages.mustache
+│   │   ├── message_drawer_view_overview_section_messages.mustache
+│   │   ├── message_drawer_view_search_body.mustache
+│   │   ├── message_drawer_view_search_header.mustache
+│   │   ├── message_drawer_view_search_results_content.mustache
+│   │   ├── message_drawer_view_search_results_content_placeholder.mustache
+│   │   ├── message_drawer_view_settings_body.mustache
+│   │   ├── message_drawer_view_settings_body_content.mustache
+│   │   ├── message_drawer_view_settings_body_content_notification_preferences.mustache
+│   │   ├── message_drawer_view_settings_body_placeholder.mustache
+│   │   ├── message_drawer_view_settings_header.mustache
+│   │   ├── message_index.mustache
+│   │   ├── message_jumpto.mustache
+│   │   ├── message_popover.mustache
+│   │   ├── message_preferences.mustache
+│   │   ├── message_preferences_component.mustache
+│   │   ├── message_preferences_notification_processor.mustache
+│   │   ├── notification_preferences.mustache
+│   │   ├── notification_preferences_component.mustache
+│   │   ├── notification_preferences_component_notification.mustache
+│   │   ├── notification_preferences_processor.mustache
+│   │   ├── preferences_processor.mustache
+│   │   ├── remove_contact_button.mustache
+│   │   └── send_bulk_message.mustache
+│   ├── tests
+│   │   ├── api_test.php
+│   │   ├── behat
+│   │   ├── event
+│   │   ├── external
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── helper_test.php
+│   │   ├── inbound_test.php
+│   │   ├── messagelib_test.php
+│   │   ├── privacy
+│   │   ├── search_received_test.php
+│   │   ├── search_sent_test.php
+│   │   └── task
+│   └── upgrade.txt
+├── mnet
+│   ├── classes
+│   │   └── privacy
+│   ├── environment.php
+│   ├── lib.php
+│   ├── peer.php
+│   ├── publickey.php
+│   ├── remote_client.php
+│   ├── service
+│   │   └── enrol
+│   ├── tests
+│   │   └── event
+│   └── xmlrpc
+│       ├── client.php
+│       ├── server.php
+│       ├── serverlib.php
+│       └── xmlparser.php
+├── mod
+│   ├── README.txt
+│   ├── UPGRADING.md
+│   ├── assign
+│   │   ├── UPGRADING.md
+│   │   ├── adminlib.php
+│   │   ├── adminmanageplugins.php
+│   │   ├── amd
+│   │   ├── assignmentplugin.php
+│   │   ├── backup
+│   │   ├── batchsetallocatedmarkerform.php
+│   │   ├── batchsetmarkingworkflowstateform.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── extensionform.php
+│   │   ├── externallib.php
+│   │   ├── feedback
+│   │   ├── feedbackplugin.php
+│   │   ├── gradeform.php
+│   │   ├── gradingbatchoperationsform.php
+│   │   ├── gradingoptionsform.php
+│   │   ├── gradingtable.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── module.js
+│   │   ├── override_form.php
+│   │   ├── overridedelete.php
+│   │   ├── overrideedit.php
+│   │   ├── overrides.php
+│   │   ├── pix
+│   │   ├── quickgradingform.php
+│   │   ├── renderable.php
+│   │   ├── renderer.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── submission
+│   │   ├── submission_form.php
+│   │   ├── submissionconfirmform.php
+│   │   ├── submissionplugin.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── yui
+│   ├── bigbluebuttonbn
+│   │   ├── UPGRADING.md
+│   │   ├── adminmanageplugins.php
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── bbb_broker.php
+│   │   ├── bbb_view.php
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── db
+│   │   ├── extension
+│   │   ├── guest.php
+│   │   ├── import_view.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── book
+│   │   ├── README.md
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── delete.php
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── edit_form.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── move.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── show.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── tool
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── chat
+│   │   ├── README.txt
+│   │   ├── backup
+│   │   ├── beep.mp3
+│   │   ├── chat_ajax.php
+│   │   ├── chatd.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── empty.php
+│   │   ├── gui_ajax
+│   │   ├── gui_basic
+│   │   ├── gui_header_js
+│   │   ├── gui_sockets
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── renderer.php
+│   │   ├── report.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── choice
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── renderer.php
+│   │   ├── report.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── coursecertificate
+│   │   ├── CHANGELOG.md
+│   │   ├── README.md
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── customcert
+│   │   ├── CHANGES.md
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── ajax.php
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── composer.json
+│   │   ├── db
+│   │   ├── download_all_certificates.php
+│   │   ├── edit.php
+│   │   ├── edit_element.php
+│   │   ├── element
+│   │   ├── includes
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── load_template.php
+│   │   ├── manage_templates.php
+│   │   ├── mobile
+│   │   ├── mod_form.php
+│   │   ├── my_certificates.php
+│   │   ├── pix
+│   │   ├── rearrange.php
+│   │   ├── report.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upload_image.php
+│   │   ├── verify_certificate.php
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── yui
+│   ├── data
+│   │   ├── UPGRADING.md
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── css.php
+│   │   ├── data.js
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── export.php
+│   │   ├── export_form.php
+│   │   ├── field
+│   │   ├── field.php
+│   │   ├── import.php
+│   │   ├── import_form.php
+│   │   ├── index.php
+│   │   ├── js.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── preset
+│   │   ├── preset.php
+│   │   ├── preset_form.php
+│   │   ├── renderer.php
+│   │   ├── rsslib.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tabs.php
+│   │   ├── templates
+│   │   ├── templates.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── feedback
+│   │   ├── UPGRADING.md
+│   │   ├── ajax.php
+│   │   ├── amd
+│   │   ├── analysis.php
+│   │   ├── analysis_course.php
+│   │   ├── analysis_to_excel.php
+│   │   ├── backup
+│   │   ├── choose_group_form.php
+│   │   ├── classes
+│   │   ├── complete.php
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── edit_form.php
+│   │   ├── edit_item.php
+│   │   ├── export.php
+│   │   ├── import.php
+│   │   ├── import_form.php
+│   │   ├── index.php
+│   │   ├── item
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── manage_templates.php
+│   │   ├── mapcourse.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── print.php
+│   │   ├── settings.php
+│   │   ├── show_entries.php
+│   │   ├── show_nonrespondents.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── use_templ.php
+│   │   ├── use_templ_form.php
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── yui
+│   ├── folder
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── download_folder.php
+│   │   ├── edit.php
+│   │   ├── edit_form.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── readme.txt
+│   │   ├── renderer.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── forum
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── discuss.php
+│   │   ├── export.php
+│   │   ├── externallib.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── maildigest.php
+│   │   ├── markposts.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── post.php
+│   │   ├── renderer.php
+│   │   ├── report
+│   │   ├── rsslib.php
+│   │   ├── search.php
+│   │   ├── settings.php
+│   │   ├── settracking.php
+│   │   ├── styles.css
+│   │   ├── subscribe.php
+│   │   ├── subscribers.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── unsubscribeall.php
+│   │   ├── upgrade.txt
+│   │   ├── user.php
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── glossary
+│   │   ├── README.txt
+│   │   ├── TODO.txt
+│   │   ├── approve.php
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deleteentry.php
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── edit_form.php
+│   │   ├── editcategories.html
+│   │   ├── editcategories.php
+│   │   ├── export.php
+│   │   ├── exportentry.php
+│   │   ├── formats
+│   │   ├── formats.php
+│   │   ├── import.php
+│   │   ├── import_form.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── print.php
+│   │   ├── rsslib.php
+│   │   ├── settings.php
+│   │   ├── showentry.php
+│   │   ├── sql.php
+│   │   ├── styles.css
+│   │   ├── tabs.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── h5pactivity
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── grade.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── report.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── imscp
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── dummyapi.js
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── module.js
+│   │   ├── pix
+│   │   ├── readme.txt
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── index.html
+│   ├── label
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── lesson
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── continue.php
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── editpage.php
+│   │   ├── editpage_form.php
+│   │   ├── essay.php
+│   │   ├── essay_form.php
+│   │   ├── format.php
+│   │   ├── grade.php
+│   │   ├── import.php
+│   │   ├── import_form.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lesson.php
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mediafile.php
+│   │   ├── mod_form.php
+│   │   ├── override_form.php
+│   │   ├── overridedelete.php
+│   │   ├── overrideedit.php
+│   │   ├── overrides.php
+│   │   ├── pagetypes
+│   │   ├── pix
+│   │   ├── renderer.php
+│   │   ├── report.php
+│   │   ├── settings.php
+│   │   ├── tabs.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── timer.js
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── view_form.php
+│   ├── lti
+│   │   ├── OAuth.php
+│   │   ├── OAuthBody.php
+│   │   ├── TrivialStore.php
+│   │   ├── amd
+│   │   ├── auth.php
+│   │   ├── backup
+│   │   ├── certs.php
+│   │   ├── classes
+│   │   ├── contentitem.php
+│   │   ├── contentitem_return.php
+│   │   ├── coursetooledit.php
+│   │   ├── coursetools.php
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── edit_form.php
+│   │   ├── externalregistrationreturn.php
+│   │   ├── grade.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── launch.php
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── openid-configuration.php
+│   │   ├── openid-registration.php
+│   │   ├── pix
+│   │   ├── register.php
+│   │   ├── register_form.php
+│   │   ├── registersettings.php
+│   │   ├── registration.php
+│   │   ├── registrationreturn.php
+│   │   ├── request_tool.php
+│   │   ├── return.php
+│   │   ├── service
+│   │   ├── service.php
+│   │   ├── servicelib.php
+│   │   ├── services.php
+│   │   ├── settings.php
+│   │   ├── source
+│   │   ├── startltiadvregistration.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── token.php
+│   │   ├── toolconfigure.php
+│   │   ├── toolproxies.php
+│   │   ├── toolssettings.php
+│   │   ├── typessettings.php
+│   │   ├── upgrade.txt
+│   │   ├── upgradelib.php
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── page
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── readme.txt
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── quiz
+│   │   ├── UPGRADING.md
+│   │   ├── accessmanager.php
+│   │   ├── accessmanager_form.php
+│   │   ├── accessrule
+│   │   ├── amd
+│   │   ├── attempt.php
+│   │   ├── attemptlib.php
+│   │   ├── autosave.ajax.php
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── comment.php
+│   │   ├── cronlib.php
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── edit.php
+│   │   ├── edit_rest.php
+│   │   ├── editgrading.php
+│   │   ├── editrandom.php
+│   │   ├── grade.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── module.js
+│   │   ├── override_form.php
+│   │   ├── overridedelete.php
+│   │   ├── overrideedit.php
+│   │   ├── overrides.php
+│   │   ├── pix
+│   │   ├── processattempt.php
+│   │   ├── renderer.php
+│   │   ├── repaginate.php
+│   │   ├── report
+│   │   ├── report.php
+│   │   ├── review.php
+│   │   ├── reviewquestion.php
+│   │   ├── settings.php
+│   │   ├── startattempt.php
+│   │   ├── styles.css
+│   │   ├── summary.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── yui
+│   ├── resource
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── readme.txt
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── scorm
+│   │   ├── aicc.php
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── datamodel.php
+│   │   ├── datamodels
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── grade.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── loadSCO.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── module.js
+│   │   ├── pix
+│   │   ├── player.js
+│   │   ├── player.php
+│   │   ├── prereqs.php
+│   │   ├── renderer.php
+│   │   ├── report
+│   │   ├── report.php
+│   │   ├── reportsettings_form.php
+│   │   ├── request.js
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   ├── view.js
+│   │   └── view.php
+│   ├── subsection
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mobileapp
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── renderer.php
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── survey
+│   │   ├── amd
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── download.php
+│   │   ├── graph.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── renderer.php
+│   │   ├── report.php
+│   │   ├── save.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── upgrade.txt
+│   ├── url
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── deprecatedlib.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── mod_form.php
+│   │   ├── pix
+│   │   ├── readme.txt
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── view.php
+│   ├── wiki
+│   │   ├── README
+│   │   ├── admin.php
+│   │   ├── backup
+│   │   ├── classes
+│   │   ├── comments.php
+│   │   ├── comments_form.php
+│   │   ├── create.php
+│   │   ├── create_form.php
+│   │   ├── db
+│   │   ├── diff
+│   │   ├── diff.php
+│   │   ├── edit.php
+│   │   ├── edit_form.php
+│   │   ├── editcomments.php
+│   │   ├── editors
+│   │   ├── files.php
+│   │   ├── filesedit.php
+│   │   ├── filesedit_form.php
+│   │   ├── history.php
+│   │   ├── index.php
+│   │   ├── instancecomments.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── lock.php
+│   │   ├── map.php
+│   │   ├── mod_form.php
+│   │   ├── module.js
+│   │   ├── overridelocks.php
+│   │   ├── pagelib.php
+│   │   ├── parser
+│   │   ├── pix
+│   │   ├── prettyview.php
+│   │   ├── renderer.php
+│   │   ├── restoreversion.php
+│   │   ├── search.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   ├── view.php
+│   │   └── viewversion.php
+│   └── workshop
+│       ├── aggregate.php
+│       ├── allocation
+│       ├── allocation.php
+│       ├── amd
+│       ├── assessment.php
+│       ├── backup
+│       ├── classes
+│       ├── db
+│       ├── editform.php
+│       ├── editformpreview.php
+│       ├── eval
+│       ├── exassessment.php
+│       ├── excompare.php
+│       ├── exsubmission.php
+│       ├── feedbackauthor_form.php
+│       ├── feedbackreviewer_form.php
+│       ├── fileinfolib.php
+│       ├── form
+│       ├── index.php
+│       ├── lang
+│       ├── lib.php
+│       ├── locallib.php
+│       ├── mod_form.php
+│       ├── pix
+│       ├── renderer.php
+│       ├── settings.php
+│       ├── styles.css
+│       ├── submission.php
+│       ├── submission_form.php
+│       ├── switchphase.php
+│       ├── templates
+│       ├── tests
+│       ├── toolbox.php
+│       ├── upgrade.txt
+│       ├── version.php
+│       └── view.php
+├── moodlenet
+│   └── shareprogress.php
+├── my
+│   ├── classes
+│   │   ├── external
+│   │   └── privacy
+│   ├── courses.php
+│   ├── index.php
+│   ├── indexsys.php
+│   ├── lib.php
+│   ├── templates
+│   │   └── dropdown.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── event
+│   │   ├── external
+│   │   └── privacy
+│   └── upgrade.txt
+├── notes
+│   ├── classes
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   ├── delete.php
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── externallib.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── event
+│   │   ├── externallib_test.php
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── lib_test.php
+│   │   ├── privacy
+│   │   └── reportbuilder
+│   └── upgrade.txt
+├── npm-shrinkwrap.json
+├── package.json
+├── payment
+│   ├── accounts.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── account.php
+│   │   ├── account_gateway.php
+│   │   ├── event
+│   │   ├── external
+│   │   ├── form
+│   │   ├── gateway.php
+│   │   ├── helper.php
+│   │   ├── local
+│   │   └── privacy
+│   ├── gateway
+│   │   └── paypal
+│   ├── manage_account.php
+│   ├── manage_gateway.php
+│   ├── templates
+│   │   ├── fee_breakdown.mustache
+│   │   ├── gateway.mustache
+│   │   ├── gateways.mustache
+│   │   ├── gateways_modal.mustache
+│   │   ├── gateways_placeholder.mustache
+│   │   └── modal_gateways.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   └── helper_test.php
+│   └── upgrade.txt
+├── phpcs.xml.dist
+├── phpinfo.php
+├── phpunit.xml.dist
+├── pix
+│   ├── a
+│   │   ├── add_file.svg
+│   │   ├── create_folder.svg
+│   │   ├── download_all.svg
+│   │   ├── em1_bwgreater.gif
+│   │   ├── em1_greater.gif
+│   │   ├── em1_lesser.gif
+│   │   ├── em1_raquo.gif
+│   │   ├── help.svg
+│   │   ├── l_breadcrumb.gif
+│   │   ├── logout.svg
+│   │   ├── r_breadcrumb.gif
+│   │   ├── r_go.gif
+│   │   ├── r_next.gif
+│   │   ├── r_previous.gif
+│   │   ├── refresh.svg
+│   │   ├── search.svg
+│   │   ├── setting.svg
+│   │   ├── view_icon_active.svg
+│   │   ├── view_list_active.svg
+│   │   └── view_tree_active.svg
+│   ├── adv.gif
+│   ├── b
+│   │   ├── BIG-ICONS
+│   │   ├── bookmark-new.svg
+│   │   ├── document-edit.svg
+│   │   ├── document-new.svg
+│   │   ├── document-properties.svg
+│   │   ├── edit-copy.svg
+│   │   ├── edit-delete.svg
+│   │   └── h5p_library.svg
+│   ├── b.gif
+│   ├── book.svg
+│   ├── c
+│   │   └── event.gif
+│   ├── docs.svg
+│   ├── e
+│   │   ├── abbr.svg
+│   │   ├── absolute.svg
+│   │   ├── accessibility_checker.svg
+│   │   ├── acronym.svg
+│   │   ├── advance_hr.svg
+│   │   ├── align_center.svg
+│   │   ├── align_left.svg
+│   │   ├── align_right.svg
+│   │   ├── anchor.svg
+│   │   ├── backward.svg
+│   │   ├── bold.svg
+│   │   ├── bullet_list.svg
+│   │   ├── cancel.svg
+│   │   ├── cancel_solid_circle.svg
+│   │   ├── cell_props.svg
+│   │   ├── cite.svg
+│   │   ├── cleanup_messy_code.svg
+│   │   ├── clear_formatting.svg
+│   │   ├── copy.svg
+│   │   ├── cut.svg
+│   │   ├── decrease_indent.svg
+│   │   ├── delete.svg
+│   │   ├── delete_col.svg
+│   │   ├── delete_row.svg
+│   │   ├── delete_table.svg
+│   │   ├── document_properties.svg
+│   │   ├── emoticons.svg
+│   │   ├── file-text.svg
+│   │   ├── find_replace.svg
+│   │   ├── forward.svg
+│   │   ├── fullpage.svg
+│   │   ├── fullscreen.svg
+│   │   ├── help.svg
+│   │   ├── increase_indent.svg
+│   │   ├── insert.svg
+│   │   ├── insert_col_after.svg
+│   │   ├── insert_col_before.svg
+│   │   ├── insert_date.svg
+│   │   ├── insert_edit_image.svg
+│   │   ├── insert_edit_link.svg
+│   │   ├── insert_edit_video.svg
+│   │   ├── insert_file.svg
+│   │   ├── insert_horizontal_ruler.svg
+│   │   ├── insert_nonbreaking_space.svg
+│   │   ├── insert_page_break.svg
+│   │   ├── insert_row_after.svg
+│   │   ├── insert_row_before.svg
+│   │   ├── insert_time.svg
+│   │   ├── italic.svg
+│   │   ├── justify.svg
+│   │   ├── layers.svg
+│   │   ├── layers_over.svg
+│   │   ├── layers_under.svg
+│   │   ├── left_to_right.svg
+│   │   ├── manage_files.svg
+│   │   ├── math.svg
+│   │   ├── merge_cells.svg
+│   │   ├── new_document.svg
+│   │   ├── numbered_list.svg
+│   │   ├── page_break.svg
+│   │   ├── paste.svg
+│   │   ├── paste_text.svg
+│   │   ├── paste_word.svg
+│   │   ├── prevent_autolink.svg
+│   │   ├── preview.svg
+│   │   ├── print.svg
+│   │   ├── question.svg
+│   │   ├── redo.svg
+│   │   ├── remove_link.svg
+│   │   ├── remove_page_break.svg
+│   │   ├── resize.svg
+│   │   ├── restore_draft.svg
+│   │   ├── restore_last_draft.svg
+│   │   ├── right_to_left.svg
+│   │   ├── row_props.svg
+│   │   ├── save.svg
+│   │   ├── screenreader_helper.svg
+│   │   ├── search.svg
+│   │   ├── select_all.svg
+│   │   ├── show_invisible_characters.svg
+│   │   ├── source_code.svg
+│   │   ├── special_character.svg
+│   │   ├── spellcheck.svg
+│   │   ├── split_cells.svg
+│   │   ├── strikethrough.svg
+│   │   ├── styleparagraph.svg
+│   │   ├── styleprops.svg
+│   │   ├── subscript.svg
+│   │   ├── superscript.svg
+│   │   ├── table.svg
+│   │   ├── table_props.svg
+│   │   ├── template.svg
+│   │   ├── text_color.svg
+│   │   ├── text_color_picker.svg
+│   │   ├── text_highlight.svg
+│   │   ├── text_highlight_picker.svg
+│   │   ├── tick.svg
+│   │   ├── toggle_blockquote.svg
+│   │   ├── underline.svg
+│   │   ├── undo.svg
+│   │   ├── visual_aid.svg
+│   │   └── visual_blocks.svg
+│   ├── f
+│   │   ├── archive.svg
+│   │   ├── audio.svg
+│   │   ├── calc.svg
+│   │   ├── chart.svg
+│   │   ├── database.svg
+│   │   ├── document.svg
+│   │   ├── draw.svg
+│   │   ├── eps.svg
+│   │   ├── epub.svg
+│   │   ├── flash.svg
+│   │   ├── folder.svg
+│   │   ├── gif.svg
+│   │   ├── h5p.svg
+│   │   ├── image.svg
+│   │   ├── impress.svg
+│   │   ├── isf.svg
+│   │   ├── json.svg
+│   │   ├── markup.svg
+│   │   ├── math.svg
+│   │   ├── moodle.svg
+│   │   ├── oth.svg
+│   │   ├── pdf.svg
+│   │   ├── powerpoint.svg
+│   │   ├── psd.svg
+│   │   ├── publisher.svg
+│   │   ├── sourcecode.svg
+│   │   ├── spreadsheet.svg
+│   │   ├── text.svg
+│   │   ├── unknown.svg
+│   │   ├── video.svg
+│   │   └── writer.svg
+│   ├── g
+│   │   ├── f1.png
+│   │   ├── f2.png
+│   │   ├── g1.png
+│   │   └── g1.svg
+│   ├── help.svg
+│   ├── i
+│   │   ├── ICONS-16x16
+│   │   ├── activities.svg
+│   │   ├── addblock.svg
+│   │   ├── admin.gif
+│   │   ├── agg_mean.svg
+│   │   ├── agg_sum.svg
+│   │   ├── ajaxloader.gif
+│   │   ├── arrow-left.svg
+│   │   ├── arrow-right.svg
+│   │   ├── assignroles.svg
+│   │   ├── asterisk.svg
+│   │   ├── backup.svg
+│   │   ├── badge.svg
+│   │   ├── breadcrumbdivider.svg
+│   │   ├── bullhorn.svg
+│   │   ├── calc.svg
+│   │   ├── calendar.svg
+│   │   ├── calendareventdescription.svg
+│   │   ├── calendareventtime.svg
+│   │   ├── categoryevent.svg
+│   │   ├── caution.svg
+│   │   ├── chartbar.svg
+│   │   ├── checked.svg
+│   │   ├── checkedcircle.svg
+│   │   ├── checkpermissions.svg
+│   │   ├── circleinfo.svg
+│   │   ├── closed.gif
+│   │   ├── cloudupload.svg
+│   │   ├── cohort.svg
+│   │   ├── colourpicker.png
+│   │   ├── competencies.svg
+│   │   ├── completion-auto-enabled.svg
+│   │   ├── completion-auto-fail.svg
+│   │   ├── completion-auto-n-override.svg
+│   │   ├── completion-auto-n.svg
+│   │   ├── completion-auto-pass.svg
+│   │   ├── completion-auto-y-override.svg
+│   │   ├── completion-auto-y.svg
+│   │   ├── completion-manual-enabled.svg
+│   │   ├── completion-manual-n-override.svg
+│   │   ├── completion-manual-n.svg
+│   │   ├── completion-manual-y-override.svg
+│   │   ├── completion-manual-y.svg
+│   │   ├── completion_self.svg
+│   │   ├── configlock.svg
+│   │   ├── contentbank.svg
+│   │   ├── course.svg
+│   │   ├── courseevent.svg
+│   │   ├── customfield.svg
+│   │   ├── dashboard.svg
+│   │   ├── db.svg
+│   │   ├── delete.svg
+│   │   ├── dot.svg
+│   │   ├── down.svg
+│   │   ├── dragdrop.svg
+│   │   ├── dropdown.png
+│   │   ├── duration.svg
+│   │   ├── edit.svg
+│   │   ├── email.svg
+│   │   ├── emojicategoryactivities.svg
+│   │   ├── emojicategoryanimalsnature.svg
+│   │   ├── emojicategoryflags.svg
+│   │   ├── emojicategoryfooddrink.svg
+│   │   ├── emojicategoryobjects.svg
+│   │   ├── emojicategorypeoplebody.svg
+│   │   ├── emojicategoryrecent.svg
+│   │   ├── emojicategorysmileysemotion.svg
+│   │   ├── emojicategorysmileyspeople.png
+│   │   ├── emojicategorysmileyspeople.svg
+│   │   ├── emojicategorysymbols.svg
+│   │   ├── emojicategorytravelplaces.svg
+│   │   ├── empty.svg
+│   │   ├── enrolmentsuspended.svg
+│   │   ├── enrolusers.svg
+│   │   ├── excluded.svg
+│   │   ├── expired.svg
+│   │   ├── export.svg
+│   │   ├── externallink.svg
+│   │   ├── feedback.gif
+│   │   ├── feedback_add.gif
+│   │   ├── file_export.svg
+│   │   ├── file_import.svg
+│   │   ├── file_plus.svg
+│   │   ├── files.svg
+│   │   ├── filter.svg
+│   │   ├── flagged.svg
+│   │   ├── folder.svg
+│   │   ├── grade_correct.svg
+│   │   ├── grade_incorrect.svg
+│   │   ├── grade_partiallycorrect.svg
+│   │   ├── grademark-grey.gif
+│   │   ├── grademark.gif
+│   │   ├── grades.svg
+│   │   ├── grading.svg
+│   │   ├── gradingnotifications.svg
+│   │   ├── group.svg
+│   │   ├── groupevent.svg
+│   │   ├── groupn.svg
+│   │   ├── groups.svg
+│   │   ├── groupv.svg
+│   │   ├── guest.gif
+│   │   ├── hide.svg
+│   │   ├── hierarchylock.svg
+│   │   ├── home.svg
+│   │   ├── ical.gif
+│   │   ├── import.svg
+│   │   ├── incorrect.svg
+│   │   ├── info.svg
+│   │   ├── invalid.svg
+│   │   ├── item.svg
+│   │   ├── key.gif
+│   │   ├── language.svg
+│   │   ├── link.svg
+│   │   ├── loading.svg
+│   │   ├── loading_small.svg
+│   │   ├── location.svg
+│   │   ├── lock.svg
+│   │   ├── log.svg
+│   │   ├── mahara_host.svg
+│   │   ├── manual_item.svg
+│   │   ├── marked.svg
+│   │   ├── marker.svg
+│   │   ├── mean.svg
+│   │   ├── menu.svg
+│   │   ├── menubars.svg
+│   │   ├── messagecontentaudio.svg
+│   │   ├── messagecontentimage.svg
+│   │   ├── messagecontentmultimediageneral.svg
+│   │   ├── messagecontentvideo.svg
+│   │   ├── mnethost.svg
+│   │   ├── moodle_host.svg
+│   │   ├── moremenu.svg
+│   │   ├── move_2d.svg
+│   │   ├── muted.svg
+│   │   ├── navigationitem.svg
+│   │   ├── ne_red_mark.svg
+│   │   ├── new.svg
+│   │   ├── news.svg
+│   │   ├── next.svg
+│   │   ├── nosubcat.svg
+│   │   ├── notifications.svg
+│   │   ├── open.svg
+│   │   ├── otherevent.svg
+│   │   ├── outcomes.svg
+│   │   ├── overriden_grade.svg
+│   │   ├── payment.svg
+│   │   ├── permissionlock.svg
+│   │   ├── permissions.svg
+│   │   ├── persona_sign_in_black.svg
+│   │   ├── portfolio.svg
+│   │   ├── preview.svg
+│   │   ├── previous.svg
+│   │   ├── privatefiles.svg
+│   │   ├── progressbar.svg
+│   │   ├── publish.svg
+│   │   ├── questions.svg
+│   │   ├── reload.svg
+│   │   ├── report.svg
+│   │   ├── repository.svg
+│   │   ├── restore.svg
+│   │   ├── return.svg
+│   │   ├── risk_config.svg
+│   │   ├── risk_dataloss.svg
+│   │   ├── risk_managetrust.svg
+│   │   ├── risk_personal.svg
+│   │   ├── risk_spam.svg
+│   │   ├── risk_xss.svg
+│   │   ├── role.svg
+│   │   ├── rss.svg
+│   │   ├── rsssitelogo.svg
+│   │   ├── scales.svg
+│   │   ├── scheduled.svg
+│   │   ├── search.svg
+│   │   ├── section.svg
+│   │   ├── sendmessage.svg
+│   │   ├── settings.svg
+│   │   ├── share.svg
+│   │   ├── show.svg
+│   │   ├── siteevent.svg
+│   │   ├── star-o.svg
+│   │   ├── star-rating.svg
+│   │   ├── star.svg
+│   │   ├── stats.svg
+│   │   ├── switch.svg
+│   │   ├── switchrole.svg
+│   │   ├── test.png
+│   │   ├── test.svg
+│   │   ├── trash.svg
+│   │   ├── twoway.svg
+│   │   ├── unchecked.svg
+│   │   ├── uncheckedcircle.svg
+│   │   ├── unflagged.svg
+│   │   ├── unlock.svg
+│   │   ├── up.svg
+│   │   ├── upload.svg
+│   │   ├── user.svg
+│   │   ├── userevent.svg
+│   │   ├── users.svg
+│   │   ├── valid.svg
+│   │   ├── viewcategory.svg
+│   │   ├── viewsection.svg
+│   │   ├── warning.svg
+│   │   ├── window_close.svg
+│   │   └── withsubcat.svg
+│   ├── m
+│   │   └── USD.svg
+│   ├── madewithmoodle.gif
+│   ├── moodlelogo.png
+│   ├── moodlelogo.svg
+│   ├── moodlelogo_grayhat.png
+│   ├── moodlelogo_grayhat.svg
+│   ├── moodlenet.png
+│   ├── moodlenet.svg
+│   ├── movehere.gif
+│   ├── movehere.svg
+│   ├── req.svg
+│   ├── s
+│   │   ├── SMILEYS
+│   │   ├── angry.png
+│   │   ├── approve.png
+│   │   ├── biggrin.png
+│   │   ├── blackeye.png
+│   │   ├── blush.png
+│   │   ├── clown.png
+│   │   ├── cool.png
+│   │   ├── dead.png
+│   │   ├── egg.png
+│   │   ├── evil.png
+│   │   ├── heart.png
+│   │   ├── kiss.png
+│   │   ├── martin.svg
+│   │   ├── mixed.png
+│   │   ├── no.png
+│   │   ├── sad.png
+│   │   ├── shy.png
+│   │   ├── sleepy.png
+│   │   ├── smiley.png
+│   │   ├── surprise.png
+│   │   ├── thoughtful.png
+│   │   ├── tongueout.png
+│   │   ├── wideeyes.png
+│   │   ├── wink.png
+│   │   └── yes.png
+│   ├── spacer.gif
+│   ├── t
+│   │   ├── TINY-ICONS
+│   │   ├── add.svg
+│   │   ├── addcontact.svg
+│   │   ├── adddir.png
+│   │   ├── addfile.png
+│   │   ├── angles-down.svg
+│   │   ├── angles-left.svg
+│   │   ├── angles-right.svg
+│   │   ├── angles-up.svg
+│   │   ├── approve.svg
+│   │   ├── arrow_left.gif
+│   │   ├── assignroles.svg
+│   │   ├── award.svg
+│   │   ├── backpack.svg
+│   │   ├── backup.svg
+│   │   ├── block.svg
+│   │   ├── block_to_dock.svg
+│   │   ├── block_to_dock_rtl.svg
+│   │   ├── blocks_drawer.svg
+│   │   ├── blocks_drawer_rtl.svg
+│   │   ├── calc.svg
+│   │   ├── calc_off.svg
+│   │   ├── calendar.gif
+│   │   ├── check.svg
+│   │   ├── clipboard.svg
+│   │   ├── cohort.svg
+│   │   ├── collapsed.svg
+│   │   ├── collapsed_empty.svg
+│   │   ├── collapsed_empty_rtl.svg
+│   │   ├── collapsed_rtl.svg
+│   │   ├── collapsedcaret.svg
+│   │   ├── collapsedchevron.svg
+│   │   ├── collapsedchevron_rtl.svg
+│   │   ├── collapsedchevron_up.svg
+│   │   ├── completion_complete.svg
+│   │   ├── completion_fail.svg
+│   │   ├── completion_incomplete.svg
+│   │   ├── contextmenu.svg
+│   │   ├── copy.svg
+│   │   ├── delete.svg
+│   │   ├── dock_to_block.svg
+│   │   ├── dock_to_block_rtl.svg
+│   │   ├── dockclose.svg
+│   │   ├── down.svg
+│   │   ├── download.svg
+│   │   ├── downlong.svg
+│   │   ├── dropdown.svg
+│   │   ├── edit.svg
+│   │   ├── edit_menu.svg
+│   │   ├── editinline.svg
+│   │   ├── editstring.svg
+│   │   ├── email.svg
+│   │   ├── emailno.svg
+│   │   ├── emptystar.svg
+│   │   ├── enroladd.gif
+│   │   ├── enrolusers.svg
+│   │   ├── expanded.svg
+│   │   ├── expandedchevron.svg
+│   │   ├── feedback.gif
+│   │   ├── feedback_add.gif
+│   │   ├── go.svg
+│   │   ├── grades.svg
+│   │   ├── groupn.svg
+│   │   ├── groups.svg
+│   │   ├── groupv.svg
+│   │   ├── hiddenuntil.gif
+│   │   ├── hide.svg
+│   │   ├── hideuntil.gif
+│   │   ├── index_drawer.svg
+│   │   ├── left.svg
+│   │   ├── less.svg
+│   │   ├── life-ring.svg
+│   │   ├── lock.svg
+│   │   ├── locked.svg
+│   │   ├── locktime.svg
+│   │   ├── log.svg
+│   │   ├── markasread.svg
+│   │   ├── mean.gif
+│   │   ├── message.svg
+│   │   ├── messages-o.svg
+│   │   ├── messages.svg
+│   │   ├── more.svg
+│   │   ├── move.svg
+│   │   ├── moveleft.gif
+│   │   ├── nonempty.gif
+│   │   ├── online.svg
+│   │   ├── outcomes.gif
+│   │   ├── passwordunmask-edit.svg
+│   │   ├── passwordunmask-reveal.svg
+│   │   ├── play.svg
+│   │   ├── portfolioadd.svg
+│   │   ├── preferences.svg
+│   │   ├── preview.svg
+│   │   ├── print.svg
+│   │   ├── ranges.gif
+│   │   ├── reload.svg
+│   │   ├── removecontact.svg
+│   │   ├── removeright.gif
+│   │   ├── reset.svg
+│   │   ├── restore.svg
+│   │   ├── right.svg
+│   │   ├── scales.gif
+│   │   ├── sendmessage.svg
+│   │   ├── show.svg
+│   │   ├── sigma.gif
+│   │   ├── sigmaplus.gif
+│   │   ├── sort.svg
+│   │   ├── sort_asc.svg
+│   │   ├── sort_by.svg
+│   │   ├── sort_desc.svg
+│   │   ├── stealth.svg
+│   │   ├── stop.svg
+│   │   ├── switch.gif
+│   │   ├── switch_minus.svg
+│   │   ├── switch_plus.svg
+│   │   ├── switch_whole.svg
+│   │   ├── tag.svg
+│   │   ├── tags.svg
+│   │   ├── unblock.svg
+│   │   ├── unlock.svg
+│   │   ├── unlocked.svg
+│   │   ├── up.svg
+│   │   ├── uplong.svg
+│   │   ├── user.svg
+│   │   ├── usernot.gif
+│   │   └── viewdetails.svg
+│   ├── u
+│   │   ├── f1.png
+│   │   ├── f2.png
+│   │   ├── f3.png
+│   │   ├── user100.png
+│   │   └── user35.png
+│   ├── webding.png
+│   └── y
+│       ├── lm.png
+│       ├── ln.gif
+│       ├── ln_rtl.gif
+│       ├── loading.gif
+│       ├── lp.png
+│       ├── lp_rtl.png
+│       ├── tm.png
+│       ├── tn.gif
+│       ├── tn_rtl.gif
+│       ├── tp.png
+│       ├── tp_rtl.png
+│       └── vline.gif
+├── plagiarism
+│   ├── classes
+│   │   └── privacy
+│   ├── lib.php
+│   ├── tests
+│   │   └── privacy
+│   └── upgrade.txt
+├── pluginfile.php
+├── portfolio
+│   ├── add.php
+│   ├── classes
+│   │   └── privacy
+│   ├── download
+│   │   ├── classes
+│   │   ├── file.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   └── version.php
+│   ├── file.php
+│   ├── flickr
+│   │   ├── classes
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── googledocs
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── mahara
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── preconfig.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── tests
+│   │   └── privacy
+│   └── upgrade.txt
+├── privacy
+│   ├── classes
+│   │   ├── local
+│   │   ├── manager.php
+│   │   ├── manager_observer.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   └── tests
+│   ├── export_files
+│   │   ├── general.css
+│   │   └── general.js
+│   ├── templates
+│   │   ├── htmlpage.mustache
+│   │   └── navigation.mustache
+│   └── tests
+│       ├── approved_contextlist_test.php
+│       ├── approved_userlist_test.php
+│       ├── collection_test.php
+│       ├── contextlist_base_test.php
+│       ├── contextlist_collection_test.php
+│       ├── contextlist_test.php
+│       ├── fixtures
+│       ├── legacy_polyfill_test.php
+│       ├── manager_test.php
+│       ├── moodle_content_writer_test.php
+│       ├── privacy
+│       ├── request_helper_test.php
+│       ├── request_transform_test.php
+│       ├── sitepolicy_test.php
+│       ├── tests_content_writer_test.php
+│       ├── types_database_table_test.php
+│       ├── types_external_location_test.php
+│       ├── types_plugintype_link_test.php
+│       ├── types_subsystem_link_test.php
+│       ├── types_user_preference_test.php
+│       ├── userlist_base_test.php
+│       ├── userlist_collection_test.php
+│       ├── userlist_test.php
+│       └── writer_test.php
+├── question
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── bank
+│   │   ├── bulkmove
+│   │   ├── columnsortorder
+│   │   ├── comment
+│   │   ├── customfields
+│   │   ├── deletequestion
+│   │   ├── editquestion
+│   │   ├── exportquestions
+│   │   ├── exporttoxml
+│   │   ├── history
+│   │   ├── importquestions
+│   │   ├── managecategories
+│   │   ├── previewquestion
+│   │   ├── statistics
+│   │   ├── tagquestion
+│   │   ├── upgrade.txt
+│   │   ├── usage
+│   │   ├── viewcreator
+│   │   ├── viewquestionname
+│   │   ├── viewquestiontext
+│   │   └── viewquestiontype
+│   ├── behaviour
+│   │   ├── adaptive
+│   │   ├── adaptivenopenalty
+│   │   ├── behaviourbase.php
+│   │   ├── behaviourtypebase.php
+│   │   ├── deferredcbm
+│   │   ├── deferredfeedback
+│   │   ├── immediatecbm
+│   │   ├── immediatefeedback
+│   │   ├── informationitem
+│   │   ├── interactive
+│   │   ├── interactivecountback
+│   │   ├── manualgraded
+│   │   ├── missing
+│   │   ├── rendererbase.php
+│   │   └── upgrade.txt
+│   ├── classes
+│   │   ├── admin
+│   │   ├── category_manager.php
+│   │   ├── engine
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── local
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── question_reference_manager.php
+│   │   └── statistics
+│   ├── deprecatedlib.php
+│   ├── edit.php
+│   ├── editlib.php
+│   ├── engine
+│   │   ├── bank.php
+│   │   ├── datalib.php
+│   │   ├── lib.php
+│   │   ├── questionattempt.php
+│   │   ├── questionattemptstep.php
+│   │   ├── questionusage.php
+│   │   ├── renderer.php
+│   │   ├── states.php
+│   │   ├── tests
+│   │   ├── upgrade
+│   │   └── upgrade.txt
+│   ├── flags.js
+│   ├── format
+│   │   ├── README.txt
+│   │   ├── aiken
+│   │   ├── blackboard_six
+│   │   ├── gift
+│   │   ├── missingword
+│   │   ├── multianswer
+│   │   ├── upgrade.txt
+│   │   ├── xhtml
+│   │   └── xml
+│   ├── format.php
+│   ├── lib.php
+│   ├── qengine.js
+│   ├── renderer.php
+│   ├── templates
+│   │   ├── bulk_actions_ui.mustache
+│   │   ├── column_header.mustache
+│   │   ├── column_sort.mustache
+│   │   ├── qbank_action_menu.mustache
+│   │   ├── qbank_chooser.mustache
+│   │   ├── question_bank_controls.mustache
+│   │   ├── question_bank_filter_ui.mustache
+│   │   ├── question_pagination.mustache
+│   │   ├── question_version_info.mustache
+│   │   ├── question_version_selection.mustache
+│   │   └── showtext_option.mustache
+│   ├── tests
+│   │   ├── backup_test.php
+│   │   ├── behat
+│   │   ├── calculated_question_summary_test.php
+│   │   ├── category_manager_test.php
+│   │   ├── coverage.php
+│   │   ├── event
+│   │   ├── externallib_test.php
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── importexport_test.php
+│   │   ├── least_used_variant_strategy_test.php
+│   │   ├── local
+│   │   ├── privacy
+│   │   ├── privacy_helper.php
+│   │   ├── question_bank_column_test.php
+│   │   ├── random_question_loader_test.php
+│   │   └── version_test.php
+│   ├── toggleflag.php
+│   ├── type
+│   │   ├── calculated
+│   │   ├── calculatedmulti
+│   │   ├── calculatedsimple
+│   │   ├── ddimageortext
+│   │   ├── ddmarker
+│   │   ├── ddwtos
+│   │   ├── description
+│   │   ├── edit_question_form.php
+│   │   ├── essay
+│   │   ├── gapselect
+│   │   ├── match
+│   │   ├── missingtype
+│   │   ├── multianswer
+│   │   ├── multichoice
+│   │   ├── numerical
+│   │   ├── ordering
+│   │   ├── questionbase.php
+│   │   ├── questiontypebase.php
+│   │   ├── random
+│   │   ├── randomsamatch
+│   │   ├── rendererbase.php
+│   │   ├── shortanswer
+│   │   ├── tests
+│   │   ├── truefalse
+│   │   └── upgrade.txt
+│   ├── upgrade.php
+│   ├── upgrade.txt
+│   └── yui
+│       ├── build
+│       └── src
+├── r.php
+├── rating
+│   ├── classes
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── phpunit
+│   │   └── privacy
+│   ├── index.php
+│   ├── lib.php
+│   ├── module.js
+│   ├── rate.php
+│   ├── rate_ajax.php
+│   └── tests
+│       ├── externallib_test.php
+│       ├── privacy
+│       └── rating_test.php
+├── report
+│   ├── UPGRADING.md
+│   ├── backups
+│   │   ├── classes
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── classes
+│   │   ├── output
+│   │   └── privacy
+│   ├── competency
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── completion
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── user.php
+│   │   └── version.php
+│   ├── configlog
+│   │   ├── classes
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── courseoverview
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── locallib.php
+│   │   ├── reportsgraph.php
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── eventlist
+│   │   ├── UPGRADING.md
+│   │   ├── classes
+│   │   ├── eventdetail.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── upgrade.txt
+│   │   ├── version.php
+│   │   └── yui
+│   ├── infectedfiles
+│   │   ├── classes
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── insights
+│   │   ├── action.php
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── done.php
+│   │   ├── insights.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── prediction.php
+│   │   ├── settings.php
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── log
+│   │   ├── UPGRADING.md
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── graph.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── user.php
+│   │   └── version.php
+│   ├── loglive
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── loglive_ajax.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── yui
+│   ├── outline
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── styles.css
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── user.php
+│   │   └── version.php
+│   ├── participation
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── performance
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── progress
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   └── version.php
+│   ├── questioninstances
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── security
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── stats
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── graph.php
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── settings.php
+│   │   ├── styles.css
+│   │   ├── tests
+│   │   ├── user.php
+│   │   └── version.php
+│   ├── status
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   └── version.php
+│   ├── themeusage
+│   │   ├── classes
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── settings.php
+│   │   ├── tests
+│   │   └── version.php
+│   ├── upgrade.txt
+│   ├── usersessions
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── index.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── tests
+│   │   ├── user.php
+│   │   └── version.php
+│   └── view.php
+├── reportbuilder
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── datasource.php
+│   │   ├── event
+│   │   ├── exception
+│   │   ├── external
+│   │   ├── form
+│   │   ├── local
+│   │   ├── manager.php
+│   │   ├── output
+│   │   ├── permission.php
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── system_report.php
+│   │   ├── system_report_factory.php
+│   │   ├── table
+│   │   └── task
+│   ├── download.php
+│   ├── edit.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── templates
+│   │   ├── editor_navbar.mustache
+│   │   ├── local
+│   │   ├── report.mustache
+│   │   ├── table_header_cell.mustache
+│   │   └── toggle_card.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── datasource_test.php
+│   │   ├── external
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   ├── generator_test.php
+│   │   ├── helpers.php
+│   │   ├── lib_test.php
+│   │   ├── local
+│   │   ├── manager_test.php
+│   │   ├── output
+│   │   ├── permission_test.php
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── system_report_factory_test.php
+│   │   ├── system_report_test.php
+│   │   └── task
+│   ├── upgrade.txt
+│   └── view.php
+├── repository
+│   ├── README.txt
+│   ├── areafiles
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   └── version.php
+│   ├── classes
+│   │   └── privacy
+│   ├── contentbank
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── coursefiles
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── draftfiles_ajax.php
+│   ├── draftfiles_manager.php
+│   ├── dropbox
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   ├── thumbnail.php
+│   │   └── version.php
+│   ├── equella
+│   │   ├── callback.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── filepicker.js
+│   ├── filepicker.php
+│   ├── filesystem
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── flickr
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── flickr_public
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── image.php
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── googledocs
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── lib.php
+│   ├── local
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── manage_instances.php
+│   ├── merlot
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── nextcloud
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── onedrive
+│   │   ├── UPGRADING.md
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── recent
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── repository_ajax.php
+│   ├── repository_callback.php
+│   ├── s3
+│   │   ├── S3.php
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── readme_moodle.txt
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   └── version.php
+│   ├── tests
+│   │   ├── behat
+│   │   ├── generator_test.php
+│   │   ├── privacy
+│   │   └── repositorylib_test.php
+│   ├── upgrade.txt
+│   ├── upload
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── url
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── locallib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── user
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── webdav
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   └── version.php
+│   ├── wikimedia
+│   │   ├── classes
+│   │   ├── db
+│   │   ├── lang
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── tests
+│   │   ├── version.php
+│   │   └── wikimedia.php
+│   └── youtube
+│       ├── classes
+│       ├── db
+│       ├── lang
+│       ├── lib.php
+│       ├── pix
+│       ├── tests
+│       └── version.php
+├── rss
+│   ├── classes
+│   │   └── privacy
+│   ├── file.php
+│   ├── renderer.php
+│   └── tests
+│       └── privacy
+├── search
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── area_category.php
+│   │   ├── base.php
+│   │   ├── base_activity.php
+│   │   ├── base_block.php
+│   │   ├── base_mod.php
+│   │   ├── document.php
+│   │   ├── document_factory.php
+│   │   ├── document_icon.php
+│   │   ├── engine.php
+│   │   ├── engine_exception.php
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── manager.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   └── skip_future_documents_iterator.php
+│   ├── cli
+│   │   └── indexer.php
+│   ├── engine
+│   │   ├── simpledb
+│   │   └── solr
+│   ├── index.php
+│   ├── templates
+│   │   ├── form-user-selector-suggestion.mustache
+│   │   ├── index_requests.mustache
+│   │   └── result.mustache
+│   ├── tests
+│   │   ├── area_category_test.php
+│   │   ├── base_activity_test.php
+│   │   ├── base_block_test.php
+│   │   ├── base_test.php
+│   │   ├── behat
+│   │   ├── document_icon_test.php
+│   │   ├── document_test.php
+│   │   ├── engine_test.php
+│   │   ├── event
+│   │   ├── external
+│   │   ├── external_test.php
+│   │   ├── fixtures
+│   │   ├── generator
+│   │   ├── manager_test.php
+│   │   ├── skip_future_documents_iterator_test.php
+│   │   └── top_result_test.php
+│   └── upgrade.txt
+├── security.txt
+├── sms
+│   ├── UPGRADING.md
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── classes
+│   │   ├── description.php
+│   │   ├── external
+│   │   ├── form
+│   │   ├── gateway.php
+│   │   ├── hook
+│   │   ├── manager.php
+│   │   ├── message.php
+│   │   ├── message_status.php
+│   │   ├── privacy
+│   │   ├── status.php
+│   │   └── table
+│   ├── configure.php
+│   ├── gateway
+│   │   └── aws
+│   ├── sms_gateways.php
+│   ├── templates
+│   │   ├── sms_action_icons.mustache
+│   │   └── sms_gateways.mustache
+│   └── tests
+│       ├── behat
+│       ├── external
+│       ├── fixtures
+│       ├── gateway_test.php
+│       ├── generator
+│       ├── manager_test.php
+│       ├── message_status_test.php
+│       ├── message_test.php
+│       └── privacy
+├── tag
+│   ├── classes
+│   │   ├── area.php
+│   │   ├── areas_table.php
+│   │   ├── collection.php
+│   │   ├── collections_table.php
+│   │   ├── external
+│   │   ├── external.php
+│   │   ├── index_builder.php
+│   │   ├── manage_table.php
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── renderer.php
+│   │   ├── reportbuilder
+│   │   ├── tag.php
+│   │   └── tests
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── index.php
+│   ├── lib.php
+│   ├── locallib.php
+│   ├── manage.php
+│   ├── search.php
+│   ├── templates
+│   │   ├── add_tag_collection.mustache
+│   │   ├── add_tags.mustache
+│   │   ├── combine_tags.mustache
+│   │   ├── index.mustache
+│   │   ├── tagcloud.mustache
+│   │   ├── tagfeed.mustache
+│   │   └── taglist.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── event
+│   │   ├── external
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   └── taglib_test.php
+│   ├── upgrade.txt
+│   └── user.php
+├── theme
+│   ├── UPGRADING.md
+│   ├── boost
+│   │   ├── UPGRADING.md
+│   │   ├── amd
+│   │   ├── classes
+│   │   ├── cli
+│   │   ├── config.php
+│   │   ├── lang
+│   │   ├── layout
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── readme_moodle.txt
+│   │   ├── scss
+│   │   ├── settings.php
+│   │   ├── style
+│   │   ├── templates
+│   │   ├── tests
+│   │   ├── thirdpartylibs.xml
+│   │   ├── upgrade.txt
+│   │   └── version.php
+│   ├── classic
+│   │   ├── classes
+│   │   ├── config.php
+│   │   ├── lang
+│   │   ├── layout
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── scss
+│   │   ├── settings.php
+│   │   ├── style
+│   │   ├── templates
+│   │   ├── tests
+│   │   └── version.php
+│   ├── font.php
+│   ├── image.php
+│   ├── index.php
+│   ├── javascript.php
+│   ├── jquery.php
+│   ├── mb2nl
+│   │   ├── amd
+│   │   ├── assets
+│   │   ├── builder2
+│   │   ├── classes
+│   │   ├── config.php
+│   │   ├── db
+│   │   ├── externallib.php
+│   │   ├── lang
+│   │   ├── layout
+│   │   ├── lib
+│   │   ├── lib.php
+│   │   ├── pix
+│   │   ├── pix_core
+│   │   ├── pix_plugins
+│   │   ├── renderers
+│   │   ├── renderers.php
+│   │   ├── script
+│   │   ├── scss
+│   │   ├── settings
+│   │   ├── settings.php
+│   │   ├── settings_mb2nlchild
+│   │   ├── shortcodes
+│   │   ├── style
+│   │   ├── templates
+│   │   └── version.php
+│   ├── styles.php
+│   ├── styles_debug.php
+│   ├── switchdevice.php
+│   ├── upgrade.txt
+│   ├── yui_combo.php
+│   └── yui_image.php
+├── tokenpluginfile.php
+├── tree.txt
+├── user
+│   ├── UPGRADING.md
+│   ├── action_redir.php
+│   ├── amd
+│   │   ├── build
+│   │   └── src
+│   ├── calendar.php
+│   ├── classes
+│   │   ├── analytics
+│   │   ├── devicekey.php
+│   │   ├── external
+│   │   ├── fields.php
+│   │   ├── form
+│   │   ├── hook
+│   │   ├── output
+│   │   ├── privacy
+│   │   ├── reportbuilder
+│   │   ├── route
+│   │   ├── search
+│   │   └── table
+│   ├── contactsitesupport.php
+│   ├── contentbank.php
+│   ├── defaulthomepage.php
+│   ├── edit.php
+│   ├── edit_form.php
+│   ├── editadvanced.php
+│   ├── editadvanced_form.php
+│   ├── editlib.php
+│   ├── editor.php
+│   ├── editor_form.php
+│   ├── emailupdate.php
+│   ├── externallib.php
+│   ├── files.php
+│   ├── filters
+│   │   ├── anycourses.php
+│   │   ├── checkbox.php
+│   │   ├── cohort.php
+│   │   ├── courserole.php
+│   │   ├── date.php
+│   │   ├── globalrole.php
+│   │   ├── lib.php
+│   │   ├── profilefield.php
+│   │   ├── select.php
+│   │   ├── simpleselect.php
+│   │   ├── text.php
+│   │   ├── user_filter_forms.php
+│   │   └── yesno.php
+│   ├── forum.php
+│   ├── forum_form.php
+│   ├── grouppix.php
+│   ├── index.php
+│   ├── language.php
+│   ├── language_form.php
+│   ├── lib.php
+│   ├── managetoken.php
+│   ├── pix.php
+│   ├── policy.php
+│   ├── portfolio.php
+│   ├── portfoliologs.php
+│   ├── preferences.php
+│   ├── profile
+│   │   ├── definelib.php
+│   │   ├── field
+│   │   ├── index.php
+│   │   └── lib.php
+│   ├── profile.php
+│   ├── profilesys.php
+│   ├── renderer.php
+│   ├── selector
+│   │   ├── lib.php
+│   │   ├── module.js
+│   │   └── search.php
+│   ├── templates
+│   │   ├── add_bulk_note.mustache
+│   │   ├── comboboxsearch
+│   │   ├── contact_site_support_email_body.mustache
+│   │   ├── contact_site_support_not_available.mustache
+│   │   ├── edit_profile_fields.mustache
+│   │   ├── form_user_selector_searchtype.mustache
+│   │   ├── form_user_selector_suggestion.mustache
+│   │   ├── participantsfilter.mustache
+│   │   ├── send_bulk_message.mustache
+│   │   ├── status_details.mustache
+│   │   ├── status_field.mustache
+│   │   └── upcoming_activities_due_insight_body.mustache
+│   ├── tests
+│   │   ├── behat
+│   │   ├── coverage.php
+│   │   ├── devicekey_test.php
+│   │   ├── editlib_test.php
+│   │   ├── external
+│   │   ├── externallib_test.php
+│   │   ├── fields_test.php
+│   │   ├── fixtures
+│   │   ├── group_non_members_selector_test.php
+│   │   ├── myprofile_test.php
+│   │   ├── privacy
+│   │   ├── profilelib_test.php
+│   │   ├── reportbuilder
+│   │   ├── route
+│   │   ├── search
+│   │   ├── table
+│   │   ├── userlib_test.php
+│   │   ├── userroleseditable_test.php
+│   │   └── userselector_test.php
+│   ├── upgrade.txt
+│   └── view.php
+├── userpix
+│   └── index.php
+├── version.php
+└── webservice
+    ├── UPGRADING.md
+    ├── classes
+    │   ├── privacy
+    │   ├── reportbuilder
+    │   ├── token_filter.php
+    │   ├── token_form.php
+    │   └── token_table.php
+    ├── draftfile.php
+    ├── externallib.php
+    ├── lib.php
+    ├── pluginfile.php
+    ├── recaptcha.php
+    ├── renderer.php
+    ├── rest
+    │   ├── classes
+    │   ├── db
+    │   ├── lang
+    │   ├── lib.php
+    │   ├── locallib.php
+    │   ├── server.php
+    │   ├── simpleserver.php
+    │   ├── tests
+    │   └── version.php
+    ├── soap
+    │   ├── classes
+    │   ├── db
+    │   ├── lang
+    │   ├── lib.php
+    │   ├── locallib.php
+    │   ├── server.php
+    │   ├── simpleserver.php
+    │   ├── tests
+    │   └── version.php
+    ├── templates
+    │   └── missing_capabilities.mustache
+    ├── tests
+    │   ├── behat
+    │   ├── event
+    │   ├── externallib_test.php
+    │   ├── generator
+    │   ├── helpers.php
+    │   └── lib_test.php
+    ├── upgrade.txt
+    ├── upload.php
+    └── wsdoc.php
+
+2470 directories, 4191 files
