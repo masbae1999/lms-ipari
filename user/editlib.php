@@ -379,7 +379,8 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
     // Display user name fields that are not currenlty enabled here if there are any.
     $disabledusernamefields = useredit_get_disabled_name_fields($enabledusernamefields);
     if (count($disabledusernamefields) > 0) {
-        $mform->addElement('header', 'moodle_additional_names', get_string('additionalnames'));
+        //hide fields : optional, interest dan additionalname karena ga dibutuhkan
+        //$mform->addElement('header', 'moodle_additional_names', get_string('additionalnames'));
         foreach ($disabledusernamefields as $allname) {
             $purpose = user_edit_map_field_purpose($user->id, $allname);
             $mform->addElement('text', $allname, get_string($allname), 'maxlength="100" size="30"' . $purpose);
@@ -388,14 +389,16 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
     }
 
     if (core_tag_tag::is_enabled('core', 'user') and empty($USER->newadminuser)) {
-        $mform->addElement('header', 'moodle_interests', get_string('interests'));
+        //hide fields : optional, interest dan additionalname karena ga dibutuhkan
+        //$mform->addElement('header', 'moodle_interests', get_string('interests'));
         $mform->addElement('tags', 'interests', get_string('interestslist'),
             array('itemtype' => 'user', 'component' => 'core'));
         $mform->addHelpButton('interests', 'interestslist');
     }
 
     // Moodle optional fields.
-    $mform->addElement('header', 'moodle_optional', get_string('optional', 'form'));
+    //hide fields : optional, interest dan additionalname karena ga dibutuhkan
+    //$mform->addElement('header', 'moodle_optional', get_string('optional', 'form'));
 
     $mform->addElement('text', 'idnumber', get_string('idnumber'), 'maxlength="255" size="25"');
     $mform->setType('idnumber', core_user::get_property_type('idnumber'));
